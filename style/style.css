@@ -1,0 +1,65 @@
+/**
+ * CSS Emilio Devesa
+ */
+
+body {
+    background-color: #f7f7f7;
+    text-align: justify;
+    font-family: 'Arimo', Calibri, Tahoma, sans-serif;
+}
+
+div.top-section {
+    margin: 50px;
+    padding: 20px;
+    padding-bottom: 50px;
+    background-color: #3B68BE;
+    color: white;
+}
+
+div.title {
+    font-size: 32px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+div.subtitle {
+    font-size: 18px;
+}
+
+div.section {
+    margin: 50px;
+    padding-bottom: 50px;
+}
+
+div.highlight {
+    color: #424242;
+    font-size: 18px;
+    text-align: center;
+}
+
+div.description {
+    color: #424242;
+    font-size: 16px;
+    text-align: center;
+    font-style: italic;
+}
+
+div.text {
+    color: #424242;
+    font-size: 16px;
+    text-align: center;
+}
+
+table {
+    border: 0px;
+    text-align: center;
+    table-layout: fixed;
+    border-spacing: 10px;
+    width: 100%;
+}
+
+div.footer {
+    color: #424242;
+    font-size: 11px;
+    text-align: center;
+}
