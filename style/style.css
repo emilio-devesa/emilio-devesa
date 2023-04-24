@@ -10,7 +10,7 @@ body {
     margin: 0 auto; /* esto centra la página horizontalmente */
 }
 
-div.top-section {
+.top-section {
     margin: 50px;
     padding: 20px;
     padding-bottom: 50px;
@@ -18,17 +18,31 @@ div.top-section {
     color: white;
 }
 
-div.menu {
+.top-section .menu {
     text-align: end;
 }
 
-div.title {
+.top-section .menu a:link, a:visited  {
+    color: #f7f7f7;
+    padding: 5px 15px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.top-section .menu a:hover, a:active {
+    color: white;
+    text-decoration: underline;
+}
+
+.top-section .title {
     font-size: 32px;
     padding-top: 20px;
     padding-bottom: 10px;
 }
 
-div.subtitle {
+.top-section .subtitle {
     font-size: 18px;
 }
 
@@ -48,7 +62,7 @@ div.description {
     color: #424242;
     font-size: 16px;
     text-align: center;
-    font-style: italic;
+    font-style: normal;
 }
 
 div.text {
@@ -65,23 +79,23 @@ table {
     width: 100%;
 }
 
-div.footer {
+.footer {
+    margin: 50px;
+    padding: 20px;
+    padding-bottom: 50px;
+    background-color: #d2d2d2;
     color: #424242;
     font-size: 11px;
     text-align: center;
 }
 
-a:link, a:visited  {
-    color: #f7f7f7;
-    padding: 5px 15px;
-    text-align: center; 
+.footer a {
+    color: #6567f9;
+    font-size: 11px;
     text-decoration: none;
-    display: inline-block;
-    font-weight: bold;
 }
 
-a:hover, a:active {
-    color: white;
+.footer a:hover {
     text-decoration: underline;
 }
 
