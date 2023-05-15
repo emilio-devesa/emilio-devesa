@@ -58,6 +58,22 @@ div.highlight {
     text-align: center;
 }
 
+.p {
+    color: #424242;
+    font-size: 16px;
+    text-align: center;
+    font-style: normal;
+}
+
+.p a {
+    color: #6567f9;
+    text-decoration: none;
+}
+
+.p a:hover {
+    text-decoration: underline;
+}
+
 .description {
     color: #424242;
     font-size: 16px;
