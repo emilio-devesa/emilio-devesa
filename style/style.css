@@ -6,11 +6,11 @@ body {
     background-color: #f7f7f7;
     text-align: justify;
     font-family: 'Arimo', Calibri, Tahoma, sans-serif;
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto; /* esto centra la página horizontalmente */
 }
 
-.top-section {
+.header {
     margin: 50px;
     padding: 20px;
     padding-bottom: 50px;
@@ -18,41 +18,43 @@ body {
     color: white;
 }
 
-.top-section .menu {
+.header .menu {
+    background-color: transparent;
     text-align: end;
 }
 
-.top-section .menu a:link, a:visited  {
+.header .menu a:link, a:visited  {
     color: #f7f7f7;
     padding: 5px 15px;
-    text-align: center; 
+    text-align: center;
     text-decoration: none;
     display: inline-block;
     font-weight: bold;
 }
 
-.top-section .menu a:hover, a:active {
+.header .menu a:hover, a:active {
     color: white;
     text-decoration: underline;
 }
 
-.top-section .title {
+.header .title {
     font-size: 32px;
     padding-top: 20px;
     padding-bottom: 10px;
 }
 
-.top-section .subtitle {
+.header .subtitle {
     font-size: 18px;
 }
 
-div.section {
+
+.section {
     margin: 50px;
     padding-top: 25px;
     padding-bottom: 50px;
 }
 
-div.highlight {
+.highlight {
     color: #424242;
     font-size: 18px;
     text-align: center;
@@ -124,48 +126,4 @@ table {
 
 .footer a:hover {
     text-decoration: underline;
-}
-
-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 3px;
-    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-input[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 3px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #444;
-}
-
-.required {
-    color: red;
 }
