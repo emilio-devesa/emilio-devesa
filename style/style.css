@@ -108,6 +108,10 @@ table {
     width: 100%;
 }
 
+th, td {
+    vertical-align: top;
+}
+
 .footer {
     margin: 50px;
     padding: 20px;
