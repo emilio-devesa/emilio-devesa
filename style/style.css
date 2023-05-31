@@ -16,7 +16,7 @@ body {
     padding-bottom: 50px;
     background-color: #3B68BE;
     color: white;
-    background-image: linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 1.0)), url('/img/large01.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 1.0)), url('/img/header.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -142,3 +142,60 @@ th, td {
 .footer a:hover {
     text-decoration: underline;
 }
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 384px;
+    max-width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+  
+.image-container {
+    position: relative;
+    width: 96%;
+    height: 96%;
+}
+  
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+  
+.gradient-top,
+.gradient-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 20px;
+    pointer-events: none;
+}
+  
+.gradient-top {
+    top: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+}
+  
+.gradient-bottom {
+    bottom: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
+}
+  
+.controls {
+    display: flex;
+    justify-content: space-between;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 10px;
+}
+  
+.controls button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+  
