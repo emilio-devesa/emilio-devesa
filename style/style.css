@@ -45,6 +45,20 @@ body {
     font-size: 32px;
     padding-top: 20px;
     padding-bottom: 10px;
+    text-decoration: none;
+}
+
+.header .title a:link, a:visited  {
+    color: #f7f7f7;
+    text-align: start;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.header .title a:hover, a:active {
+    color: white;
+    text-decoration: none;
 }
 
 .header .subtitle {
@@ -95,13 +109,6 @@ body {
 
 .description a:hover {
     text-decoration: underline;
-}
-
-
-div.text {
-    color: #424242;
-    font-size: 16px;
-    text-align: center;
 }
 
 table {
