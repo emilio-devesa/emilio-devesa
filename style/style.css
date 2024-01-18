@@ -78,6 +78,40 @@ body {
     text-align: center;
 }
 
+/* Estilos para pantallas más pequeñas */
+@media only screen and (max-width: 800px) {
+    table {
+        width: 100%;
+        text-align: center;
+    }
+
+    table img {
+        width: 60%;
+        height: auto;
+    }
+
+    table td {
+        display: inline;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px; /* Ajusta el espacio entre las celdas */
+    }
+}
+
+/* Estilos para pantallas más grandes */
+@media only screen and (min-width: 801px) {
+    table {
+        width: 80%;
+        margin: 0 auto; /* Centra la tabla en pantallas más grandes */
+    }
+
+    table td {
+        width: 33.33%; /* Distribuye las celdas en tres columnas iguales */
+        box-sizing: border-box;
+    }
+}
+
+
 .text {
     color: #424242;
     font-size: 16px;
@@ -117,6 +151,7 @@ table {
     table-layout: fixed;
     border-spacing: 10px;
     width: 100%;
+    display: inline-block;
 }
 
 th, td {
