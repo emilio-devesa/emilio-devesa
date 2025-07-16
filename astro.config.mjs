@@ -10,5 +10,6 @@ export default defineConfig({
             prefixDefaultLocale: false,
             redirectToDefaultLocale: true
         }
-    }
+    },
+    site: "https://emiliodevesa.com"
 });
