@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #0b0d13;
+  color: #ffffff;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Colores personalizados */
+:root {
+  --primary: #2f90ff; /* Azul eléctrico */
+  --accent: #d9224e;  /* Alternativa roja Yamaha */
+  --background: #0b0d13;
+  --foreground: #ffffff;
+  --muted: #aaa;
+}
+
+/* Navegación */
+header {
+  background-color: var(--background);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #1b1f27;
+}
+
+nav a {
+  color: var(--foreground);
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+/* Hero principal */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(11,13,19,1)),
+              url('/images/hero.jpg') center/cover no-repeat;
+  color: white;
+  padding: 6rem 2rem;
+  height: 90vh;
+  text-align: left;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  max-width: 800px;
+}
+
+.hero .cta {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero .cta:hover {
+  background-color: #1e6ed6;
+}
+
+/* Secciones */
+section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--primary);
+  padding-left: 0.5rem;
+}
+
+section p, section li {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+section .cta {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Qué Ofrezco - columnas */
+.offers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.offer {
+  flex: 1 1 30%;
+  background-color: #151821;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #222;
+}
+
+.offer h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+}
+
+/* Blog */
+.blog-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.post-card {
+  background-color: #151821;
+  border: 1px solid #222;
+  border-radius: 0.5rem;
+  flex: 1 1 30%;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--foreground);
+  transition: transform 0.2s;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+}
+
+.post-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.post-card .content {
+  padding: 1rem;
+}
+
+.post-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-card .date {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* Footer */
+footer {
+  background-color: #0a0c11;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #1b1f27;
+}
+
+footer a {
+  color: var(--muted);
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+footer a:hover {
+  color: var(--primary);
+}
+
+.auto-carousel {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+}
+
+.testimonial-slide {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 2rem;
+  text-align: center;
+  background-color: #151821;
+  border: 1px solid #222;
+  border-radius: 0.5rem;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: slideShow 24s infinite;
+}
+
+.testimonial-slide:nth-child(1) {
+  animation-delay: 0s;
+}
+.testimonial-slide:nth-child(2) {
+  animation-delay: 8s;
+}
+.testimonial-slide:nth-child(3) {
+  animation-delay: 16s;
+}
+
+@keyframes slideShow {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.testimonial-slide blockquote {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.testimonial-slide cite {
+  margin-top: 1rem;
+  display: block;
+  color: var(--muted);
+  font-style: normal;
+}

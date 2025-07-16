@@ -1,0 +1,27 @@
+---
+import '../style.css';
+const { title } = Astro.props;
+const siteTitle = 'Emilio Devesa';
+const pageTitle = title ? `${title} - ${siteTitle}` : siteTitle;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>{pageTitle}</title>
+        <meta name="description" content="Emilio Devesa - Yamaha Music Education System Key Teacher">
+        <meta name="keywords" content="Emilio Devesa @emiliodevesadrums Drums Bateria">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/favicon/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#2b5797">
+        <meta name="theme-color" content="#ffffff">
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <slot />
+
+    </body>
+</html>

@@ -1,0 +1,19 @@
+---
+const navLinks = [
+  { href: "#sobre-mi", label: "Quién soy" },
+  { href: "#clases", label: "Clases de batería" },
+  { href: "#compromiso", label: "Mi compromiso" },
+  { href: "#music", label: "Discografía" },
+  { href: "#contact", label: "Contacto" },
+];
+---
+<header>
+  <nav>
+    <a href="/">Emilio Devesa</a>
+  </nav>
+  <nav>
+    {navLinks.map(link => (
+      <a href={link.href}>{link.label}</a>
+    ))}
+  </nav>
+</header>

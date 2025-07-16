@@ -1,0 +1,27 @@
+---
+const email = "hola@emiliodevesa.com";
+const redes = [
+  { name: "Instagram", url: "https://instagram.com/emilioodevesadrums" },
+  { name: "YouTube", url: "https://youtube.com/@emiliodevesadrums" }
+];
+---
+    
+<section id="contact">
+    <h2>📧 Contacto</h2>
+    <p>🚀 ¿Buscas clases de batería y quieres pasar al siguiente nivel?<br />
+    Diseñaré un plan adaptado a tu nivel y estilo musical, tanto si estás empezando como si ya tienes experiencia.</p>
+    <p>🎯 ¿Buscas un batería para tu proyecto? ¡Cuéntame tus objetivos!<br />
+    Estaré encantado de escuchar tus necesidades y discutir cómo podemos colaborar para ayudarte a alcanzar el éxito.</p>
+    <p>Escríbeme!
+      <ul style="display: flex; flex-wrap: wrap; gap: 1rem; padding-left: 0; list-style: none;">
+        <li><a class="cta" href={`mailto:${email}`}>{email}</a></li>
+      </ul>
+    </p>
+
+    <p>También puedes encontrarme en redes:</p>
+    <ul style="display: flex; flex-wrap: wrap; gap: 1rem; padding-left: 0; list-style: none;">
+        {redes.map(red => (
+        <li><a class="cta" href={red.url} target="_blank" rel="noopener">{red.name}</a></li>
+        ))}
+    </ul>
+</section>
