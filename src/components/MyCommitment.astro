@@ -1,0 +1,30 @@
+---
+const commitments = [
+  {
+    title: "💡 Lo que realmente importa",
+    description: "Me comprometo a proporcionarte todas las herramientas necesarias para convertirte en el mejor batería que puedas ser."
+  },
+  {
+    title: "🏁 Alcanza el éxito",
+    description: "Desde tu casa hasta el escenario: adquiere técnicas de estudio eficientes y dinámicas que maximicen tu tiempo."
+  },
+  {
+    title: "...y diviértete! 💫",
+    description: "Aprender no tiene por qué ser aburrido. Con mi enfoque lúdico disfrutarás del proceso de aprendizaje."
+  }
+];
+---
+
+<section id="compromiso">
+  <h2>🤝🏾 Mi compromiso</h2>
+  <div class="offers">
+    {commitments.map(commitment => (
+      <div class="offer">
+        <h3>{commitment.title}</h3>
+        <p>{commitment.description}</p>
+      </div>
+    ))}
+  </div>
+  <br /><br />
+  <a class="cta" href="#contact">¿Listo para empezar?</a>
+</section>

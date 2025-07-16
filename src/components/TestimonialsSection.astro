@@ -1,0 +1,19 @@
+---
+const testimonios = [
+  { quote: "Las clases con Emilio son muy dinámicas y entretenidas. Siempre utilizamos canciones para aplicar las cosas que aprendemos y que a la vez nos permiten profundizar en conceptos los más teóricos.", author: "Antón T." },
+  { quote: "Son lecciones ricas en consejos y detalles, nos apoyamos en muchas reglas mnemotécnicas y con su buen humor Emilio hace que las clases se pasen en un abrir y cerrar de ojos. Se nota que disfruta enseñando, y eso se contagia.", author: "Lucas C." },
+  { quote: "Aprender batería con él está siendo una experiencia de lo más gratificante y motivadora. Es un gran músico y magnífico profesor, que enseña tanto desde la pasión como desde la técnica. Explica con total claridad, mantiene el ritmo de la clase siempre vivo y sabe cómo mantenerte enganchado. Además, destaco su sensibilidad especial para apreciar cada matiz de una canción.", author: "Iaga C." }
+];
+---
+
+<section id="opiniones">
+  <h2>📣 Opiniones de alumnos</h2>
+  <div class="auto-carousel">
+    {testimonios.map((t, i) => (
+      <div class="testimonial-slide">
+        <blockquote>“{t.quote}”</blockquote>
+        <cite>— {t.author}</cite>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,24 @@
+---
+const paragraphs = [
+  "🙋🏻‍♂️ Soy Emilio Devesa, batería profesional, profesor certificado por Yamaha Music Europe y cuento con una sólida experiencia como intérprete y docente.",
+  "🌍 Llevo más de 15 años trabajando como músico de directo, músico de sesión y profesor de batería.",
+  "💿 También he producido varios trabajos para otros artistas y colaborado con muchos proyectos de estilos muy variados.",
+  "🎓 Además soy Key Teacher oficial del sistema Yamaha Music Education."
+];
+---
+
+<section id="sobre-mi">
+  <h2>👋🏾 Quién soy</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+    <div style="flex: 1 1 60%;">
+      {paragraphs.map(p => <p>{p}</p>)}
+    </div>
+    <div style="flex: 1 1 35%;">
+      <img 
+        src="/images/profile.png" 
+        alt="Emilio Devesa tocando la batería"
+        style="width: 100%; border-radius: 0.5rem; border: 0px solid #222;"
+      />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+---
+const offers = [
+  {
+    title: "🎯 Clases personalizadas para todos los niveles",
+    description: "Desde principiante hasta avanzado: desarrollarás tu técnica, sonido, lenguaje y repertorio."
+  },
+  {
+    title: "🔥 Formación moderna, práctica y enfocada a resultados",
+    description: "Un enfoque individual, adaptado a tus objetivos, a tu forma de entender la música y a tu ritmo de aprendizaje."
+  },
+  {
+    title: "🎵 Métodología Yamaha y materiales progresivos",
+    description: "Te guiaré en todo momento para que puedas alcanzar tus metas musicales más ambiciosas."
+  }
+];
+---
+
+<section id="clases">
+  <h2>🚀 Clases de batería</h2>
+  <div class="offers">
+    {offers.map(offer => (
+      <div class="offer">
+        <h3>{offer.title}</h3>
+        <p>{offer.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
