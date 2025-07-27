@@ -258,9 +258,9 @@ footer a:hover {
 .auto-carousel {
   display: flex;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
-  height: 200px;
+  height: 220px;
 }
 
 .testimonial-slide {
