@@ -8,12 +8,31 @@ const navLinks = [
 ];
 ---
 <header>
-  <nav>
-    <a href="/">Emilio Devesa</a>
-  </nav>
-  <nav>
-    {navLinks.map(link => (
-      <a href={link.href}>{link.label}</a>
-    ))}
-  </nav>
+    <nav>
+        <a href="/">Emilio Devesa</a>
+    </nav>
+    
+    <nav>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">☰</button>
+
+
+        <div class="nav-links" id="nav-links">
+            {navLinks.map(link => (
+                <a href={link.href}>{link.label}</a>
+            ))}
+        </div>
+    </nav>
+
+    <script type="text/javascript" is:inline>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggle = document.getElementById("menu-toggle");
+            const nav = document.getElementById("nav-links");
+
+            toggle.addEventListener("click", () => {
+                nav.classList.toggle("menu-open");
+                toggle.textContent = nav.classList.contains("menu-open") ? "✕" : "☰";
+            });
+        });
+    </script>
+
 </header>

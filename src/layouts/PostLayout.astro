@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import PrimaryLayout from "./PrimaryLayout.astro"
+import BlogHeader from "../components/blog/BlogHeader.astro";
+import HeroMini from "../components/blog/HeroMini.astro";
+import Footer from "../components/Footer.astro";
+
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, date } = Astro.props;
+---
+
+<PrimaryLayout {title}>
+
+    <BlogHeader />
+
+    <HeroMini title={title} />
+
+        <section id="article-content" class="w-full flex justify">
+            <div class="article-content max-w-2xl w-full px-4">
+                <h2>{title}</h2>
+                <p><FormattedDate date={date} /></p>
+                <slot />
+            </div>
+        </section>
+
+    <Footer />
+    
+</PrimaryLayout>
