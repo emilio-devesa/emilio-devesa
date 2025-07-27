@@ -519,6 +519,7 @@ footer a:hover {
   text-decoration: none;
   color: var(--primary);
   font-weight: 500;
+  font-size: 12px;
   transition: color 0.2s ease;
 }
 
