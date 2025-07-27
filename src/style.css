@@ -515,7 +515,7 @@ footer a:hover {
 }
 
 .links a {
-  margin-right: 1rem;
+  margin-right: 0.25rem;
   text-decoration: none;
   color: var(--primary);
   font-weight: 500;
