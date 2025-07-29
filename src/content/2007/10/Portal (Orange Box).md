@@ -36,29 +36,29 @@ Traduciendo todo lo anterior: Portal es un gran juego. Las virtudes de un motor 
 **NOTA: 8**
 
 **Lo mejor de Portal:**  
-- Puzzles tremendamente buenos y un soplo de aire fresco en el género
-- El sistema de portales es muy innovador
-- El cambio de estilo final y los detalles típicos de Valve
+Puzzles tremendamente buenos y un soplo de aire fresco en el género  
+El sistema de portales es muy innovador  
+El cambio de estilo final y los detalles típicos de Valve
 
 **Lo peor de Portal:**  
-- No deja de ser "lo otro que venia con la Orange Box"
-- Demasiado corto
-- Apenas añade matices a la trama de Half-Life
+No deja de ser "lo otro que venia con la Orange Box"  
+Demasiado corto  
+Apenas añade matices a la trama de Half-Life
 
 ![](images/portal-5.jpg)
 
 **Requisitos mínimos:**  
-- Procesador a 1.7 GHz
-- 512 MB de RAM
-- Tarjeta de video compatible con DirectX 8
-- Windows 2000/XP/Vista
-- Conexión a Internet
+Procesador a 1.7 GHz  
+512 MB de RAM  
+Tarjeta de video compatible con DirectX 8  
+Windows 2000/XP/Vista  
+Conexión a Internet
 
 **Requisitos recomendados:**  
-- Pentium 4 a 3.0 GHz
-- 1 GB de RAM
-- Tarjeta de video compatible con DirectX 9
-- Windows 2000/XP/Vista
-- Conexión a Internet
+Pentium 4 a 3.0 GHz  
+1 GB de RAM  
+Tarjeta de video compatible con DirectX 9  
+Windows 2000/XP/Vista  
+Conexión a Internet  
 
 **NOTA:** Desde hace unos días, Portal se puede adquirir en Steam de forma individual, para aquellos que no estén interesados en la Orange Box completa o el resto de packs que incluyen este juego.
