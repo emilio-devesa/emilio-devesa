@@ -138,6 +138,7 @@ nav a:hover {
   height: 40vh;
   text-align: left;
 }
+
 /* Secciones */
 section {
   padding: 4rem 2rem;
@@ -170,6 +171,10 @@ section .cta {
   transition: background 0.3s;
 }
 
+section .cta:hover {
+  background-color: #1e6ed6;
+}
+
 /* Qué Ofrezco - columnas */
 .offers {
   display: flex;
@@ -190,26 +195,6 @@ section .cta {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
   color: var(--foreground);
-}
-
-/* Footer */
-footer {
-  background-color: #0a0c11;
-  padding: 2rem;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #666;
-  border-top: 1px solid #1b1f27;
-}
-
-footer a {
-  color: var(--muted);
-  text-decoration: none;
-  margin: 0 0.5rem;
-}
-
-footer a:hover {
-  color: var(--primary);
 }
 
 .auto-carousel {
@@ -268,8 +253,143 @@ footer a:hover {
   font-style: normal;
 }
 
+
+/* Music */
+
+.music {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.album {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.album img {
+  flex: 1 1 300px;
+  max-width: 300px;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 2px solid #ccc;
+}
+
+.album-info {
+  flex: 2 1 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.album.reverse {
+  flex-direction: row-reverse;
+}
+
+.collab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem;
+}
+
+.collab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.collab-item img {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  border-radius: 0.5rem;
+  object-fit: contain;
+}
+
+.collab-item p {
+  margin: 0.5rem 0;
+  color: var(--muted);
+}
+
+.links a {
+  margin-right: 0.25rem;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 12px;
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: #1e6ed6;
+}
+
+/* ====== RESPONSIVE ADAPTATIONS ====== */
+@media (max-width: 768px) {
+  .album {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .album.reverse {
+    flex-direction: column;
+  }
+
+  .album-info {
+    align-items: center;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #0a0c11;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #1b1f27;
+}
+
+footer a {
+  color: var(--muted);
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+footer a:hover {
+  color: var(--primary);
+}
+
+
+/* Blog */
+
+#posts {
+  margin-top: 2rem;
+}
+#posts h3 {
+  font-size: 1.5rem;
+  color: var(--foreground);
+}
+#posts p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+#posts a {
+  color: var(--primary);
+  text-decoration: none;
+}
+#posts a:hover {
+  color: #1e6ed6;
+}
+
 .article-content {
-  max-width: 800px; /* similar a max-w-3xl en Tailwind */
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -402,101 +522,4 @@ footer a:hover {
 .article-content th {
   background-color: #f9fafb; /* gray-50 */
   font-weight: 600;
-}
-
-.album {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-bottom: 3rem;
-  align-items: flex-start;
-}
-
-#music {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-.album {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.album img {
-  flex: 1 1 300px;
-  max-width: 300px;
-  height: auto;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  border: 2px solid #ccc;
-}
-
-.album-info {
-  flex: 2 1 0px;
-  display: flex;
-  flex-direction: column;
-}
-
-.album.reverse {
-  flex-direction: row-reverse;
-}
-
-.collab-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 2rem;
-}
-
-.collab-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.5rem;
-}
-
-.collab-item img {
-  width: 100%;
-  max-width: 240px;
-  height: auto;
-  border-radius: 0.5rem;
-  object-fit: contain;
-}
-
-.collab-item p {
-  margin: 0.5rem 0;
-  color: var(--muted);
-}
-
-.links a {
-  margin-right: 0.25rem;
-  text-decoration: none;
-  color: var(--primary);
-  font-weight: 500;
-  font-size: 12px;
-  transition: color 0.2s ease;
-}
-
-.links a:hover {
-  color: #1e6ed6;
-}
-
-/* ====== RESPONSIVE ADAPTATIONS ====== */
-@media (max-width: 768px) {
-  .album {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .album.reverse {
-    flex-direction: column;
-  }
-
-  .album-info {
-    align-items: center;
-  }
 }
