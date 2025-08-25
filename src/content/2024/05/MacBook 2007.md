@@ -94,8 +94,8 @@ Hay otras cosas que no funcionan:
 
 Vamos a necesitar:  
 - La app de instalación del nuevo SO, p.ej.: _Install OS X Mavericks.app_
-- Descargar SFOTT desde [aquí](https://github.com/emilio-devesa/dev/raw/main/resources/mb_2,1_osx_10.9/sw/sfott_beta.pkg)
-- Descargar estos Ketxs desde [aquí](https://github.com/emilio-devesa/dev/raw/main/resources/mb_2,1_osx_10.9/kext/kexts.zip)
+- Descargar SFOTT desde [aquí](/files/2024/05/sfott_beta.pkg)
+- Descargar estos Ketxs desde [aquí](/files/2024/05/kexts.zip)
 
 _Install OS X Mavericks.app_ es el instalador que te puedes descargar de la Mac App Store y debe estar en la carpeta /Aplicaciones. Si no lo tienes en tu pestaña de aplicaciones compradas de la tienda (porque en su momento no lo adquiriste), deberás localizarlo por otros medios. Las versiones de Mavericks lanzadas por Apple van desde la 10.9.0 hasta la 10.9.5. Si tienes el instalador de esta última, perfecto. Si no es así y quieres actualizar a posteriori, ojo porque tendrás que reparchear el sistema.
 
@@ -156,7 +156,7 @@ El bloqueo que se producía en Snow Leopard no se produjo en las versiones nueva
 ![](images/macbook-wifi-ipv6.png)
 
 **Audio y video**  
-Además verás que no tienes audio y que el rendimiento gráfico es pésimo. Descarga y abre la aplicación [Kext Utility.app](https://github.com/emilio-devesa/dev/raw/main/resources/mb_2,1_osx_10.9/sw/Kext_Utility.zip) y el sistema te pedirá tu contraseña para continuar.
+Además verás que no tienes audio y que el rendimiento gráfico es pésimo. Descarga y abre la aplicación [Kext Utility.app](/files/2024/05/Kext_Utility.zip) y el sistema te pedirá tu contraseña para continuar.
 
 ![](images/kext-utility.png)
 
@@ -176,13 +176,13 @@ El primer paso es descargar la ISO desde la página web de [Ubuntu](https://ubun
 
 ![](images/usb-format.jpeg) 
 
-El programa Unetbootin te permitirá crear un USB con el que arrancar la máquina y ejecutar el instalador del SO. Es cierto que hay otras formas de hacerlo o que MacOS te ofrece grabar la ISO en un CD en blanco, pero ninguna de estas opciones nos vale ya que no nos van a permitir alterar el contenido del disco creado. Por algún motivo, la única versión de [Unetbootin](https://sourceforge.net/projects/unetbootin/files/UNetbootin/613/) que pude hacer funcionar en OS X Snow Leopard fue la 613, que todavía se puede descargar desde Sourceforge. Ahora bien, necesitas que tu cuenta tenga privilegios de administrador para poder ejecutarla. 
+El programa Unetbootin te permitirá crear un USB con el que arrancar la máquina y ejecutar el instalador del SO. Es cierto que hay otras formas de hacerlo o que MacOS te ofrece grabar la ISO en un CD en blanco, pero ninguna de estas opciones nos vale ya que no nos van a permitir alterar el contenido del disco creado. Por algún motivo, la única versión de [Unetbootin](https://sourceforge.net/projects/unetbootin/files/UNetbootin/613/) que pude hacer funcionar en OS X Snow Leopard fue la 613, que todavía se puede descargar desde Sourceforge (o desde [aquí](/files/2024/05/unetbootin-mac-613.zip)). Ahora bien, necesitas que tu cuenta tenga privilegios de administrador para poder ejecutarla. 
 
 ![](images/unetbootin-mac-613.jpeg) 
 
 ![](images/unetbootin-process.jpeg)
 
-Una vez realizado el proceso de crear el disco de instalación, necesitaremos un cargador EFI de 32-bits. Por defecto desde hace muchas versiones no se incluye ninguna configuración de estas características en los instaladores de Ubuntu así que podemos descargarnos alguna otra de internet. Mucha gente está empleando con éxito este archivo [bootia32.efi](https://github.com/jfwells/linux-asus-t100ta/tree/master/boot) publicado en Github. Descárgalo y cópialo en la carpeta `/EFI/boot` del pendrive de instalación. El firmware sabrá arrancar con él cuando llegue el momento. 
+Una vez realizado el proceso de crear el disco de instalación, necesitaremos un cargador EFI de 32-bits. Por defecto desde hace muchas versiones no se incluye ninguna configuración de estas características en los instaladores de Ubuntu así que podemos descargarnos alguna otra de internet. Mucha gente está empleando con éxito este archivo [bootia32.efi](https://github.com/jfwells/linux-asus-t100ta/tree/master/boot) publicado en Github (o [aquí](/files/2024/05/bootia32.efi)). Descárgalo y cópialo en la carpeta `/EFI/boot` del pendrive de instalación. El firmware sabrá arrancar con él cuando llegue el momento. 
 
 ![](images/efi-folder-bootia32.jpeg)
 
@@ -211,7 +211,7 @@ Yo he escogido el formato Btrfs para la partición de sistema (/), he creado una
 
 ![](images/ubuntu-installer-failure.jpeg) 
 
-El motivo es que esta versión de Ubuntu no contempla ser instalada en un equipo con EFI de 32-bits y falla al intentar instalar Grub en el disco duro, por lo que nos va a tocar hacer un poco de magia desde la terminal para solucionarlo. Ya que tenemos el sistema de ficheros de destino montado en la ruta `/target`, vamos a instalar un paquete de configuración de Grub de 32-bit para nuestra EFI y ejecutar una orden que instale esta configuración en nuestra partición EFI. Si vas a descargar el paquete desde internet (yo lo tenía descargado en local), basta con:
+El motivo es que esta versión de Ubuntu no contempla ser instalada en un equipo con EFI de 32-bits y falla al intentar instalar Grub en el disco duro, por lo que nos va a tocar hacer un poco de magia desde la terminal para solucionarlo. Ya que tenemos el sistema de ficheros de destino montado en la ruta `/target`, vamos a instalar un paquete de configuración de Grub de 32-bit para nuestra EFI y ejecutar una orden que instale esta configuración en nuestra partición EFI. Si vas a descargar el paquete desde internet, basta con:
 ```
 $ sudo apt-get install grub-efi-ia32-bin
 ```
@@ -219,6 +219,8 @@ Y una vez esté instalado:
 ```
 $ sudo grub-install --target i386-efi --boot-directory=/target/boot --efi-directory=/target/boot/efi --bootloader-id="$(lsb_release -ds)" --recheck /dev/sda
 ```
+
+Si necesitas encontrar una copia del paquete, lo tienes también [aquí](/files/2024/05/grub-efi-ia32-bin_2.12-1ubuntu7_amd64.deb).
 
 ![](images/grub-efi-ia32-bin-install.jpeg) 
 
@@ -254,6 +256,3 @@ Linux:
 - https://ubuntuforums.org/archive/index.php/t-2367200.html 
 - https://mattgadient.com/linux-dvd-images-and-how-to-for-32-bit-efi-macs-late-2006-models/ 
 - https://slimbook.com/blog/tutoriales-2/post/3-maneras-de-como-reinstalar-o-reparar-grub-boot-repair-archlinux-o-antergos-58
-
-La aplicación SFOTT, la aplicación Kext Utility, los archivos kext; así como los archivos de configuración EFI, la versión 613 de Unetbootin para MacOS y el paquete de configuración de EFI de 32-bits de Grub también están en mi repositorio de Github: https://github.com/emilio-devesa/dev/ 
-
