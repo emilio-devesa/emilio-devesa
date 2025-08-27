@@ -6,7 +6,7 @@
 
 Multiplatform software developer since 2022.
 
-> ⭐️ [GitHub star](https://stars.github.com/profiles/mouredev/)
+> ⭐️ [GitHub star](https://stars.github.com/profiles/emilio-devesa/)
 
 ## Find me on:
 
