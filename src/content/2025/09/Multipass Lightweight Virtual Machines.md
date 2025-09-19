@@ -22,7 +22,7 @@ multipass version
 
 This should print the client and daemon version, confirming that Multipass is ready to use.
 
-![](images/multipass_list_info.jpeg)
+![](images/multipass-launch-info-list.png)
 
 **Key Multipass Commands**  
 Here are the most common commands you’ll use with Multipass:  
@@ -76,4 +76,4 @@ multipass info vm
 You can download official Ubuntu cloud images (including minimal images, server images, and daily builds) from Canonical’s repository at https://cloud-images.ubuntu.com/  
 From there, you can choose the Ubuntu release you want (e.g., 24.04), and pick the appropriate .img file for your architecture (usually amd64 for most modern systems).
 
-![](images/multipass_shell.jpeg)
+![](images/multipass-shell.png)
