@@ -45,7 +45,7 @@ This will output a table with the supported Ubuntu releases and their aliases (e
 
 However, you can also launch a VM from a custom image. For example, here is a command that launches a small VM using a specific Ubuntu 24.04 minimal cloud image:  
 ```
-multipass launch -vvvv -c 1 -m 512M -d 5G -n vm --mount $HOME https://cloud-images.ubuntu.com/minimal/releases/noble/release-20240423/ubuntu-24.04-minimal-cloudimg-amd64.img
+multipass launch -vvvv -c 1 -m 512M -d 5G -n vm --mount $HOME:/home/ubuntu/mac https://cloud-images.ubuntu.com/minimal/releases/noble/release-20240423/ubuntu-24.04-minimal-cloudimg-amd64.img
 ```
 
 Let’s break down each option:  
@@ -54,17 +54,17 @@ Let’s break down each option:
 - `-m 512M`: Sets the memory to 512 MB, keeping the VM lightweight.
 - `-d 5G`: Specifies a 5 GB disk for the VM.
 - `-n vm`: Names the VM vm. You can use any name you prefer.
-- `--mount $HOME`: Mounts your host system’s home directory inside the VM, making it easy to share files between host and guest.
+- `--mount $HOME:/home/ubuntu/mac`: Mounts your host system’s home directory inside the VM's folder _/home/ubuntu/mac_, making it easy to share files between host and guest.
 - `https://cloud-images.ubuntu.com/minimal/releases/noble/release-20240423/ubuntu-24.04-minimal-cloudimg-amd64.img`: Tells Multipass to use the specified image instead of downloading the default remote image.
 
 If you would rather use a standard Ubuntu Server image, you just need to change the image URL:  
 ```
-multipass launch -vvvv -c 1 -m 512M -d 5G -n vm --mount $HOME https://cloud-images.ubuntu.com/releases/server/releases/noble/release-20240423/ubuntu-24.04-server-cloudimg-amd64.img
+multipass launch -vvvv -c 1 -m 512M -d 5G -n vm --mount $HOME:/home/ubuntu/mac https://cloud-images.ubuntu.com/releases/server/releases/noble/release-20240423/ubuntu-24.04-server-cloudimg-amd64.img
 ```
 
 Or use an alias:
 ```
-multipass launch -vvvv -c 1 -m 512M -d 5G -n vm --mount $HOME release:24.04
+multipass launch -vvvv -c 1 -m 512M -d 5G -n vm --mount $HOME:/home/ubuntu/mac release:24.04
 ```
 
 Once the VM is running, you can inspect it with:  
