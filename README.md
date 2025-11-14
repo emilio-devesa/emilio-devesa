@@ -38,4 +38,4 @@ Multiplatform software developer since 2022.
 
 ### :octocat: Github stats
 
-<img height="150px" src="https://github-readme-stats.vercel.app/api?username=emilio-devesa&count_private=true&show_icons=true&theme=light"> <img height="150px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=emilio-devesa&layout=compact&theme=light">
+![emilio-devesa's Stats](https://github-readme-stats.vercel.app/api?username=emilio-devesa&theme=nord&show_icons=true&hide_border=true&count_private=true) ![emilio-devesa's Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=emilio-devesa&theme=nord&show_icons=true&hide_border=true&layout=compact)
