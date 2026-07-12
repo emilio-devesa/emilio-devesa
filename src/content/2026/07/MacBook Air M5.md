@@ -53,7 +53,7 @@ Like the Neo, it is light, well-built and highly portable, buit it offers consid
 The screen is a noticiable upgrade, supports greater color representation, it's brighter and .6 inches larger thanks to its thinner bezels. It also features a significantly better webcam, Magsafe 3 or USB-C charging, and Thunderbolt 4 enabled ports.
 
 Finally, the MacBook Pro family was simply more than I needed considering its higher price tag. It would be an investment very hard to justify for an equivalent configuration, and I would be carrying a laptop as heavy as the one I already had.  
-I don't need the extra power, wouldn't take advantage of the better screen in most of my use cases and waiting for redesigns of OLED screens would only mean postponing the purchase while spending considerably more money.
+I don't need the extra power, wouldn't take advantage of the better screen in most of my use cases and waiting for redesigns or OLED screens would only mean postponing the purchase while spending considerably more money.
 
 ![](images/macbook_air_m5_screen.jpeg)
 
@@ -96,5 +96,5 @@ The most valuable part of the whole experience wasn't that ChatGPT recommended a
 
 ![](images/macbook_air_m5_front.jpeg)
 
-**Next step**
+**Next step**  
 Choosing the laptop turned out to be only half of the story. Once the computer had been decided, there was another piece of the setup that had remained virtually unchanged for almost two decades: my external monitor. Surprisingly, that decision would end up being even more difficult.
