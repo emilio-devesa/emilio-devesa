@@ -16,7 +16,7 @@ It was about time to replace my old [2014 13-inch MacBook Pro](../../../2025/02/
 
 **Starting point**  
 After twelve years of service, my 2014 13-inch MacBook Pro is still working, but it is clearly beginning to show its age. It weighs 1.54 Kg and battery life is no longer what it used to be, even after replacing the battery eighteen months ago, in February 2025.  
-When working at home, I usually connect it to its charger, my [Acer P241W](../../2009/06/acer-p241w) monitor, and a USB hub with external hard drives, an audio interface and a mouse.
+When working at home, I usually connect it to its charger, my [Acer P241W](../../../2009/06/acer-p241w) monitor, and a USB hub with external hard drives, an audio interface and a mouse.
 
 One of its two USB 3.0 ports had failed and could only transfer data at 2.0 speeds. The screen suffered from the infamous staingate problem, with the anti-reflective coating peeling off. Performance was becoming increasingly limited, heat was a constant problem, software updates were no longer officially supported (even with OpenCore Legacy Patcher), and the speakers had started to fail. As I said... it was definitely time.
 
