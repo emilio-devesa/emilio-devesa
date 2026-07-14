@@ -6,6 +6,7 @@ Durante el mes de **julio** continúan las clases con un **50 % de descuento** p
 
 El mes de **agosto** no se imparten clases, coincidiendo con el periodo vacacional habitual del sector de la enseñanza.
 
+---
 
 ## Duración de las clases
 
@@ -13,6 +14,7 @@ Cada clase tiene una duración de **55 minutos**, siguiendo la metodología del 
 
 Esta duración permite aprovechar el tiempo de forma eficiente y mantener una estructura de trabajo adecuada.
 
+---
 
 ## Precios
 
@@ -26,6 +28,7 @@ Puedes reservar un horario recurrente de una clase semanal mediante una mensuali
 
 La mensualidad mantiene el mismo importe independientemente de que un mes tenga cuatro o cinco clases según el calendario. A cambio, dispones de un horario semanal reservado de forma recurrente y se garantiza un mínimo de **tres clases al mes**, según las condiciones indicadas en el apartado de festivos y vacaciones.
 
+---
 
 ## Forma de pago
 
@@ -33,6 +36,7 @@ Las mensualidades deberán abonarse al comienzo de cada mes.
 
 Las clases sueltas deberán abonarse con una antelación mínima de **24 horas** respecto al inicio de la clase.
 
+---
 
 ## Reserva de horario recurrente
 
@@ -44,6 +48,7 @@ Si interrumpes tu asistencia o dejas de abonar la mensualidad, se entenderá que
 
 Si más adelante deseas retomar las clases, haré todo lo posible por ofrecerte un nuevo horario, aunque no puedo garantizar que la franja que ocupabas anteriormente continúe disponible.
 
+---
 
 ## Cancelaciones
 
@@ -57,7 +62,7 @@ Las clases canceladas por tu parte, independientemente del motivo, no son reembo
 
 Esta política permite mantener una planificación estable y garantizar la disponibilidad del horario recurrente reservado para cada alumno.
 
-
+---
 
 ## Festivos y vacaciones
 
@@ -69,6 +74,7 @@ No obstante, algunos meses —como diciembre— concentran varios festivos y el 
 
 Por este motivo, cuando vayas a recibir únicamente **dos clases en un mismo mes** debido exclusivamente al calendario de festivos o vacaciones, se programará una clase adicional para garantizar un mínimo de **tres clases mensuales**.
 
+---
 
 ## Puntualidad
 
@@ -76,6 +82,7 @@ Te agradezco que seas puntual tanto al inicio como al final de cada clase.
 
 Las sesiones comienzan y finalizan a la hora prevista para respetar el horario del resto de alumnos y garantizar el correcto funcionamiento de la jornada.
 
+---
 
 ## Material y uso de las instalaciones
 
@@ -103,11 +110,13 @@ El desgaste ocasionado por el uso normal del material será asumido por mí.
 
 Sin embargo, cualquier daño producido por un uso negligente o un comportamiento inadecuado deberá ser reparado o repuesto por el alumno. En caso de no asumir dicha responsabilidad, las clases quedarán suspendidas de forma inmediata, sin derecho al reembolso de las cantidades abonadas.
 
+---
 
 ## Comunicación
 
 Las comunicaciones relacionadas con las clases se realizarán preferentemente mediante **WhatsApp** o **correo electrónico**.
 
+---
 
 ## Clases online y Grabación de las clases
 
@@ -117,6 +126,7 @@ Puedes grabar audio o vídeo durante las clases siempre que su finalidad sea exc
 
 Cualquier otro uso, especialmente la publicación o difusión de grabaciones, deberá consultarse previamente conmigo.
 
+---
 
 ## Finalización de la relación docente
 
@@ -133,6 +143,7 @@ Entre otros, podrán considerarse motivos de finalización:
 
 Siempre que las circunstancias lo permitan, esta decisión será comunicada previamente. En caso de producirse una finalización por alguno de los motivos anteriores, las cantidades ya abonadas no serán reembolsadas.
 
+---
 
 ## Compromiso mutuo
 
