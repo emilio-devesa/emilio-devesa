@@ -1,31 +1,11 @@
 ---
-title: "Condiciones de las clases"
+title: "Condiciones"
 date: "2026-07-14"
 categories:
   - "clases"
 ---
 
-# Condiciones de las clases
-
-## Bienvenido
-
-Gracias por confiar en mí para acompañarte en tu aprendizaje de la batería.
-
-Mi objetivo es ofrecerte una enseñanza de calidad, adaptada a tus necesidades y basada en una metodología estructurada que te permita disfrutar del proceso de aprendizaje mientras adquieres unos fundamentos sólidos.
-
-En esta guía encontrarás toda la información necesaria sobre el funcionamiento de las clases, su organización y las condiciones de la reserva de un horario recurrente.
-
----
-
-## Filosofía de las clases
-
-Las clases tienen siempre un objetivo **didáctico y musical**. Cada sesión está diseñada para favorecer progresivamente tu aprendizaje, desarrollando aspectos como la técnica, la lectura rítmica, la coordinación, la creatividad y la interpretación.
-
-Tus intereses y objetivos personales siempre serán escuchados y tenidos en cuenta. No obstante, la planificación de los contenidos, el orden en que se trabajan y la metodología empleada forman parte de mi criterio pedagógico como profesor.
-
-Las clases no están concebidas como un tiempo de ensayo libre ni como un local de práctica, sino como un espacio de aprendizaje estructurado. Mi compromiso es seleccionar en cada momento el contenido que considere más adecuado para favorecer tu progreso.
-
----
+# Condiciones
 
 ## Calendario del curso
 
