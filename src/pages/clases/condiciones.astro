@@ -4,14 +4,20 @@ import BlogHeader from '../../components/blog/BlogHeader.astro';
 import HeroMini from '../../components/blog/HeroMini.astro';
 import Footer from '../../components/Footer.astro';
 import Content from '../../content/clases/condiciones.md';
+
 ---
 
-<PrimaryLayout title="Página desde Markdown">
+<PrimaryLayout title="Condiciones de las clases">
   <BlogHeader />
   
   <HeroMini />
 
-  <Content />
+        <section id="article-content" class="w-full flex justify">
+            <div class="article-content max-w-2xl w-full px-4">
+                <p><FormattedDate date={date} /></p>
+                <slot />
+            </div>
+        </section>
 
   <Footer />
 </PrimaryLayout>
