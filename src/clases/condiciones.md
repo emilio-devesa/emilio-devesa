@@ -17,7 +17,7 @@ En esta guía encontrarás toda la información necesaria sobre el funcionamient
 
 ---
 
-# Filosofía de las clases
+## Filosofía de las clases
 
 Las clases tienen siempre un objetivo **didáctico y musical**. Cada sesión está diseñada para favorecer progresivamente tu aprendizaje, desarrollando aspectos como la técnica, la lectura rítmica, la coordinación, la creatividad y la interpretación.
 
@@ -27,7 +27,7 @@ Las clases no están concebidas como un tiempo de ensayo libre ni como un local 
 
 ---
 
-# Calendario del curso
+## Calendario del curso
 
 Las clases siguen el calendario escolar y se desarrollan habitualmente entre los meses de **septiembre y junio**.
 
@@ -37,7 +37,7 @@ El mes de **agosto** no se imparten clases, coincidiendo con el periodo vacacion
 
 ---
 
-# Duración de las clases
+## Duración de las clases
 
 Cada clase tiene una duración de **55 minutos**, siguiendo la metodología del **Sistema de Educación Musical Yamaha**.
 
@@ -45,13 +45,13 @@ Esta duración permite aprovechar el tiempo de forma eficiente y mantener una es
 
 ---
 
-# Precios
+## Precios
 
-## Clase individual
+### Clase individual
 
 **25 € por sesión.**
 
-## Reserva mensual
+### Reserva mensual
 
 Puedes reservar un horario recurrente de una clase semanal mediante una mensualidad de **100 €**.
 
@@ -59,7 +59,7 @@ La mensualidad mantiene el mismo importe independientemente de que un mes tenga 
 
 ---
 
-# Forma de pago
+## Forma de pago
 
 Las mensualidades deberán abonarse al comienzo de cada mes.
 
@@ -67,7 +67,7 @@ Las clases sueltas deberán abonarse con una antelación mínima de **24 horas**
 
 ---
 
-# Reserva de horario recurrente
+## Reserva de horario recurrente
 
 La mensualidad no corresponde únicamente a las clases impartidas, sino también a la reserva de una franja horaria fija dentro del calendario semanal.
 
@@ -79,13 +79,13 @@ Si más adelante deseas retomar las clases, haré todo lo posible por ofrecerte 
 
 ---
 
-# Cancelaciones
+## Cancelaciones
 
-## Si la cancelación la realizo yo
+### Si la cancelación la realizo yo
 
 Si, por cualquier motivo, una o varias clases no pudieran impartirse por mi iniciativa, se devolverá el importe correspondiente a las sesiones no realizadas.
 
-## Si cancelas una clase
+### Si cancelas una clase
 
 Las clases canceladas por tu parte, independientemente del motivo, no son reembolsables ni recuperables.
 
@@ -93,7 +93,7 @@ Esta política permite mantener una planificación estable y garantizar la dispo
 
 ---
 
-# Festivos y vacaciones
+## Festivos y vacaciones
 
 Las clases que coincidan con festivos o periodos vacacionales no se recuperan de forma general.
 
@@ -105,7 +105,7 @@ Por este motivo, cuando vayas a recibir únicamente **dos clases en un mismo mes
 
 ---
 
-# Puntualidad
+## Puntualidad
 
 Te agradezco que seas puntual tanto al inicio como al final de cada clase.
 
@@ -113,7 +113,7 @@ Las sesiones comienzan y finalizan a la hora prevista para respetar el horario d
 
 ---
 
-# Material y uso de las instalaciones
+## Material y uso de las instalaciones
 
 Todo el material necesario para el desarrollo de las clases está incluido:
 
@@ -141,19 +141,19 @@ Sin embargo, cualquier daño producido por un uso negligente o un comportamiento
 
 ---
 
-# Comunicación
+## Comunicación
 
 Las comunicaciones relacionadas con las clases se realizarán preferentemente mediante **WhatsApp** o **correo electrónico**.
 
 ---
 
-# Clases online
+## Clases online
 
 Actualmente las clases se imparten únicamente en modalidad presencial.
 
 ---
 
-# Grabación de las clases
+## Grabación de las clases
 
 Puedes grabar audio o vídeo durante las clases siempre que su finalidad sea exclusivamente el estudio y tu uso personal.
 
@@ -161,7 +161,7 @@ Cualquier otro uso, especialmente la publicación o difusión de grabaciones, de
 
 ---
 
-# Finalización de la relación docente
+## Finalización de la relación docente
 
 Mi objetivo es que las clases se desarrollen siempre en un ambiente de respeto, confianza y colaboración mutua.
 
@@ -178,7 +178,7 @@ Siempre que las circunstancias lo permitan, esta decisión será comunicada prev
 
 ---
 
-# Compromiso mutuo
+## Compromiso mutuo
 
 Aprender un instrumento es un proceso que requiere constancia, paciencia y dedicación.
 
