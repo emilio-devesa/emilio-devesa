@@ -1,7 +1,8 @@
 ---
 title: "Condiciones de las clases"
-date: 2026-07-14
-slug: "condiciones-clases"
+date: "2026-07-14"
+categories:
+  - "clases"
 ---
 
 # Condiciones de las clases
