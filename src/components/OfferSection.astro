@@ -14,7 +14,7 @@ const offers = [
   }
 ];
 const cta = {
-  text: "¡Quiero clases!",
+  text: "Más información sobre las clases",
   url: "lessons/"
 }
 ---
@@ -31,7 +31,7 @@ const cta = {
   </div>    
   <p>
       <ul style="display: flex; flex-wrap: wrap; gap: 1rem; padding-left: 0; list-style: none;">
-        <li><a class="cta" href={`cta.url`}>{cta.text}</a></li>
+        <li><a class="cta" href={cta.url}>{cta.text}</a></li>
       </ul>
     </p>
 </section>
