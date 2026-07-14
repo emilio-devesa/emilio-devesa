@@ -13,6 +13,10 @@ const offers = [
     description: "Te guiaré en todo momento para que puedas alcanzar tus metas musicales más ambiciosas."
   }
 ];
+const cta = {
+  text: "¡Quiero clases!",
+  url: "lessons/"
+}
 ---
 
 <section id="clases">
@@ -24,5 +28,10 @@ const offers = [
         <p>{offer.description}</p>
       </div>
     ))}
-  </div>
+  </div>    
+  <p>
+      <ul style="display: flex; flex-wrap: wrap; gap: 1rem; padding-left: 0; list-style: none;">
+        <li><a class="cta" href={`cta.url`}>{cta.text}</a></li>
+      </ul>
+    </p>
 </section>
