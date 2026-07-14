@@ -1,12 +1,3 @@
----
-title: "Condiciones"
-date: "2026-07-14"
-categories:
-  - "clases"
----
-
-# Condiciones
-
 ## Calendario del curso
 
 Las clases siguen el calendario escolar y se desarrollan habitualmente entre los meses de **septiembre y junio**.

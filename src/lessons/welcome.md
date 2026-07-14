@@ -1,5 +1,3 @@
-## Bienvenido
-
 Gracias por confiar en mí para acompañarte en tu aprendizaje de la batería.
 
 Mi objetivo es ofrecerte una enseñanza de calidad, adaptada a tus necesidades y basada en una metodología estructurada que te permita disfrutar del proceso de aprendizaje mientras adquieres unos fundamentos sólidos.
