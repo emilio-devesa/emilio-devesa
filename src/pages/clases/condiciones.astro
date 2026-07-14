@@ -3,19 +3,19 @@ import PrimaryLayout from '../../layouts/PrimaryLayout.astro';
 import BlogHeader from '../../components/blog/BlogHeader.astro';
 import HeroMini from '../../components/blog/HeroMini.astro';
 import Footer from '../../components/Footer.astro';
-import Content from '../../content/clases/condiciones.md';
+import ConditionsContent from '../../content/clases/condiciones.md';
 ---
 
 <PrimaryLayout title="Condiciones de las clases">
   <BlogHeader />
-  
+
   <HeroMini />
 
-        <section id="article-content" class="w-full flex justify">
-            <div class="article-content max-w-2xl w-full px-4">
-                <slot />
-            </div>
-        </section>
+  <section id="article-content" class="w-full flex justify">
+    <div class="article-content max-w-2xl w-full px-4">
+      <ConditionsContent />
+    </div>
+  </section>
 
   <Footer />
 </PrimaryLayout>
