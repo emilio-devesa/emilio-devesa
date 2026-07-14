@@ -4,7 +4,7 @@
 
 En cumplimiento del Reglamento (UE) 2016/679 (Reglamento General de Protección de Datos, RGPD) y de la Ley Orgánica 3/2018, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), se informa de que el responsable del tratamiento de los datos personales es:
 
-**Nombre:** Emilio Devesa
+**Nombre:** Emilio Devesa  
 **Correo electrónico:** hola@emiliodevesa.com
 
 ---
