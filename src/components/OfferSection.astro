@@ -13,10 +13,16 @@ const offers = [
     description: "Te guiaré en todo momento para que puedas alcanzar tus metas musicales más ambiciosas."
   }
 ];
-const cta = {
-  text: "Más información sobre las clases",
-  url: "clases/"
-}
+const cta = [
+  {
+    text: "Más información",
+    url: "clases/"
+  },
+  {
+    text: "¿Listo para empezar?",
+    url: "#contact"
+  }
+];
 ---
 
 <section id="clases">
@@ -33,8 +39,9 @@ const cta = {
   <section>
     <p>
       <ul style="display: flex; flex-wrap: wrap; gap: 1rem; padding-left: 0; list-style: none;">
-        <li><a class="cta" href={cta.url}>{cta.text}</a></li>
-        <li><a class="cta" href="#contact">¿Listo para empezar?</a></li>
+        {cta.map((button, index) => (
+          <li><a class="cta" href={button.url}>{button.text}</a></li>
+        ))}
       </ul>
     </p>
   </section>
