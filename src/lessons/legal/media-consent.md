@@ -1,5 +1,3 @@
-# Política sobre uso de imagen
-
 Con el objetivo de facilitar el aprendizaje y respetar la privacidad de todos los alumnos, se establecen las siguientes normas relativas a las grabaciones realizadas durante las clases.
 
 ## Grabaciones realizadas por el alumno
