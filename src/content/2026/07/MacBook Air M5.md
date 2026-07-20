@@ -12,7 +12,7 @@ Name: MacBook Air
 Manufacturer: Apple  
 Price: 1568.99 €
 
-It was about time to replace my old [2014 13-inch MacBook Pro](../../../2025/02/macbook-pro-2014/) and find computer that better suited my current needs. Just before Apple's latest price increases, I managed to get a 13-inch MacBook Air M5 (10-core CPU, 10-core GPU, 24 GB RAM, 1 TB SSD) for 1569 €.
+It was about time to replace my old [2014 13-inch MacBook Pro](../../../2025/02/macbook-pro-2014/) and find a computer that better suited my current needs. Just before Apple's latest price increases, I managed to get a 13-inch MacBook Air M5 (10-core CPU, 10-core GPU, 24 GB RAM, 1 TB SSD) for 1569 €.
 
 **Starting point**  
 After twelve years of service, my 2014 13-inch MacBook Pro is still working, but it is clearly beginning to show its age. It weighs 1.54 Kg and battery life is no longer what it used to be, even after replacing the battery eighteen months ago, in February 2025.  
@@ -49,7 +49,7 @@ For the MacBook Neo, this machine is capable enough for almost everything I do. 
 Its main drawbacks, however, were the display and the storage options. While perfectly adequate, the screen wouldn't have represented a significant improvement over my old MacBook Pro, and 512 GB of storage felt rather limiting for a computer I intended to keep for many years.
 
 Next came the MacBook Air. Since I was willing to buy it new and have as many years of support as possible, the M5 generation was the obvious choice.  
-Like the Neo, it is light, well-built and highly portable, buit it offers considerable more computing power and capacity. I could choose between 1 TB or 2 TB of internal storage and, in ChatGPT's words, it is the modern equivalent to the MacBook Pro from 2014.  
+Like the Neo, it is light, well-built and highly portable, but it offers considerable more computing power and capacity. I could choose between 1 TB or 2 TB of internal storage and, in ChatGPT's words, it is the modern equivalent to the MacBook Pro from 2014.  
 The screen is a noticiable upgrade, supports greater color representation, it's brighter and .6 inches larger thanks to its thinner bezels. It also features a significantly better webcam, Magsafe 3 or USB-C charging, and Thunderbolt 4 enabled ports.
 
 Finally, the MacBook Pro family was simply more than I needed considering its higher price tag. It would be an investment very hard to justify for an equivalent configuration, and I would be carrying a laptop as heavy as the one I already had.  
