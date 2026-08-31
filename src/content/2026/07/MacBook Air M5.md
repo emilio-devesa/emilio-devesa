@@ -15,7 +15,7 @@ Price: 1568.99 €
 It was about time to replace my old [2014 13-inch MacBook Pro](../../../2025/02/macbook-pro-2014/) and find a computer that better suited my current needs. Just before Apple's latest price increases, I managed to get a 13-inch MacBook Air M5 (10-core CPU, 10-core GPU, 24 GB RAM, 1 TB SSD) for 1569 €.
 
 **Starting point**  
-After twelve years of service, my 2014 13-inch MacBook Pro is still working, but it is clearly beginning to show its age. It weighs 1.54 Kg and battery life is no longer what it used to be, even after replacing the battery eighteen months ago, in February 2025.  
+After twelve years of service, my 2014 13-inch MacBook Pro is still working, but it is clearly beginning to show its age. It weighs 1.57 Kg and battery life is no longer what it used to be, even after replacing the battery eighteen months ago, in February 2025.  
 When working at home, I usually connect it to its charger, my [Acer P241W](../../../2009/06/acer-p241w) monitor, and a USB hub with external hard drives, an audio interface and a mouse.
 
 One of its two USB 3.0 ports had failed and could only transfer data at 2.0 speeds. The screen suffered from the infamous staingate problem, with the anti-reflective coating peeling off. Performance was becoming increasingly limited, heat was a constant problem, software updates were no longer officially supported (even with OpenCore Legacy Patcher), and the speakers had started to fail. As I said... it was definitely time.
@@ -29,7 +29,7 @@ I was also prepared to invest a little more in a machine that I could connect to
 
 We're fortunate to live in a time when Linux has become more and more popular nowadays, and computers like the Framwork Laptop 13 Pro can be a very interesting option for having a very good display, battery life, and construction in pair to those of MacBooks'. Its repairability and upgradeability make it one of the few Windows/Linux laptops that genuinely caught my attention.
 
-However, at this point I've been a MacOS user for more than a decade, and over the years I've become pretty good at editing on FinalCut Pro and Logic Pro. My custom domain e-mails run on top of iCloud, that also serves as an online cloud backup of my most important documents. I rely heavily on the seamless integration with my iPhone. The Photos app alone is one of the strongest reasons why I have never seriously considered switching to Android.
+However, at this point I've been a MacOS user for more than a decade, and over the years I've become pretty good at editing on Final Cut Pro and Logic Pro. My custom domain e-mails run on top of iCloud, that also serves as an online cloud backup of my most important documents. I rely heavily on the seamless integration with my iPhone. The Photos app alone is one of the strongest reasons why I have never seriously considered switching to Android.
 
 Taking all of this into account, I concluded that buying another Mac was the most sensible choice.
 
@@ -90,11 +90,28 @@ With all this in mind, ChatGPT recommended an M5 MacBook Air with 1 TB of storag
 
 My original plan was to wait until the new generation of monitors became available and upgrade my entire setup at once. However, when Apple announced a price increase, I felt some urgency to buy the laptop first if I could still find it at the original price.
 
-As it turned out, I found a 24 GB model on sale for just 1568 euros, only slightly more than the configuration I had originally planned to buy, so that became my final choice. This model lauched at 1699 euros and briefly dropped to 1589 euros on Amazon Spain back in april. Compared with its current retail price of 1979 euros, I ended up saving about 410 €.
+As it turned out, I found a 24 GB model on sale for just 1568.99 euros, only slightly more than the configuration I had originally planned to buy, so that became my final choice. This model lauched at 1699 euros and briefly dropped to 1589 euros on Amazon Spain back in april. Compared with its current retail price of 1979 euros, I ended up saving about 410 €.
 
 The most valuable part of the whole experience wasn't that ChatGPT recommended a particular computer. It was that it helped me ask better questions. Instead of comparing products, we compared how each option matched my actual needs, how long I expected to keep the machine, and whether the additional cost translated into meaningful improvements for the way I work. By the time I placed the order, the decision felt less like buying a new gadget and more like making a well-reasoned long-term investment.
 
 ![](images/macbook_air_m5_front.jpeg)
 
+After twelve years, this is what the upgrade actually looks like on paper:
+
+| | MacBook Pro (2014) | MacBook Air M5 (2026) |
+|---|---|---|
+| Model | 13-inch MacBook Pro | 13-inch MacBook Air |
+| Processor | Intel Core i5 | Apple M5 |
+| Memory | 8 GB | 24 GB unified memory |
+| Internal storage | 2 TB SSD* | 1 TB SSD |
+| Architecture | Intel x86 | Apple Silicon |
+| Cooling | Active fan | Fanless |
+| Weight | ~1.57 kg | ~1.23 kg |
+| Years of service | 12 | Just started |
+
+* The original MacBook Pro was later upgraded with a 2 TB NVMe SSD.
+
+On paper, the difference is enormous. In practice, however, the most important improvements aren't necessarily the ones that show up in a specification sheet.
+
 **Next step**  
-Choosing the laptop turned out to be only half of the story. Once the computer had been decided, there was another piece of the setup that had remained virtually unchanged for almost two decades: my external monitor. Surprisingly, that decision would end up being even more difficult.
+Choosing the laptop turned out to be only half of the story. Once the computer had been decided, there was another piece of the setup that had remained virtually unchanged for almost two decades: [my external monitor](../../../2026/09/lg-27gm950b/). Surprisingly, that decision would end up being even more difficult.
