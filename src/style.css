@@ -198,29 +198,22 @@ section .cta:hover {
 }
 
 .auto-carousel {
-  display: flex;
-  width: 100%;
-  overflow: visible;
   position: relative;
-  height: 220px;
+  min-height: 220px;
+  width: 100%;
 }
 
 .testimonial-slide {
-  flex: 0 0 100%;
-  max-width: 100%;
-  overflow: visible;
+  position: absolute;
+  inset: 0;
   padding: 1rem;
   box-sizing: border-box;
-  white-space: normal;
   text-align: center;
   background-color: #151821;
   border: 1px solid #222;
   border-radius: 0.5rem;
   opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  animation: slideShow 24s infinite;
+  animation: slideShow 32s infinite;
 }
 
 .testimonial-slide:nth-child(1) {
@@ -231,6 +224,9 @@ section .cta:hover {
 }
 .testimonial-slide:nth-child(3) {
   animation-delay: 16s;
+}
+.testimonial-slide:nth-child(4) {
+  animation-delay: 24s;
 }
 
 @keyframes slideShow {
