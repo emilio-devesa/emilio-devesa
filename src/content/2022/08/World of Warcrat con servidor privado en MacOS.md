@@ -5,12 +5,28 @@ categories:
   - "videojuegos"
 ---
 
-![](images/costasur-2.png)
+[![](images/costasur.png)](images/costasur-full.png)
 
-**Cliente**  
-Hace un par de años que Apple retiró de MacOS el soporte para aplicaciones de 32-bit. A estas alturas, salvo que utilices aplicaciones muy antiguas y abandonadas, esto no debería ser un problema, pero sí que existen algunos programas que ya no podrás ejecutar en versiones nuevas del SO. Una de ellas es el antiguo cliente de [World of Warcraft](../../../2007/02/world-of-warcraft/) pero podemos utilizar la aplicación de Windows a través de traducción de librerías con Wine.
+Hace un par de años que Apple retiró de MacOS el soporte para aplicaciones de 32-bit. A estas alturas, salvo que utilices aplicaciones muy antiguas y abandonadas, esto no debería ser un problema, pero sí que existen algunos programas que ya no podrás ejecutar en versiones nuevas del SO. Una de ellas es el antiguo cliente de [World of Warcraft](../../../2007/02/world-of-warcraft/) pero podemos utilizar la aplicación de Windows a través de traducción de librerías.
 
-Para facilitarlo, instalamos Winery. Puedes descargarlo manualmente desde https://github.com/Gcenx/WineskinServer/releases aunque yo prefiero hacerlo con Homebrew, con lo que también se instalarán sus actualizaciones de forma automatizada: 
+**Actualización 09/2026:** El método descrito anteriormente para ejecutar el cliente en MacOS solo funcionaba en procesadores Intel. Ahora he incluido tamnbién un apartado donde describo como ejecutarlo en procesadores Apple Silicon y lo he comprobado en mi [MacBook Air M5](../../../2026/07/macbook-air-m5/) con las betas de MacOS 27 Golden Gate.
+
+**Cliente en Macs con procesador Apple Silicon**  
+Para procesadores M1, M2, M3 o superiores, [WoWSilicon](https://wowsilicon.github.io/) ofrece compatibilidad nativa y fluida con la arquitectura ARM64. Basta con descargar la aplicación desde su repositorio oficial en GitHub, moverla a Aplicaciones y asignarle la carpeta del cliente de World of Warcraft que contiene el archivo Wow.exe durante su primer inicio para gestionar el rendimiento gráfico sin emuladores pesados. El programa parcheará el ejecutable de WoW y podrás jugar sin mayores problemas.
+
+![](images/wowsilicon.png)
+
+En las siguientes capturas se puede ver la configuración que a mi me ha dado mejor resultado. He podido poner los gráficos al máximo y podría incluso seleccionar una resolución mayor, pero 1280x800 es un ajuste con el que me encuentro bastante cómodo.
+
+![](images/wowsilicon-config-1.png)
+
+![](images/wowsilicon-config-2.png)
+
+![](images/wowsilicon-config-3.png)
+
+
+**Cliente en Macs con procesador Intel**  
+En primer lugar instalamos Winery. Puedes descargarlo manualmente desde https://github.com/Gcenx/WineskinServer/releases aunque yo prefiero hacerlo con Homebrew, con lo que también se instalarán sus actualizaciones de forma automatizada: 
 ```
 $ brew install --cask --no-quarantine gcenx/wine/wineskin
 ``` 
