@@ -5,7 +5,7 @@ categories:
   - "videojuegos"
 ---
 
-[![](images/costasur.png)](images/costasur-full.png)
+[![](images/costasur-full.png)](images/costasur-full.png)
 
 Hace un par de años que Apple retiró de MacOS el soporte para aplicaciones de 32-bit. A estas alturas, salvo que utilices aplicaciones muy antiguas y abandonadas, esto no debería ser un problema, pero sí que existen algunos programas que ya no podrás ejecutar en versiones nuevas del SO. Una de ellas es el antiguo cliente de [World of Warcraft](../../../2007/02/world-of-warcraft/) pero podemos utilizar la aplicación de Windows a través de traducción de librerías.
 
