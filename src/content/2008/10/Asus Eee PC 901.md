@@ -13,7 +13,12 @@ Fabricante: Asus
 Precio: 380 €  
 Página web: http://eeepc.asus.com/
 
-Hace cosa de un año y poco Asus sacaba al mercado el Eee PC, un portatil ultraligero de apenas 7 pulgadas y bajo coste. El invento venía con un sistema operativo propio basado en Linux, concretamente en una distribución Debian, con una interfaz propia pero toda la versatilidad de una distro típica. Con la llegada de nuevos Eee PC, nos referiremos al primero con el número 701. Ahora salen al mercado los nuevos Eee PC. Las novedades son: - Nuevo procesador Intel Atom 1,6 Ghz (45nm, 512 Kb L2) - Mayor memoria DDR-2, aumentada a 1GB - Nueva pantalla de 8 pulgadas - Almacenamiento de 12 gigabytes (Windows) o 20 gigabytes (Linux) frente a los 4 GB del Eee PC original - Wi-fi con el nuevo protocolo 802.11n
+Hace cosa de un año y poco Asus sacaba al mercado el Eee PC, un portatil ultraligero de apenas 7 pulgadas y bajo coste. El invento venía con un sistema operativo propio basado en Linux, concretamente en una distribución Debian, con una interfaz propia pero toda la versatilidad de una distro típica. Con la llegada de nuevos Eee PC, nos referiremos al primero con el número 701. Ahora salen al mercado los nuevos Eee PC. Las novedades son:  
+- Nuevo procesador Intel Atom 1,6 Ghz (45nm, 512 Kb L2)
+- Mayor memoria DDR-2, aumentada a 1GB
+- Nueva pantalla de 8 pulgadas
+- Almacenamiento de 12 gigabytes (Windows) o 20 gigabytes (Linux) frente a los 4 GB del Eee PC original
+- Wi-fi con el nuevo protocolo 802.11n
 
 Estas son las especificaciones básicas de un Eee PC 901, como el que probamos a continuación, y son muy similares a los nuevos Eee PC 900 y 1000. En la caja encontraremos además un pequeño set de accesorios realmente imprescindibles y muy socorridos: una funda de transporte, una gamuza para limpiar la pantalla y la carcasa, los discos de recuperación, unos estupendos manuales y, como es lógico, el cargador para la batería.
 
