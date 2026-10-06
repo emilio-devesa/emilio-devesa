@@ -1,0 +1,29 @@
+---
+import PrimaryLayout from '../../layouts/PrimaryLayout.astro';
+
+import { getCollection } from 'astro:content';
+import { BLOG_PAGE_SIZE, blogPageUrl } from '../../lib/blog';
+
+// Redirecciones de las URLs de paginación antiguas (/blog/2/ …) a las
+// nuevas (/blog/pagina/2/ …). Genera una página por número con refresh
+// inmediato y enlace manual por si el navegador lo ignora.
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog');
+  const totalPages = Math.ceil(allPosts.length / BLOG_PAGE_SIZE);
+  return Array.from({ length: totalPages - 1 }, (_, i) => {
+    const page = i + 2;
+    return {
+      params: { page: String(page) },
+      props: { target: blogPageUrl(page) },
+    };
+  });
+}
+
+const { target } = Astro.props;
+---
+
+<PrimaryLayout title="Redirigiendo…" robots="noindex, nofollow" redirectTo={target}>
+  <p>
+    Esta página se ha movido. Si no eres redirigido, <a href={target}>pulsa aquí</a>.
+  </p>
+</PrimaryLayout>

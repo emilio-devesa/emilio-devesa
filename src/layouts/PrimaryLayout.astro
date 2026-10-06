@@ -1,24 +1,27 @@
 ---
 import '../style.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/700.css';
 
 interface Props {
   title?: string;
   description?: string;
   robots?: string;
+  redirectTo?: string;
 }
 
 const {
   title,
   description = 'Emilio Devesa - Yamaha Music Education System Key Teacher',
   robots = 'index, follow',
+  redirectTo,
 } = Astro.props;
 const siteTitle = 'Emilio Devesa';
 const pageTitle = title ? `${title} - ${siteTitle}` : siteTitle;
-const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://emiliodevesa.com').toString();
-const ogImage = new URL(
-  '/images/hero_3a.jpeg',
-  Astro.site ?? 'https://emiliodevesa.com',
-).toString();
+const site = Astro.site ?? 'https://emiliodevesa.com';
+const canonical = new URL(redirectTo ?? Astro.url.pathname, site).toString();
+const ogImage = new URL('/images/hero_3a.jpeg', site).toString();
 ---
 
 <!doctype html>
@@ -30,6 +33,13 @@ const ogImage = new URL(
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content={robots} />
     <link rel="canonical" href={canonical} />
+    {redirectTo && <meta http-equiv="refresh" content={`0; url=${redirectTo}`} />}
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Emilio Devesa – Blog"
+      href={new URL('/rss.xml', site).toString()}
+    />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteTitle} />
     <meta property="og:title" content={pageTitle} />
@@ -40,12 +50,7 @@ const ogImage = new URL(
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preload" as="image" href="/images/hero_3a.jpeg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
     <link rel="manifest" href="/favicon/site.webmanifest" />

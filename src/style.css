@@ -109,7 +109,6 @@ header {
 
 nav a {
   color: var(--foreground);
-  margin-left: 1.5rem;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease-in-out;
@@ -139,8 +138,8 @@ nav a:hover {
   max-width: 800px;
 }
 
-.hero .cta {
-  margin-top: 2rem;
+.cta {
+  display: inline-block;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   background-color: var(--primary);
@@ -148,11 +147,16 @@ nav a:hover {
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
+  text-decoration: none;
   transition: background 0.3s;
 }
 
-.hero .cta:hover {
+.cta:hover {
   background-color: #1e6ed6;
+}
+
+.hero .cta {
+  margin-top: 2rem;
 }
 
 /* Hero mini (modificador de .hero) */
@@ -188,24 +192,17 @@ section p, section li {
   margin-bottom: 1rem;
 }
 
-section .cta {
-  margin-top: 2rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  background-color: var(--primary);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-section .cta:hover {
-  background-color: #1e6ed6;
-}
-
 .cta-row {
   margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-row--tight {
+  margin-top: 0.5rem;
+}
+
+.cta-lead {
+  margin-bottom: 0.5rem;
 }
 
 .cta-row ul {
@@ -326,7 +323,7 @@ section .cta:hover {
 }
 
 .testimonial-slide cite {
-  margin-top: 0rem;
+  margin-top: 0;
   display: block;
   color: var(--muted);
   font-style: normal;
@@ -334,12 +331,6 @@ section .cta:hover {
 
 
 /* Music */
-
-.music {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
 
 .album {
   display: flex;
@@ -355,11 +346,11 @@ section .cta:hover {
   height: auto;
   border-radius: var(--radius);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  border: 2px solid #ccc;
+  border: 2px solid var(--border);
 }
 
 .album-info {
-  flex: 2 1 0px;
+  flex: 2 1 0;
   display: flex;
   flex-direction: column;
 }
@@ -445,7 +436,7 @@ footer {
   padding: 2rem;
   text-align: center;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--muted);
   border-top: 1px solid #1b1f27;
 }
 
@@ -464,15 +455,6 @@ footer a:hover {
 
 #posts {
   margin-top: 2rem;
-}
-#posts h3 {
-  font-size: 1.5rem;
-  color: var(--foreground);
-}
-#posts p {
-  color: var(--muted);
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
 }
 #posts a {
   color: var(--primary);
@@ -668,11 +650,19 @@ footer a:hover {
 
 .pagination a,
 .pagination span {
+  display: inline-block;
   padding: 0.5rem 1rem;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   color: var(--foreground);
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .pagination a,
+  .pagination span {
+    padding: 0.75rem 1.25rem;
+  }
 }
 
 .pagination a:hover {
