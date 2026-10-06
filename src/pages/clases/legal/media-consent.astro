@@ -2,7 +2,8 @@
 import PrimaryLayout from '../../../layouts/PrimaryLayout.astro';
 import SiteHeader from '../../../components/SiteHeader.astro';
 import HeroMini from '../../../components/HeroMini.astro';
-import MediaConsent from '../../../components/lessons/legal/MediaConsent.astro';
+import ProseSection from '../../../components/ProseSection.astro';
+import MediaConsentMd from '../../../lessons/legal/media-consent.md';
 import SiteFooter from '../../../components/SiteFooter.astro';
 
 const navLinks = [
@@ -28,7 +29,9 @@ const footerLinks = [
 
   <HeroMini title="Clases de Batería" />
 
-  <MediaConsent />
+  <ProseSection id="info" title="Política sobre uso de imagen">
+    <MediaConsentMd />
+  </ProseSection>
 
   <SiteFooter links={footerLinks} />
 </PrimaryLayout>

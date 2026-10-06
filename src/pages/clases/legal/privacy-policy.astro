@@ -2,7 +2,8 @@
 import PrimaryLayout from '../../../layouts/PrimaryLayout.astro';
 import SiteHeader from '../../../components/SiteHeader.astro';
 import HeroMini from '../../../components/HeroMini.astro';
-import PrivacyPolicy from '../../../components/lessons/legal/PrivacyPolicy.astro';
+import ProseSection from '../../../components/ProseSection.astro';
+import PrivacyPolicyMd from '../../../lessons/legal/privacy-policy.md';
 import SiteFooter from '../../../components/SiteFooter.astro';
 
 const navLinks = [
@@ -28,7 +29,9 @@ const footerLinks = [
 
   <HeroMini title="Clases de Batería" />
 
-  <PrivacyPolicy />
+  <ProseSection id="info" title="Política de privacidad y protección de datos">
+    <PrivacyPolicyMd />
+  </ProseSection>
 
   <SiteFooter links={footerLinks} />
 </PrimaryLayout>

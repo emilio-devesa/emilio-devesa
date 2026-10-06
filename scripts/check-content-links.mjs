@@ -33,11 +33,7 @@ const files = walk(CONTENT);
 const routes = new Set(
   files.map((f) => {
     const rel = f.replace(CONTENT, '').replace(/\.mdx?$/, '');
-    return rel
-      .split(sep)
-      .filter(Boolean)
-      .map(slugify)
-      .join('/');
+    return rel.split(sep).filter(Boolean).map(slugify).join('/');
   }),
 );
 
@@ -74,11 +70,7 @@ for (const file of files) {
       continue;
     }
     const route = absUrl.replace(/^\/blog\//, '');
-    const norm = route
-      .split('/')
-      .filter(Boolean)
-      .map(slugify)
-      .join('/');
+    const norm = route.split('/').filter(Boolean).map(slugify).join('/');
     if (!routes.has(norm)) brokenLinks.push({ file: rel, target });
   }
 

@@ -7,6 +7,12 @@ import { BLOG_PAGE_SIZE, blogPageUrl } from '../../lib/blog';
 // Redirecciones de las URLs de paginación antiguas (/blog/2/ …) a las
 // nuevas (/blog/pagina/2/ …). Genera una página por número con refresh
 // inmediato y enlace manual por si el navegador lo ignora.
+//
+// NOTA: este fichero coexiste a propósito con
+// src/pages/blog/pagina/[page].astro (la paginación real) y con
+// src/pages/blog/[...slug].astro (los artículos). No borrar: sin él,
+// las URLs /blog/2/ … /blog/5/ enlazadas anteriormente darían 404.
+// Al añadir más artículos solo cambia el número de páginas generadas.
 export async function getStaticPaths() {
   const allPosts = await getCollection('blog');
   const totalPages = Math.ceil(allPosts.length / BLOG_PAGE_SIZE);

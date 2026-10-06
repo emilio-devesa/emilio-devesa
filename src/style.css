@@ -1,4 +1,12 @@
-/* Colores personalizados y tokens */
+/* style.css — hoja global del sitio.
+ * Índice:
+ *  1. Tokens   2. Base   3. Navegación   4. Hero
+ *  5. Secciones y botones   6. Sobre mí   7. Ofertas
+ *  8. Testimonios   9. Música   10. Pie
+ *  11. Blog (lista y paginación)   12. Artículo   13. Responsive
+ */
+
+/* 1. Tokens */
 :root {
   --primary: #2f90ff; /* Azul eléctrico */
   --background: #0b0d13;
@@ -27,7 +35,7 @@ html {
 
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
-  background-color: #0b0d13;
+  background-color: var(--background);
   color: #ffffff;
   line-height: 1.6;
   font-size: 16px;
@@ -62,7 +70,7 @@ section[id] {
   scroll-margin-top: 80px;
 }
 
-/* Navegación */
+/* 3. Navegación */
 header {
   background-color: var(--background);
   padding: 1rem 2rem;
@@ -118,14 +126,15 @@ nav a:hover {
   color: var(--primary);
 }
 
-/* Hero principal */
+/* 4. Hero (.hero--mini es el modificador para cabeceras compactas) */
 .hero {
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(11,13,19,1)),
-              url('/images/hero_3a.jpeg') center/cover no-repeat;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(11, 13, 19, 1)),
+    url('/images/hero_3a.jpeg') center/cover no-repeat;
   color: white;
   padding: 6rem 2rem;
   height: 90vh;
@@ -159,7 +168,6 @@ nav a:hover {
   margin-top: 2rem;
 }
 
-/* Hero mini (modificador de .hero) */
 .hero--mini {
   background-position: bottom;
   height: 40vh;
@@ -172,7 +180,7 @@ nav a:hover {
   align-items: center;
 }
 
-/* Secciones */
+/* 5. Secciones y botones */
 section {
   padding: 4rem 2rem;
   max-width: 1000px;
@@ -186,7 +194,8 @@ section h2 {
   padding-left: 0.5rem;
 }
 
-section p, section li {
+section p,
+section li {
   color: var(--muted);
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -214,6 +223,7 @@ section p, section li {
   margin: 0;
 }
 
+/* 6. Sobre mí */
 .about-grid {
   display: flex;
   flex-wrap: wrap;
@@ -236,7 +246,7 @@ section p, section li {
   border-radius: var(--radius);
 }
 
-/* Qué Ofrezco - columnas */
+/* 7. Ofertas */
 .offers {
   display: flex;
   flex-wrap: wrap;
@@ -258,6 +268,7 @@ section p, section li {
   color: var(--foreground);
 }
 
+/* 8. Testimonios (carrusel automático; ver NOTA en los retardos) */
 .auto-carousel {
   position: relative;
   min-height: 220px;
@@ -296,6 +307,8 @@ section p, section li {
   }
 }
 
+/* NOTA: los retardos están acoplados al nº de testimonios en
+ * TestimonialsSection.astro (hoy 4, uno cada 8 s de un ciclo de 32 s). */
 .testimonial-slide:nth-child(1) {
   animation-delay: 0s;
 }
@@ -310,11 +323,21 @@ section p, section li {
 }
 
 @keyframes slideShow {
-  0% { opacity: 0; }
-  5% { opacity: 1; }
-  25% { opacity: 1; }
-  30% { opacity: 0; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .testimonial-slide blockquote {
@@ -329,8 +352,7 @@ section p, section li {
   font-style: normal;
 }
 
-
-/* Music */
+/* 9. Música */
 
 .album {
   display: flex;
@@ -345,7 +367,7 @@ section p, section li {
   max-width: 300px;
   height: auto;
   border-radius: var(--radius);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border: 2px solid var(--border);
 }
 
@@ -399,7 +421,7 @@ section p, section li {
   color: #1e6ed6;
 }
 
-/* ====== RESPONSIVE ADAPTATIONS ====== */
+/* 13. Responsive (único punto de corte: 768 px) */
 @media (max-width: 768px) {
   .album {
     flex-direction: column;
@@ -430,7 +452,7 @@ section p, section li {
   }
 }
 
-/* Footer */
+/* 10. Pie */
 footer {
   background-color: #0a0c11;
   padding: 2rem;
@@ -450,8 +472,7 @@ footer a:hover {
   color: var(--primary);
 }
 
-
-/* Blog */
+/* 11. Blog (lista y paginación) */
 
 #posts {
   margin-top: 2rem;
@@ -464,6 +485,7 @@ footer a:hover {
   color: #1e6ed6;
 }
 
+/* 12. Artículo (prosa de posts y secciones de clases) */
 .article-content {
   margin-left: auto;
   margin-right: auto;
@@ -536,7 +558,7 @@ footer a:hover {
 }
 
 .article-content ul li::marker {
-  color: var(--primary)
+  color: var(--primary);
 }
 
 .article-content ol {
@@ -553,7 +575,7 @@ footer a:hover {
   padding: 0.2rem 0.4rem;
   border-radius: 0.375rem;
   font-size: 0.95rem;
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
   border: 1px solid #2a2f3a;
 }
 
@@ -670,7 +692,7 @@ footer a:hover {
   color: var(--primary);
 }
 
-.pagination [aria-current="page"] {
+.pagination [aria-current='page'] {
   background-color: var(--primary);
   border-color: var(--primary);
   color: #fff;

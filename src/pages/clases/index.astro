@@ -2,10 +2,11 @@
 import PrimaryLayout from '../../layouts/PrimaryLayout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import HeroMini from '../../components/HeroMini.astro';
-import Welcome from '../../components/lessons/Welcome.astro';
-import Lessons from '../../components/lessons/Lessons.astro';
-import Studio from '../../components/lessons/Studio.astro';
-import Conditions from '../../components/lessons/Conditions.astro';
+import ProseSection from '../../components/ProseSection.astro';
+import WelcomeMd from '../../lessons/welcome.md';
+import LessonsMd from '../../lessons/lessons.md';
+import StudioMd from '../../lessons/studio.md';
+import ConditionsMd from '../../lessons/conditions.md';
 import Contact from '../../components/ContactSection.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 
@@ -32,13 +33,21 @@ const footerLinks = [
 
   <HeroMini title="Clases de Batería" />
 
-  <Welcome />
+  <ProseSection id="welcome" title="🙋🏻‍♂️ Bienvenida">
+    <WelcomeMd />
+  </ProseSection>
 
-  <Lessons />
+  <ProseSection id="lessons" title="🥁 Mis Clases">
+    <LessonsMd />
+  </ProseSection>
 
-  <Studio />
+  <ProseSection id="studio" title="📍 El Estudio">
+    <StudioMd />
+  </ProseSection>
 
-  <Conditions />
+  <ProseSection id="conditions" title="🫱🏻‍🫲🏼 Condiciones">
+    <ConditionsMd />
+  </ProseSection>
 
   <Contact />
 
