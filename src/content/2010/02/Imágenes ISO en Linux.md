@@ -27,7 +27,7 @@ En cambio, la mayoría de sistemas son capaces de entender los discos grabados f
 ```
 $ mkisofs -JR -o imagen.iso /ruta_de_carpeta/
 ```
-Las opciones implicadas aquí son -J (de [_Joliet_](http://es.wikipedia.org/wiki/Joliet)) y -R (de [_Rock Ridge_](http://es.wikipedia.org/wiki/Rock_Ridge)) que permiten el uso de nombres largos manteniendo la compatibilidad. 
+Las opciones implicadas aquí son -J (de [_Joliet_](https://es.wikipedia.org/wiki/Joliet)) y -R (de [_Rock Ridge_](https://es.wikipedia.org/wiki/Rock_Ridge)) que permiten el uso de nombres largos manteniendo la compatibilidad. 
 
 ### Grabar un archivo ISO
 

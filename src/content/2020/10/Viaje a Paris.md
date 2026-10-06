@@ -32,7 +32,7 @@ Para organizar tu propio viaje a París o a cualquier otro destino, te recomiend
 - [Vueling](https://www.vueling.com/es)
 - [App in the air](https://www.appintheair.mobi)
 - [Mapify](https://mapify.travel)
-- [Google Maps](http://maps.google.com)
+- [Google Maps](https://maps.google.com)
 - [Packr](https://packr.app)
 - [Airbnb](https://www.airbnb.es)
 - [Uber](https://www.uber.com/es/es-es/)
@@ -129,7 +129,7 @@ Todo aquel que visita París te dirá que es una ciudad muy cara. Efectivamente 
 Por lo general, las tiendas están abiertas a partir de las 9:30h hasta las 19:30h. Es habitual que los miércoles lo amplíen hasta las 21h y que en las zonas turísticas abran incluso en domingo. Lógicamente, la hostelería y los pubs extenderán su horario un poco más. Por su parte, los museos suelen abrir entre las 9:30h y las 11:00h, pero cierran a las 18:00h. También extienden su horario uno o dos días de la semana. Puedes [consultar estos horarios online](https://www.paris.es/museos).
 
 **Algunos rincones**   
-Ya te he hablado del Nostra Pizza y La Cave Cafe. Hubo un par de noches que cenamos en [Patakrep](http://patakrep.fr) (89 Rue Duhesme), un pequeño restaurante de barrio en la esquina de nuestra calle. Nos gustó también porque a pesar de que llegábamos habitualmente tarde, para la hora a la que los franceses acostumbran cenar, nos atendieron muy amablemente. No te pierdas sus Galettes. Un par de portales más arriba de nuestro alojamiento encontramos [El Tast](http://www.eltast.fr) (70 Rue Duhesme), un agradable lugar donde cenar o disfrutar una copa de vino por la noche. El dueño (valenciano) y el camarero que nos atendió (argentino) se alegraron mucho de vernos por allí y nos hicieron sentir muy a gusto. Para las copas los días de ambiente nocturno, que son varios a la semana, tienes [Le Village](http://levillagebistrot.com) (8 Rue Versigny) justo frente al Patakrep.
+Ya te he hablado del Nostra Pizza y La Cave Cafe. Hubo un par de noches que cenamos en [Patakrep](http://patakrep.fr) (89 Rue Duhesme), un pequeño restaurante de barrio en la esquina de nuestra calle. Nos gustó también porque a pesar de que llegábamos habitualmente tarde, para la hora a la que los franceses acostumbran cenar, nos atendieron muy amablemente. No te pierdas sus Galettes. Un par de portales más arriba de nuestro alojamiento encontramos [El Tast](https://www.eltast.fr) (70 Rue Duhesme), un agradable lugar donde cenar o disfrutar una copa de vino por la noche. El dueño (valenciano) y el camarero que nos atendió (argentino) se alegraron mucho de vernos por allí y nos hicieron sentir muy a gusto. Para las copas los días de ambiente nocturno, que son varios a la semana, tienes [Le Village](http://levillagebistrot.com) (8 Rue Versigny) justo frente al Patakrep.
 
 \====
 

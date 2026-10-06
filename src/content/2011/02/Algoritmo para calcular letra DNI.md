@@ -64,7 +64,7 @@ class Dni {
 ```
 
 **Implementación en Python**  
-La primera línea simplemente sirve (bajo sistemas Unix como Linux o MacOS) para indicar la ruta donde el ordenador puede encontrar el intérprete de Python que corra el programa. Si alguna vez has programado un script para bash, sabrás que se les suele llamar "[bangs](http://en.wikipedia.org/wiki/Shebang_\(Unix\))" a este tipo de líneas. No tiene más explicación, puedes tomarlo como algo mecánico.
+La primera línea simplemente sirve (bajo sistemas Unix como Linux o MacOS) para indicar la ruta donde el ordenador puede encontrar el intérprete de Python que corra el programa. Si alguna vez has programado un script para bash, sabrás que se les suele llamar "[bangs](https://en.wikipedia.org/wiki/Shebang_\(Unix\))" a este tipo de líneas. No tiene más explicación, puedes tomarlo como algo mecánico.
 
 Importaremos la librería _sys_ para poder leer argumentos de la consola. La función _LetraDNI_ recibe un nif y, como se ve en el return, devuelve la letra del string "letra" que corresponda con la operación mod _%_. En el _main_ se lanza esa función para el primer argumento leido en la consola (_sys.argv[1]_) que se tiene que convertir en un entero, de ahí que se le aplique la conversión a entero _int_.
 

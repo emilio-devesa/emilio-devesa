@@ -13,9 +13,9 @@ Desarrollador: Playdead
 Precio: 7.99 €  
 Página web: http://limbogame.org/
 
-Ya habia oído hablar de Limbo hace unas semanas, pero todavía me preguntaba lo que era en realidad. Ahora que forma parte del [Humble Indie Bundle V](http://www.humblebundle.com/), la oportunidad para disfrutarlo no se puede dejar pasar.
+Ya habia oído hablar de Limbo hace unas semanas, pero todavía me preguntaba lo que era en realidad. Ahora que forma parte del [Humble Indie Bundle V](https://www.humblebundle.com/), la oportunidad para disfrutarlo no se puede dejar pasar.
 
-Confieso que en los últimos años me he desconectado (por unos motivos u otros) del mundo del videojuego. De estar a la última, a ser el último en enterarme. Ahora he vuelto a instalar [Steam](http://store.steampowered.com), a jugar a algunos títulos y a estar algo más al corriente de las novedades. El mercado ha cambiado mucho: ahora te pre-compras el juego, se va descargando, luego te lo terminas enseguida y vuelta a empezar porque hay mogollón de contenidos descargables adicionales sin los cuales no puedes vivir. Y en esta industria altamente fortificada, muchos buscan vías de escape en los juegos independientes. Nace así el concepto de Humble Indie Bundle. Y triunfa.
+Confieso que en los últimos años me he desconectado (por unos motivos u otros) del mundo del videojuego. De estar a la última, a ser el último en enterarme. Ahora he vuelto a instalar [Steam](https://store.steampowered.com), a jugar a algunos títulos y a estar algo más al corriente de las novedades. El mercado ha cambiado mucho: ahora te pre-compras el juego, se va descargando, luego te lo terminas enseguida y vuelta a empezar porque hay mogollón de contenidos descargables adicionales sin los cuales no puedes vivir. Y en esta industria altamente fortificada, muchos buscan vías de escape en los juegos independientes. Nace así el concepto de Humble Indie Bundle. Y triunfa.
 
 ![](images/limbo-1.png)
 

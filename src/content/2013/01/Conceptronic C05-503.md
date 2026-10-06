@@ -12,9 +12,9 @@ Nombre: Conceptronic C05-503
 Fabricante: Conceptronic  
 Precio: 26.37 €
 
-Hace un par de semanas compré [este dock en Amazon](http://www.amazon.es/dp/B004KQ9CYK). Mi idea era poder aprovechar el disco duro de mi anterior PC, un [Seagate Barracuda 7200.11](../../../2008/06/seagate-barracuda-720011) de 500 GB todavía en buen estado y con conexión S-ATA II. Las dos características más importantes de este periférico es que se conecta mediante USB (escogí la versión con USB 2.0 por cuestiones de compatibilidad con mi ordenador) y que tanto puede alojar discos S-ATA de 2.5 como de 3.5 pulgadas.
+Hace un par de semanas compré [este dock en Amazon](https://www.amazon.es/dp/B004KQ9CYK). Mi idea era poder aprovechar el disco duro de mi anterior PC, un [Seagate Barracuda 7200.11](../../../2008/06/seagate-barracuda-720011) de 500 GB todavía en buen estado y con conexión S-ATA II. Las dos características más importantes de este periférico es que se conecta mediante USB (escogí la versión con USB 2.0 por cuestiones de compatibilidad con mi ordenador) y que tanto puede alojar discos S-ATA de 2.5 como de 3.5 pulgadas.
 
-Además su aspecto combina a la perfección con el resto de elementos que hay en mi escritorio (como por ejemplo [mis altavoces](../../../2006/01/logitech-z-4/)); pero también existe una versión en blanco, de pinta un poco más "mac". Eso sí, para que el disco duro quedase un poco protegido, acompañé la compra con [ésta funda de silicona](http://www.amazon.es/dp/B002GWO8OY), que tiene una tapa del mismo material que al retirarla permite el acceso a los conectores.
+Además su aspecto combina a la perfección con el resto de elementos que hay en mi escritorio (como por ejemplo [mis altavoces](../../../2006/01/logitech-z-4/)); pero también existe una versión en blanco, de pinta un poco más "mac". Eso sí, para que el disco duro quedase un poco protegido, acompañé la compra con [ésta funda de silicona](https://www.amazon.es/dp/B002GWO8OY), que tiene una tapa del mismo material que al retirarla permite el acceso a los conectores.
 
 ![](images/docking-station-c05-503-chddock-conceptronic-hd-25-35_mpe-o-2991187188_082012.jpg)
 

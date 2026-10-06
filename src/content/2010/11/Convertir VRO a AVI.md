@@ -38,7 +38,7 @@ En este caso los parámetros del video son:
 - _\-qscale 3:_ se trata de la calidad general que se busca en el video. Cuanto más alto es el número, más se comprime y peor se vé. Lo ideal es 3 o 2, reservando el 1 únicamente para casos muy concretos donde se necesite una calidad máxima. Del 3 en adelante, la pérdida de nitidez es apreciable. 
 - _\-g 300:_ se trata de una opción bastante avanzada. Agrupará los fotogramas en grupos de 300 para que sea más facil comprimir los que sean similares. En cierto modo, ayuda a mejorar la imagen. No te recomiendo que modifiques este valor a no ser que estés muy seguro. 
 - _\-deinterlace:_ desentrelaza las líneas del video, dando a las imagenes un aspecto más suave. 
-- _\-aspect 16:9:_ aplica un [ratio de aspecto](http://es.wikipedia.org/wiki/Relaci%C3%B3n_de_aspecto) al video. Hay bastantes opciones disponibles, pero las más habituales serían 4:3 (como la televisión cuadrada de toda la vida), 16:9 (el de bastantes películas) y 16:10 (ligeramente más alto que 16:9, pero bastante común tambien). Si el video se reproduce deformado (como en mi caso), prueba a utilizar esta opción, pero omítela si se ve bien. 
+- _\-aspect 16:9:_ aplica un [ratio de aspecto](https://es.wikipedia.org/wiki/Relaci%C3%B3n_de_aspecto) al video. Hay bastantes opciones disponibles, pero las más habituales serían 4:3 (como la televisión cuadrada de toda la vida), 16:9 (el de bastantes películas) y 16:10 (ligeramente más alto que 16:9, pero bastante común tambien). Si el video se reproduce deformado (como en mi caso), prueba a utilizar esta opción, pero omítela si se ve bien. 
 - _\-s 512x288:_ sirve para cambiar el tamaño del video. Apenas tiene impacto en el tamaño del archivo, pero si reduces mucho la resolución, se verá bastante peor. Lo ideal es tratar con el original. Un dvd tiene una resolución de 720x576 píxeles, mientras que un blu-ray tiene 1280x720 (HD Ready) ó 1920x1080 (Full HD). Si por ejemplo quiero que el ancho sea de 512 pixeles, debo calcular el alto con una simple regla de tres: 
 ```
 alto_original * nuevo_ancho / ancho_original = nuevo_alto 1080 * 512 / 1920 = 288 píxeles
@@ -49,4 +49,4 @@ Añadí alguna opción más como _\-async 1_ para mejorar la sincronización del
 ```
 $ ffmpeg -i VR_MOVIE.VRO -acodec libmp3lame -ac 2 -ar 48000 -ab 128k -async 1 -vcodec mpeg4 -qscale 3 -g 300 -deinterlace -s 720x405 -aspect 16:9 -f avi VIDEO.AVI
 ```
-Hay otras opciones muy interesantes y la [documentación de ffmpeg](http://www.ffmpeg.org/ffmpeg-doc.html) es excelente para consultar su funcionamiento.
+Hay otras opciones muy interesantes y la [documentación de ffmpeg](https://www.ffmpeg.org/ffmpeg-doc.html) es excelente para consultar su funcionamiento.

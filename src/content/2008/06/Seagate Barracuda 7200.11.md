@@ -33,6 +33,6 @@ Emite pequeños ruidos, como las anteriores versiones
 
 ![](images/seagate-barracuda-inside1.jpg)
 
-**NOTA IMPORTANTE:** Dado que los modelos ST3500320AS entre otros están sufriendo "muertes súbitas", se recomienda actualizar los firmwares. Comprueba tu modelo concreto y tu revisión con la herramienta [DriveDetect](http://support.seagate.com/kbimg/utils/drivedetect.exe). Si la revision es la SD15, actualiza tu firmware a la SD1A con [esta herramienta](http://www.seagate.com/staticfiles/support/downloads/firmware/ms-sd1a.exe). Tienes mucha mas informacion en las siguientes URLs:  
+**NOTA IMPORTANTE:** Dado que los modelos ST3500320AS entre otros están sufriendo "muertes súbitas", se recomienda actualizar los firmwares. Comprueba tu modelo concreto y tu revisión con la herramienta [DriveDetect](https://support.seagate.com/kbimg/utils/drivedetect.exe). Si la revision es la SD15, actualiza tu firmware a la SD1A con [esta herramienta](https://www.seagate.com/staticfiles/support/downloads/firmware/ms-sd1a.exe). Tienes mucha mas informacion en las siguientes URLs:  
 - http://www.msfn.org/board/index.php?showtopic=128906  
 - http://foro.noticias3d.com/vbulletin/showthread.php?t=274425

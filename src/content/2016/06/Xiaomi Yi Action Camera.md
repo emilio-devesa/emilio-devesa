@@ -69,4 +69,4 @@ Duración de la batería
 No dispone de pantalla LCD  
 Algunas han salido con problemas (solucionables) de enfoque, de batería, de micrófono, ... ¡Consulta en el grupo de facebook si crees que sufres alguno!
 
-**ATENCIÓN:** Si tu firmware no está al día, actualízalo para poder grabar en 2K. Si necesitas ayuda visita el grupo de Facebook [Xiaomi Yi Action en Español](https://www.facebook.com/groups/Xiaomi.YiAction/) o este [foro](http://grupoxiaomiyiaction.foroactivo.com/).
+**ATENCIÓN:** Si tu firmware no está al día, actualízalo para poder grabar en 2K. Si necesitas ayuda visita el grupo de Facebook [Xiaomi Yi Action en Español](https://www.facebook.com/groups/Xiaomi.YiAction/) o este [foro](https://grupoxiaomiyiaction.foroactivo.com/).
