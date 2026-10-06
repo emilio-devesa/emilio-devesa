@@ -1,22 +1,36 @@
 ---
 import PrimaryLayout from '../../layouts/PrimaryLayout.astro';
-import Header from '../../components/lessons/Header.astro';
-import HeroMini from '../../components/lessons/HeroMini.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import HeroMini from '../../components/HeroMini.astro';
 import Welcome from '../../components/lessons/Welcome.astro';
 import Lessons from '../../components/lessons/Lessons.astro';
 import Studio from '../../components/lessons/Studio.astro';
 import Conditions from '../../components/lessons/Conditions.astro';
 import Contact from '../../components/ContactSection.astro';
-import Footer from '../../components/lessons/Footer.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+
+const navLinks = [
+  { href: '/clases/#lessons', label: 'Clases' },
+  { href: '/clases/#studio', label: 'Estudio' },
+  { href: '/clases/#conditions', label: 'Condiciones' },
+  { href: '/clases/#contact', label: 'Contacto' },
+];
+
+const footerLinks = [
+  { href: '/', label: 'Inicio' },
+  { href: '/clases/legal/privacy-policy', label: 'Política de privacidad y protección de datos' },
+  { href: '/clases/legal/media-consent', label: 'Política sobre uso de imagen' },
+];
 ---
 
 <PrimaryLayout
   title="Clases de Batería"
   description="Información sobre las clases presenciales de batería con Emilio Devesa."
+  robots="noindex, nofollow"
 >
-  <Header />
+  <SiteHeader links={navLinks} idPrefix="clases" />
 
-  <HeroMini />
+  <HeroMini title="Clases de Batería" />
 
   <Welcome />
 
@@ -28,5 +42,5 @@ import Footer from '../../components/lessons/Footer.astro';
 
   <Contact />
 
-  <Footer />
+  <SiteFooter links={footerLinks} />
 </PrimaryLayout>

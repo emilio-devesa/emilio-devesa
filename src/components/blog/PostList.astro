@@ -1,6 +1,7 @@
 ---
 import FormattedDate from '../FormattedDate.astro';
 import type { CollectionEntry } from 'astro:content';
+import { blogPageUrl } from '../../lib/blog';
 
 interface Props {
   posts: CollectionEntry<'blog'>[];
@@ -10,9 +11,7 @@ interface Props {
 
 const { posts, currentPage, totalPages } = Astro.props;
 
-function pageUrl(page: number) {
-  return page === 1 ? '/blog/' : `/blog/${page}/`;
-}
+const pageUrl = blogPageUrl;
 ---
 
 <ul class="post-list">

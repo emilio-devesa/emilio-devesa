@@ -1,24 +1,28 @@
 ---
 import PrimaryLayout from '../layouts/PrimaryLayout.astro';
-import BlogHeader from '../components/blog/BlogHeader.astro';
-import HeroMini from '../components/blog/HeroMini.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import HeroMini from '../components/HeroMini.astro';
 import PostList from '../components/blog/PostList.astro';
-import Footer from '../components/Footer.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 
 import { getCollection } from 'astro:content';
+import { BLOG_PAGE_SIZE } from '../lib/blog';
 
-const PAGE_SIZE = 20;
+const navLinks = [
+  { href: '/blog', label: 'Blog' },
+  { href: 'https://github.com/emilio-devesa', label: 'GitHub' },
+];
 
 const allPosts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 
-const totalPages = Math.ceil(allPosts.length / PAGE_SIZE);
-const posts = allPosts.slice(0, PAGE_SIZE);
+const totalPages = Math.ceil(allPosts.length / BLOG_PAGE_SIZE);
+const posts = allPosts.slice(0, BLOG_PAGE_SIZE);
 ---
 
 <PrimaryLayout title="Blog" robots="noindex, nofollow">
-  <BlogHeader />
+  <SiteHeader links={navLinks} ariaLabel="Navegación del blog" idPrefix="blog" />
 
   <HeroMini title="Emilio Devesa" />
 
@@ -27,5 +31,10 @@ const posts = allPosts.slice(0, PAGE_SIZE);
     <PostList posts={posts} currentPage={1} totalPages={totalPages} />
   </section>
 
-  <Footer />
+  <SiteFooter
+    links={[
+      { href: '/', label: 'Inicio' },
+      { href: '/blog', label: 'Blog' },
+    ]}
+  />
 </PrimaryLayout>

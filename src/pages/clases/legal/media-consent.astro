@@ -1,20 +1,34 @@
 ---
 import PrimaryLayout from '../../../layouts/PrimaryLayout.astro';
-import Header from '../../../components/lessons/Header.astro';
-import HeroMini from '../../../components/lessons/HeroMini.astro';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import HeroMini from '../../../components/HeroMini.astro';
 import MediaConsent from '../../../components/lessons/legal/MediaConsent.astro';
-import Footer from '../../../components/lessons/Footer.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+
+const navLinks = [
+  { href: '/clases/#lessons', label: 'Clases' },
+  { href: '/clases/#studio', label: 'Estudio' },
+  { href: '/clases/#conditions', label: 'Condiciones' },
+  { href: '/clases/#contact', label: 'Contacto' },
+];
+
+const footerLinks = [
+  { href: '/', label: 'Inicio' },
+  { href: '/clases/legal/privacy-policy', label: 'Política de privacidad y protección de datos' },
+  { href: '/clases/legal/media-consent', label: 'Política sobre uso de imagen' },
+];
 ---
 
 <PrimaryLayout
   title="Política sobre uso de imagen"
   description="Información sobre las clases presenciales de batería con Emilio Devesa."
+  robots="noindex, nofollow"
 >
-  <Header />
+  <SiteHeader links={navLinks} idPrefix="clases" />
 
-  <HeroMini />
+  <HeroMini title="Clases de Batería" />
 
   <MediaConsent />
 
-  <Footer />
+  <SiteFooter links={footerLinks} />
 </PrimaryLayout>

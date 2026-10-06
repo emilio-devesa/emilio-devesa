@@ -1,7 +1,6 @@
 /* Colores personalizados y tokens */
 :root {
   --primary: #2f90ff; /* Azul eléctrico */
-  --accent: #d9224e;  /* Alternativa roja Yamaha */
   --background: #0b0d13;
   --foreground: #ffffff;
   --muted: #aaa;
@@ -76,13 +75,6 @@ header {
   border-bottom: 1px solid #1b1f27;
 }
 
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
 .menu-toggle {
   background: none;
   border: none;
@@ -154,7 +146,7 @@ nav a:hover {
   background-color: var(--primary);
   color: #fff;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -163,18 +155,17 @@ nav a:hover {
   background-color: #1e6ed6;
 }
 
-/* Hero mini */
-.hero_mini {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(11,13,19,1)),
-              url('/images/hero_3a.jpeg') bottom/cover no-repeat;
-  color: white;
-  padding: 6rem 2rem;
+/* Hero mini (modificador de .hero) */
+.hero--mini {
+  background-position: bottom;
   height: 40vh;
-  text-align: left;
+}
+
+.prose-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
 }
 
 /* Secciones */
@@ -204,7 +195,7 @@ section .cta {
   background-color: var(--primary);
   color: #fff;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -245,7 +236,7 @@ section .cta:hover {
   width: 100%;
   max-width: 300px;
   height: auto;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
 }
 
 /* Qué Ofrezco - columnas */
@@ -258,10 +249,10 @@ section .cta:hover {
 
 .offer {
   flex: 1 1 30%;
-  background-color: #151821;
+  background-color: var(--surface);
   padding: 1.5rem;
-  border-radius: 0.5rem;
-  border: 1px solid #222;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
 }
 
 .offer h3 {
@@ -282,9 +273,9 @@ section .cta:hover {
   padding: 1rem;
   box-sizing: border-box;
   text-align: center;
-  background-color: #151821;
-  border: 1px solid #222;
-  border-radius: 0.5rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   opacity: 0;
   animation: slideShow 32s infinite;
   overflow-y: auto;
@@ -362,7 +353,7 @@ section .cta:hover {
   flex: 1 1 300px;
   max-width: 300px;
   height: auto;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   border: 2px solid #ccc;
 }
@@ -395,7 +386,7 @@ section .cta:hover {
   width: 100%;
   max-width: 240px;
   height: auto;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   object-fit: contain;
 }
 
@@ -551,7 +542,7 @@ footer a:hover {
   margin: 2rem 0;
   font-style: italic;
   color: #d1d5db;
-  background-color: #151821;
+  background-color: var(--surface);
 }
 
 .article-content ul,
@@ -589,10 +580,10 @@ footer a:hover {
   color: #e5e7eb;
   padding: 1rem;
   overflow-x: auto;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   font-size: 0.95rem;
   margin: 2rem 0;
-  border: 1px solid #222;
+  border: 1px solid var(--border);
 }
 
 .article-content pre code {
@@ -629,7 +620,7 @@ footer a:hover {
 }
 
 .article-content th {
-  background-color: #151821;
+  background-color: var(--surface);
   font-weight: 600;
   color: var(--foreground);
 }
@@ -678,8 +669,8 @@ footer a:hover {
 .pagination a,
 .pagination span {
   padding: 0.5rem 1rem;
-  border: 1px solid #222;
-  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   color: var(--foreground);
   text-decoration: none;
 }

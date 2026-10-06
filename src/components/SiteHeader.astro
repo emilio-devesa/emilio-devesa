@@ -7,47 +7,52 @@ interface NavLink {
 interface Props {
   links: NavLink[];
   ariaLabel?: string;
+  menuAriaLabel?: string;
+  idPrefix?: string;
 }
 
-const { links, ariaLabel = 'Navegación principal' } = Astro.props;
+const {
+  links,
+  ariaLabel = 'Navegación principal',
+  menuAriaLabel = 'Menú',
+  idPrefix = 'site',
+} = Astro.props;
+const toggleId = `${idPrefix}-menu-toggle`;
+const navId = `${idPrefix}-nav-links`;
 ---
 
 <header>
-  <a class="skip-link" href="#main-content">
-    Saltar al contenido
-  </a>
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
   <nav aria-label={ariaLabel}>
     <a href="/">Emilio Devesa</a>
   </nav>
 
-  <nav aria-label={ariaLabel}>
+  <nav aria-label={menuAriaLabel}>
     <button
       class="menu-toggle"
-      id="menu-toggle"
+      id={toggleId}
       aria-label="Abrir menú"
       aria-expanded="false"
-      aria-controls="nav-links"
-    >
-      ☰
-    </button>
+      aria-controls={navId}
+    >☰</button>
 
-    <div class="nav-links" id="nav-links">
-      {links.map((link) => (
-        <a href={link.href}>{link.label}</a>
-      ))}
+    <div class="nav-links" id={navId}>
+      {links.map((link) => <a href={link.href}>{link.label}</a>)}
     </div>
   </nav>
 
   <script is:inline>
     document.addEventListener('DOMContentLoaded', function () {
-      const toggle = document.getElementById('menu-toggle');
-      const nav = document.getElementById('nav-links');
-      if (!toggle || !nav) return;
-      toggle.addEventListener('click', () => {
-        const isOpen = nav.classList.toggle('menu-open');
-        toggle.textContent = isOpen ? '✕' : '☰';
-        toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
-        toggle.setAttribute('aria-expanded', String(isOpen));
+      document.querySelectorAll('header').forEach(function (header) {
+        const toggle = header.querySelector('.menu-toggle');
+        const nav = header.querySelector('.nav-links');
+        if (!toggle || !nav) return;
+        toggle.addEventListener('click', () => {
+          const isOpen = nav.classList.toggle('menu-open');
+          toggle.textContent = isOpen ? '✕' : '☰';
+          toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+          toggle.setAttribute('aria-expanded', String(isOpen));
+        });
       });
     });
   </script>

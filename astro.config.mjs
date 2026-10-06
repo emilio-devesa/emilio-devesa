@@ -9,9 +9,13 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      // El blog no debe indexarse (robots.txt + noindex).
-      // Lo excluimos también del sitemap.
-      filter: (page) => !page.includes('/blog'),
+      // Solo la home debe indexarse (robots.txt + noindex en el resto).
+      // Se excluye blog, clases, 404 y rss del sitemap.
+      filter: (page) =>
+        !page.includes('/blog') &&
+        !page.includes('/clases') &&
+        !page.includes('/404') &&
+        !page.includes('/rss'),
     }),
   ],
 });
