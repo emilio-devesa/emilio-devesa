@@ -1,5 +1,5 @@
 ---
-title: "Asphalt 8: Airborne"
+title: "Asphalt 8 Airborne"
 date: "2016-04-20"
 categories: 
   - "videojuegos"
