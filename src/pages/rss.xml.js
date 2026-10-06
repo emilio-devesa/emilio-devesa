@@ -5,26 +5,16 @@ import sanitizeHtml from 'sanitize-html';
 
 const parser = new MarkdownIt({ html: false, linkify: true });
 
-// Convierte el markdown del cuerpo a HTML saneado con URLs absolutas,
-// para publicarlo como content:encoded en el feed.
-function toFeedHtml(markdown, site, postDir) {
+// Convierte el markdown del cuerpo a HTML saneado, sin imágenes y con
+// URLs absolutas y normalizadas, para publicarlo como content:encoded.
+function toFeedHtml(markdown, postUrl) {
   const raw = parser.render(markdown ?? '');
   const withAbsUrls = raw.replace(
     /(src|href)="(?!https?:|mailto:|#|data:)([^"]+)"/g,
-    (_m, attr, url) => {
-      const abs = url.startsWith('/')
-        ? `${site}${url}`
-        : `${site}/blog/${postDir}/${url}`;
-      return `${attr}="${abs}"`;
-    },
+    (_m, attr, url) => `${attr}="${new URL(url, postUrl).href}"`,
   );
   return sanitizeHtml(withAbsUrls, {
-    allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
-    allowedAttributes: {
-      ...sanitizeHtml.defaults.allowedAttributes,
-      a: ['href', 'title'],
-      img: ['src', 'alt', 'title', 'width', 'height'],
-    },
+    allowedTags: sanitizeHtml.defaults.allowedTags.filter((tag) => tag !== 'img'),
   });
 }
 
@@ -35,7 +25,7 @@ function toExcerpt(markdown, max = 280) {
 }
 
 export async function GET(context) {
-  const site = context.site ?? 'https://emiliodevesa.com';
+  const site = String(context.site ?? 'https://emiliodevesa.com/').replace(/\/$/, '');
   const posts = (await getCollection('blog')).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
   );
@@ -44,15 +34,18 @@ export async function GET(context) {
     description: 'Artículos del blog de Emilio Devesa',
     site,
     items: posts.map((post) => {
-      const postDir = post.id.split('/').slice(0, -1).join('/');
+      // post.id conserva la forma NFD del nombre del fichero (p. ej. la
+      // ñ como n + tilde combinada); la ruta publicada usa NFC.
+      const slug = post.id.normalize('NFC');
+      const link = `/blog/${slug}/`;
       const excerpt = toExcerpt(post.body);
       return {
         title: post.data.title,
         pubDate: post.data.date,
         description: post.data.description ?? excerpt,
-        link: `/blog/${post.id}/`,
+        link,
         categories: post.data.categories ?? [],
-        content: toFeedHtml(post.body, site, postDir),
+        content: toFeedHtml(post.body, new URL(link, `${site}/`).href),
       };
     }),
   });
