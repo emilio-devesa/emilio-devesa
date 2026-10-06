@@ -1,5 +1,11 @@
-<section class="hero_mini">
-  <h2>
-    Emilio Devesa
-  </h2>
-</section>
+---
+import HeroMini from '../HeroMini.astro';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Emilio Devesa' } = Astro.props;
+---
+
+<HeroMini title={title} />

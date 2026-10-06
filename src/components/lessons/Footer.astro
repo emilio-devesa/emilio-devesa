@@ -1,6 +1,11 @@
-<footer>
-    <nav>
-        <a href="/">Inicio</a> | <a href="/clases/legal/privacy-policy">Política de privacidad y protección de datos</a> | <a href="/clases/legal/media-consent">Política sobre uso de imagen</a>
-    </nav>
-    <p>©{new Date().getFullYear()} Emilio Devesa.</p>
-</footer>
+---
+import SiteFooter from '../SiteFooter.astro';
+---
+
+<SiteFooter
+  links={[
+    { href: '/', label: 'Inicio' },
+    { href: '/clases/legal/privacy-policy', label: 'Política de privacidad y protección de datos' },
+    { href: '/clases/legal/media-consent', label: 'Política sobre uso de imagen' },
+  ]}
+/>

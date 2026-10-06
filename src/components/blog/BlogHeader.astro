@@ -1,16 +1,10 @@
 ---
+import SiteHeader from '../SiteHeader.astro';
+
 const navLinks = [
-  { href: "/blog", label: "Blog" },
-  { href: "https://github.com/emilio-devesa", label: "GitHub" }
+  { href: '/blog', label: 'Blog' },
+  { href: 'https://github.com/emilio-devesa', label: 'GitHub' },
 ];
 ---
-<header>
-  <nav>
-    <a href="/">Emilio Devesa</a>
-  </nav>
-  <nav>
-    {navLinks.map(link => (
-      <a href={link.href}>{link.label}</a>
-    ))}
-  </nav>
-</header>
+
+<SiteHeader links={navLinks} ariaLabel="Navegación del blog" />

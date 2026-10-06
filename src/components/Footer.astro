@@ -1,6 +1,10 @@
-<footer>
-    <nav>
-        <a href="/">Inicio</a> | <a href="/blog">Blog</a>
-    </nav>
-    <p>©{new Date().getFullYear()} Emilio Devesa.</p>
-</footer>
+---
+import SiteFooter from './SiteFooter.astro';
+---
+
+<SiteFooter
+  links={[
+    { href: '/', label: 'Inicio' },
+    { href: '/blog', label: 'Blog' },
+  ]}
+/>

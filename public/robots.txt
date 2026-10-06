@@ -1,0 +1,75 @@
+# robots.txt — emiliodevesa.com
+# Objetivo: solo la página principal (https://emiliodevesa.com/)
+# debe ser indexada. Los artículos del blog (/blog/) quedan
+# bloqueados para buscadores y servicios de IA.
+# Nota: Disallow impide el rastreo/indexación, pero NO bloquea
+# el acceso directo (los ficheros de /files/ siguen descargables).
+
+User-agent: *
+Allow: /$
+Disallow: /blog
+Disallow: /blog/
+Disallow: /
+
+# Servicios de IA / scrapers — bloqueo explícito del blog (y del resto, salvo la home)
+User-agent: GPTBot
+Allow: /$
+Disallow: /
+
+User-agent: ChatGPT-User
+Allow: /$
+Disallow: /
+
+User-agent: CCBot
+Allow: /$
+Disallow: /
+
+User-agent: anthropic-ai
+Allow: /$
+Disallow: /
+
+User-agent: ClaudeBot
+Allow: /$
+Disallow: /
+
+User-agent: Claude-Web
+Allow: /$
+Disallow: /
+
+User-agent: Cohere-ai
+Allow: /$
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /$
+Disallow: /
+
+User-agent: Applebot-Extended
+Allow: /$
+Disallow: /
+
+User-agent: Bytespider
+Allow: /$
+Disallow: /
+
+User-agent: PerplexityBot
+Allow: /$
+Disallow: /
+
+User-agent: YouBot
+Allow: /$
+Disallow: /
+
+User-agent: DeepSeekBot
+Allow: /$
+Disallow: /
+
+User-agent: Grok
+Allow: /$
+Disallow: /
+
+User-agent: Amazonbot
+Allow: /$
+Disallow: /
+
+Sitemap: https://emiliodevesa.com/sitemap-index.xml

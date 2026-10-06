@@ -1,0 +1,29 @@
+---
+interface FooterLink {
+  href: string;
+  label: string;
+}
+
+interface Props {
+  links?: FooterLink[];
+}
+
+const {
+  links = [
+    { href: '/', label: 'Inicio' },
+    { href: '/blog', label: 'Blog' },
+  ],
+} = Astro.props;
+---
+
+<footer>
+  <nav aria-label="Navegación de pie de página">
+    {links.map((link, i) => (
+      <>
+        {i > 0 && <span aria-hidden="true"> | </span>}
+        <a href={link.href}>{link.label}</a>
+      </>
+    ))}
+  </nav>
+  <p>©{new Date().getFullYear()} Emilio Devesa.</p>
+</footer>

@@ -1,27 +1,60 @@
 ---
 import '../style.css';
-const { title } = Astro.props;
+
+interface Props {
+  title?: string;
+  description?: string;
+  robots?: string;
+}
+
+const {
+  title,
+  description = 'Emilio Devesa - Yamaha Music Education System Key Teacher',
+  robots = 'index, follow',
+} = Astro.props;
 const siteTitle = 'Emilio Devesa';
 const pageTitle = title ? `${title} - ${siteTitle}` : siteTitle;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://emiliodevesa.com').toString();
+const ogImage = new URL(
+  '/images/hero_3a.jpeg',
+  Astro.site ?? 'https://emiliodevesa.com',
+).toString();
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-    <head>
-        <title>{pageTitle}</title>
-        <meta name="description" content="Emilio Devesa - Yamaha Music Education System Key Teacher">
-        <meta name="keywords" content="Emilio Devesa @emiliodevesadrums Drums Bateria">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-        <link rel="manifest" href="/favicon/site.webmanifest">
-        <meta name="msapplication-TileColor" content="#2b5797">
-        <meta name="theme-color" content="#ffffff">
-        <meta charset="utf-8">
-    </head>
-    <body>
-
-        <slot />
-
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteTitle} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#0b0d13" />
+    <meta name="theme-color" content="#0b0d13" />
+  </head>
+  <body>
+    <main id="main-content">
+      <slot />
+    </main>
+  </body>
 </html>

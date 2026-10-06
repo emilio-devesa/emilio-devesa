@@ -1,5 +1,11 @@
-<section class="hero_mini">
-  <h2>
-    Clases de Batería
-  </h2>
-</section>
+---
+import HeroMini from '../HeroMini.astro';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Clases de Batería' } = Astro.props;
+---
+
+<HeroMini title={title} />

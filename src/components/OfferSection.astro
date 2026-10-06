@@ -1,48 +1,53 @@
 ---
 const offers = [
   {
-    title: "🎯 Clases personalizadas para todos los niveles",
-    description: "Desde principiante hasta avanzado: desarrollarás tu técnica, sonido, lenguaje y repertorio."
+    title: '🎯 Clases personalizadas para todos los niveles',
+    description:
+      'Desde principiante hasta avanzado: desarrollarás tu técnica, sonido, lenguaje y repertorio.',
   },
   {
-    title: "🔥 Formación moderna, práctica y enfocada a resultados",
-    description: "Un enfoque individual, adaptado a tus objetivos, a tu forma de entender la música y a tu ritmo de aprendizaje."
+    title: '🔥 Formación moderna, práctica y enfocada a resultados',
+    description:
+      'Un enfoque individual, adaptado a tus objetivos, a tu forma de entender la música y a tu ritmo de aprendizaje.',
   },
   {
-    title: "🎵 Metodología Yamaha y materiales progresivos",
-    description: "Te guiaré en todo momento para que puedas alcanzar tus metas musicales más ambiciosas."
-  }
+    title: '🎵 Metodología Yamaha y materiales progresivos',
+    description:
+      'Te guiaré en todo momento para que puedas alcanzar tus metas musicales más ambiciosas.',
+  },
 ];
 const cta = [
   {
-    text: "Más información",
-    url: "clases/"
+    text: 'Más información',
+    url: 'clases/',
   },
   {
-    text: "¿Listo para empezar?",
-    url: "#contact"
-  }
+    text: '¿Listo para empezar?',
+    url: '#contact',
+  },
 ];
 ---
 
 <section id="clases">
   <h2>🚀 Clases de Batería</h2>
   <div class="offers">
-    {offers.map(offer => (
+    {offers.map((offer) => (
       <div class="offer">
         <h3>{offer.title}</h3>
         <p>{offer.description}</p>
       </div>
     ))}
-  </div>    
-  
-  <section>
-    <p>
-      <ul style="display: flex; flex-wrap: wrap; gap: 1rem; padding-left: 0; list-style: none;">
-        {cta.map((button, index) => (
-          <li><a class="cta" href={button.url}>{button.text}</a></li>
-        ))}
-      </ul>
-    </p>
-  </section>
+  </div>
+
+  <div class="cta-row">
+    <ul>
+      {cta.map((button) => (
+        <li>
+          <a class="cta" href={button.url}>
+            {button.text}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
 </section>

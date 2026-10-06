@@ -1,13 +1,19 @@
 ---
-import PrimaryLayout from "../layouts/PrimaryLayout.astro";
+import PrimaryLayout from '../layouts/PrimaryLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<PrimaryLayout title="404 No Encontrada">
+<PrimaryLayout title="404 No Encontrada" robots="noindex, nofollow">
+  <Header />
 
-    <section class="hero">
-        <h3>Página no encontrada</h3>
-        <p>Lo sentimos, la página que estás buscando no existe.</p>
-        <p>Por favor, verifica la URL o vuelve a la <a href="/">página principal</a>.</p>
-    </section>
-    
+  <section class="hero">
+    <h1>Página no encontrada</h1>
+    <p>Lo sentimos, la página que estás buscando no existe.</p>
+    <p>
+      Por favor, verifica la URL o vuelve a la <a href="/">página principal</a>.
+    </p>
+  </section>
+
+  <Footer />
 </PrimaryLayout>
