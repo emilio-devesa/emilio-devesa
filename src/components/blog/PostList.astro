@@ -7,11 +7,10 @@ interface Props {
   posts: CollectionEntry<'blog'>[];
   currentPage: number;
   totalPages: number;
+  pageUrl?: (page: number) => string;
 }
 
-const { posts, currentPage, totalPages } = Astro.props;
-
-const pageUrl = blogPageUrl;
+const { posts, currentPage, totalPages, pageUrl = blogPageUrl } = Astro.props;
 ---
 
 <ul class="post-list">

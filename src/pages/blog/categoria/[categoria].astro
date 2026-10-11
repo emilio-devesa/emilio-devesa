@@ -1,0 +1,63 @@
+---
+import PrimaryLayout from '../../../layouts/PrimaryLayout.astro';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import HeroMini from '../../../components/HeroMini.astro';
+import CategoryNav from '../../../components/blog/CategoryNav.astro';
+import PostList from '../../../components/blog/PostList.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+
+import { getCollection } from 'astro:content';
+import { BLOG_CATEGORIES, BLOG_PAGE_SIZE, blogCategoryUrl } from '../../../lib/blog';
+
+const navLinks = [
+  { href: '/blog', label: 'Blog' },
+  { href: 'https://github.com/emilio-devesa', label: 'GitHub' },
+];
+
+export async function getStaticPaths() {
+  const allPosts = (await getCollection('blog')).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  );
+  // Una página 1 por cada categoría del filtro
+  return BLOG_CATEGORIES.map((cat) => {
+    const posts = allPosts.filter((post) =>
+      (post.data.categories ?? []).some((c) => cat.match.includes(c)),
+    );
+    const totalPages = Math.max(1, Math.ceil(posts.length / BLOG_PAGE_SIZE));
+    return {
+      params: { categoria: cat.slug },
+      props: {
+        cat,
+        posts: posts.slice(0, BLOG_PAGE_SIZE),
+        totalPages,
+      },
+    };
+  });
+}
+
+const { cat, posts, totalPages } = Astro.props;
+---
+
+<PrimaryLayout title={`Blog – ${cat.label}`} robots="noindex, nofollow">
+  <SiteHeader links={navLinks} ariaLabel="Navegación del blog" idPrefix="blog" />
+
+  <HeroMini title="Emilio Devesa" />
+
+  <section id="posts">
+    <h2>Entradas: {cat.label}</h2>
+    <CategoryNav active={cat.slug} />
+    <PostList
+      posts={posts}
+      currentPage={1}
+      totalPages={totalPages}
+      pageUrl={(page) => blogCategoryUrl(cat.slug, page)}
+    />
+  </section>
+
+  <SiteFooter
+    links={[
+      { href: '/', label: 'Inicio' },
+      { href: '/blog', label: 'Blog' },
+    ]}
+  />
+</PrimaryLayout>

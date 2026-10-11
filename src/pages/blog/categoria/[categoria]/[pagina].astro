@@ -1,0 +1,68 @@
+---
+import PrimaryLayout from '../../../../layouts/PrimaryLayout.astro';
+import SiteHeader from '../../../../components/SiteHeader.astro';
+import HeroMini from '../../../../components/HeroMini.astro';
+import CategoryNav from '../../../../components/blog/CategoryNav.astro';
+import PostList from '../../../../components/blog/PostList.astro';
+import SiteFooter from '../../../../components/SiteFooter.astro';
+
+import { getCollection } from 'astro:content';
+import { BLOG_CATEGORIES, BLOG_PAGE_SIZE, blogCategoryUrl } from '../../../../lib/blog';
+
+const navLinks = [
+  { href: '/blog', label: 'Blog' },
+  { href: 'https://github.com/emilio-devesa', label: 'GitHub' },
+];
+
+export async function getStaticPaths() {
+  const allPosts = (await getCollection('blog')).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  );
+  // La página 1 de cada categoría vive en /blog/categoria/<slug>/;
+  // aquí generamos las páginas 2..N de las que las necesiten.
+  return BLOG_CATEGORIES.flatMap((cat) => {
+    const filtered = allPosts.filter((post) =>
+      (post.data.categories ?? []).some((c) => cat.match.includes(c)),
+    );
+    const totalPages = Math.ceil(filtered.length / BLOG_PAGE_SIZE);
+    return Array.from({ length: Math.max(0, totalPages - 1) }, (_, i) => {
+      const page = i + 2;
+      return {
+        params: { categoria: cat.slug, pagina: String(page) },
+        props: {
+          cat,
+          posts: filtered.slice((page - 1) * BLOG_PAGE_SIZE, page * BLOG_PAGE_SIZE),
+          currentPage: page,
+          totalPages,
+        },
+      };
+    });
+  });
+}
+
+const { cat, posts, currentPage, totalPages } = Astro.props;
+---
+
+<PrimaryLayout title={`Blog – ${cat.label} – Página ${currentPage}`} robots="noindex, nofollow">
+  <SiteHeader links={navLinks} ariaLabel="Navegación del blog" idPrefix="blog" />
+
+  <HeroMini title="Emilio Devesa" />
+
+  <section id="posts">
+    <h2>Entradas: {cat.label}</h2>
+    <CategoryNav active={cat.slug} />
+    <PostList
+      posts={posts}
+      currentPage={currentPage}
+      totalPages={totalPages}
+      pageUrl={(page) => blogCategoryUrl(cat.slug, page)}
+    />
+  </section>
+
+  <SiteFooter
+    links={[
+      { href: '/', label: 'Inicio' },
+      { href: '/blog', label: 'Blog' },
+    ]}
+  />
+</PrimaryLayout>

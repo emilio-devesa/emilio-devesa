@@ -2,6 +2,7 @@
 import PrimaryLayout from '../../../layouts/PrimaryLayout.astro';
 import SiteHeader from '../../../components/SiteHeader.astro';
 import HeroMini from '../../../components/HeroMini.astro';
+import CategoryNav from '../../../components/blog/CategoryNav.astro';
 import PostList from '../../../components/blog/PostList.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
 
@@ -39,6 +40,7 @@ const { posts, currentPage, totalPages } = Astro.props;
 
   <section id="posts">
     <h2>Entradas</h2>
+    <CategoryNav active="todo" />
     <PostList posts={posts} currentPage={currentPage} totalPages={totalPages} />
   </section>
 
