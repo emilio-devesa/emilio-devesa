@@ -1,21 +1,68 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import PostLayout from '../../layouts/PostLayout.astro';
-import { render } from 'astro:content';
+import { blogPostUrl, postCategoryLabel, postCategorySlug, readingMinutes } from '../../lib/blog';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: post,
-  }));
+  const posts = (await getCollection('blog')).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  );
+  // Enlaces anterior/siguiente en orden cronológico inverso (el blog
+  // lista primero lo más reciente) y hasta 3 relacionados de la misma
+  // categoría, rellenando con los más recientes si hacen falta.
+  return await Promise.all(
+    posts.map(async (post, i) => {
+      const prev = posts[i - 1];
+      const next = posts[i + 1];
+      const label = postCategoryLabel(post.data.categories);
+      const sameCat = posts.filter(
+        (p) => p.id !== post.id && postCategoryLabel(p.data.categories) === label,
+      );
+      const fill = posts.filter((p) => p.id !== post.id && !sameCat.includes(p));
+      const related = [...sameCat, ...fill].slice(0, 3);
+      return {
+        params: { slug: post.id },
+        props: {
+          post,
+          minutes: readingMinutes(post.body),
+          categoryLabel: label,
+          categorySlug: postCategorySlug(post.data.categories),
+          prev: prev
+            ? { title: prev.data.title, url: blogPostUrl(prev.id) }
+            : undefined,
+          next: next
+            ? { title: next.data.title, url: blogPostUrl(next.id) }
+            : undefined,
+          related: related.map((p) => ({ title: p.data.title, url: blogPostUrl(p.id) })),
+        },
+      };
+    }),
+  );
 }
-type Props = CollectionEntry<'blog'>;
 
-const post = Astro.props;
+interface Props {
+  post: CollectionEntry<'blog'>;
+  minutes: number;
+  categoryLabel: string;
+  categorySlug: string;
+  prev?: { title: string; url: string };
+  next?: { title: string; url: string };
+  related: { title: string; url: string }[];
+}
+
+const { post, minutes, categoryLabel, categorySlug, prev, next, related } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<PostLayout {...post.data}>
+<PostLayout
+  {...post.data}
+  minutes={minutes}
+  categoryLabel={categoryLabel}
+  categorySlug={categorySlug}
+  prev={prev}
+  next={next}
+  related={related}
+>
   <Content />
 </PostLayout>

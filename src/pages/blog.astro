@@ -30,7 +30,7 @@ const posts = allPosts.slice(0, BLOG_PAGE_SIZE);
   <section id="posts">
     <h2>Entradas</h2>
     <CategoryNav active="todo" />
-    <PostList posts={posts} currentPage={1} totalPages={totalPages} />
+    <PostList posts={posts} currentPage={1} totalPages={totalPages} showCategory />
   </section>
 
   <SiteFooter

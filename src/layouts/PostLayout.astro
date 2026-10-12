@@ -6,9 +6,21 @@ import SiteHeader from '../components/SiteHeader.astro';
 import HeroMini from '../components/HeroMini.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
-type Props = CollectionEntry<'blog'>['data'];
+interface PostLink {
+  title: string;
+  url: string;
+}
 
-const { title, date } = Astro.props;
+type Props = CollectionEntry<'blog'>['data'] & {
+  minutes: number;
+  categoryLabel: string;
+  categorySlug: string;
+  prev?: PostLink;
+  next?: PostLink;
+  related: PostLink[];
+};
+
+const { title, date, minutes, categoryLabel, categorySlug, prev, next, related } = Astro.props;
 
 const navLinks = [
   { href: '/blog', label: 'Blog' },
@@ -22,12 +34,46 @@ const navLinks = [
   <HeroMini title="Emilio Devesa" />
 
   <section id="article-content">
-    <div class="article-content max-w-2xl w-full px-4">
+    <div class="article-content">
       <h2>{title}</h2>
-      <p>
-        <FormattedDate date={date} />
+      <p class="article-meta">
+        <a href="/blog/">← Volver al índice</a> ·{' '}
+        <a href={`/blog/categoria/${categorySlug}/`}>{categoryLabel}</a> ·{' '}
+        <FormattedDate date={date} /> · {minutes} min de lectura
       </p>
       <slot />
+
+      <nav class="post-nav" aria-label="Navegación entre artículos">
+        <ul>
+          {prev && (
+            <li>
+              ← Anterior
+              <br />
+              <a href={prev.url}>{prev.title}</a>
+            </li>
+          )}
+          {next && (
+            <li>
+              Siguiente →
+              <br />
+              <a href={next.url}>{next.title}</a>
+            </li>
+          )}
+        </ul>
+      </nav>
+
+      {related.length > 0 && (
+        <section class="post-related">
+          <h3>Relacionados</h3>
+          <ul>
+            {related.map((p) => (
+              <li>
+                <a href={p.url}>{p.title}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </div>
   </section>
 

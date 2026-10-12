@@ -41,7 +41,7 @@ const { posts, currentPage, totalPages } = Astro.props;
   <section id="posts">
     <h2>Entradas</h2>
     <CategoryNav active="todo" />
-    <PostList posts={posts} currentPage={currentPage} totalPages={totalPages} />
+    <PostList posts={posts} currentPage={currentPage} totalPages={totalPages} showCategory />
   </section>
 
   <SiteFooter

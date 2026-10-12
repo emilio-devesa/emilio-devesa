@@ -1,25 +1,34 @@
 ---
 import FormattedDate from '../FormattedDate.astro';
 import type { CollectionEntry } from 'astro:content';
-import { blogPageUrl, blogPostUrl } from '../../lib/blog';
+import { blogPageUrl, blogPostUrl, postCategoryLabel, readingMinutes } from '../../lib/blog';
 
 interface Props {
   posts: CollectionEntry<'blog'>[];
   currentPage: number;
   totalPages: number;
   pageUrl?: (page: number) => string;
+  showCategory?: boolean;
 }
 
-const { posts, currentPage, totalPages, pageUrl = blogPageUrl } = Astro.props;
+const { posts, currentPage, totalPages, pageUrl = blogPageUrl, showCategory = false } =
+  Astro.props;
 ---
 
 <ul class="post-list">
-  {posts.map((post) => (
-    <li>
-      <FormattedDate date={post.data.date} />
-      <a href={blogPostUrl(post.id)}>{post.data.title}</a>
-    </li>
-  ))}
+  {posts.map((post) => {
+    const minutes = readingMinutes(post.body);
+    const detail = showCategory
+      ? `${postCategoryLabel(post.data.categories)} · ${minutes} min`
+      : `${minutes} min`;
+    return (
+      <li>
+        <FormattedDate date={post.data.date} />
+        <a href={blogPostUrl(post.id)}>{post.data.title}</a>
+        <span class="post-cat">{detail}</span>
+      </li>
+    );
+  })}
 </ul>
 
 {totalPages > 1 && (
