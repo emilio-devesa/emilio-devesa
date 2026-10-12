@@ -1,6 +1,7 @@
 ---
 title: "Asphalt 8 Airborne"
 date: "2016-04-20"
+description: "Gira el móvil, pisa el nitro y salta por los aires: arcade gratuito sin complicaciones donde lo único que importa es la espectacularidad. Diversión inmediata en tu bolsillo."
 categories: 
   - "videojuegos"
 ---

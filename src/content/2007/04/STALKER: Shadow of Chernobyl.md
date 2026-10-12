@@ -1,6 +1,7 @@
 ---
 title: "STALKER: Shadow of Chernobyl"
 date: "2007-04-30"
+description: "La Zona te espera: mundo abierto entre ruinas radiactivas, anomalías imposibles y stalkers que luchan por sobrevivir. Adéntrate en Chernóbil si te atreves."
 categories: 
   - "videojuegos"
 ---

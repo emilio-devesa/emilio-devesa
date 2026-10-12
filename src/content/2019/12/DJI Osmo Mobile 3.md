@@ -1,6 +1,7 @@
 ---
 title: "DJI Osmo Mobile 3"
 date: "2019-12-14"
+description: "Este gimbal es el accesorio que necesitas si quieres que los videos de tu móvil salten al siguiente nivel. Estabilización de tres ejes, una buena batería, plegable y muy versátil. Lo he puesto a prueba en un viaje a París."
 categories: 
   - "hardware"
 ---

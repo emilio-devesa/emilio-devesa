@@ -1,6 +1,7 @@
 ---
 title: "The House of the Dead 3"
 date: "2005-03-20"
+description: "La saga arcade de Sega en PC: solo tu escopeta recortada contra zombis, mutantes y jefes descomunales, con gráficos remozados y diversión directa sin miramientos."
 categories: 
   - "videojuegos"
 ---

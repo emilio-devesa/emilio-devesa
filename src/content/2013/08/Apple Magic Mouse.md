@@ -1,6 +1,7 @@
 ---
 title: "Apple Magic Mouse"
 date: "2013-08-07"
+description: "Tras el teclado, el ratón: superficie táctil con gestos, cuerpo alargado y adiós a la ruedecilla que no hacía clic. ¿El complemento perfecto para un escritorio sin cables?"
 categories: 
   - "hardware"
 ---

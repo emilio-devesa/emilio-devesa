@@ -1,6 +1,7 @@
 ---
 title: "HIFIMAN Sundara"
 date: "2023-01-02"
+description: "Driver planar, cable desmontable y perfil neutro para trabajar el audio: por qué un Sundara con cable supera a cualquier flagship inalámbrico a la hora de mezclar."
 categories: 
   - "hardware"
 ---

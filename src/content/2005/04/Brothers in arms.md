@@ -1,6 +1,7 @@
 ---
 title: "Brothers in Arms"
 date: "2005-04-01"
+description: "Olvida disparar a lo loco: aquí eres el sargento Baker y tus hombres solo sobreviven si piensas como Aníbal. ¿Serías capaz de tomar esa colina sin perder a nadie?"
 categories: 
   - "videojuegos"
 ---

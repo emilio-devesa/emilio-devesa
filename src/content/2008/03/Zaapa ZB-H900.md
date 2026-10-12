@@ -1,6 +1,7 @@
 ---
 title: "Zaapa ZB-H900"
 date: "2008-03-20"
+description: "Auriculares Bluetooth antes de que el Bluetooth molara: ligeros, sin cables y perfectos como manos libres, aunque el sonido te recordará por qué eran baratos."
 categories: 
   - "hardware"
 ---

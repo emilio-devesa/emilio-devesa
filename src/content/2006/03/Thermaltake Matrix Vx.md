@@ -1,6 +1,7 @@
 ---
 title: "Thermaltake Matrix Vx"
 date: "2006-03-29"
+description: "¿La futura reina de las torres midi? Aluminio ligero, frontal poroso que respira, montaje sin un solo tornillo y dos ventiladores de 12 cm rugiendo en silencio."
 categories: 
   - "hardware"
 ---

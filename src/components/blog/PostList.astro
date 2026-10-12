@@ -1,6 +1,8 @@
 ---
 import FormattedDate from '../FormattedDate.astro';
 import type { CollectionEntry } from 'astro:content';
+import type { ImageMetadata } from 'astro';
+import { getImage } from 'astro:assets';
 import { blogPageUrl, blogPostUrl, postCategoryLabel, readingMinutes } from '../../lib/blog';
 
 interface Props {
@@ -13,19 +15,79 @@ interface Props {
 
 const { posts, currentPage, totalPages, pageUrl = blogPageUrl, showCategory = false } =
   Astro.props;
+
+// Miniaturas: primera imagen del cuerpo, optimizada en build (320px webp).
+// Sin imagen o con error -> la fila sale sin miniatura.
+const imageModules = import.meta.glob<{ default: ImageMetadata }>(
+  '../../content/**/*.{jpg,jpeg,png,gif,webp}',
+);
+
+function firstImage(body: string | undefined): string | undefined {
+  const match = /!\[[^\]]*\]\(([^)]+)\)/.exec(body ?? '');
+  const rel = match?.[1].split('#')[0].trim();
+  return rel && !/^(https?:|data:)/i.test(rel) ? rel : undefined;
+}
+
+interface Thumb {
+  src: string;
+  width: number;
+  height: number;
+}
+
+const thumbs: (Thumb | undefined)[] = await Promise.all(
+  posts.map(async (post) => {
+    const rel = firstImage(post.body);
+    if (!rel) return undefined;
+    const dir = (post.filePath ?? '').replace(/^src\//, '').split('/').slice(0, -1).join('/');
+    const key = `../../${dir}/${rel}`;
+    const load = imageModules[key];
+    if (!load) return undefined;
+    try {
+      const mod = await load();
+      const img = await getImage({
+        src: mod.default,
+        width: 320,
+        height: 240,
+        fit: 'cover',
+        format: 'webp',
+      });
+      return { src: img.src, width: img.attributes.width, height: img.attributes.height };
+    } catch {
+      return undefined;
+    }
+  }),
+);
 ---
 
 <ul class="post-list">
-  {posts.map((post) => {
+  {posts.map((post, i) => {
     const minutes = readingMinutes(post.body);
-    const detail = showCategory
-      ? `${postCategoryLabel(post.data.categories)} · ${minutes} min`
-      : `${minutes} min`;
+    const url = blogPostUrl(post.id);
+    const thumb = thumbs[i];
     return (
-      <li>
-        <FormattedDate date={post.data.date} />
-        <a href={blogPostUrl(post.id)}>{post.data.title}</a>
-        <span class="post-cat">{detail}</span>
+      <li class="post-item">
+        {thumb ? (
+          <a class="post-thumb" href={url} tabindex={-1} aria-hidden="true">
+            <img
+              src={thumb.src}
+              width={thumb.width}
+              height={thumb.height}
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+        ) : (
+          <span class="post-thumb post-thumb--empty" aria-hidden="true" />
+        )}
+        <div class="post-text">
+          <a href={url}>{post.data.title}</a>{' '}
+          <span class="post-cat">
+            {showCategory && <>{postCategoryLabel(post.data.categories)} · </>}
+            <FormattedDate date={post.data.date} /> · {minutes} min
+          </span>
+          {post.data.description && <span class="post-excerpt">{post.data.description}</span>}
+        </div>
       </li>
     );
   })}

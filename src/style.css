@@ -645,25 +645,74 @@ footer a:hover {
   gap: 0;
 }
 
-.post-list li {
+.post-list .post-item {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: baseline;
-  padding: 0.2rem 0;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 0.5rem 0;
   line-height: 1.3;
+}
+
+.post-thumb {
+  flex: 0 0 112px;
+  width: 112px;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+a.post-thumb:hover,
+a.post-thumb:focus-visible {
+  border-color: var(--primary);
+  box-shadow: 0 4px 16px rgba(47, 144, 255, 0.35);
+}
+
+a.post-thumb:hover img,
+a.post-thumb:focus-visible img {
+  transform: scale(1.07);
+}
+
+.post-thumb--empty {
+  background-color: var(--surface);
+}
+
+.post-text {
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .post-list time {
   color: var(--muted);
-  font-size: 0.85rem;
-  min-width: 6rem;
 }
 
 .post-list .post-cat {
   font-size: 0.8rem;
   color: var(--muted);
   white-space: nowrap;
+}
+
+.post-list .post-excerpt {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+@media (max-width: 768px) {
+  .post-thumb {
+    flex-basis: 88px;
+    width: 88px;
+  }
 }
 
 
@@ -692,7 +741,12 @@ footer a:hover {
 .post-related {
   margin-top: 2rem;
   padding: 0;
-  font-size: 0.9rem;
+}
+
+.article-content .post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .post-related h3 {

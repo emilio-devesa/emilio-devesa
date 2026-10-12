@@ -1,6 +1,7 @@
 ---
 title: "Tomb Raider Legend"
 date: "2011-06-17"
+description: "Tras el fiasco del Ángel de la Oscuridad, Crystal Dynamics devuelve a Lara a la aventura: de Perú a Nepal tras el misterio de su madre. El renacer de la saga."
 categories: 
   - "videojuegos"
 ---

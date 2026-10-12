@@ -1,6 +1,7 @@
 ---
 title: "Conceptronic C05-503"
 date: "2013-01-26"
+description: "Este dock USB para discos duros será el dispositivo que necesitas para rescatar datos, clonar discos y dar una segunda vida a tus discos sin abrir el PC."
 categories: 
   - "hardware"
 ---

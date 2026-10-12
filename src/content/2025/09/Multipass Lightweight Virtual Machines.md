@@ -1,6 +1,7 @@
 ---
 title: "Multipass: Lightweight Virtual Machines"
 date: "2025-09-19"
+description: "Need a disposable Ubuntu in seconds? Stop dual-booting for experiments: tiny VMs with your home folder mounted inside. Launch it, break it, purge it and start again. Your fearless test lab with a handful of commands on Mac, Windows or Linux."
 categories: 
   - "software"
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Acer P241W"
 date: "2009-06-12"
+description: "A fondo con este monitor de 24 pulgadas y formato 16:10, genial para jugar, trabajar y consumir contenidos. La review completa, con pruebas y veredicto."
 categories: 
   - "hardware"
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Moxpad X9"
 date: "2019-08-23"
+description: "Tres años después los X6 dijeron basta: llegan los hermanos mayores con doble driver por 14 €. ¿Repiten la hazaña calidad-precio?"
 categories: 
   - "hardware"
 ---

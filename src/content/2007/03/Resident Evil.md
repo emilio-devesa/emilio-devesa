@@ -1,6 +1,7 @@
 ---
 title: "Resident Evil"
 date: "2007-03-01"
+description: "Volver a la mansión de 1997: Jill o Chris, un virus descontrolado y una atmósfera que se mide en pulsaciones por minuto. ¿Cuántas veces encenderás la luz?"
 categories: 
   - "videojuegos"
 ---

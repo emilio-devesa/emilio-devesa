@@ -1,6 +1,7 @@
 ---
 title: "Ironman"
 date: "2008-05-06"
+description: "Ponte la armadura: escapa de la cueva, planta cara a Stark y reparte justicia con tus repulsores. El juego de la película que convierte una licencia quemada en diversión directa."
 categories: 
   - "videojuegos"
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Moxpad X6"
 date: "2016-08-13"
+description: "¿Unos in-ear de 26 € que miran de tú a tú a unos Shure de 100? Cable con micro, graves generosos y el miedo a romperlos cada día. El caramelo chino al que no pude resistirme."
 categories: 
   - "hardware"
 ---

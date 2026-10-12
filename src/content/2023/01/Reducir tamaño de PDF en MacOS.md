@@ -1,6 +1,7 @@
 ---
 title: "Reducir tamaño de PDF en MacOS"
 date: "2023-01-01"
+description: "De 1,2 GB a 100 MB sin instalar nada: un filtro personalizado de ColorSync que adelgaza tus escaneos. Con pruebas reales y porcentajes que asustan."
 categories: 
   - "software"
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Examen de Programación ETIX Septiembre 2010"
 date: "2010-09-12"
+description: "Un repaso a la prueba que nos pusieron en el examen de Programación 1, con una explicación clara y fácil de seguir para obtener la solución óptima."
 categories: 
   - "software"
 ---

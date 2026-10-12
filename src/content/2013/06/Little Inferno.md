@@ -1,6 +1,7 @@
 ---
 title: "Little Inferno"
 date: "2013-06-14"
+description: "No es un juego, es una chimenea: quema cartas, juguetes y bichos mientras nieva ahí fuera, combina objetos y descubre qué se esconde tras el humo. El indie más hipnótico, raro e hilarante."
 categories: 
   - "videojuegos"
 ---

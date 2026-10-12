@@ -1,6 +1,7 @@
 ---
 title: "Asus Eee PC 901"
 date: "2008-10-29"
+description: "¿Para qué quieres un portátil grande? 20 GB, 1 GB de RAM y arranque fulgurante por 380 €. El Eee PC 901, la revolución diminuta de 2008."
 categories: 
   - "hardware"
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Toca Race Driver 2"
 date: "2004-05-10"
+description: "De piloto novato sin dinero a protagonista de un reality: turismos, NASCAR, camiones y Fórmula Ford con una historia que evoluciona dentro y fuera de la pista según tu deportividad."
 categories: 
   - "videojuegos"
 ---

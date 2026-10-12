@@ -4,6 +4,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 import PrimaryLayout from './PrimaryLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import HeroMini from '../components/HeroMini.astro';
+import PostList from '../components/blog/PostList.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
 interface PostLink {
@@ -17,7 +18,7 @@ type Props = CollectionEntry<'blog'>['data'] & {
   categorySlug: string;
   prev?: PostLink;
   next?: PostLink;
-  related: PostLink[];
+  related: CollectionEntry<'blog'>[];
 };
 
 const { title, date, minutes, categoryLabel, categorySlug, prev, next, related } = Astro.props;
@@ -65,13 +66,7 @@ const navLinks = [
       {related.length > 0 && (
         <section class="post-related">
           <h3>Relacionados</h3>
-          <ul>
-            {related.map((p) => (
-              <li>
-                <a href={p.url}>{p.title}</a>
-              </li>
-            ))}
-          </ul>
+          <PostList posts={related} currentPage={1} totalPages={1} showCategory />
         </section>
       )}
     </div>

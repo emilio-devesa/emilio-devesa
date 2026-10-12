@@ -1,6 +1,7 @@
 ---
 title: "iPhone 16e"
 date: "2025-03-16"
+description: "Apple's most interesting release in years: single camera that delivers, all-day battery and years of updates in a no-nonsense package. Our verdict after upgrading from an iPhone 8."
 categories: 
   - "hardware"
 ---

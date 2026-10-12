@@ -1,6 +1,7 @@
 ---
 title: "America's Army 2.79"
 date: "2006-12-18"
+description: "Gratis, del Pentágono y con un entrenamiento que parece La chaqueta metálica: ¿merecen la pena 800 MB de descarga y la casa de tiro más tensa del género?"
 categories: 
   - "videojuegos"
 ---

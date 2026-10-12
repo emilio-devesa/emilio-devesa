@@ -1,6 +1,7 @@
 ---
 title: "Painkiller"
 date: "2004-05-11"
+description: "Daniel Garner atrapado en el purgatorio: acción clásica de oleadas, jefes finales memorables y un arsenal con disparos secundarios tan divertidos como el congelador."
 categories: 
   - "videojuegos"
 ---

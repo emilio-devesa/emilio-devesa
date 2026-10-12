@@ -1,6 +1,7 @@
 ---
 title: "Intel Pentium E2x00 Dual Core"
 date: "2008-06-10"
+description: "El mito resucitado: un Core 2 Duo con 1 MB de caché a un tercio de precio que rinde igual en escritorio. El procesador honesto para máquinas sin pretensiones."
 categories: 
   - "hardware"
 ---

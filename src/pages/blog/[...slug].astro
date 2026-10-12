@@ -20,7 +20,8 @@ export async function getStaticPaths() {
         (p) => p.id !== post.id && postCategoryLabel(p.data.categories) === label,
       );
       const fill = posts.filter((p) => p.id !== post.id && !sameCat.includes(p));
-      const related = [...sameCat, ...fill].slice(0, 3);
+      // Entradas completas para reutilizar la fila de la lista (PostList)
+      const relatedPosts = [...sameCat, ...fill].slice(0, 3);
       return {
         params: { slug: post.id },
         props: {
@@ -34,7 +35,7 @@ export async function getStaticPaths() {
           next: next
             ? { title: next.data.title, url: blogPostUrl(next.id) }
             : undefined,
-          related: related.map((p) => ({ title: p.data.title, url: blogPostUrl(p.id) })),
+          related: relatedPosts,
         },
       };
     }),
@@ -48,7 +49,7 @@ interface Props {
   categorySlug: string;
   prev?: { title: string; url: string };
   next?: { title: string; url: string };
-  related: { title: string; url: string }[];
+  related: CollectionEntry<'blog'>[];
 }
 
 const { post, minutes, categoryLabel, categorySlug, prev, next, related } = Astro.props;

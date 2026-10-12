@@ -1,6 +1,7 @@
 ---
 title: "Need for Speed Hot Pursuit 2011"
 date: "2011-08-30"
+description: "Vuelven los polis y fugitivos de verdad: Criterion al volante, Seacrest County como patio de juego y superdeportivos de todos los colores. ¿Policía o fugitivo? Tú eliges bando."
 categories: 
   - "videojuegos"
 ---

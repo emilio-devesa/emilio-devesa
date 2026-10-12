@@ -1,6 +1,7 @@
 ---
 title: "Half-Life 2 Episode One"
 date: "2006-06-06"
+description: "Gordon Freeman ya no está solo: escapa de Ciudad 17 junto a Alyx entre puzzles de gravedad y un guion de Oscar. El primer capítulo que te dejará con más preguntas que respuestas."
 categories: 
   - "videojuegos"
 ---

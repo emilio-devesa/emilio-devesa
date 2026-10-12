@@ -1,6 +1,7 @@
 ---
 title: "Escribir buen código"
 date: "2010-06-16"
+description: "Distribuir, documentar e indentar: buenas costumbres en Pascal que valen para cualquier lenguaje, más los errores graves que conviene no cometer nunca. El ensayo de un estudiante que quería programar bien."
 categories: 
   - "software"
 ---
