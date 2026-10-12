@@ -2,7 +2,7 @@
 title: "World of Warcraft con servidor privado (en MacOS)"
 date: "2022-08-25"
 categories: 
-  - "videojuegos"
+  - "software"
 ---
 
 ![](images/costasur-full.jpg)
