@@ -1,9 +1,14 @@
 ---
 import FormattedDate from '../FormattedDate.astro';
 import type { CollectionEntry } from 'astro:content';
-import type { ImageMetadata } from 'astro';
-import { getImage } from 'astro:assets';
-import { blogPageUrl, blogPostUrl, postCategoryLabel, readingMinutes } from '../../lib/blog';
+import {
+  blogPageUrl,
+  blogPostUrl,
+  postCategoryLabel,
+  postFirstImage,
+  readingMinutes,
+  type OptimizedImage,
+} from '../../lib/blog';
 
 interface Props {
   posts: CollectionEntry<'blog'>[];
@@ -13,49 +18,12 @@ interface Props {
   showCategory?: boolean;
 }
 
-const { posts, currentPage, totalPages, pageUrl = blogPageUrl, showCategory = false } =
-  Astro.props;
+const { posts, currentPage, totalPages, pageUrl = blogPageUrl, showCategory = false } = Astro.props;
 
 // Miniaturas: primera imagen del cuerpo, optimizada en build (320px webp).
-// Sin imagen o con error -> la fila sale sin miniatura.
-const imageModules = import.meta.glob<{ default: ImageMetadata }>(
-  '../../content/**/*.{jpg,jpeg,png,gif,webp}',
-);
-
-function firstImage(body: string | undefined): string | undefined {
-  const match = /!\[[^\]]*\]\(([^)]+)\)/.exec(body ?? '');
-  const rel = match?.[1].split('#')[0].trim();
-  return rel && !/^(https?:|data:)/i.test(rel) ? rel : undefined;
-}
-
-interface Thumb {
-  src: string;
-  width: number;
-  height: number;
-}
-
-const thumbs: (Thumb | undefined)[] = await Promise.all(
-  posts.map(async (post) => {
-    const rel = firstImage(post.body);
-    if (!rel) return undefined;
-    const dir = (post.filePath ?? '').replace(/^src\//, '').split('/').slice(0, -1).join('/');
-    const key = `../../${dir}/${rel}`;
-    const load = imageModules[key];
-    if (!load) return undefined;
-    try {
-      const mod = await load();
-      const img = await getImage({
-        src: mod.default,
-        width: 320,
-        height: 240,
-        fit: 'cover',
-        format: 'webp',
-      });
-      return { src: img.src, width: img.attributes.width, height: img.attributes.height };
-    } catch {
-      return undefined;
-    }
-  }),
+// Sin imagen o con error -> la fila sale con el hueco reservado.
+const thumbs: (OptimizedImage | undefined)[] = await Promise.all(
+  posts.map((post) => postFirstImage(post, 320, 240)),
 );
 ---
 

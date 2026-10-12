@@ -86,11 +86,11 @@ Las sesiones comienzan y finalizan a la hora prevista para respetar el horario d
 
 Todo el material necesario para el desarrollo de las clases está incluido:
 
-* batería;
-* baquetas;
-* protección auditiva;
-* atril;
-* partituras y material didáctico en formato digital o impreso.
+- batería;
+- baquetas;
+- protección auditiva;
+- atril;
+- partituras y material didáctico en formato digital o impreso.
 
 Puedes acudir con tus propias baquetas, las partituras impresas o utilizar una tablet u ordenador para consultar el material y realizar anotaciones.
 
@@ -98,9 +98,9 @@ Todo el material y las instalaciones deberán utilizarse con cuidado y respeto.
 
 En el estudio no está permitido:
 
-* fumar en el interior;
-* consumir bebidas alcohólicas;
-* acceder con comida.
+- fumar en el interior;
+- consumir bebidas alcohólicas;
+- acceder con comida.
 
 Te agradeceré que mantengas el espacio limpio y que deposites cualquier residuo en la papelera correspondiente.
 
@@ -134,10 +134,10 @@ No obstante, me reservo el derecho a dar por finalizada la relación docente cua
 
 Entre otros, podrán considerarse motivos de finalización:
 
-* faltas de respeto hacia el profesor o hacia otras personas presentes en las instalaciones;
-* daños ocasionados por un uso negligente del material que no sean reparados o repuestos;
-* impagos de las cantidades adeudadas;
-* incumplimientos reiterados de estas normas que dificulten la organización o el desarrollo de las clases.
+- faltas de respeto hacia el profesor o hacia otras personas presentes en las instalaciones;
+- daños ocasionados por un uso negligente del material que no sean reparados o repuestos;
+- impagos de las cantidades adeudadas;
+- incumplimientos reiterados de estas normas que dificulten la organización o el desarrollo de las clases.
 
 Siempre que las circunstancias lo permitan, esta decisión será comunicada previamente. En caso de producirse una finalización por alguno de los motivos anteriores, las cantidades ya abonadas no serán reembolsadas.
 
@@ -152,4 +152,3 @@ Mi compromiso es preparar cada clase con profesionalidad, ofrecerte un seguimien
 A cambio, espero de ti puntualidad, respeto hacia las instalaciones y el material, interés por el aprendizaje y un compromiso con la continuidad de las clases.
 
 Estoy convencido de que, trabajando juntos desde el respeto y la confianza mutua, conseguiremos disfrutar del proceso de aprender música y alcanzar los objetivos que nos propongamos.
-

@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import profile from '../assets/images/profile.png';
+
 const paragraphs = [
   '🙋🏻‍♂️ Soy Emilio Devesa, batería profesional, profesor certificado por Yamaha Music Europe y cuento con una sólida experiencia como intérprete y docente.',
   '🌍 Llevo más de 15 años trabajando como músico de directo, músico de sesión y profesor de batería.',
@@ -16,13 +19,7 @@ const paragraphs = [
       ))}
     </div>
     <div class="about-image">
-      <img
-        src="/images/profile.png"
-        alt="Emilio Devesa tocando la batería"
-        width="300"
-        height="300"
-        loading="lazy"
-      />
+      <Image src={profile} alt="Emilio Devesa tocando la batería" width={300} loading="lazy" />
     </div>
   </div>
 </section>

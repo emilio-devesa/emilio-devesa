@@ -2,7 +2,13 @@
 import type { CollectionEntry } from 'astro:content';
 import { getCollection, render } from 'astro:content';
 import PostLayout from '../../layouts/PostLayout.astro';
-import { blogPostUrl, postCategoryLabel, postCategorySlug, readingMinutes } from '../../lib/blog';
+import {
+  blogPostUrl,
+  postCategoryLabel,
+  postCategorySlug,
+  postFirstImage,
+  readingMinutes,
+} from '../../lib/blog';
 
 export async function getStaticPaths() {
   const posts = (await getCollection('blog')).sort(
@@ -29,12 +35,8 @@ export async function getStaticPaths() {
           minutes: readingMinutes(post.body),
           categoryLabel: label,
           categorySlug: postCategorySlug(post.data.categories),
-          prev: prev
-            ? { title: prev.data.title, url: blogPostUrl(prev.id) }
-            : undefined,
-          next: next
-            ? { title: next.data.title, url: blogPostUrl(next.id) }
-            : undefined,
+          prev: prev ? { title: prev.data.title, url: blogPostUrl(prev.id) } : undefined,
+          next: next ? { title: next.data.title, url: blogPostUrl(next.id) } : undefined,
           related: relatedPosts,
         },
       };
@@ -54,6 +56,9 @@ interface Props {
 
 const { post, minutes, categoryLabel, categorySlug, prev, next, related } = Astro.props;
 const { Content } = await render(post);
+// OG con la primera imagen del post (1200px); si no hay, el hero por defecto
+const og = await postFirstImage(post, 1200, 630);
+const site = Astro.site ?? 'https://emiliodevesa.com';
 ---
 
 <PostLayout
@@ -64,6 +69,7 @@ const { Content } = await render(post);
   prev={prev}
   next={next}
   related={related}
+  ogImage={og ? new URL(og.src, site).href : undefined}
 >
   <Content />
 </PostLayout>

@@ -22,7 +22,9 @@ const navId = `${idPrefix}-nav-links`;
 ---
 
 <header>
-  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+  <a class="skip-link" href="#main-content">
+    Saltar al contenido
+  </a>
   <nav aria-label={ariaLabel}>
     <a href="/">Emilio Devesa</a>
   </nav>
@@ -34,10 +36,14 @@ const navId = `${idPrefix}-nav-links`;
       aria-label="Abrir menú"
       aria-expanded="false"
       aria-controls={navId}
-    >☰</button>
+    >
+      ☰
+    </button>
 
     <div class="nav-links" id={navId}>
-      {links.map((link) => <a href={link.href}>{link.label}</a>)}
+      {links.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
     </div>
   </nav>
 

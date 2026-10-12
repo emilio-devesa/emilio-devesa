@@ -15,6 +15,51 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
   { slug: 'mas', label: 'Más', match: ['sin-categoria'] },
 ];
 
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+
+// Primera imagen del cuerpo optimizada en build. Sin imagen o con
+// error devuelve undefined para que la llamada pinte sin miniatura.
+const postImages = import.meta.glob<{ default: ImageMetadata }>(
+  '../content/**/*.{jpg,jpeg,png,gif,webp}',
+);
+
+export function postFirstImageRel(body: string | undefined): string | undefined {
+  const match = /!\[[^\]]*\]\(([^)]+)\)/.exec(body ?? '');
+  const rel = match?.[1].split('#')[0].trim();
+  return rel && !/^(https?:|data:)/i.test(rel) ? rel : undefined;
+}
+
+export interface OptimizedImage {
+  src: string;
+  width: number;
+  height: number;
+}
+
+export async function postFirstImage(
+  post: CollectionEntry<'blog'>,
+  width: number,
+  height: number,
+): Promise<OptimizedImage | undefined> {
+  const rel = postFirstImageRel(post.body);
+  if (!rel) return undefined;
+  const dir = (post.filePath ?? '')
+    .replace(/^src\//, '')
+    .split('/')
+    .slice(0, -1)
+    .join('/');
+  const load = postImages[`../${dir}/${rel}`];
+  if (!load) return undefined;
+  try {
+    const mod = await load();
+    const img = await getImage({ src: mod.default, width, height, fit: 'cover', format: 'webp' });
+    return { src: img.src, width: img.attributes.width, height: img.attributes.height };
+  } catch {
+    return undefined;
+  }
+}
+
 export function blogPageUrl(page: number) {
   return page === 1 ? '/blog/' : `/blog/pagina/${page}/`;
 }

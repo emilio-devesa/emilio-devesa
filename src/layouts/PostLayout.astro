@@ -19,9 +19,12 @@ type Props = CollectionEntry<'blog'>['data'] & {
   prev?: PostLink;
   next?: PostLink;
   related: CollectionEntry<'blog'>[];
+  ogImage?: string;
 };
 
-const { title, date, minutes, categoryLabel, categorySlug, prev, next, related } = Astro.props;
+const { title, date, lang, minutes, categoryLabel, categorySlug, prev, next, related, ogImage } =
+  Astro.props;
+const articleLang = lang ?? 'es';
 
 const navLinks = [
   { href: '/blog', label: 'Blog' },
@@ -29,13 +32,13 @@ const navLinks = [
 ];
 ---
 
-<PrimaryLayout title={title} robots="noindex, nofollow">
+<PrimaryLayout title={title} robots="noindex, nofollow" lang={articleLang} ogImage={ogImage}>
   <SiteHeader links={navLinks} ariaLabel="Navegación del blog" idPrefix="blog" />
 
   <HeroMini title="Emilio Devesa" />
 
   <section id="article-content">
-    <div class="article-content">
+    <div class="article-content" lang={articleLang}>
       <h2>{title}</h2>
       <p class="article-meta">
         <a href="/blog/">← Volver al índice</a> ·{' '}
@@ -48,14 +51,14 @@ const navLinks = [
         <ul>
           {prev && (
             <li>
-              ← Anterior
+              ← Más reciente
               <br />
               <a href={prev.url}>{prev.title}</a>
             </li>
           )}
           {next && (
             <li>
-              Siguiente →
+              Más antiguo →
               <br />
               <a href={next.url}>{next.title}</a>
             </li>

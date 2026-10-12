@@ -11,13 +11,7 @@ const { active = 'todo' } = Astro.props;
 
 <nav aria-label="Filtrar entradas por categoría">
   <ul class="category-filter">
-    <li>
-      {active === 'todo' ? (
-        <span aria-current="page">Todo</span>
-      ) : (
-        <a href="/blog/">Todo</a>
-      )}
-    </li>
+    <li>{active === 'todo' ? <span aria-current="page">Todo</span> : <a href="/blog/">Todo</a>}</li>
     {BLOG_CATEGORIES.map((cat) => (
       <li>
         {active === cat.slug ? (

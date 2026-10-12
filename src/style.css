@@ -134,7 +134,12 @@ nav a:hover {
   justify-content: center;
   background:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(11, 13, 19, 1)),
-    url('/images/hero_3a.jpeg') center/cover no-repeat;
+    image-set(
+        url('/images/hero_3a.avif') type('image/avif'),
+        url('/images/hero_3a.webp') type('image/webp'),
+        url('/images/hero_3a.jpeg') type('image/jpeg')
+      )
+      center/cover no-repeat;
   color: white;
   padding: 6rem 2rem;
   height: 90vh;
@@ -606,7 +611,9 @@ footer a:hover {
 }
 
 .article-content table {
+  display: block;
   width: 100%;
+  overflow-x: auto;
   border-collapse: collapse;
   margin-bottom: 2rem;
 }
@@ -660,7 +667,9 @@ footer a:hover {
   overflow: hidden;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .post-thumb img {
@@ -714,8 +723,6 @@ a.post-thumb:focus-visible img {
     width: 88px;
   }
 }
-
-
 
 .article-meta {
   color: var(--muted);
@@ -816,4 +823,52 @@ a.post-thumb:focus-visible img {
   background-color: var(--primary);
   border-color: var(--primary);
   color: #fff;
+}
+
+/* 14. Impresión (guías de clases y artículos) */
+@media print {
+  header,
+  footer,
+  .hero,
+  .post-nav,
+  .pagination,
+  .category-filter,
+  .skip-link {
+    display: none;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 12pt;
+  }
+
+  section {
+    max-width: none;
+    padding: 0;
+  }
+
+  section p,
+  section li,
+  .article-content,
+  .article-content p,
+  .article-content ul,
+  .article-content ol {
+    color: #000;
+  }
+
+  .article-content a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .article-content img {
+    max-width: 80%;
+  }
+
+  .offer,
+  .testimonial-slide {
+    border-color: #999;
+    background: none;
+  }
 }
