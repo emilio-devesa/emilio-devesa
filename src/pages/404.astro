@@ -4,18 +4,13 @@ import SiteHeader from '../components/SiteHeader.astro';
 import HeroMini from '../components/HeroMini.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
-const navLinks = [
-  { href: '/#sobre-mi', label: 'Quién soy' },
-  { href: '/#clases', label: 'Clases de Batería' },
-  { href: '/#opiniones', label: 'Opiniones' },
-  { href: '/#compromiso', label: 'Mi compromiso' },
-  { href: '/#music', label: 'Discografía' },
-  { href: '/#contact', label: 'Contacto' },
-];
+import { NOT_FOUND_NAV_LINKS } from '../lib/blog';
+
+const navLinks = NOT_FOUND_NAV_LINKS;
 ---
 
 <PrimaryLayout title="404 No Encontrada" robots="noindex, nofollow">
-  <SiteHeader links={navLinks} idPrefix="home" />
+  <SiteHeader links={navLinks} idPrefix="home" slot="header" />
 
   <HeroMini title="Página no encontrada" />
 
@@ -26,5 +21,5 @@ const navLinks = [
     </p>
   </section>
 
-  <SiteFooter />
+  <SiteFooter slot="footer" />
 </PrimaryLayout>

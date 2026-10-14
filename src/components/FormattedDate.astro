@@ -4,10 +4,13 @@ interface Props {
 }
 
 const { date } = Astro.props;
+// Mediodía UTC: la fecha visible coincide con la del front-matter en
+// cualquier huso horario (sin el desfase de la medianoche UTC).
+const noon = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), 12));
 ---
 
-<time datetime={date.toISOString()}>
-  {date.toLocaleDateString('es-ES', {
+<time datetime={noon.toISOString()}>
+  {noon.toLocaleDateString('es-ES', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',

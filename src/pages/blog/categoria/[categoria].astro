@@ -1,15 +1,19 @@
 ---
 import BlogLayout from '../../../layouts/BlogLayout.astro';
 
-import { BLOG_CATEGORIES, BLOG_PAGE_SIZE, blogCategoryUrl, getAllPosts } from '../../../lib/blog';
+import {
+  BLOG_CATEGORIES,
+  BLOG_PAGE_SIZE,
+  blogCategoryUrl,
+  getAllPosts,
+  postsInCategory,
+} from '../../../lib/blog';
 
 export async function getStaticPaths() {
   const allPosts = await getAllPosts();
   // Una página 1 por cada categoría del filtro
   return BLOG_CATEGORIES.map((cat) => {
-    const posts = allPosts.filter((post) =>
-      (post.data.categories ?? []).some((c) => cat.match.includes(c)),
-    );
+    const posts = postsInCategory(allPosts, cat);
     const totalPages = Math.max(1, Math.ceil(posts.length / BLOG_PAGE_SIZE));
     return {
       params: { categoria: cat.slug },
@@ -34,4 +38,5 @@ const { cat, posts, totalPages } = Astro.props;
   currentPage={1}
   totalPages={totalPages}
   pageUrl={(page) => blogCategoryUrl(cat.slug, page)}
+  showCategory
 />

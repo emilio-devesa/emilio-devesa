@@ -8,7 +8,7 @@ import artwork03 from '../assets/images/artwork03.png';
 import artwork02 from '../assets/images/artwork02.png';
 import artwork01 from '../assets/images/artwork01.png';
 
-interface StreamLinks {
+interface PlatformLinks {
   spotify: string;
   apple: string;
   amazon: string;
@@ -19,7 +19,7 @@ interface Album {
   alt: string;
   title: string;
   text: string;
-  links: StreamLinks;
+  links: PlatformLinks;
   reverse?: boolean;
 }
 
@@ -28,7 +28,7 @@ interface Collab {
   alt: string;
   title: string;
   meta: string;
-  links: StreamLinks;
+  links: PlatformLinks;
 }
 
 const albums: Album[] = [

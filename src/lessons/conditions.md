@@ -122,7 +122,7 @@ Actualmente las clases se imparten únicamente en modalidad presencial.
 
 Puedes grabar audio o vídeo durante las clases siempre que su finalidad sea exclusivamente el estudio y tu uso personal.
 
-Cualquier otro uso, especialmente la publicación o difusión de grabaciones, deberá consultarse previamente conmigo. Para más información, por favor, revisa la [Política sobre uso de imagen y grabaciones](legal/media-consent) y la [Política de privacidad](legal/privacy-policy).
+Cualquier otro uso, especialmente la publicación o difusión de grabaciones, deberá consultarse previamente conmigo. Para más información, por favor, revisa la [Política sobre uso de imagen y grabaciones](/clases/legal/media-consent) y la [Política de privacidad](/clases/legal/privacy-policy).
 
 ---
 

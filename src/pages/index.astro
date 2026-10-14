@@ -9,14 +9,9 @@ import MusicSection from '../components/MusicSection.astro';
 import ContactSection from '../components/ContactSection.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
-const navLinks = [
-  { href: '#sobre-mi', label: 'Quién soy' },
-  { href: '#clases', label: 'Clases de Batería' },
-  { href: '#opiniones', label: 'Opiniones' },
-  { href: '#compromiso', label: 'Mi compromiso' },
-  { href: '#music', label: 'Discografía' },
-  { href: '#contact', label: 'Contacto' },
-];
+import { HOME_NAV_LINKS } from '../lib/blog';
+
+const navLinks = HOME_NAV_LINKS;
 
 const offers = [
   {
@@ -56,7 +51,7 @@ const commitments = [
 ---
 
 <PrimaryLayout>
-  <SiteHeader links={navLinks} idPrefix="home" />
+  <SiteHeader links={navLinks} idPrefix="home" slot="header" />
 
   <Hero />
 
@@ -85,5 +80,5 @@ const commitments = [
 
   <ContactSection />
 
-  <SiteFooter />
+  <SiteFooter slot="footer" />
 </PrimaryLayout>

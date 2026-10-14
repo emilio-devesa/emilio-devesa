@@ -14,7 +14,7 @@ const linkLabels: { key: keyof Props['links']; label: string }[] = [
 
 <div class="links">
   {linkLabels.map(({ key, label }) => (
-    <a href={links[key]} target="_blank" rel="noopener">
+    <a href={links[key]} target="_blank" rel="noopener noreferrer">
       {label}
     </a>
   ))}

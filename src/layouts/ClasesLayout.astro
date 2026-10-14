@@ -29,11 +29,11 @@ const footerLinks = [
 ---
 
 <PrimaryLayout title={title} description={description} robots="noindex, nofollow">
-  <SiteHeader links={navLinks} idPrefix="clases" />
+  <SiteHeader links={navLinks} idPrefix="clases" slot="header" />
 
   <HeroMini title="Clases de Batería" />
 
   <slot />
 
-  <SiteFooter links={footerLinks} />
+  <SiteFooter links={footerLinks} slot="footer" />
 </PrimaryLayout>
