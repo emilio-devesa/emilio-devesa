@@ -1,13 +1,10 @@
 ---
 import BlogLayout from '../../../layouts/BlogLayout.astro';
 
-import { getCollection } from 'astro:content';
-import { BLOG_CATEGORIES, BLOG_PAGE_SIZE, blogCategoryUrl } from '../../../lib/blog';
+import { BLOG_CATEGORIES, BLOG_PAGE_SIZE, blogCategoryUrl, getAllPosts } from '../../../lib/blog';
 
 export async function getStaticPaths() {
-  const allPosts = (await getCollection('blog')).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-  );
+  const allPosts = await getAllPosts();
   // Una página 1 por cada categoría del filtro
   return BLOG_CATEGORIES.map((cat) => {
     const posts = allPosts.filter((post) =>

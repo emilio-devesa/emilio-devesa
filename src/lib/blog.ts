@@ -1,8 +1,21 @@
 import { getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
-import type { CollectionEntry } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 
 export const BLOG_PAGE_SIZE = 20;
+
+// Todos los posts, de más reciente a más antiguo
+export async function getAllPosts() {
+  return (await getCollection('blog')).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  );
+}
+
+// Navegación compartida de las páginas del blog
+export const BLOG_NAV_LINKS = [
+  { href: '/blog', label: 'Blog' },
+  { href: 'https://github.com/emilio-devesa', label: 'GitHub' },
+];
 
 export interface BlogCategory {
   slug: string;
@@ -80,13 +93,14 @@ export function readingMinutes(body: string | undefined) {
   return Math.max(1, Math.round(words / 200));
 }
 
-// Etiqueta de categoría para mostrar (primera coincidencia con el filtro)
+// Etiqueta de categoría para mostrar (primera coincidencia con el filtro;
+// 'Más' si no hay ninguna conocida)
 export function postCategoryLabel(categories: string[] | undefined) {
   const cats = categories ?? [];
   for (const cat of BLOG_CATEGORIES) {
     if (cats.some((c) => cat.match.includes(c))) return cat.label;
   }
-  return cats[0] ?? 'Más';
+  return 'Más';
 }
 
 // Slug del filtro al que pertenece el post (para enlazar la categoría)

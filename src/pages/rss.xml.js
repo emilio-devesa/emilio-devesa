@@ -1,5 +1,5 @@
 import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
+import { getAllPosts, blogPostUrl } from '../lib/blog.js';
 import MarkdownIt from 'markdown-it';
 import sanitizeHtml from 'sanitize-html';
 
@@ -26,18 +26,13 @@ function toExcerpt(markdown, max = 280) {
 
 export async function GET(context) {
   const site = String(context.site ?? 'https://emiliodevesa.com/').replace(/\/$/, '');
-  const posts = (await getCollection('blog')).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-  );
+  const posts = await getAllPosts();
   return rss({
     title: 'Emilio Devesa – Blog',
     description: 'Artículos del blog de Emilio Devesa',
     site,
     items: posts.map((post) => {
-      // post.id conserva la forma NFD del nombre del fichero (p. ej. la
-      // ñ como n + tilde combinada); la ruta publicada usa NFC.
-      const slug = post.id.normalize('NFC');
-      const link = `/blog/${slug}/`;
+      const link = blogPostUrl(post.id);
       const excerpt = toExcerpt(post.body);
       return {
         title: post.data.title,

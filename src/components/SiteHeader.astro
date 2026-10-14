@@ -7,16 +7,10 @@ interface NavLink {
 interface Props {
   links: NavLink[];
   ariaLabel?: string;
-  menuAriaLabel?: string;
   idPrefix?: string;
 }
 
-const {
-  links,
-  ariaLabel = 'Navegación principal',
-  menuAriaLabel = 'Menú',
-  idPrefix = 'site',
-} = Astro.props;
+const { links, ariaLabel = 'Navegación principal', idPrefix = 'site' } = Astro.props;
 const toggleId = `${idPrefix}-menu-toggle`;
 const navId = `${idPrefix}-nav-links`;
 ---
@@ -27,9 +21,6 @@ const navId = `${idPrefix}-nav-links`;
   </a>
   <nav aria-label={ariaLabel}>
     <a href="/">Emilio Devesa</a>
-  </nav>
-
-  <nav aria-label={menuAriaLabel}>
     <button
       class="menu-toggle"
       id={toggleId}

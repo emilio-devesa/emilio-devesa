@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import StreamLinks from './StreamLinks.astro';
 import artwork05 from '../assets/images/artwork05.png';
 import artwork04 from '../assets/images/artwork04.png';
 import artwork03 from '../assets/images/artwork03.png';
@@ -91,12 +92,6 @@ const collabs: Collab[] = [
     },
   },
 ];
-
-const linkLabels: { key: keyof StreamLinks; label: string }[] = [
-  { key: 'spotify', label: 'Spotify' },
-  { key: 'apple', label: 'Apple Music' },
-  { key: 'amazon', label: 'Amazon Music' },
-];
 ---
 
 <section id="music">
@@ -109,13 +104,7 @@ const linkLabels: { key: keyof StreamLinks; label: string }[] = [
       <div class="album-info">
         <h4>{album.title}</h4>
         <p>{album.text}</p>
-        <div class="links">
-          {linkLabels.map(({ key, label }) => (
-            <a href={album.links[key]} target="_blank" rel="noopener">
-              {label}
-            </a>
-          ))}
-        </div>
+        <StreamLinks links={album.links} />
       </div>
     </div>
   ))}
@@ -130,13 +119,7 @@ const linkLabels: { key: keyof StreamLinks; label: string }[] = [
           <br />
           {collab.meta}
         </p>
-        <div class="links">
-          {linkLabels.map(({ key, label }) => (
-            <a href={collab.links[key]} target="_blank" rel="noopener">
-              {label}
-            </a>
-          ))}
-        </div>
+        <StreamLinks links={collab.links} />
       </div>
     ))}
   </div>

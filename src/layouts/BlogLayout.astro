@@ -6,6 +6,7 @@ import CategoryNav from '../components/blog/CategoryNav.astro';
 import PostList from '../components/blog/PostList.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import type { CollectionEntry } from 'astro:content';
+import { BLOG_NAV_LINKS } from '../lib/blog';
 
 interface Props {
   title: string;
@@ -31,10 +32,7 @@ const {
   showCategory = false,
 } = Astro.props;
 
-const navLinks = [
-  { href: '/blog', label: 'Blog' },
-  { href: 'https://github.com/emilio-devesa', label: 'GitHub' },
-];
+const navLinks = BLOG_NAV_LINKS;
 ---
 
 <PrimaryLayout title={title} description={description} robots="noindex, nofollow">
@@ -54,10 +52,5 @@ const navLinks = [
     />
   </section>
 
-  <SiteFooter
-    links={[
-      { href: '/', label: 'Inicio' },
-      { href: '/blog', label: 'Blog' },
-    ]}
-  />
+  <SiteFooter />
 </PrimaryLayout>

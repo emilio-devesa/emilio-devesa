@@ -23,7 +23,7 @@ const siteTitle = 'Emilio Devesa';
 const pageTitle = title ? `${title} - ${siteTitle}` : siteTitle;
 const site = Astro.site ?? 'https://emiliodevesa.com';
 const canonical = new URL(Astro.url.pathname, site).toString();
-const ogImage = ogImageProp ?? new URL('/images/hero_3a.jpeg', site).toString();
+const ogImage = ogImageProp ?? new URL('/images/hero_3a.webp', site).toString();
 ---
 
 <!doctype html>
@@ -51,7 +51,7 @@ const ogImage = ogImageProp ?? new URL('/images/hero_3a.jpeg', site).toString();
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <link rel="preload" as="image" href="/images/hero_3a.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/images/hero_3a.avif" type="image/avif" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png" />
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
     <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />

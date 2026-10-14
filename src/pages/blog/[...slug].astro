@@ -1,9 +1,10 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
 import PostLayout from '../../layouts/PostLayout.astro';
 import {
   blogPostUrl,
+  getAllPosts,
   postCategoryLabel,
   postCategorySlug,
   postFirstImage,
@@ -11,9 +12,7 @@ import {
 } from '../../lib/blog';
 
 export async function getStaticPaths() {
-  const posts = (await getCollection('blog')).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-  );
+  const posts = await getAllPosts();
   // Enlaces anterior/siguiente en orden cronológico inverso (el blog
   // lista primero lo más reciente) y hasta 3 relacionados de la misma
   // categoría, rellenando con los más recientes si hacen falta.

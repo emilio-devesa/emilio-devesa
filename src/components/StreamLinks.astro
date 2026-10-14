@@ -1,0 +1,21 @@
+---
+interface Props {
+  links: Record<'spotify' | 'apple' | 'amazon', string>;
+}
+
+const { links } = Astro.props;
+
+const linkLabels: { key: keyof Props['links']; label: string }[] = [
+  { key: 'spotify', label: 'Spotify' },
+  { key: 'apple', label: 'Apple Music' },
+  { key: 'amazon', label: 'Amazon Music' },
+];
+---
+
+<div class="links">
+  {linkLabels.map(({ key, label }) => (
+    <a href={links[key]} target="_blank" rel="noopener">
+      {label}
+    </a>
+  ))}
+</div>

@@ -7,6 +7,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 const navLinks = [
   { href: '/#sobre-mi', label: 'Quién soy' },
   { href: '/#clases', label: 'Clases de Batería' },
+  { href: '/#opiniones', label: 'Opiniones' },
   { href: '/#compromiso', label: 'Mi compromiso' },
   { href: '/#music', label: 'Discografía' },
   { href: '/#contact', label: 'Contacto' },
@@ -25,10 +26,5 @@ const navLinks = [
     </p>
   </section>
 
-  <SiteFooter
-    links={[
-      { href: '/', label: 'Inicio' },
-      { href: '/blog', label: 'Blog' },
-    ]}
-  />
+  <SiteFooter />
 </PrimaryLayout>

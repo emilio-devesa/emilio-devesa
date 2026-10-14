@@ -7,8 +7,6 @@
 
 User-agent: *
 Allow: /$
-Disallow: /blog
-Disallow: /blog/
 Disallow: /
 
 # Servicios de IA / scrapers — bloqueo explícito del blog (y del resto, salvo la home)

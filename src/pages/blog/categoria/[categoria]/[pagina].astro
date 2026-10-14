@@ -1,20 +1,22 @@
 ---
 import BlogLayout from '../../../../layouts/BlogLayout.astro';
 
-import { getCollection } from 'astro:content';
-import { BLOG_CATEGORIES, BLOG_PAGE_SIZE, blogCategoryUrl } from '../../../../lib/blog';
+import {
+  BLOG_CATEGORIES,
+  BLOG_PAGE_SIZE,
+  blogCategoryUrl,
+  getAllPosts,
+} from '../../../../lib/blog';
 
 export async function getStaticPaths() {
-  const allPosts = (await getCollection('blog')).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-  );
+  const allPosts = await getAllPosts();
   // La página 1 de cada categoría vive en /blog/categoria/<slug>/;
   // aquí generamos las páginas 2..N de las que las necesiten.
   return BLOG_CATEGORIES.flatMap((cat) => {
     const filtered = allPosts.filter((post) =>
       (post.data.categories ?? []).some((c) => cat.match.includes(c)),
     );
-    const totalPages = Math.ceil(filtered.length / BLOG_PAGE_SIZE);
+    const totalPages = Math.max(1, Math.ceil(filtered.length / BLOG_PAGE_SIZE));
     return Array.from({ length: Math.max(0, totalPages - 1) }, (_, i) => {
       const page = i + 2;
       return {

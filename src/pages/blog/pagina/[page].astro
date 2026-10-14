@@ -1,13 +1,10 @@
 ---
 import BlogLayout from '../../../layouts/BlogLayout.astro';
 
-import { getCollection } from 'astro:content';
-import { BLOG_PAGE_SIZE } from '../../../lib/blog';
+import { BLOG_PAGE_SIZE, getAllPosts } from '../../../lib/blog';
 
 export async function getStaticPaths() {
-  const allPosts = (await getCollection('blog')).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-  );
+  const allPosts = await getAllPosts();
   const totalPages = Math.ceil(allPosts.length / BLOG_PAGE_SIZE);
   // La página 1 vive en /blog/, aquí generamos 2..N
   return Array.from({ length: totalPages - 1 }, (_, i) => {

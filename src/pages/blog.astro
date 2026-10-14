@@ -1,12 +1,9 @@
 ---
 import BlogLayout from '../layouts/BlogLayout.astro';
 
-import { getCollection } from 'astro:content';
-import { BLOG_PAGE_SIZE } from '../lib/blog';
+import { BLOG_PAGE_SIZE, getAllPosts } from '../lib/blog';
 
-const allPosts = (await getCollection('blog')).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-);
+const allPosts = await getAllPosts();
 
 const totalPages = Math.ceil(allPosts.length / BLOG_PAGE_SIZE);
 const posts = allPosts.slice(0, BLOG_PAGE_SIZE);

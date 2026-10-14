@@ -6,6 +6,7 @@ import SiteHeader from '../components/SiteHeader.astro';
 import HeroMini from '../components/HeroMini.astro';
 import PostList from '../components/blog/PostList.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import { BLOG_NAV_LINKS } from '../lib/blog';
 
 interface PostLink {
   title: string;
@@ -26,10 +27,7 @@ const { title, date, lang, minutes, categoryLabel, categorySlug, prev, next, rel
   Astro.props;
 const articleLang = lang ?? 'es';
 
-const navLinks = [
-  { href: '/blog', label: 'Blog' },
-  { href: 'https://github.com/emilio-devesa', label: 'GitHub' },
-];
+const navLinks = BLOG_NAV_LINKS;
 ---
 
 <PrimaryLayout title={title} robots="noindex, nofollow" lang={articleLang} ogImage={ogImage}>
@@ -75,10 +73,5 @@ const navLinks = [
     </div>
   </section>
 
-  <SiteFooter
-    links={[
-      { href: '/', label: 'Inicio' },
-      { href: '/blog', label: 'Blog' },
-    ]}
-  />
+  <SiteFooter />
 </PrimaryLayout>
