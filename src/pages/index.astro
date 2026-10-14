@@ -15,17 +15,20 @@ const navLinks = HOME_NAV_LINKS;
 
 const offers = [
   {
-    title: '🎯 Clases personalizadas para todos los niveles',
+    icon: '🎯',
+    title: 'Clases personalizadas para todos los niveles',
     description:
       'Desde principiante hasta avanzado: desarrollarás tu técnica, sonido, lenguaje y repertorio.',
   },
   {
-    title: '🔥 Formación moderna, práctica y enfocada a resultados',
+    icon: '🔥',
+    title: 'Formación moderna, práctica y enfocada a resultados',
     description:
       'Un enfoque individual, adaptado a tus objetivos, a tu forma de entender la música y a tu ritmo de aprendizaje.',
   },
   {
-    title: '🎵 Metodología Yamaha y materiales progresivos',
+    icon: '🎵',
+    title: 'Metodología Yamaha y materiales progresivos',
     description:
       'Te guiaré en todo momento para que puedas alcanzar tus metas musicales más ambiciosas.',
   },
@@ -33,17 +36,20 @@ const offers = [
 
 const commitments = [
   {
-    title: '💡 Lo que realmente importa',
+    icon: '💡',
+    title: 'Lo que realmente importa',
     description:
       'Me comprometo a proporcionarte todas las herramientas necesarias para convertirte en el mejor batería que puedas ser.',
   },
   {
-    title: '🏁 Alcanza el éxito',
+    icon: '🏁',
+    title: 'Alcanza el éxito',
     description:
       'Desde tu casa hasta el escenario: adquiere técnicas de estudio eficientes y dinámicas que maximicen tu tiempo.',
   },
   {
-    title: '...y diviértete! 💫',
+    title: '...y diviértete!',
+    iconEnd: '💫',
     description:
       'Aprender no tiene por qué ser aburrido. Con mi enfoque lúdico disfrutarás del proceso de aprendizaje.',
   },
@@ -59,7 +65,8 @@ const commitments = [
 
   <CardsSection
     id="clases"
-    title="🚀 Clases de Batería"
+    icon="🚀"
+    title="Clases de Batería"
     cards={offers}
     cta={[
       { text: 'Más información', url: '/clases/' },
@@ -71,7 +78,8 @@ const commitments = [
 
   <CardsSection
     id="compromiso"
-    title="🤝🏾 Mi compromiso"
+    icon="🤝🏾"
+    title="Mi compromiso"
     cards={commitments}
     cta={[{ text: '¿Listo para empezar?', url: '#contact' }]}
   />

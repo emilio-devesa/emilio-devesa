@@ -14,12 +14,12 @@ const navLinks = NOT_FOUND_NAV_LINKS;
 
   <HeroMini title="Página no encontrada" />
 
-  <section>
+  <section aria-label="Error 404">
     <p>Lo sentimos, la página que estás buscando no existe.</p>
     <p>
       Por favor, verifica la URL o vuelve a la <a href="/">página principal</a>.
     </p>
   </section>
 
-  <SiteFooter slot="footer" />
+  <SiteFooter links={[{ href: '/', label: 'Inicio' }]} slot="footer" />
 </PrimaryLayout>

@@ -7,7 +7,7 @@ En cumplimiento del Reglamento (UE) 2016/679 (Reglamento General de Protección 
 
 ---
 
-# Finalidad del tratamiento
+## Finalidad del tratamiento
 
 Los datos personales se recogen exclusivamente para gestionar la relación docente y administrativa derivada de las clases de batería.
 
@@ -23,7 +23,7 @@ Tus datos no se utilizarán para elaborar perfiles comerciales ni para tomar dec
 
 ---
 
-# Datos que se recogen
+## Datos que se recogen
 
 Podrán tratarse los siguientes datos personales:
 
@@ -38,7 +38,7 @@ No se solicitarán categorías especiales de datos personales salvo que exista u
 
 ---
 
-# Base jurídica del tratamiento
+## Base jurídica del tratamiento
 
 El tratamiento de tus datos se basa en:
 
@@ -48,7 +48,7 @@ El tratamiento de tus datos se basa en:
 
 ---
 
-# Conservación de los datos
+## Conservación de los datos
 
 Tus datos personales se conservarán mientras exista la relación docente.
 
@@ -58,7 +58,7 @@ Las anotaciones docentes y el historial de clases podrán conservarse durante un
 
 ---
 
-# Servicios utilizados para el tratamiento de los datos
+## Servicios utilizados para el tratamiento de los datos
 
 Con el fin de prestar correctamente el servicio, algunos datos podrán almacenarse o procesarse mediante herramientas tecnológicas proporcionadas por terceros.
 
@@ -73,13 +73,13 @@ Estos proveedores tratarán los datos conforme a sus propias políticas de priva
 
 ---
 
-# Cesión de datos
+## Cesión de datos
 
 Tus datos personales no serán vendidos ni cedidos a terceros, salvo obligación legal.
 
 ---
 
-# Derechos del interesado
+## Derechos del interesado
 
 Puedes ejercer en cualquier momento los derechos reconocidos por la normativa de protección de datos:
 
@@ -96,7 +96,7 @@ Si consideras que el tratamiento de tus datos no se ajusta a la normativa vigent
 
 ---
 
-# Seguridad de la información
+## Seguridad de la información
 
 Se adoptarán las medidas técnicas y organizativas razonables para proteger los datos personales frente al acceso no autorizado, la pérdida, la alteración o cualquier otro tratamiento ilícito.
 
@@ -104,7 +104,7 @@ El acceso a los datos queda limitado exclusivamente al responsable del tratamien
 
 ---
 
-# Actualización de esta política
+## Actualización de esta política
 
 Esta política podrá modificarse cuando resulte necesario para adaptarla a cambios normativos o a modificaciones en la prestación del servicio.
 

@@ -1,6 +1,8 @@
 ---
 interface Card {
+  icon?: string;
   title: string;
+  iconEnd?: string;
   description: string;
 }
 
@@ -11,20 +13,41 @@ interface Cta {
 
 interface Props {
   id: string;
+  icon?: string;
   title: string;
   cards: Card[];
   cta: Cta[];
 }
 
-const { id, title, cards, cta } = Astro.props;
+const { id, icon, title, cards, cta } = Astro.props;
 ---
 
 <section id={id}>
-  <h2>{title}</h2>
+  <h2>
+    {icon ? (
+      <>
+        <span aria-hidden="true">{icon}</span>{' '}
+      </>
+    ) : null}
+    {title}
+  </h2>
   <div class="offers">
     {cards.map((card) => (
       <div class="offer">
-        <h3>{card.title}</h3>
+        <h3>
+          {card.icon ? (
+            <>
+              <span aria-hidden="true">{card.icon}</span>{' '}
+            </>
+          ) : null}
+          {card.title}
+          {card.iconEnd ? (
+            <>
+              {' '}
+              <span aria-hidden="true">{card.iconEnd}</span>
+            </>
+          ) : null}
+        </h3>
         <p>{card.description}</p>
       </div>
     ))}

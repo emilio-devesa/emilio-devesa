@@ -8,26 +8,26 @@
 
 /* 1. Tokens */
 :root {
-  --primary: #2f90ff; /* Azul eléctrico */
-  --primary-dark: #1e6ed6;
-  --background: #0b0d13;
-  --foreground: #ffffff;
-  --muted: #aaa;
-  --ink-soft: #b8bdc6;
-  --surface: #151821;
-  --panel: #0a0c11;
-  --border: #222;
-  --line: #1b1f27;
-  --edge: #2a2f3a;
-  --quote: #d1d5db;
-  --code-fg: #e5e7eb;
-  --primary-light: #6db3ff;
-  --primary-glow: rgba(47, 144, 255, 0.35);
-  --shade: rgba(0, 0, 0, 0.6);
-  --card-shadow: rgba(0, 0, 0, 0.1);
-  --scroll-offset: 80px;
+  --primary: #2f90ff; /* Azul eléctrico: enlaces, botones, acentos */
+  --primary-dark: #1e6ed6; /* Hover de primary */
+  --primary-light: #6db3ff; /* Hover de enlaces en artículo */
+  --primary-glow: rgba(47, 144, 255, 0.35); /* Sombra de miniaturas */
+  --background: #0b0d13; /* Fondo de página y cabecera */
+  --foreground: #ffffff; /* Texto principal y sobre primary */
+  --muted: #aaa; /* Texto secundario en secciones */
+  --ink-soft: #b8bdc6; /* Texto de cuerpo en artículos */
+  --quote: #d1d5db; /* Citas en artículos */
+  --code-fg: #e5e7eb; /* Texto en code/pre */
+  --surface: #151821; /* Tarjetas y citas */
+  --panel: #0a0c11; /* Pie y bloques pre */
+  --border: #222; /* Bordes de tarjetas */
+  --line: #1b1f27; /* Separadores y fondos de código */
+  --edge: #2a2f3a; /* Bordes de tablas, code/pre y hr */
+  --shade: rgba(0, 0, 0, 0.6); /* Velo del hero */
+  --card-shadow: rgba(0, 0, 0, 0.1); /* Sombra de portadas */
+  --scroll-offset: 80px; /* Anclas bajo la cabecera fija */
   --radius: 0.5rem;
-  --radius-sm: 0.375rem;
+  --radius-sm: 0.375rem; /* code/pre */
 }
 
 * {
@@ -426,7 +426,6 @@ section li {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 0.5rem;
 }
 
 .collab-item img {
@@ -437,8 +436,14 @@ section li {
   object-fit: contain;
 }
 
+.collab-item h4 {
+  font-size: 1rem;
+  margin: 0.75rem 0 0.25rem;
+  color: var(--foreground);
+}
+
 .collab-item p {
-  margin: 0.5rem 0;
+  margin: 0 0 0.5rem;
   color: var(--muted);
 }
 
@@ -826,6 +831,11 @@ a.post-thumb:focus-visible img {
 
 .category-filter a {
   text-decoration: none;
+  color: var(--primary);
+}
+
+.category-filter a:hover {
+  color: var(--primary-dark);
 }
 
 .category-filter [aria-current='page'] {
@@ -840,7 +850,7 @@ a.post-thumb:focus-visible img {
   padding: 0.5rem 1rem;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  color: var(--foreground);
+  color: var(--primary);
   text-decoration: none;
 }
 
@@ -853,7 +863,7 @@ a.post-thumb:focus-visible img {
 
 .pagination a:hover {
   border-color: var(--primary);
-  color: var(--primary);
+  color: var(--primary-dark);
 }
 
 .pagination [aria-current='page'] {
@@ -907,5 +917,17 @@ a.post-thumb:focus-visible img {
   .testimonial-slide {
     border-color: #999;
     background: none;
+  }
+
+  /* Testimonios: sin animación ni apilado absoluto en papel */
+  .auto-carousel {
+    min-height: auto;
+  }
+
+  .testimonial-slide {
+    position: static;
+    opacity: 1;
+    animation: none;
+    margin-bottom: 1rem;
   }
 }

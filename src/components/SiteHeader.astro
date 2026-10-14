@@ -38,6 +38,25 @@ const navId = `${idPrefix}-nav-links`;
     </div>
   </nav>
 
+  <noscript>
+    <style>
+      .menu-toggle {
+        display: none;
+      }
+      @media (max-width: 768px) {
+        header nav {
+          flex-wrap: wrap;
+        }
+        .nav-links {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          margin-top: 1rem;
+        }
+      }
+    </style>
+  </noscript>
+
   <script is:inline>
     document.addEventListener('DOMContentLoaded', function () {
       document.querySelectorAll('header').forEach(function (header) {
@@ -49,6 +68,15 @@ const navId = `${idPrefix}-nav-links`;
           toggle.textContent = isOpen ? '✕' : '☰';
           toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
           toggle.setAttribute('aria-expanded', String(isOpen));
+        });
+        // Al elegir sección, el menú vuelve a cerrarse
+        nav.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', () => {
+            nav.classList.remove('menu-open');
+            toggle.textContent = '☰';
+            toggle.setAttribute('aria-label', 'Abrir menú');
+            toggle.setAttribute('aria-expanded', 'false');
+          });
         });
       });
     });

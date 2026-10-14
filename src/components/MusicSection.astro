@@ -27,7 +27,8 @@ interface Collab {
   img: ImageMetadata;
   alt: string;
   title: string;
-  meta: string;
+  artist: string;
+  detail: string;
   links: PlatformLinks;
 }
 
@@ -62,7 +63,8 @@ const collabs: Collab[] = [
     img: artwork03,
     alt: 'Monstros con ou sen consentimento',
     title: 'Monstros con ou sen consentimento',
-    meta: 'Chuches Amil, Galaxia 2018',
+    artist: 'Chuches Amil',
+    detail: 'Galaxia 2018',
     links: {
       spotify: 'https://open.spotify.com/album/4L9ND9Cb6CIIRZEXmis2yP?si=cq-6sOCaRGKZs5MD0KgiwQ',
       apple: 'https://music.apple.com/es/album/monstros-con-ou-sen-consentimento/1405051787',
@@ -73,7 +75,8 @@ const collabs: Collab[] = [
     img: artwork02,
     alt: 'Un Conto ao Revés',
     title: 'Un Conto ao Revés',
-    meta: 'Chuches Amil, Galaxia 2015',
+    artist: 'Chuches Amil',
+    detail: 'Galaxia 2015',
     links: {
       spotify: 'https://open.spotify.com/album/6rMZ09HzJ7Whpndq9gpqpj?si=bqI2K9MwTaKWW9Zh0coUkg',
       apple: 'https://music.apple.com/es/album/un-conto-ao-rev%C3%A9s/1005680529',
@@ -84,7 +87,8 @@ const collabs: Collab[] = [
     img: artwork01,
     alt: 'Escándalo en Bohemia',
     title: 'Escándalo en Bohemia',
-    meta: 'Los Wattsons, Luscomática 2014',
+    artist: 'Los Wattsons',
+    detail: 'Luscomática 2014',
     links: {
       spotify: 'https://open.spotify.com/album/6Pa4oombvRPDngASi2NZp6?si=xAnQtIlxT6mM6Y_GPQZ0iw',
       apple: 'https://music.apple.com/es/album/escandalo-en-bohemia/797595581',
@@ -95,7 +99,9 @@ const collabs: Collab[] = [
 ---
 
 <section id="music">
-  <h2>💿 Discografía y colaboraciones</h2>
+  <h2>
+    <span aria-hidden="true">💿</span> Discografía y colaboraciones
+  </h2>
 
   <h3>Discografía</h3>
   {albums.map((album) => (
@@ -114,10 +120,9 @@ const collabs: Collab[] = [
     {collabs.map((collab) => (
       <div class="collab-item">
         <Image src={collab.img} alt={collab.alt} width={300} loading="lazy" />
+        <h4>{collab.title}</h4>
         <p>
-          <i>{collab.title}</i>
-          <br />
-          {collab.meta}
+          {collab.artist}, {collab.detail}
         </p>
         <StreamLinks links={collab.links} />
       </div>

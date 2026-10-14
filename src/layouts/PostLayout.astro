@@ -50,11 +50,10 @@ const navLinks = BLOG_NAV_LINKS;
 >
   <SiteHeader links={navLinks} ariaLabel="Navegación del blog" idPrefix="blog" slot="header" />
 
-  <HeroMini title="Emilio Devesa" />
+  <HeroMini title={title} />
 
   <section id="article-content">
     <div class="article-content" lang={articleLang}>
-      <h2>{title}</h2>
       <p class="article-meta">
         <a href="/blog/">← Volver al índice</a> ·{' '}
         <a href={`/blog/categoria/${categorySlug}/`}>{categoryLabel}</a> ·{' '}
@@ -82,10 +81,10 @@ const navLinks = BLOG_NAV_LINKS;
       </nav>
 
       {related.length > 0 && (
-        <section class="post-related">
+        <div class="post-related">
           <h3>Relacionados</h3>
           <PostList posts={related} currentPage={1} totalPages={1} showCategory />
-        </section>
+        </div>
       )}
     </div>
   </section>

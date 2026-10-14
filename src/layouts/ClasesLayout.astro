@@ -23,15 +23,15 @@ const navLinks = [
 
 const footerLinks = [
   { href: '/', label: 'Inicio' },
-  { href: '/clases/legal/privacy-policy', label: 'Política de privacidad y protección de datos' },
   { href: '/clases/legal/media-consent', label: 'Política sobre uso de imagen' },
+  { href: '/clases/legal/privacy-policy', label: 'Política de privacidad y protección de datos' },
 ];
 ---
 
 <PrimaryLayout title={title} description={description} robots="noindex, nofollow">
   <SiteHeader links={navLinks} idPrefix="clases" slot="header" />
 
-  <HeroMini title="Clases de Batería" />
+  <HeroMini title={title} />
 
   <slot />
 
