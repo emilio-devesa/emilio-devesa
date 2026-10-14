@@ -1,38 +1,14 @@
 ---
-import PrimaryLayout from '../../layouts/PrimaryLayout.astro';
-import SiteHeader from '../../components/SiteHeader.astro';
-import HeroMini from '../../components/HeroMini.astro';
+import ClasesLayout from '../../layouts/ClasesLayout.astro';
 import ProseSection from '../../components/ProseSection.astro';
 import WelcomeMd from '../../lessons/welcome.md';
 import LessonsMd from '../../lessons/lessons.md';
 import StudioMd from '../../lessons/studio.md';
 import ConditionsMd from '../../lessons/conditions.md';
 import Contact from '../../components/ContactSection.astro';
-import SiteFooter from '../../components/SiteFooter.astro';
-
-const navLinks = [
-  { href: '/clases/#lessons', label: 'Clases' },
-  { href: '/clases/#studio', label: 'Estudio' },
-  { href: '/clases/#conditions', label: 'Condiciones' },
-  { href: '/clases/#contact', label: 'Contacto' },
-];
-
-const footerLinks = [
-  { href: '/', label: 'Inicio' },
-  { href: '/clases/legal/privacy-policy', label: 'Política de privacidad y protección de datos' },
-  { href: '/clases/legal/media-consent', label: 'Política sobre uso de imagen' },
-];
 ---
 
-<PrimaryLayout
-  title="Clases de Batería"
-  description="Información sobre las clases presenciales de batería con Emilio Devesa."
-  robots="noindex, nofollow"
->
-  <SiteHeader links={navLinks} idPrefix="clases" />
-
-  <HeroMini title="Clases de Batería" />
-
+<ClasesLayout title="Clases de Batería">
   <ProseSection id="welcome" title="🙋🏻‍♂️ Bienvenida">
     <WelcomeMd />
   </ProseSection>
@@ -50,6 +26,4 @@ const footerLinks = [
   </ProseSection>
 
   <Contact />
-
-  <SiteFooter links={footerLinks} />
-</PrimaryLayout>
+</ClasesLayout>

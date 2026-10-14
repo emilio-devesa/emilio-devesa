@@ -1,5 +1,5 @@
 ---
-title: "Viaje a Paris"
+title: "Viaje a París"
 date: "2020-10-12"
 description: "Escapada en pareja con festival incluido: apps, vuelos, rincones y precios de París, con vídeo estabilizado con el Osmo. Una guía genial para tu aventura parisina."
 categories: 
@@ -38,10 +38,12 @@ Para organizar tu propio viaje a París o a cualquier otro destino, te recomiend
 - [Airbnb](https://www.airbnb.es)
 - [Uber](https://www.uber.com/es/es-es/)
 
+![](images/img_3420.jpg)
+
 **Los vuelos**  
 Pude pillar unos billetes de ida y vuelta a través de la app de Vueling por 100€ por persona, lo que entraba dentro del presupuesto que yo había previsto para los aviones. Desde Santiago de Compostela hay (o al menos había) varios vuelos directos semanales con destino al aeropuerto Charles De Gaulle, de dos horas de duración cada uno aproximadamente. Fue realmente útil importar la información del vuelo a App In The Air, desde donde puedo tener todo lo importante en un único sitio, con alertas incluidas y otros datos de interés como por ejemplo las condiciones meteorológicas. 
 
-![](images/img_3457-e1586115622817-1.png) ![](images/img_3458-e1586115637454-1.png)
+![](images/vuelos-vueling.png)
 
 **Algunos puntos de interés**  
 Para reunir la lista de sitios que visitar dispones de varios recursos, empezando por las guías en papel de National Geographic, Lonely Planet, etc. También le echamos un vistazo a varios canales de Youtube, especialmente el de alanxelmundo que tiene unos videos muy buenos tanto de París como de otros destinos a los que quiero viajar: https://youtu.be/pRLtyPjQ\_dE  
@@ -102,6 +104,8 @@ Decidimos que lo mejor para nosotros sería una estancia de una semana en un peq
 ![](images/airbnb-3.jpg)
 
 ![](images/airbnb-4.jpg)
+
+![](images/d5cae86a-54c4-4760-92a1-9beffd62718f.jpg)
 
 Valoré especialmente que dispusiese de conexión WiFi para no tener que preocuparme de la tarifa de datos de mi teléfono. La ausencia de costes de Roaming es algo que, por necesario, parece mentira que haya tardado tanto en hacerse realidad, pero nunca sabes si tu transferencia mensual será suficiente cuando a diario dependes de datos para tu aplicación de mapas, consultar información y horarios, comunicación con familiares, copias de seguridad de fotos y videos en la nube, etc. El anuncio del apartamento también asegura que dispones de desayunos incluidos y así fue: había un pequeño surtido de diferentes infusiones y una cafetera de cápsulas. Por supuesto, la mini-cocina y el microondas permiten que desayunes, comas o cenes lo que tú quieras en el propio apartamento, pero deberás hacer la compra de lo que vayas a consumir. También había calefacción y he de decir que en el apartamento había una temperatura muy agradable cuando llegamos. La semana completa nos salió por algo menos de 400€, lo que supone un gran diferencia con cualquier hotel y la posibilidad de ahorrar algo de dinero en las comidas.
 

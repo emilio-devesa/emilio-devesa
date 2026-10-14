@@ -1,37 +1,11 @@
 ---
-import PrimaryLayout from '../../../layouts/PrimaryLayout.astro';
-import SiteHeader from '../../../components/SiteHeader.astro';
-import HeroMini from '../../../components/HeroMini.astro';
+import ClasesLayout from '../../../layouts/ClasesLayout.astro';
 import ProseSection from '../../../components/ProseSection.astro';
 import PrivacyPolicyMd from '../../../lessons/legal/privacy-policy.md';
-import SiteFooter from '../../../components/SiteFooter.astro';
-
-const navLinks = [
-  { href: '/clases/#lessons', label: 'Clases' },
-  { href: '/clases/#studio', label: 'Estudio' },
-  { href: '/clases/#conditions', label: 'Condiciones' },
-  { href: '/clases/#contact', label: 'Contacto' },
-];
-
-const footerLinks = [
-  { href: '/', label: 'Inicio' },
-  { href: '/clases/legal/privacy-policy', label: 'Política de privacidad y protección de datos' },
-  { href: '/clases/legal/media-consent', label: 'Política sobre uso de imagen' },
-];
 ---
 
-<PrimaryLayout
-  title="Política de privacidad y protección de datos"
-  description="Información sobre las clases presenciales de batería con Emilio Devesa."
-  robots="noindex, nofollow"
->
-  <SiteHeader links={navLinks} idPrefix="clases" />
-
-  <HeroMini title="Clases de Batería" />
-
+<ClasesLayout title="Política de privacidad y protección de datos">
   <ProseSection id="info" title="Política de privacidad y protección de datos">
     <PrivacyPolicyMd />
   </ProseSection>
-
-  <SiteFooter links={footerLinks} />
-</PrimaryLayout>
+</ClasesLayout>

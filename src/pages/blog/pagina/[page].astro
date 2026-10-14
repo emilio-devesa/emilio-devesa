@@ -1,18 +1,8 @@
 ---
-import PrimaryLayout from '../../../layouts/PrimaryLayout.astro';
-import SiteHeader from '../../../components/SiteHeader.astro';
-import HeroMini from '../../../components/HeroMini.astro';
-import CategoryNav from '../../../components/blog/CategoryNav.astro';
-import PostList from '../../../components/blog/PostList.astro';
-import SiteFooter from '../../../components/SiteFooter.astro';
+import BlogLayout from '../../../layouts/BlogLayout.astro';
 
 import { getCollection } from 'astro:content';
 import { BLOG_PAGE_SIZE } from '../../../lib/blog';
-
-const navLinks = [
-  { href: '/blog', label: 'Blog' },
-  { href: 'https://github.com/emilio-devesa', label: 'GitHub' },
-];
 
 export async function getStaticPaths() {
   const allPosts = (await getCollection('blog')).sort(
@@ -33,21 +23,13 @@ export async function getStaticPaths() {
 const { posts, currentPage, totalPages } = Astro.props;
 ---
 
-<PrimaryLayout title={`Blog – Página ${currentPage}`} robots="noindex, nofollow">
-  <SiteHeader links={navLinks} ariaLabel="Navegación del blog" idPrefix="blog" />
-
-  <HeroMini title="Emilio Devesa" />
-
-  <section id="posts">
-    <h2>Entradas</h2>
-    <CategoryNav active="todo" />
-    <PostList posts={posts} currentPage={currentPage} totalPages={totalPages} showCategory />
-  </section>
-
-  <SiteFooter
-    links={[
-      { href: '/', label: 'Inicio' },
-      { href: '/blog', label: 'Blog' },
-    ]}
-  />
-</PrimaryLayout>
+<BlogLayout
+  title={`Blog – Página ${currentPage}`}
+  description={`Entradas del blog de Emilio Devesa: página ${currentPage} de ${totalPages}.`}
+  activeCategory="todo"
+  heading="Entradas"
+  posts={posts}
+  currentPage={currentPage}
+  totalPages={totalPages}
+  showCategory
+/>

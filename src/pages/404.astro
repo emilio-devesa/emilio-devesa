@@ -1,22 +1,24 @@
 ---
 import PrimaryLayout from '../layouts/PrimaryLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
+import HeroMini from '../components/HeroMini.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
 const navLinks = [
-  { href: '#sobre-mi', label: 'Quién soy' },
-  { href: '#clases', label: 'Clases de Batería' },
-  { href: '#compromiso', label: 'Mi compromiso' },
-  { href: '#music', label: 'Discografía' },
-  { href: '#contact', label: 'Contacto' },
+  { href: '/#sobre-mi', label: 'Quién soy' },
+  { href: '/#clases', label: 'Clases de Batería' },
+  { href: '/#compromiso', label: 'Mi compromiso' },
+  { href: '/#music', label: 'Discografía' },
+  { href: '/#contact', label: 'Contacto' },
 ];
 ---
 
 <PrimaryLayout title="404 No Encontrada" robots="noindex, nofollow">
   <SiteHeader links={navLinks} idPrefix="home" />
 
-  <section class="hero hero--mini">
-    <h1>Página no encontrada</h1>
+  <HeroMini title="Página no encontrada" />
+
+  <section>
     <p>Lo sentimos, la página que estás buscando no existe.</p>
     <p>
       Por favor, verifica la URL o vuelve a la <a href="/">página principal</a>.

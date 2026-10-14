@@ -1,0 +1,44 @@
+---
+interface Card {
+  title: string;
+  description: string;
+}
+
+interface Cta {
+  text: string;
+  url: string;
+}
+
+interface Props {
+  id: string;
+  title: string;
+  cards: Card[];
+  cta: Cta[];
+}
+
+const { id, title, cards, cta } = Astro.props;
+---
+
+<section id={id}>
+  <h2>{title}</h2>
+  <div class="offers">
+    {cards.map((card) => (
+      <div class="offer">
+        <h3>{card.title}</h3>
+        <p>{card.description}</p>
+      </div>
+    ))}
+  </div>
+
+  <div class="cta-row">
+    <ul>
+      {cta.map((button) => (
+        <li>
+          <a class="cta" href={button.url}>
+            {button.text}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

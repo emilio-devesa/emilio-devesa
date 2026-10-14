@@ -1,0 +1,63 @@
+---
+import PrimaryLayout from './PrimaryLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import HeroMini from '../components/HeroMini.astro';
+import CategoryNav from '../components/blog/CategoryNav.astro';
+import PostList from '../components/blog/PostList.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  title: string;
+  description: string;
+  activeCategory: string;
+  heading: string;
+  posts: CollectionEntry<'blog'>[];
+  currentPage: number;
+  totalPages: number;
+  pageUrl?: (page: number) => string;
+  showCategory?: boolean;
+}
+
+const {
+  title,
+  description,
+  activeCategory,
+  heading,
+  posts,
+  currentPage,
+  totalPages,
+  pageUrl,
+  showCategory = false,
+} = Astro.props;
+
+const navLinks = [
+  { href: '/blog', label: 'Blog' },
+  { href: 'https://github.com/emilio-devesa', label: 'GitHub' },
+];
+---
+
+<PrimaryLayout title={title} description={description} robots="noindex, nofollow">
+  <SiteHeader links={navLinks} ariaLabel="Navegación del blog" idPrefix="blog" />
+
+  <HeroMini title="Emilio Devesa" />
+
+  <section id="posts">
+    <h2>{heading}</h2>
+    <CategoryNav active={activeCategory} />
+    <PostList
+      posts={posts}
+      currentPage={currentPage}
+      totalPages={totalPages}
+      pageUrl={pageUrl}
+      showCategory={showCategory}
+    />
+  </section>
+
+  <SiteFooter
+    links={[
+      { href: '/', label: 'Inicio' },
+      { href: '/blog', label: 'Blog' },
+    ]}
+  />
+</PrimaryLayout>

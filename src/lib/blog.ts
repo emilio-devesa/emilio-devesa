@@ -1,3 +1,7 @@
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+
 export const BLOG_PAGE_SIZE = 20;
 
 export interface BlogCategory {
@@ -14,10 +18,6 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
   { slug: 'videojuegos', label: 'Videojuegos', match: ['videojuegos'] },
   { slug: 'mas', label: 'Más', match: ['sin-categoria'] },
 ];
-
-import { getImage } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
-import type { CollectionEntry } from 'astro:content';
 
 // Primera imagen del cuerpo optimizada en build. Sin imagen o con
 // error devuelve undefined para que la llamada pinte sin miniatura.

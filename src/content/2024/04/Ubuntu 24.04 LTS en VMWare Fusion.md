@@ -33,3 +33,5 @@ Ahora ya podemos recargar el daemon del sistema y montar todo:
 user@ubuntu:~$ sudo systemctl daemon-reload
 user@ubuntu:~$ sudo mount /mnt/hgfs
 ```
+
+![](images/git.png)

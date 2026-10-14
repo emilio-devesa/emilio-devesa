@@ -1,0 +1,39 @@
+---
+import PrimaryLayout from './PrimaryLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import HeroMini from '../components/HeroMini.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'Información sobre las clases presenciales de batería con Emilio Devesa.',
+} = Astro.props;
+
+const navLinks = [
+  { href: '/clases/#lessons', label: 'Clases' },
+  { href: '/clases/#studio', label: 'Estudio' },
+  { href: '/clases/#conditions', label: 'Condiciones' },
+  { href: '/clases/#contact', label: 'Contacto' },
+];
+
+const footerLinks = [
+  { href: '/', label: 'Inicio' },
+  { href: '/clases/legal/privacy-policy', label: 'Política de privacidad y protección de datos' },
+  { href: '/clases/legal/media-consent', label: 'Política sobre uso de imagen' },
+];
+---
+
+<PrimaryLayout title={title} description={description} robots="noindex, nofollow">
+  <SiteHeader links={navLinks} idPrefix="clases" />
+
+  <HeroMini title="Clases de Batería" />
+
+  <slot />
+
+  <SiteFooter links={footerLinks} />
+</PrimaryLayout>
