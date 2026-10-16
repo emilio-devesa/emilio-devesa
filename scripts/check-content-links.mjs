@@ -90,3 +90,5 @@ for (const b of brokenLinks.slice(0, 100)) console.log(`- ENLACE ${b.file} -> ${
 for (const b of brokenImgs.slice(0, 100)) console.log(`- IMAGEN ${b.file} -> ${b.target}`);
 if (brokenLinks.length + brokenImgs.length > 100)
   console.log(`… y ${brokenLinks.length + brokenImgs.length - 100} más`);
+// El CI debe fallar si hay algo roto: sin exit code el chequeo es decorativo.
+if (brokenLinks.length + brokenImgs.length > 0) process.exitCode = 1;
