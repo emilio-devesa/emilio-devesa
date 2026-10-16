@@ -25,17 +25,43 @@ const navLinks = NOT_FOUND_NAV_LINKS;
       <a href="/">página principal</a>.
     </p>
     <form class="blog-search" action="/blog/" method="get" role="search">
-      <input
-        type="search"
-        id="notfound-search-input"
-        class="blog-search-input"
-        name="q"
-        placeholder="Buscar artículos…"
-        aria-label="Buscar en el blog"
-        autocomplete="off"
-      />
+      <div class="blog-search-field">
+        <input
+          type="search"
+          id="notfound-search-input"
+          class="blog-search-input"
+          name="q"
+          placeholder="Buscar artículos…"
+          aria-label="Buscar en el blog"
+          autocomplete="off"
+        />
+        <button
+          type="button"
+          id="notfound-search-clear"
+          class="blog-search-clear"
+          aria-label="Limpiar búsqueda"
+          hidden
+        >
+          ✕
+        </button>
+      </div>
     </form>
   </section>
 
+  <script is:inline>
+    const notfoundInput = document.getElementById('notfound-search-input');
+    const notfoundClear = document.getElementById('notfound-search-clear');
+    if (notfoundInput && notfoundClear) {
+      const syncNotfoundClear = () =>
+        notfoundClear.toggleAttribute('hidden', notfoundInput.value === '');
+      notfoundInput.addEventListener('input', syncNotfoundClear);
+      notfoundClear.addEventListener('click', () => {
+        notfoundInput.value = '';
+        syncNotfoundClear();
+        notfoundInput.focus();
+      });
+      syncNotfoundClear();
+    }
+  </script>
   <SiteFooter links={[{ href: '/', label: 'Inicio' }]} slot="footer" />
 </PrimaryLayout>

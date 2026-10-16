@@ -41,14 +41,25 @@ const navLinks = BLOG_NAV_LINKS;
   <section id="posts">
     <CategoryNav active={activeCategory} />
     <div class="blog-search" data-pagefind-ignore>
-      <input
-        type="search"
-        id="blog-search-input"
-        class="blog-search-input"
-        placeholder="Buscar artículos…"
-        aria-label="Buscar artículos"
-        autocomplete="off"
-      />
+      <div class="blog-search-field">
+        <input
+          type="search"
+          id="blog-search-input"
+          class="blog-search-input"
+          placeholder="Buscar artículos…"
+          aria-label="Buscar artículos"
+          autocomplete="off"
+        />
+        <button
+          type="button"
+          id="blog-search-clear"
+          class="blog-search-clear"
+          aria-label="Limpiar búsqueda"
+          hidden
+        >
+          ✕
+        </button>
+      </div>
       <p id="blog-search-status" class="blog-search-status" role="status" aria-live="polite"></p>
     </div>
     <PostList
@@ -65,10 +76,14 @@ const navLinks = BLOG_NAV_LINKS;
   <script is:inline>
     (() => {
       const input = document.getElementById('blog-search-input');
+      const clearBtn = document.getElementById('blog-search-clear');
       const status = document.getElementById('blog-search-status');
       const results = document.getElementById('blog-search-results');
       const section = document.getElementById('posts');
       if (!input || !status || !results || !section) return;
+      const syncClear = () => {
+        if (clearBtn) clearBtn.toggleAttribute('hidden', input.value === '');
+      };
       const statics = section.querySelectorAll(':scope > nav, :scope > ul.post-list');
       let pagefind = null;
       let timer = 0;
@@ -120,6 +135,7 @@ const navLinks = BLOG_NAV_LINKS;
       }
       input.addEventListener('input', () => {
         const query = input.value.trim();
+        syncClear();
         clearTimeout(timer);
         if (!query) {
           reset();
@@ -127,10 +143,19 @@ const navLinks = BLOG_NAV_LINKS;
         }
         timer = window.setTimeout(() => run(query), 200);
       });
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          input.value = '';
+          syncClear();
+          reset();
+          input.focus();
+        });
+      }
       // Búsqueda desde otras páginas (?q= en la URL, p. ej. la 404).
       const initial = new URLSearchParams(window.location.search).get('q');
       if (initial) {
         input.value = initial;
+        syncClear();
         run(initial);
       }
     })();

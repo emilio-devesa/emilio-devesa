@@ -486,6 +486,11 @@ section li {
     align-items: center;
   }
 
+  /* Enlaces de plataformas centrados bajo el texto (como en colaboraciones). */
+  .album .links {
+    justify-content: center;
+  }
+
   .offer {
     flex: 1 1 100%;
   }
@@ -536,14 +541,42 @@ footer a:hover {
   margin-bottom: 1rem;
 }
 
+.blog-search-field {
+  position: relative;
+}
+
 .blog-search-input {
   width: 100%;
-  padding: 0.6rem 0.9rem;
+  padding: 0.6rem 2.75rem 0.6rem 0.9rem;
   background-color: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   color: var(--foreground);
   font-size: 1rem;
+}
+
+/* Se usa botón propio (siguiente regla): se oculta el nativo de escritorio. */
+.blog-search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* X para limpiar: el nativo no existe en todos los móviles. */
+.blog-search-clear {
+  position: absolute;
+  top: 50%;
+  right: 0.25rem;
+  transform: translateY(-50%);
+  padding: 0.6rem 0.9rem;
+  background: none;
+  border: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.blog-search-clear:hover {
+  color: var(--foreground);
 }
 
 .blog-search-input:focus {
@@ -974,12 +1007,18 @@ details.toc[open] .toc-title {
   border-radius: var(--radius);
   color: var(--primary);
   text-decoration: none;
+  /* Que "← Anterior" no parta la flecha de la palabra en móvil. */
+  white-space: nowrap;
 }
 
 @media (max-width: 768px) {
+  .pagination {
+    gap: 0.5rem;
+  }
+
   .pagination a,
   .pagination span {
-    padding: 0.75rem 1.25rem;
+    padding: 0.6rem 0.9rem;
   }
 }
 
