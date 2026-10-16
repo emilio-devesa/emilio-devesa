@@ -7,6 +7,7 @@ categories:
   - "software"
 ---
 
+## Enunciado
 Este viernes me examiné de esta asignatura, y la prueba me pareció muy fácil. El apartado de escribir código fue, en palabras del propio profesor, trivial:
 
 _El método de la suma de sucesivos impares permite calcular el cuadrado de un numero n de la siguiente manera:  
@@ -18,6 +19,7 @@ _El método de la suma de sucesivos impares permite calcular el cuadrado de un n
 ...  
 Implemente la funcion cuadrado para calcular, de forma NO RECURSIVA y utilizando el método de la suma de sucesivos impares, el cuadrado de un numero entero n >= 0 dado._
 
+## Desarrollando la función
 Lo primero en lo que me fijé fue en que para calcular el cuadrado de 2, sumo los dos primeros números impares (comenzando en 1); para calcular el cuadrado de 3, sumo los tres primeros impares; etc.
 
 Comenzamos planteando la función, sus condiciones y el caso base, calcular el cuadrado de 0, numero para el que no hay que realizar sumas. Como precaución, aprovecharemos también para escribir la última instrucción antes de que se nos olvide, la que asigna el valor del resultado a la función. 
@@ -82,6 +84,7 @@ begin
 end;
 ```
 
+## Otro punto de vista
 Y así queda completa esta función. No obstante, se puede entender de otra forma matemáticamente más eficiente: la suma de los elementos de una progresión aritmética de diferencia d = 2. La fórmula matemática que calcula la suma de n términos de una progresión aritmética de diferencia d es:  
 `Sn = (a1 + an) * n/2`  
 Por lo tanto, utilizando una variable an en nuestra función, podemos resolver el problema de forma totalmente inmediata:  
