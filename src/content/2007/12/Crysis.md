@@ -9,7 +9,7 @@ categories:
 
 ![Crysis](images/crysis.jpg)
 
-Hace unos meses que os contaba porqué [Half-Life 2 Episode Two](../../../2007/10/half-life-2-episode-two-orange-box/) era el mejor juego que jamás había probado. Bien. Hoy eso ha cambiado: tras una larga pero expectante espera, Crytek ha lanzado su segundo juego, titulado “Crysis” y llamado a ser el referente durante los próximos años. Tanto es así que tras su aparición estelar, el mercado de PC ha quedado un poco “huérfano” por falta de títulos de mayor calibre. Todo a su lado parece empequeñecer hasta tal punto que ni siquiera el multiplataforma y pulcro Assasin’s Creed le puede hacer sombra. Entendido este punto comenzaremos comentando el guión de esta obra maestra.
+Hace unos meses que os contaba porqué [Half-Life 2 Episode Two](../../../2007/10/half-life-2-episode-two-orange-box/) era el mejor juego que jamás había probado. Bien. Hoy eso ha cambiado: tras una larga pero expectante espera, Crytek ha lanzado su segundo juego, titulado “Crysis” y llamado a ser el referente durante los próximos años. Tanto es así que tras su aparición estelar, el mercado de PC ha quedado un poco “huérfano” por falta de títulos de mayor calibre. Todo a su lado parece empequeñecer hasta tal punto que ni siquiera el multiplataforma y pulcro _Assassin's Creed_ le puede hacer sombra. Entendido este punto comenzaremos comentando el guión de esta obra maestra.
 
 ![Crysis, 1](images/crysis-1.jpg)
 
