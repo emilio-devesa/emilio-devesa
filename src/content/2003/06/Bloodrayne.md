@@ -54,7 +54,7 @@ En resumen, un título más que correcto que no pretende ser innovador, sino aun
 - Detalle de los escenarios  
 - Muy fácil
 
-## Ficha Técnica:
+## Ficha técnica
 - Título: Bloodrayne  
 - Desarrollador: Terminal Reality  
 - Editor: Majesco  

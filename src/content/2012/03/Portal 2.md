@@ -2,7 +2,7 @@
 title: "Portal 2"
 lang: "es"
 date: "2012-03-15"
-description: "¡Regresa a Aperture! Han pasado muchos años y las impolutas cámaras blancas se han transformado en unas ruinas invadidas por la naturaleza. GLaDOS ya no es la misma pero no estás solo: Wheatley será un compañero inolvidable en esta nueva epopeya de puzzles. La secuela que lo supera todo."
+description: "¡Regresa a Aperture! El laboratorio está en ruinas. ¿Que fué de GLaDOS? Ahora ya no estás solo: el inolvidable Wheatley te espera. La secuela perfecta."
 categories: 
   - "videojuegos"
 ---

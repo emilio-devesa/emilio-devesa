@@ -2,7 +2,7 @@
 title: "MacBook 2007"
 lang: "es"
 date: "2024-05-18"
-description: "Rescatando un viejo MacBook blanco de 2007 con la batería muerta y problemas de sobrecalentamiento. Lo devolvemos a la vida con un SSD, más RAM y una pasta térmica nueva; con versiones modernas de OS X y Ubuntu. A este Mac aun le queda mucho por delante."
+description: "Rescatado! Devolvemos a la vida un viejo MacBook (2007) con un SSD, más RAM y una pasta térmica nueva; un nuevo OS X y Ubuntu. A este Mac aun le queda mucha vida!"
 categories: 
   - "hardware"
 ---

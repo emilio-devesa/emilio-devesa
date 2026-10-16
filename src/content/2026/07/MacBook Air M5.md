@@ -1,7 +1,7 @@
 ---
 title: "MacBook Air M5"
 date: "2026-07-12"
-description: "After twelve years with the 2014 MacBook Pro, it's time to move on: a deep-dive into usage analysis, what to avoid, and alternatives such as Framework or other Apple laptops. The most thought-through purchase I've ever made led me to this M5 MacBook Air (24 GB, 1 TB). With all the numbers, doubts and my single-cable desk dream."
+description: "Time to upgrade my Mac: the most thought-through purchase I've ever made led me to this M5 MacBook Air. All the numbers, doubts and my single-cable desk dream."
 lang: "en"
 categories: 
   - "hardware"

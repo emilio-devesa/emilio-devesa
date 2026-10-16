@@ -2,7 +2,7 @@
 title: "Portal (Orange Box)"
 lang: "es"
 date: "2007-10-25"
-description: "Coge la pistola de portales: atraviesa paredes, cae por el techo y burla a una IA que te promete una tarta. El puzzle definitivo después de años de cajas y palancas, donde cada solución abre una sospecha nueva y nada es lo que parece."
+description: "Coge la pistola de portales: atraviesa paredes, cae por el techo y burla a una IA que te promete una tarta. El puzzle definitivo donde nada es lo que parece."
 categories: 
   - "videojuegos"
 ---
