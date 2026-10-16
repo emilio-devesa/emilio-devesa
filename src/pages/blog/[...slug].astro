@@ -11,7 +11,7 @@ import {
   postsInSameCategory,
   readingMinutes,
 } from '../../lib/blog';
-import { postHeadings } from '../../lib/toc';
+import { postHeadings, type TocHeading } from '../../lib/toc';
 
 export async function getStaticPaths() {
   const posts = await getAllPosts();
@@ -54,6 +54,7 @@ interface Props {
   prev?: { title: string; url: string };
   next?: { title: string; url: string };
   related: CollectionEntry<'blog'>[];
+  headings: TocHeading[];
 }
 
 const { post, minutes, categoryLabel, categorySlug, prev, next, related, headings } = Astro.props;
