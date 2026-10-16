@@ -6,16 +6,11 @@ categories:
   - "hardware"
 ---
 
-![](images/lymax-l1-0.jpeg)
-
-**Ficha Técnica:**  
-Nombre: L1 Screen hanging light (Touching control)  
-Fabricante: Lymax  
-Precio: 21,63 €
+![Lymax L1](images/lymax-l1-0.jpeg)
 
 Si pasas muchas horas frente a la pantalla o te gusta trabajar a oscuras es posible que hayas experimentado fatiga ocular o tensión en los ojos. La iluminación inadecuada puede ser la causa principal de estos problemas, y ahí es donde entran en juego las barras de luz para monitor como la Lymax L1. Estas lámparas proporcionan una luz continua sin apenas parpadeos, sin molestos reflejos en la pantalla y que además te proporcionan una tenue y agradable luz ambiente en tu mesa de trabajo que puede mejorar significativamente tu experiencia de visualización.
 
-![](images/lymax-l1-1.jpeg)
+![Lymax L1, 1](images/lymax-l1-1.jpeg)
 
 La Lymax L1 mide 420 mm de largo se coloca en la parte superior del monitor, apoyada en una sencilla peana ajustable al grosor del marco de la pantalla. También permite ajustar la inclinación y proporciona una iluminación suave y uniforme a tu alrededor. Está diseñada para ser compatible con una amplia gama de monitores, por lo que puedes estar seguro de que funcionará con el tuyo. La versión que yo he adquirido se maneja mediante dos controles táctiles en la propia barra, aunque existe una versión con un controlador inalámbrico e incluso la posibilidad de tener dos barras para aquellos que utilicen dos monitores.
 
@@ -23,13 +18,13 @@ Cuenta con una potencia de 3,5W, más que suficiente para iluminar un espacio de
 
 En estas dos fotos puedes ver la diferencia en una habitación iluminada suavemente por un flexo y luz natural que entra por la ventana, y cómo incluso así se nota la luz de la barra en la zona del escritorio donde están el teclado y el ratón: 
 
-![](images/lymax-l1-2.jpeg) 
+![Lymax L1, 2](images/lymax-l1-2.jpeg) 
 
-![](images/lymax-l1-3.jpeg)
+![Lymax L1, 3](images/lymax-l1-3.jpeg)
 
 Y con la habitación completamente a oscuras: 
 
-![](images/lymax-l1-5.jpeg)
+![Lymax L1, 4](images/lymax-l1-5.jpeg)
 
 Aun con todo, hay algunos inconvenientes que necesites tener en cuenta. El primero es que si quieres ajustar finamente la temperatura de la luz, los únicos tres ajustes disponibles te limitarán mucho. En segundo lugar, si utilizas un monitor ultrawide esta lámpara se te va a quedar corta. Y en tercer lugar, si adquieres la versión con controlador inalámbrico, necesitarás ponerle una pila de botón (aunque el fabricante incluya una y vaya a durarle mucho tiempo).
 
@@ -37,16 +32,21 @@ Personalmente he optado por la versión sin el control remoto ya que creo que un
 
 En general, la Lymax L1 es una barra de luz para monitor sólida y asequible que puede mejorar significativamente tu experiencia de visualización. Si pasas muchas horas frente a tu monitor, la Lymax L1 puede reducir la fatiga ocular y mejorar la claridad de la imagen, lo que hace que sea una excelente inversión para cualquier persona que desee mejorar su productividad y comodidad al trabajar en el ordenador.
 
-![](images/lymax-l1-4.jpeg)
+![Lymax L1, 5](images/lymax-l1-4.jpeg)
 
-**NOTA: 7.5**
+## NOTA: 7.5
 
-**Lo mejor de Lymax L1:**  
-Luz continua muy agradable para la zona de trabajo y sin reflejos en la pantalla  
-Precio  
-Construcción robusta y manejo muy simple
+### Lo mejor de Lymax L1
+- Luz continua muy agradable para la zona de trabajo y sin reflejos en la pantalla  
+- Precio  
+- Construcción robusta y manejo muy simple
 
-**Lo peor de Lymax L1:**  
-Solo tres ajustes de temperatura  
-Muy corta si usas monitores ultrawide o de gran tamaño  
-El controlador inalámbrico requiere pilas
+### Lo peor de Lymax L1
+- Solo tres ajustes de temperatura  
+- Muy corta si usas monitores ultrawide o de gran tamaño  
+- El controlador inalámbrico requiere pilas
+
+## Ficha técnica
+- Nombre: L1 Screen hanging light (Touching control)  
+- Fabricante: Lymax  
+- Precio: 21,63 €

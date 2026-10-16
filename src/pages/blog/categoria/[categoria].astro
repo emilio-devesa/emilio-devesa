@@ -33,7 +33,6 @@ const { cat, posts, totalPages } = Astro.props;
   title={`Blog – ${cat.label}`}
   description={`Entradas del blog de Emilio Devesa sobre ${cat.label}.`}
   activeCategory={cat.slug}
-  heading={`Entradas: ${cat.label}`}
   posts={posts}
   currentPage={1}
   totalPages={totalPages}

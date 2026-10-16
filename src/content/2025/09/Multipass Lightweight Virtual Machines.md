@@ -9,7 +9,7 @@ categories:
 
 If you need a quick, reliable way to run Ubuntu virtual machines (VMs) on your local machine, **Multipass** is one of the best tools available. It’s a lightweight VM manager that makes it easy to launch, configure, and manage Ubuntu instances with just a few commands — perfect for developers, sysadmins, and anyone who wants isolated test environments. Multipass is made by **Canonical**, the same company behind the development of Ubuntu.
 
-**Installing Multipass**  
+## Installing Multipass
 You can download Multipass for Linux, macOS, and Windows from the official Canonical website: https://multipass.run/
 
 On macOS, you can also install it directly via **Homebrew**:  
@@ -24,9 +24,9 @@ multipass version
 
 This should print the client and daemon version, confirming that Multipass is ready to use.
 
-![](images/multipass-launch-info-list.png)
+![Multipass: Lightweight Virtual Machines](images/multipass-launch-info-list.png)
 
-**Key Multipass Commands**  
+## Key Multipass Commands
 Here are the most common commands you’ll use with Multipass:  
 - `multipass find`: Lists the available Ubuntu images you can launch.
 - `multipass launch`: Creates a new virtual machine. By default, this will use the latest available Ubuntu LTS image.
@@ -37,7 +37,7 @@ Here are the most common commands you’ll use with Multipass:
 - `multipass list`: Displays a table with all your VMs, including their state (Running/Stopped), IP address, and resource usage.
 - `multipass info <name>`: Shows detailed information about a specific VM, including allocated resources and mount points.
 
-**Listing Available Images and Using a Custom File**  
+## Listing Available Images and Using a Custom File
 Before launching a VM, you can see which images are available by running:  
 ```
 multipass find
@@ -74,8 +74,8 @@ Once the VM is running, you can inspect it with:
 multipass info vm
 ```
 
-**Where to Get Cloud Images**  
+## Where to Get Cloud Images
 You can download official Ubuntu cloud images (including minimal images, server images, and daily builds) from Canonical’s repository at https://cloud-images.ubuntu.com/  
 From there, you can choose the Ubuntu release you want (e.g., 24.04), and pick the appropriate .img file for your architecture (usually amd64 for most modern systems).
 
-![](images/multipass-shell.png)
+![Multipass: Lightweight Virtual Machines, 1](images/multipass-shell.png)

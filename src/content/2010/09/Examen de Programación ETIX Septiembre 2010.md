@@ -37,7 +37,7 @@ begin
 end;
 ```
 
-Con esto planteado, utilizaré una variable llamada "impar" que comience con valor 1 y un bucle en el que en cada paso, impar aumente su valor en 2 para que me dé esa sucesión de numeros impares. 
+Con esto planteado, utilizaré una variable llamada `impar` que comience con valor 1 y un bucle en el que en cada paso, `impar` aumente su valor en 2 para que me dé esa sucesión de numeros impares. 
 ```
 function cuadrado (n: integer): integer; 
 { Objetivo: Calcula el cuadrado de n mediante la suma de sucesivos numeros impares. 

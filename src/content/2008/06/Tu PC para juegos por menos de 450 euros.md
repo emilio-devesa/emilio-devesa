@@ -6,7 +6,7 @@ categories:
   - "hardware"
 ---
 
-![](images/thermaltake-matrix-vx1.jpg)
+![Tu PC para juegos por menos de 450 euros](images/thermaltake-matrix-vx1.jpg)
 
 Plan renove: llega Crysis y no podemos dejarlo escapar. Hay que jugarlo y además hay que hacerlo bien, pequeño Mike. Te enseñamos como jugar más pagando menos.
 
@@ -18,17 +18,19 @@ El micro puede resultar todavía más barato. Cierto es que el Pentium Dual-Core
 
 ¡Alto! Estando en un buen momento para comprar RAM podemos echar mano de varios gigas, pero tan solo necesitamos 2 GB DDR2 a 800 MHz de Trascend por 30 €. Sus latencias no son nada del otro mundo (5-5-5-18) pero al menos soportan funcionar con más voltaje de lo habitual en DDR2, lo que nos dará un pequeño margen de overclocking.
 
-![](images/pentium-e2xx0-box1.jpg)
+![Tu PC para juegos por menos de 450 euros, 1](images/pentium-e2xx0-box1.jpg)
 
 Mover Crysis en calidad Muy Alta y renderizado DirectX10 es casi imposible en nuestro presupuesto, pero no renunciamos a jugarlo en calidad Alta bajo DirectX 9. Y ahora que ha salido la serie HD4xxx de AMD/ATI, la generación anterior está muy bien de precio. Una HD3870 de 512 MB GDDR3 para puerto PCI-E puede salirnos por tan solo 120 €, y además es Gigabyte por lo tanto los condensadores sólidos incorporados nos beneficiarán si queremos subirla un poco por encima de sus posibilidades.
 
-![](images/ati-radeon-hd-3870.jpg)
+Es necesario comentar que la 3870 se puede encontrar tambien con GDDR4 pero el beneficio no es tan grande como para desechar el modelo de GDDR3, y la diferencia solo se hace notar un poco en los test sintéticos. Para jugar parece más sensato seguir apostando por la versión con GDDR3 que ahora está bastante barata. 
 
-Es necesario comentar que la 3870 se puede encontrar tambien con GDDR4 pero el beneficio no es tan grande como para desechar el modelo de GDDR3, y la diferencia solo se hace notar un poco en los test sintéticos. Para jugar parece más sensato seguir apostando por la versión con GDDR3 que ahora está bastante barata. Efectivamente, compañero, un buen disco duro es necesario para guardar todos nuestros datos e instalar Crysis sin que la información salga despedida de los platos por falta de espacio en disco. Por 60 € conseguimos un [Seagate Barracuda 7200.11 de 500 GB](../../../2008/06/seagate-barracuda-720011) que incorpora unas buenas tasas de lectura/escritura y 32 MB de caché. No es el más rápido ni el más económico, pero es de los últimos que pudimos encontrar sin estar sujeto al nuevo canon digital. Ya tenemos todos los componentes esenciales para nuestro nuevo PC. Podemos ahora añadir al carrito una unidad óptica como por ejemplo una regrabadora de DVD que ronde los 30 €.
+![Tu PC para juegos por menos de 450 euros, 2](images/ati-radeon-hd-3870.jpg)
+
+Efectivamente, compañero, un buen disco duro es necesario para guardar todos nuestros datos e instalar Crysis sin que la información salga despedida de los platos por falta de espacio en disco. Por 60 € conseguimos un [Seagate Barracuda 7200.11 de 500 GB](../../../2008/06/seagate-barracuda-720011) que incorpora unas buenas tasas de lectura/escritura y 32 MB de caché. No es el más rápido ni el más económico, pero es de los últimos que pudimos encontrar sin estar sujeto al nuevo canon digital. Ya tenemos todos los componentes esenciales para nuestro nuevo PC. Podemos ahora añadir al carrito una unidad óptica como por ejemplo una regrabadora de DVD que ronde los 30 €.
 
 Todavía podríamos hacernos con un buen conjunto de altavoces que mejore nuestra experiencia, o una TFT de generosas dimensiones. Sin embargo, todos estos accesorios no afectarán al rendimiento así que los dejaremos a un lado para que cada uno escoja los que crea más adecuados o para que aproveche los que tenga, lo mismo que el sistema operativo.
 
-![](images/monta-tu-pc.jpg)
+![Tu PC para juegos por menos de 450 euros, 3](images/monta-tu-pc.jpg)
 
 Montamos el PC e instalamos una copia de Windows XP SP3 con los driver del CD que venia con la placa base. Para la tarjeta gráfica utilizamos los Catalyst 8.6 del 18 de Junio de 2008. Lo primero es lo primero, así que ejecutamos el 3D-Mark 06 con el hotfix de Febrero de 2008 que incluye pruebas de carga para la gráfica y el procesador. Arrojó unos saludables pero no fascinantes 8893 puntos.
 
@@ -40,7 +42,7 @@ Conseguimos que funcionase estable a esa velocidad, y la prueba de 3D-Mark se di
 
 A estas velocidades Crysis es jugable a 1024x768 2xAA y todos los ajustes en Alto, y a 1280x1024 píxeles con todo en Alto, pero sin filtrado. Obviamente es más de lo que pedíamos para un PC que cuesta menos que una 9800 GTX.
 
-![](images/monta-tu-pc-interior.jpg)
+![Tu PC para juegos por menos de 450 euros, 4](images/monta-tu-pc-interior.jpg)
 
 ¿Y si nuestro presupuesto no fuese tan ajustado? Bueno, básicamente parece que es el procesador el que más afectó al rendimiento, de modo que sería muy sensato hacerse con uno que tuviese más caché L2 y funcionase a más MHz, como por ejemplo un Quad Core o un Core 2 Duo de gama alta. No obstante son bastante caros en comparación con la ganancia de rendimiento, a no ser que te asuste el overclocking de tu PC.
 
@@ -50,4 +52,4 @@ O en vez de adquirir una HD 3870 podríamos echar un ojo a la nueva generación 
 
 Y si no, pues no pasa nada. En cualquier caso, nuestro bolsillo y nuestro ocio nos agradecerán haber probado a montar un PC por nosotros mismos con unos componentes bien escogidos.
 
-![](images/monta-tu-pc-escritorio.jpg)
+![Tu PC para juegos por menos de 450 euros, 5](images/monta-tu-pc-escritorio.jpg)

@@ -79,7 +79,8 @@ body {
   left: 0;
 }
 
-section[id] {
+section[id],
+article[id] {
   scroll-margin-top: var(--scroll-offset);
 }
 
@@ -216,7 +217,8 @@ nav a:hover {
 }
 
 /* 5. Secciones y botones */
-section {
+section,
+article#article-content {
   padding: 4rem 2rem;
   max-width: 1000px;
   margin: auto;
@@ -490,7 +492,8 @@ section li {
     min-height: 40vh;
   }
 
-  section {
+  section,
+  article#article-content {
     padding: 3rem 1.5rem;
   }
 }
@@ -890,7 +893,8 @@ a.post-thumb:focus-visible img {
     font-size: 12pt;
   }
 
-  section {
+  section,
+  article#article-content {
     max-width: none;
     padding: 0;
   }

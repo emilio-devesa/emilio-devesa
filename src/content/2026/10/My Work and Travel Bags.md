@@ -7,7 +7,12 @@ categories:
   - "sin-categoria"
 ---
 
-For almost twenty years, I have used only one computer at a time. When I in my first year at university, my parents bought me a 15-inch Packard Bell laptop. It was a decent machine, but carrying it back and forth to university made my daily commute miserable. I had to carry it in a large backpack or laptop bag along with its charger, as the battery lasted barely two hours. It worked well enough, but portability was definitely not its strongest point.
+## The starting point
+For almost twenty years, I have used only one computer at a time. When I in my first year at university, my parents bought me a 15-inch Packard Bell MZ36-T-073 laptop. It was a decent machine, but carrying it back and forth to university made my daily commute miserable. I had to carry it in a large backpack or laptop bag along with its charger, as the battery lasted barely two hours. It worked well enough, but portability was definitely not its strongest point.
+
+I was using a Targus TSB081 Backpack that had only one strap so all the weight was put on one shoulder:
+
+![Targus TSB081EU Backpack](images/targus-tsb081eu.jpeg)
 
 That changed when I discovered the [Asus Eee PC 901](../../../2008/10/asus-eee-pc-901/). I immediately fell in love with this small, lightweight computer. I could carry it around every day in its included bag, and still get some work done: basic coding, taking notes and keeping PDFs of my lessons close at hand.
 
@@ -17,35 +22,35 @@ I eventually sold the Packard Bell and stuck with the Asus for three years. Then
 
 The 1215N was larger than the 901, so I needed a slightly bigger bag. That was when I bought the Belkin Messenger Bag that I still own today.
 
-**Belkin Messenger Bag**  
+## Belkin Messenger Bag
 Looking back, I don't think I gave this bag enough credit for its everyday performance, appearance and comfort. It is compact, practical and surprisingly capable. It can accommodate a laptop, its charger and even a tablet, with additional pockets for a pen, smartphone, headphones and sunglasses. There is also room for a few documents, provided you don't mind bending their corners a little.
 
-![](images/belkin-messenger-bag-1.jpeg)
+![Belkin Messenger Bag, 1](images/belkin-messenger-bag-1.jpeg)
 
 There are two things I have always missed, though: an external pocket for a water bottle and the option to detach the shoulder strap completely. The strap can be tucked away in an exterior pocket, but it cannot be removed.
 
 The bag combines nylon and neoprene, and its overall construction has held up remarkably well. The zippers, Velcro fasteners and padding around the laptop compartment have all proved dependable, while the interior dividers help keep small accessories organised. You can carry it by the handle, over your shoulder or across your body.
 
-![](images/belkin-messenger-bag-2.jpeg)
+![Belkin Messenger Bag, 2](images/belkin-messenger-bag-2.jpeg)
 
 After around fifteen years of use, it remains a bag I genuinely like. It has needed a repair to a torn seam at one corner, but that is a pretty good track record for something I have carried through several computers and countless commutes.
 
 Its main limitation is capacity. When all I need is my laptop and a few everyday essentials, it is excellent. When I need to bring extra clothes, shoes or a water bottle, things become much more complicated.
 
-| ![](images/belkin-messenger-bag-3.jpeg) | ![](images/belkin-messenger-bag-4.jpeg) | ![](images/belkin-messenger-bag-5.jpeg) |
+| ![Belkin Messenger Bag (Details), 1](images/belkin-messenger-bag-3.jpeg) | ![Belkin Messenger Bag (Details), 2](images/belkin-messenger-bag-4.jpeg) | ![Belkin Messenger Bag (Details), 3](images/belkin-messenger-bag-5.jpeg) |
 |---|---|---|
 
-**Backpacks**  
+## Backpacks
 At the end of 2014, I replaced the Eee PC 1215N with my [13-inch MacBook Pro](../../../2025/02/macbook-pro-2014/). I travelled quite a lot with this Mac, both for work and leisure, and the Belkin continued to serve me well.
 
 However, I often carried the computer in a backpack instead. I tried several models, including a couple of inexpensive ones I bought on Amazon because of their simple design and low prices. None really stood out. More importantly, I never felt entirely confident about how well they protected my laptop.
 
 I started looking for something better: a bag that was comfortable to carry, offered proper laptop protection and could handle the demands of travelling without being unnecessarily bulky.
 
-**Paco Martínez Executive Backpack**  
+### Paco Martínez Executive Backpack
 Fast-forward to November 2021, and I was still using my 2014 MacBook Pro. I was about to start flying more frequently within Spain and occasionally to Germany, so my mother decided it was time for a more suitable travel bag. She bought me a black Paco Martínez executive backpack.
 
-![](images/paco-martinez-men-work-backpack-1.jpeg)
+![Paco Martínez Men Executive Work Backpack, 1](images/paco-martinez-men-work-backpack-1.jpeg)
 
 This model has a professional, understated appearance and combines the portability of a backpack with features designed for carrying documents and electronics.
 
@@ -55,9 +60,9 @@ It has served me well, but there are still a couple of things I would change. Li
 
 I can fit a pair of shoes inside if necessary, but that leaves little room for anything else. It is a useful work backpack, but its capacity becomes a limitation when I need to carry both my usual equipment and additional clothing.
 
-![](images/paco-martinez-men-work-backpack-2.jpeg)
+![Paco Martínez Men Executive Work Backpack, 2](images/paco-martinez-men-work-backpack-2.jpeg)
 
-**Looking for something new**  
+### Looking for something new
 It is now autumn 2026. I don't fly as frequently as I used to, but I still travel for work and leisure. My cabin suitcase has been passed on to my partner, whose own suitcase has a broken handle, and I have been looking for a lighter, smaller alternative for short trips.
 
 My needs have not changed dramatically. I still carry a laptop and a collection of everyday essentials, but my trips are often shorter, and I want to be able to travel for a couple of days without feeling constrained by my luggage.
@@ -79,12 +84,12 @@ There were plenty of cheaper alternatives on Amazon, but I was less interested i
 
 Then I remembered a documentary.
 
-**Pakt One Travel Duffel (28L)**  
+## Pakt One Travel Duffel (28L)
 I remembered Mat D'Avella's documentary "[Minimalism: a documentary about the important things](https://www.youtube.com/watch?v=J8DGjUv-Vjc)" which is available to watch on YouTube. One of the men featured in the film used a bag that was praised as "the only bag you will ever need". Could that really be true?
 
 After watching this documentary again and going through promotional videos and customer reviews, I finally bit the bullet and bought the Pakt One Travel Duffel (28L), the latest version of a bag originally launched under the Malcolm Fontier brand.
 
-![](images/pakt-one-travel-duffel-28l-1.jpeg)
+![Pakt One Travel Duffel (28L)](images/pakt-one-travel-duffel-28l-1.jpeg)
 
 The Pakt One Travel Duffel is a 28-litre travel bag designed to combine the portability of a duffel with the organisation of a suitcase. It opens in clamshell style, making packing and unpacking straightforward. It has a padded laptop compartment for devices up to 16 inches, several quick-access pockets, a hideaway water bottle pocket and a luggage pass-through for attaching it to a rolling suitcase.
 
@@ -96,9 +101,9 @@ I had a few concerns, though. Would it be too large for everyday carry? How well
 
 I was about to find out, as the first rainy days of autumn arrived.
 
-![](images/pakt-one-travel-duffel-28l-2.jpeg)
+![Pakt One Travel Duffel (28L), Interior](images/pakt-one-travel-duffel-28l-2.jpeg)
 
-**The first test: a rainy commute**  
+### The first test: a rainy commute
 My first real test came on a rainy day when I needed to carry more than usual. Along with my MacBook Air, charger and everyday essentials, I had to pack a pair of trainers and some extra clothing to change into at work.
 
 This was precisely the kind of situation that had made me reconsider my old bags in the first place. The Belkin Messenger Bag would simply have been too small for all of this, while the Paco Martínez would have struggled to accommodate everything comfortably.
@@ -109,9 +114,9 @@ That was my first impression: the bag felt slightly oversized for everyday use. 
 
 This is the trade-off I wanted to explore. I did not want to buy another bag that could only carry my usual essentials; I wanted something that could handle the days when I needed to take more with me, without having to resort to a separate piece of luggage.
 
-![](images/pakt-one-travel-duffel-28l-3.jpeg)
+![Pakt One Travel Duffel (28L), laptop compartment](images/pakt-one-travel-duffel-28l-3.jpeg)
 
-**The first trip: Tuesday to Thursday**  
+### The first trip: Tuesday to Thursday
 A few days later, I took the Pakt One on a Tuesday-to-Thursday trip, and it turned out to be the perfect size for a short getaway.
 
 I managed to fit a pair of shoes, a pair of slippers, a coat, my laptop and its charger, clean clothes, a notebook, headphones, a toiletry bag, keys, sunglasses, and a few other everyday essentials. Everything fitted comfortably, without having to squeeze things in or leave anything behind.
@@ -122,7 +127,7 @@ After worrying that the bag might be too large for everyday use, I was pleased t
 
 Of course, a single trip is not enough to establish whether the Pakt is the right bag for every situation. But it has already proved its worth when carrying a laptop and clothing together, which is exactly what I wanted it to do.
 
-**Comparing the three bags**  
+## Comparing the three bags
 | Feature | Belkin Messenger Bag | Paco Martínez Executive Backpack | Pakt One Travel Duffel (28L) |
 |---|---|---|---|
 | Everyday carry | Very compact | Medium-sized | Large |
@@ -136,7 +141,7 @@ Of course, a single trip is not enough to establish whether the Pakt is the righ
 
 These are my own assessments based on the bags' design and my experience using them, rather than the results of standardised tests. In particular, although the Pakt has a well-padded laptop compartment, I haven't used it long enough to assess its long-term protective performance or durability.
 
-**The approximate price of the bags**  
+### The approximate price of the bags
 Price is another important difference between these three bags. I paid around €270, including shipping, for my Pakt One Travel Duffel, placing it firmly in the premium category. At the time of writing, Pakt lists the current version at $285 before any discounts or shipping costs. 
 
 My Belkin was a much more affordable purchase. I found an archived retailer listing showing a price of approximately €22, although I cannot confirm that this was the exact price I paid. I bought the Paco Martínez Executive Backpack in November 2021 for €40.
@@ -145,17 +150,17 @@ The comparison is therefore not simply about which bag offers the most features 
 
 Whether that investment proves worthwhile will depend on how frequently I use it and how well it holds up over time.
 
-**The right size depends on what you need to carry**  
+### The right size depends on what you need to carry
 My first impression of the Pakt was that it felt slightly too large for everyday use. On a rainy commute, however, I needed to carry my laptop, charger, trainers and extra clothing, and the Belkin would not have been big enough. A few days later, the Pakt proved ideal for a two-night trip.
 
 The lesson is that capacity is only useful when you need it, but having that extra room can make a real difference. The challenge is finding a bag that offers enough space for occasional trips without feeling unnecessarily bulky on ordinary working days.
 
-**Durability matters more than impressive specifications**  
+### Durability matters more than impressive specifications
 My Belkin Messenger Bag has been with me for around fifteen years, through several computers and countless commutes. It has needed some repair, but it has also demonstrated how much value a well-chosen product can offer over time.
 
 The Pakt is built with more premium materials and comes with a lifetime guarantee, but that does not automatically mean it will last as long as my Belkin. Only time will tell. For me, the important question is whether its materials, zippers, padding and organisation justify the higher price over years of real-world use, rather than simply looking good in a product description.
 
-**There may not be one perfect bag for every situation**  
+## There may not be one perfect bag for every situation
 The Belkin, the Paco Martínez and the Pakt serve slightly different purposes. The Belkin remains an excellent choice for a light commute when I only need my laptop and a few accessories. The Paco Martínez offers a more conventional backpack format for carrying work essentials on my back. The Pakt, meanwhile, has proved particularly useful when I need to combine work and travel, with enough room for shoes, a coat, clothes and all my usual electronics.
 
 Perhaps the best solution is not to find a single bag that does everything perfectly, but to understand which one works best for each situation. I will continue using the Pakt for workdays when I need extra capacity and for short trips, while keeping the Belkin as a compact alternative.

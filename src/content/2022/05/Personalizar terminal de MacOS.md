@@ -6,7 +6,7 @@ categories:
   - "software"
 ---
 
-![](images/custom_zsh_colors.png) 
+![Personalizar terminal de MacOS](images/custom_zsh_colors.png) 
 
 El intérprete de terminal de comandos por defecto en MacOS desde hace un par de años (concretamente desde la versión 10.15 Catalina) es [Zsh](https://www.zsh.org). Éste intérprete viene configurado para mostrar un aspecto realmente limpio y sobrio, con texto negro sobre fondo blanco (o viceversa cuando estamos usando el modo oscuro del entorno gráfico). 
 
@@ -23,7 +23,7 @@ $ source ~/.zshrc
 ``` 
 Y además puedes hacer que aun cuando cerramos y salimos de la terminal, al volver a abrirla todavía tengamos a la vista la salida de los comandos introducidos con anterioridad y estemos situados en el mismo directorio donde lo dejamos. 
 
-![](images/zsh_persistent_history.png) 
+![Personalizar terminal de MacOS, 1](images/zsh_persistent_history.png) 
 
 Para activar este comportamiento podemos recurrir a Preferencias del Sistema/General y desmarcar la opción "Cerrar las ventanas al salir de una app". Pero este ajuste afecta a todas las aplicaciones, lo cual puede no ser del todo deseable. Para mí, lo mejor es activarlo de forma específica para la aplicación que queramos. En el caso del terminal, se hace con el siguiente comando: 
 ```

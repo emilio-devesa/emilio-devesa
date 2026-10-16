@@ -6,7 +6,7 @@ categories:
   - "software"
 ---
 
-![](images/win11_kms_key.jpeg)
+![Windows 11 Pro: Activar Licencia](images/win11_kms_key.jpeg)
 
 En Windows 11 es posible completar la instalación del sistema operativo aunque no tengas una clave de activación de licencia, pero como resultado algunas funciones del sistema estarán bloqueadas hasta que no haya sido activada una licencia válida.
 

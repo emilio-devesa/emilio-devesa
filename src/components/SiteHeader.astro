@@ -72,12 +72,28 @@ const navId = `${idPrefix}-nav-links`;
         // Al elegir sección, el menú vuelve a cerrarse
         nav.querySelectorAll('a').forEach(function (link) {
           link.addEventListener('click', () => {
-            nav.classList.remove('menu-open');
-            toggle.textContent = '☰';
-            toggle.setAttribute('aria-label', 'Abrir menú');
-            toggle.setAttribute('aria-expanded', 'false');
+            closeMenu();
           });
         });
+        // Tecla Escape: cierra y devuelve el foco al botón
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && nav.classList.contains('menu-open')) {
+            closeMenu();
+            toggle.focus();
+          }
+        });
+        // Al pasar a escritorio, el menú siempre visible sin estado abierto
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 768) {
+            closeMenu();
+          }
+        });
+        function closeMenu() {
+          nav.classList.remove('menu-open');
+          toggle.textContent = '☰';
+          toggle.setAttribute('aria-label', 'Abrir menú');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
       });
     });
   </script>

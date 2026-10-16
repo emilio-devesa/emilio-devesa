@@ -52,42 +52,40 @@ const navLinks = BLOG_NAV_LINKS;
 
   <HeroMini title={title} />
 
-  <section id="article-content">
-    <div class="article-content" lang={articleLang}>
-      <p class="article-meta">
-        <a href="/blog/">← Volver al índice</a> ·{' '}
-        <a href={`/blog/categoria/${categorySlug}/`}>{categoryLabel}</a> ·{' '}
-        <FormattedDate date={date} /> · {minutes} min de lectura
-      </p>
-      <slot />
+  <article id="article-content" class="article-content" lang={articleLang}>
+    <p class="article-meta">
+      <a href="/blog/">← Volver al índice</a> ·{' '}
+      <a href={`/blog/categoria/${categorySlug}/`}>{categoryLabel}</a> ·{' '}
+      <FormattedDate date={date} /> · {minutes} min de lectura
+    </p>
+    <slot />
 
-      <nav class="post-nav" aria-label="Navegación entre artículos">
-        <ul>
-          {prev && (
-            <li>
-              ← Más reciente
-              <br />
-              <a href={prev.url}>{prev.title}</a>
-            </li>
-          )}
-          {next && (
-            <li>
-              Más antiguo →
-              <br />
-              <a href={next.url}>{next.title}</a>
-            </li>
-          )}
-        </ul>
-      </nav>
+    <nav class="post-nav" aria-label="Navegación entre artículos">
+      <ul>
+        {prev && (
+          <li>
+            ← Más reciente
+            <br />
+            <a href={prev.url}>{prev.title}</a>
+          </li>
+        )}
+        {next && (
+          <li>
+            Más antiguo →
+            <br />
+            <a href={next.url}>{next.title}</a>
+          </li>
+        )}
+      </ul>
+    </nav>
 
-      {related.length > 0 && (
-        <div class="post-related">
-          <h3>Relacionados</h3>
-          <PostList posts={related} currentPage={1} totalPages={1} showCategory />
-        </div>
-      )}
-    </div>
-  </section>
+    {related.length > 0 && (
+      <div class="post-related">
+        <h3>Relacionados</h3>
+        <PostList posts={related} currentPage={1} totalPages={1} showCategory />
+      </div>
+    )}
+  </article>
 
   <SiteFooter slot="footer" />
 </PrimaryLayout>
