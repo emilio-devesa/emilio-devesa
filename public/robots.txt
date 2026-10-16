@@ -8,6 +8,8 @@
 User-agent: *
 Allow: /$
 Disallow: /
+# El feed publica el contenido completo del blog: fuera de rastreadores.
+Disallow: /rss.xml
 
 # Servicios de IA / scrapers — bloqueo explícito del blog (y del resto, salvo la home)
 User-agent: GPTBot

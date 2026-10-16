@@ -6,9 +6,12 @@ interface Props {
 }
 
 const { id, icon, title } = Astro.props;
+// Sin título no hay encabezado que nombre la región: un <section>
+// anónimo es ruido para lectores de pantalla, así que se usa <div>.
+const Tag = title ? 'section' : 'div';
 ---
 
-<section id={id}>
+<Tag id={id}>
   {title ? (
     <h2>
       {icon ? (
@@ -24,4 +27,4 @@ const { id, icon, title } = Astro.props;
       <slot />
     </div>
   </div>
-</section>
+</Tag>

@@ -39,11 +39,12 @@ const thumbs: (OptimizedImage | undefined)[] = await Promise.all(
         <a class="post-card" href={url}>
           {thumb ? (
             <span class="post-thumb">
+              {/* Decorativa: el título visible ya está junto a la imagen. */}
               <img
                 src={thumb.src}
                 width={thumb.width}
                 height={thumb.height}
-                alt={post.data.title}
+                alt=""
                 loading="lazy"
                 decoding="async"
               />

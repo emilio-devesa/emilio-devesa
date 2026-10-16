@@ -17,7 +17,9 @@ interface Props {
 const {
   title,
   description = 'Emilio Devesa - Yamaha Music Education System Key Teacher',
-  robots = 'index, follow',
+  // Política anti-índice por defecto: solo la home se excepciona
+  // pasando robots="index, follow" (ver index.astro).
+  robots = 'noindex, nofollow',
   lang = 'es',
   ogImage: ogImageProp,
   ogType = 'website',
