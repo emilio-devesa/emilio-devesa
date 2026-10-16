@@ -315,88 +315,35 @@ section li {
   color: var(--foreground);
 }
 
-/* 8. Testimonios (carrusel automático; ver NOTA en los retardos) */
-.auto-carousel {
-  position: relative;
-  min-height: 220px;
-  width: 100%;
-}
-
-.testimonial-slide {
-  position: absolute;
-  inset: 0;
-  padding: 1rem;
-  box-sizing: border-box;
-  text-align: center;
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  opacity: 0;
-  animation: slideShow 32s infinite;
-  overflow-y: auto;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .testimonial-slide {
-    position: static;
-    opacity: 1;
-    animation: none;
-    margin-bottom: 1rem;
-  }
-  .auto-carousel {
-    min-height: auto;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .auto-carousel:hover .testimonial-slide {
-    animation-play-state: paused;
-  }
-}
-
-/* NOTA: los retardos están acoplados al nº de testimonios en
- * TestimonialsSection.astro (hoy 4, uno cada 8 s de un ciclo de 32 s). */
-.testimonial-slide:nth-child(1) {
-  animation-delay: 0s;
-}
-.testimonial-slide:nth-child(2) {
-  animation-delay: 8s;
-}
-.testimonial-slide:nth-child(3) {
-  animation-delay: 16s;
-}
-.testimonial-slide:nth-child(4) {
-  animation-delay: 24s;
-}
-
-@keyframes slideShow {
-  0% {
-    opacity: 0;
-  }
-  5% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 1;
-  }
-  30% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.testimonial-slide blockquote {
-  font-size: 1.2rem;
+/* Testimonios en lista estática: reutiliza las tarjetas de ofertas */
+#opiniones .offer blockquote {
+  font-size: 1.1rem;
+  font-style: italic;
   color: var(--foreground);
+  margin: 0;
 }
 
-.testimonial-slide cite {
+#opiniones .offer blockquote::before {
+  content: '“';
   display: block;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--primary);
+  font-style: normal;
+}
+
+#opiniones .offer blockquote::after {
+  content: '”';
+}
+
+#opiniones .offer cite {
+  display: block;
+  margin-top: 0.75rem;
   color: var(--muted);
   font-style: normal;
 }
+
+/* 8. Testimonios (lista estática de tarjetas) */
 
 /* 9. Música */
 
@@ -1078,23 +1025,8 @@ details.toc[open] .toc-title {
     word-break: break-all;
   }
 
-  .offer,
-  .testimonial-slide {
+  .offer {
     border-color: #999;
     background: none;
-  }
-
-  /* Testimonios: sin animación ni apilado absoluto en papel.
-     Parecido al fallback de prefers-reduced-motion a propósito:
-     son medios distintos y pueden divergir. */
-  .auto-carousel {
-    min-height: auto;
-  }
-
-  .testimonial-slide {
-    position: static;
-    opacity: 1;
-    animation: none;
-    margin-bottom: 1rem;
   }
 }
