@@ -71,7 +71,7 @@ const navLinks = BLOG_NAV_LINKS;
     <TableOfContents headings={headings} lang={articleLang} />
     <slot />
 
-    <nav class="post-nav" aria-label="Navegación entre artículos">
+      <nav class="post-nav" aria-label="Navegación entre artículos" data-pagefind-ignore>
       <ul>
         {prev && (
           <li>
@@ -90,8 +90,8 @@ const navLinks = BLOG_NAV_LINKS;
       </ul>
     </nav>
 
-    {related.length > 0 && (
-      <div class="post-related">
+      {related.length > 0 && (
+        <div class="post-related" data-pagefind-ignore>
         <h3>Relacionados</h3>
         <PostList posts={related} currentPage={1} totalPages={1} showCategory />
       </div>

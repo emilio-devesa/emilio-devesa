@@ -29,7 +29,7 @@ const thumbs: (OptimizedImage | undefined)[] = await Promise.all(
 );
 ---
 
-<ul class="post-list">
+<ul class="post-list" data-pagefind-ignore>
   {posts.map((post, i) => {
     const minutes = readingMinutes(post.body);
     const url = blogPostUrl(post.id);

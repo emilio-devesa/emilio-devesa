@@ -13,7 +13,7 @@ const title = lang === 'en' ? 'In this article' : 'En este artículo';
 ---
 
 {show && (
-  <details class="toc">
+  <details class="toc" data-pagefind-ignore>
     <summary class="toc-title">{title}</summary>
     <ul>
       {headings.map((h) => (
