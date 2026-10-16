@@ -68,6 +68,9 @@ const navLinks = BLOG_NAV_LINKS;
       <a href={`/blog/categoria/${categorySlug}/`}>{categoryLabel}</a> ·{' '}
       <FormattedDate date={date} /> · {minutes} min de lectura
     </p>
+    {ogImage && (
+      <img data-pagefind-meta="image[src]" src={ogImage} alt="" aria-hidden="true" hidden />
+    )}
     <TableOfContents headings={headings} lang={articleLang} />
     <slot />
 

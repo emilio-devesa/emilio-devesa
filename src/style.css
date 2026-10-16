@@ -563,6 +563,41 @@ footer a:hover {
 
 /* 11. Blog (lista y paginación) */
 
+[hidden] {
+  display: none !important;
+}
+
+.blog-search {
+  margin-bottom: 1rem;
+}
+
+.blog-search-input {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--foreground);
+  font-size: 1rem;
+}
+
+.blog-search-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.blog-search-status {
+  font-size: var(--text-sm);
+  color: var(--muted);
+  margin-top: 0.35rem;
+}
+
+.post-list .post-excerpt mark {
+  background-color: transparent;
+  color: var(--primary);
+  font-weight: 700;
+}
+
 /* 12. Artículo (prosa de posts y secciones de clases) */
 .article-content {
   margin-left: auto;

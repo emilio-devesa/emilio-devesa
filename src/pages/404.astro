@@ -21,8 +21,20 @@ const navLinks = NOT_FOUND_NAV_LINKS;
   <section aria-label="Error 404">
     <p>Lo sentimos, la página que estás buscando no existe.</p>
     <p>
-      Por favor, verifica la URL o vuelve a la <a href="/">página principal</a>.
+      Por favor, verifica la URL, prueba a buscar en el blog o vuelve a la{' '}
+      <a href="/">página principal</a>.
     </p>
+    <form class="blog-search" action="/blog/" method="get" role="search">
+      <input
+        type="search"
+        id="notfound-search-input"
+        class="blog-search-input"
+        name="q"
+        placeholder="Buscar artículos…"
+        aria-label="Buscar en el blog"
+        autocomplete="off"
+      />
+    </form>
   </section>
 
   <SiteFooter links={[{ href: '/', label: 'Inicio' }]} slot="footer" />

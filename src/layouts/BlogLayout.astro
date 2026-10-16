@@ -40,6 +40,17 @@ const navLinks = BLOG_NAV_LINKS;
 
   <section id="posts" aria-label={title}>
     <CategoryNav active={activeCategory} />
+    <div class="blog-search" data-pagefind-ignore>
+      <input
+        type="search"
+        id="blog-search-input"
+        class="blog-search-input"
+        placeholder="Buscar artículos…"
+        aria-label="Buscar artículos"
+        autocomplete="off"
+      />
+      <p id="blog-search-status" class="blog-search-status" role="status" aria-live="polite"></p>
+    </div>
     <PostList
       posts={posts}
       currentPage={currentPage}
@@ -47,8 +58,79 @@ const navLinks = BLOG_NAV_LINKS;
       pageUrl={pageUrl}
       showCategory={showCategory}
     />
+    <div id="blog-search-results" hidden></div>
     <slot />
   </section>
 
+  <script is:inline>
+    (() => {
+      const input = document.getElementById('blog-search-input');
+      const status = document.getElementById('blog-search-status');
+      const results = document.getElementById('blog-search-results');
+      const section = document.getElementById('posts');
+      if (!input || !status || !results || !section) return;
+      const statics = section.querySelectorAll(':scope > nav, :scope > ul.post-list');
+      let pagefind = null;
+      let timer = 0;
+      const escapeHtml = (s) =>
+        s
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      async function run(query) {
+        if (!pagefind) {
+          status.textContent = 'Cargando índice…';
+          try {
+            pagefind = await import('/pagefind/pagefind.js');
+          } catch {
+            status.textContent = 'La búsqueda no está disponible (falta el índice).';
+            return;
+          }
+        }
+        const answer = await pagefind.search(query);
+        const items = await Promise.all(answer.results.map((r) => r.data()));
+        statics.forEach((el) => el.toggleAttribute('hidden', true));
+        results.toggleAttribute('hidden', false);
+        status.textContent =
+          items.length === 0
+            ? `Sin resultados para "${query}".`
+            : `${items.length} resultado${items.length === 1 ? '' : 's'} para "${query}".`;
+        results.innerHTML =
+          '<ul class="post-list">' +
+          items
+            .map((item) => {
+              const thumb = item.meta.image
+                ? `<span class="post-thumb"><img src="${item.meta.image}" width="320" height="240" alt="" loading="lazy" decoding="async" /></span>`
+                : '<span class="post-thumb post-thumb--empty"></span>';
+              return `<li class="post-item"><a class="post-card" href="${item.url}">${thumb}<span class="post-text"><span class="post-title">${escapeHtml(item.meta.title)}</span><span class="post-excerpt">${item.excerpt}</span></span></a></li>`;
+            })
+            .join('') +
+          '</ul>';
+      }
+      function reset() {
+        clearTimeout(timer);
+        statics.forEach((el) => el.toggleAttribute('hidden', false));
+        results.toggleAttribute('hidden', true);
+        results.innerHTML = '';
+        status.textContent = '';
+      }
+      input.addEventListener('input', () => {
+        const query = input.value.trim();
+        clearTimeout(timer);
+        if (!query) {
+          reset();
+          return;
+        }
+        timer = window.setTimeout(() => run(query), 200);
+      });
+      // Búsqueda desde otras páginas (?q= en la URL, p. ej. la 404).
+      const initial = new URLSearchParams(window.location.search).get('q');
+      if (initial) {
+        input.value = initial;
+        run(initial);
+      }
+    })();
+  </script>
   <SiteFooter slot="footer" />
 </PrimaryLayout>
