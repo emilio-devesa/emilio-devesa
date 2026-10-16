@@ -89,7 +89,8 @@ body {
 
 section[id],
 article[id],
-#main-content {
+#main-content,
+.article-content [id] {
   scroll-margin-top: var(--scroll-offset);
 }
 

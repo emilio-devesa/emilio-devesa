@@ -7,8 +7,9 @@ categories:
   - "sin-categoria"
 ---
 
-"[Oceanside](https://www.youtube.com/watch?v=ZNVcTCP33fU)" The Decemberists, 5 Songs EP (2002)
+## "[_Oceanside_](https://www.youtube.com/watch?v=ZNVcTCP33fU)", The Decemberists, 5 Songs EP (2002)
 
+### Letra original
 Sweet Annabelle\[1\],  
 As seen reclining on an ocean swell  
 As the waves do lather up to lay her down  
@@ -51,6 +52,7 @@ Oceanside.
 Oceanside.  
 Oh. 
 
+### Anotaciones
 1. Colin Meloy ya ha utilizado el nombre Annabelle en otras ocasiones antes y después de lanzar este álbum. Con Tarkio, su anterior banda, escribió "Annabelle Leigh" y más tarde lo recuperaría en "California One/Youth and Beauty Brigade" (Castaways and Cutouts, 2003). Su escritura es una reminiscencia de la novela "Lolita" de Vladimir Nabokov (1955), en la que el narrador pedófilo Humbert culpa a una chica llamada así de su obsesión con las ninfas. Sin embargo, no hay que pasar por alto que Nabokov estaba a su vez inspirándose para el nombre en un poema de Edgar Allan Poe titulado "[Annabel Lee](https://www.poemhunter.com/poem/annabel-lee/)", publicado en 1849 tras la muerte del mismo. Describe a una mujer de un reino en el mar cuya muerte causaron los ángeles, quienes sentían envidia de su intenso amor. Probablemente Poe se habría inspirado en su mujer (fallecida dos años antes) para crear este personaje. Empleando lenguaje de este poema, Humbert describe su encuentro con Annabel Leigh en una playa durante un verano, y como sus intenciones sexuales se vieron frustradas por los padres de ella, que pronto murió dejando su amor sin consumar. 
 
 2. Aunque "fast" se suele traducir directamente por "rápido", es una de esas palabras que tienen mil y un significados según el contexto. Para la ocasión apostaría por una referencia a lo sexualmente atractiva que le resulta al narrador, a su promiscuidad y cómo a él le excita verla dormida. 
