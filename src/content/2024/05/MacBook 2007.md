@@ -239,7 +239,7 @@ Como el teclado no tiene tecla `Alt Gr` a la derecha de la barra espaciadora, he
 
 ![MacBook 2007, 33](images/altkey.png)
 
-**Referencias**  
+## Referencias
 Especificaciones del MacBook: https://everymac.com/systems/apple/macbook/specs/macbook-core-2-duo-2.16-white-13-mid-2007-specs.html
 
 Solución al error de conexión a IPv6: https://apple.stackexchange.com/questions/200612/macbook-with-10-6-8-snow-leopard-freezes-after-wi-fi-connection

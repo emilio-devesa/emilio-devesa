@@ -1,0 +1,26 @@
+---
+import type { TocHeading } from '../lib/toc';
+
+interface Props {
+  headings: TocHeading[];
+  lang?: string;
+}
+
+const { headings, lang = 'es' } = Astro.props;
+// Solo artículos con al menos 4 apartados ## llevan índice.
+const show = headings.filter((h) => h.depth === 2).length >= 4;
+const title = lang === 'en' ? 'In this article' : 'En este artículo';
+---
+
+{show && (
+  <details class="toc">
+    <summary class="toc-title">{title}</summary>
+    <ul>
+      {headings.map((h) => (
+        <li class={h.depth === 3 ? 'toc-sub' : undefined}>
+          <a href={`#${h.slug}`}>{h.text}</a>
+        </li>
+      ))}
+    </ul>
+  </details>
+)}

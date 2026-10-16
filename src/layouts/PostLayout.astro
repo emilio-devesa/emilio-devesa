@@ -5,8 +5,10 @@ import PrimaryLayout from './PrimaryLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import HeroMini from '../components/HeroMini.astro';
 import PostList from '../components/blog/PostList.astro';
+import TableOfContents from '../components/blog/TableOfContents.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { BLOG_NAV_LINKS } from '../lib/blog';
+import type { TocHeading } from '../lib/toc';
 
 interface PostLink {
   title: string;
@@ -25,6 +27,7 @@ type Props = {
   next?: PostLink;
   related: CollectionEntry<'blog'>[];
   ogImage?: string;
+  headings?: TocHeading[];
 };
 
 const {
@@ -39,6 +42,7 @@ const {
   next,
   related,
   ogImage,
+  headings = [],
 } = Astro.props;
 const articleLang = lang ?? 'es';
 
@@ -64,6 +68,7 @@ const navLinks = BLOG_NAV_LINKS;
       <a href={`/blog/categoria/${categorySlug}/`}>{categoryLabel}</a> ·{' '}
       <FormattedDate date={date} /> · {minutes} min de lectura
     </p>
+    <TableOfContents headings={headings} lang={articleLang} />
     <slot />
 
     <nav class="post-nav" aria-label="Navegación entre artículos">

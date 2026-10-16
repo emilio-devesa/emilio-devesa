@@ -206,7 +206,7 @@ Tras instalar la nueva batería, he vuelto a hacer un pequeño esfuerzo en mante
 - No mantenerla constantemente enchufada si ya está al 100% 
 - Evitar temperaturas extremas
 
-## Enlaces útiles:
+## Enlaces útiles
 - Especificaciones: https://support.apple.com/kb/SP703?locale=es_ES
 - Información sobre la NVRAM (PRAM) y el SMC - en inglés: http://www.macworld.com/article/2881177/how-to-reset-your-macs-nvram-pram-and-smc.html
 - Número de ciclos segun modelo (Soporte oficial de Apple): https://support.apple.com/es-es/HT201585

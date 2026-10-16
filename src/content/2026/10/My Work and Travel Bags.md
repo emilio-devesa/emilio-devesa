@@ -150,7 +150,7 @@ The comparison is therefore not simply about which bag offers the most features 
 
 Whether that investment proves worthwhile will depend on how frequently I use it and how well it holds up over time.
 
-### The right size depends on what you need to carry
+### The right size depends on what you need to carry
 My first impression of the Pakt was that it felt slightly too large for everyday use. On a rainy commute, however, I needed to carry my laptop, charger, trainers and extra clothing, and the Belkin would not have been big enough. A few days later, the Pakt proved ideal for a two-night trip.
 
 The lesson is that capacity is only useful when you need it, but having that extra room can make a real difference. The challenge is finding a bag that offers enough space for occasional trips without feeling unnecessarily bulky on ordinary working days.

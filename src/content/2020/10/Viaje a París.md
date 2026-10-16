@@ -13,22 +13,7 @@ categories:
 En octubre del año pasado (madre mía como pasa el tiempo!) hicimos una escapada en pareja a París. Ella me convenció con unos pases para un festival y allá que nos fuimos. No de cualquier forma: como quería hacer el video del viaje me compré el estabilizador [DJI Osmo Mobile 3](../../../2019/12/dji-osmo-mobile-3/) para que todo quedase bien inmortalizado con mi iPhone. Pero un viaje así requiere de cierta planificación, que dejo por aquí resumida por si tú también quieres vivir tu aventura parisina. Estos consejos no tienen garantías de ningún tipo pero ahí están, como me gusta decir, sin gluten ni lactosa.
 
 Video del viaje: https://youtu.be/1iZO_LzzWkc
-```
-Índice:
-1. Las apps
-2. Los vuelos
-3. Algunos puntos de interés
-4. El equipaje
-5. El alojamiento
-6. En el aire
-7. El transbordo
-8. El check-in
-9. Primeros pasos
-10. Los precios
-11. Los horarios
-12. Algunos rincones
-13. Otros recursos
-```
+
 \====
 
 ## Las apps 
@@ -103,7 +88,7 @@ En la mochila, trata de empaquetar al fondo una muda y unos calcetines (por lo q
 
 Por último en un compartimento más pequeño y accesible rápidamente los auriculares, los chicles y la guía de viaje. Para objetos críticos, como tu teléfono móvil, llaves y billetero, yo recomiendo un bolsillo interior de tu cazadora, o los bolsillos delanteros de tu pantalón, para evitar tentar a los amigos de lo ajeno.
 
-## Alojamiento
+## El alojamiento
 Decidimos que lo mejor para nosotros sería una estancia de una semana en un pequeño piso de la oferta de Airbnb y dado que teníamos tickets para el festival que se celebraba en el teatro Le Trianon, buscamos algo cercano y económico. Los precios me parecieron todos altísimos pero rebuscando un poco se pueden encontrar cosas razonables. En pleno corazón de Montmartre, en el 74 Rue Duhesme, estaba el apartamento de Caroline:
 
 ![Viaje a París, Alojamiento](images/airbnb-1.jpg)
@@ -163,7 +148,7 @@ Para las copas los días de ambiente nocturno, que son varios a la semana, tiene
 
 \====
 
-### Otros recursos
+## Otros recursos
 - www.paris.es
 - Teléfonos de emergencias en Paris: 
   1. Ambulancias: 15 

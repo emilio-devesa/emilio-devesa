@@ -878,6 +878,47 @@ a.post-card:hover .post-thumb img {
   gap: 0.25rem;
 }
 
+/* Índice del artículo (solo si tiene 4+ apartados) */
+.toc {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.toc-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+details.toc[open] .toc-title {
+  margin-bottom: 0.5rem;
+}
+
+.toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.toc li.toc-sub {
+  padding-left: 1rem;
+}
+
+.toc a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.toc a:hover {
+  text-decoration: underline;
+}
+
 .pagination {
   display: flex;
   gap: 1rem;

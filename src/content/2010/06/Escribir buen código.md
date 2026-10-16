@@ -247,4 +247,5 @@ Busca siempre tu productividad, no pierdas el tiempo en cosas que no deberías. 
 
 - Permitir que alguien altere nuestro código y luego no revisar, estudiar y comprender los cambios/mejoras introducidos, y cómo afectan al funcionamiento interno de la aplicación: Es evidente porqué esto es un error: no nos ayudará en absoluto a aprender a programar e incluso nos puede conducir a algún aprieto si en algún momento tenemos que defender un código que no hemos escrito, no comprendemos/recordamos su funcionamiento o que no está escrito como debiera. ¡Y eso ya es dando por supuesto que funciona bien!
 
+## Conclusión
 En definitiva, programar bien es una tarea que requiere mucha práctica pero que, como he descrito en algunos de los ejemplos anteriores, puede ser más sencilla si contamos con herramientas apropiadas y adoptamos algunas "buenas prácticas". Según tu experiencia encontrarás más útiles unos u otros consejos. Por ejemplo en el caso de un estudiante de primero de carrera, quizás los más interesantes sean los consejos de programación "pura y dura" mientras que uno de segundo quizás ya pueda preocuparse del análisis y el diseño.
