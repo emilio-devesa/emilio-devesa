@@ -1,5 +1,6 @@
 ---
 title: "Reescribir historia de repositorio git"
+lang: "es"
 date: "2024-08-24"
 description: "Cambiar autores, mensajes y orden sin perder las fechas originales: filter-branch bien hecho, con ejemplo paso a paso y las trampas del amend evitadas. Cirugía git sin anestesia."
 categories: 

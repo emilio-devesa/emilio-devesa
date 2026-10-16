@@ -1,5 +1,6 @@
 ---
 title: "Apple Wireless Keyboard"
+lang: "es"
 date: "2013-06-18"
 description: "Misión: un escritorio sin cables. Bluetooth sin receptor USB, 7 metros de alcance y el dilema de las teclas de Mac en Ubuntu. ¿El teclado de Apple fuera de su ecosistema?"
 categories: 

@@ -1,5 +1,6 @@
 ---
 title: "Need for Speed Most Wanted"
+lang: "es"
 date: "2006-01-13"
 description: "Tuning, nitro y la pasma pisándote los talones: escala la Blacklist carrera a carrera hasta ser el más buscado. El cóctel definitivo de 12 años de saga."
 categories: 

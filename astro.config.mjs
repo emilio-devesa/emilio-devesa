@@ -6,6 +6,9 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://emiliodevesa.com',
+  // Una sola forma de URL: siempre con barra final (coherente con
+  // los enlaces internos y con la canónica de PrimaryLayout).
+  trailingSlash: 'always',
   integrations: [
     mdx(),
     sitemap({

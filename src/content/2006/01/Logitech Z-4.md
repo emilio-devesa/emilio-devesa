@@ -1,5 +1,6 @@
 ---
 title: "Logitech Z-4"
+lang: "es"
 date: "2006-01-29"
 description: "Adiós al 5.1 de Creative: un 2.1 con subwoofer sellado de 8 pulgadas que suena como un bombo y unos satélites que distinguen un platillo de un piano. ¿Merecen los 100 €?"
 categories: 

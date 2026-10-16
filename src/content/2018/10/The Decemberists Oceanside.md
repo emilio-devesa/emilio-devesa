@@ -1,5 +1,6 @@
 ---
 title: "The Decemberists: Oceanside"
+lang: "es"
 date: "2018-10-11"
 description: "Verso a verso por una canción sobre el mar: Annabelle, Lolita, Poe y dobles sentidos que esconden algo oscuro. Traducción anotada de una joya de los Decemberists."
 categories: 

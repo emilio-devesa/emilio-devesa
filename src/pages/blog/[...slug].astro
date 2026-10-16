@@ -8,6 +8,7 @@ import {
   postCategoryLabel,
   postCategorySlug,
   postFirstImage,
+  postsInSameCategory,
   readingMinutes,
 } from '../../lib/blog';
 
@@ -21,8 +22,8 @@ export async function getStaticPaths() {
       const prev = posts[i - 1];
       const next = posts[i + 1];
       const label = postCategoryLabel(post.data.categories);
-      const sameCat = posts.filter(
-        (p) => p.id !== post.id && postCategoryLabel(p.data.categories) === label,
+      const sameCat = postsInSameCategory(posts, post.data.categories).filter(
+        (p) => p.id !== post.id,
       );
       const fill = posts.filter((p) => p.id !== post.id && !sameCat.includes(p));
       // Entradas completas para reutilizar la fila de la lista (PostList)
@@ -61,7 +62,10 @@ const site = Astro.site ?? 'https://emiliodevesa.com';
 ---
 
 <PostLayout
-  {...post.data}
+  title={post.data.title}
+  description={post.data.description}
+  date={post.data.date}
+  lang={post.data.lang}
   minutes={minutes}
   categoryLabel={categoryLabel}
   categorySlug={categorySlug}

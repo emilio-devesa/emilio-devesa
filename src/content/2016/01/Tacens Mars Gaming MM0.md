@@ -1,5 +1,6 @@
 ---
 title: "Tacens Mars Gaming MM0"
+lang: "es"
 date: "2016-01-28"
 description: "Harto de pilas y ratones pequeños: cable, cuerpo grande y seis botones programables por poco más de 5 €. El ratón gaming honesto que no necesita ni reunión de ejecutivos."
 categories: 

@@ -1,5 +1,6 @@
 ---
 title: "MacBook Pro 2014"
+lang: "es"
 date: "2025-02-23"
 description: "Este MacBook Pro de 2014 lleva más de diez años siendo mi máquina principal y con un par de mejoras seguirá funcionando otros diez. Ampliamos almacenamiento a 2 TB, instalamos una batería nueva, firmware actualizado, nuevas versiones de Mac OS y cómo seguir sacandole partido a este gran portátil."
 categories: 

@@ -1,5 +1,6 @@
 ---
 title: "Gigabyte GA-P31-DS3L"
+lang: "es"
 date: "2008-06-07"
 description: "La placa que demuestra que lo bueno no cuesta un riñón: chipset P31, overclocking hasta 375 MHz estables y todo lo necesario por 62 €. La mejor amiga del PC económico."
 categories: 

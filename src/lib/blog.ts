@@ -13,7 +13,7 @@ export async function getAllPosts() {
 
 // Navegación compartida de las páginas del blog
 export const BLOG_NAV_LINKS = [
-  { href: '/blog', label: 'Blog' },
+  { href: '/blog/', label: 'Blog' },
   { href: 'https://github.com/emilio-devesa', label: 'GitHub' },
 ];
 
@@ -35,6 +35,21 @@ export const NOT_FOUND_NAV_LINKS = HOME_NAV_LINKS.map((link) => ({
 // Posts pertenecientes a una categoría del filtro
 export function postsInCategory(posts: CollectionEntry<'blog'>[], cat: BlogCategory) {
   return posts.filter((post) => (post.data.categories ?? []).some((c) => cat.match.includes(c)));
+}
+
+// Posts de la misma categoría del filtro que unas categorías dadas
+// (misma agrupación que el filtro y que postCategoryLabel/Slug)
+export function postsInSameCategory(
+  posts: CollectionEntry<'blog'>[],
+  categories: string[] | undefined,
+) {
+  const slug = postCategorySlug(categories);
+  const cat = BLOG_CATEGORIES.find((c) => c.slug === slug) ?? {
+    slug: 'mas',
+    label: 'Más',
+    match: ['sin-categoria'],
+  };
+  return postsInCategory(posts, cat);
 }
 
 export interface BlogCategory {

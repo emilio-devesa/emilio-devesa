@@ -1,5 +1,6 @@
 ---
 title: "Ubuntu 24.04 LTS (en VMware Fusion)"
+lang: "es"
 date: "2024-04-28"
 description: "Estrenando LTS con Btrfs, snapshots automáticos y carpetas compartidas con el Mac: la receta corta para programar en Linux virtualizado sin dramas."
 categories: 

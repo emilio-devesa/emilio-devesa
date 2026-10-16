@@ -15,6 +15,8 @@ interface Props {
   currentPage: number;
   totalPages: number;
   pageUrl?: (page: number) => string;
+  // false por defecto a propósito: documenta el comportamiento base aunque
+  // hoy todos los llamadores pasen true.
   showCategory?: boolean;
 }
 
@@ -33,29 +35,31 @@ const thumbs: (OptimizedImage | undefined)[] = await Promise.all(
     const url = blogPostUrl(post.id);
     const thumb = thumbs[i];
     return (
-      <li class="post-item">
-        {thumb ? (
-          <a class="post-thumb" href={url} tabindex={-1} aria-hidden="true">
-            <img
-              src={thumb.src}
-              width={thumb.width}
-              height={thumb.height}
-              alt=""
-              loading="lazy"
-              decoding="async"
-            />
-          </a>
-        ) : (
-          <span class="post-thumb post-thumb--empty" aria-hidden="true" />
-        )}
-        <div class="post-text">
-          <a href={url}>{post.data.title}</a>{' '}
-          <span class="post-cat">
-            {showCategory && <>{postCategoryLabel(post.data.categories)} · </>}
-            <FormattedDate date={post.data.date} /> · {minutes} min
+      <li class="post-item" lang={post.data.lang ?? undefined}>
+        <a class="post-card" href={url}>
+          {thumb ? (
+            <span class="post-thumb">
+              <img
+                src={thumb.src}
+                width={thumb.width}
+                height={thumb.height}
+                alt={post.data.title}
+                loading="lazy"
+                decoding="async"
+              />
+            </span>
+          ) : (
+            <span class="post-thumb post-thumb--empty" />
+          )}
+          <span class="post-text">
+            <span class="post-title">{post.data.title}</span>
+            {post.data.description && <span class="post-excerpt">{post.data.description}</span>}
+            <span class="post-meta">
+              {showCategory && <>{postCategoryLabel(post.data.categories)} · </>}
+              <FormattedDate date={post.data.date} /> · {minutes} min
+            </span>
           </span>
-          {post.data.description && <span class="post-excerpt">{post.data.description}</span>}
-        </div>
+        </a>
       </li>
     );
   })}

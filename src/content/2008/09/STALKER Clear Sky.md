@@ -1,5 +1,6 @@
 ---
 title: "STALKER: Clear Sky"
+lang: "es"
 date: "2008-09-15"
 description: "Vuelve a la Zona antes de que existiera: un segundo accidente, facciones en guerra y la misma hierba alta que enamoró. El prólogo que todo stalker debe pisar."
 categories: 

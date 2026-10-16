@@ -10,6 +10,8 @@ interface Props {
   robots?: string;
   lang?: string;
   ogImage?: string;
+  ogType?: string;
+  publishedTime?: string;
 }
 
 const {
@@ -18,11 +20,15 @@ const {
   robots = 'index, follow',
   lang = 'es',
   ogImage: ogImageProp,
+  ogType = 'website',
+  publishedTime,
 } = Astro.props;
 const siteTitle = 'Emilio Devesa';
 const pageTitle = title ? `${title} - ${siteTitle}` : siteTitle;
 const site = Astro.site ?? 'https://emiliodevesa.com';
-const canonical = new URL(Astro.url.pathname, site).toString();
+// Canónica única: siempre con barra final (ver trailingSlash en config).
+const pathname = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const canonical = new URL(pathname, site).toString();
 const ogImage = ogImageProp ?? new URL('/images/hero_3a.webp', site).toString();
 ---
 
@@ -41,7 +47,8 @@ const ogImage = ogImageProp ?? new URL('/images/hero_3a.webp', site).toString();
       title="Emilio Devesa – Blog"
       href={new URL('/rss.xml', site).toString()}
     />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
     <meta property="og:site_name" content={siteTitle} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />

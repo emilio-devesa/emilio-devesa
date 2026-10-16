@@ -1,5 +1,6 @@
 ---
 title: "Windows 11 Pro: Activar Licencia"
+lang: "es"
 date: "2024-08-08"
 description: "Instalar Windows 11 sin clave es fácil; lo difícil es vivir con las funciones bloqueadas. Tres comandos con privilegios y un servidor KMS para dejarlo activado en una virtual."
 categories: 

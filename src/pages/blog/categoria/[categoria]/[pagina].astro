@@ -36,7 +36,7 @@ const { cat, posts, currentPage, totalPages } = Astro.props;
 
 <BlogLayout
   title={`Blog – ${cat.label} – Página ${currentPage}`}
-  description={`Entradas del blog de Emilio Devesa sobre ${cat.label}: página ${currentPage} de ${totalPages}.`}
+  description={`Entradas del blog de Emilio Devesa sobre ${cat.label}: página ${currentPage} de ${totalPages} (algunas en inglés).`}
   activeCategory={cat.slug}
   posts={posts}
   currentPage={currentPage}

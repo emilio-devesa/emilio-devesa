@@ -1,5 +1,6 @@
 ---
 title: "Seagate Barracuda 7200.11"
+lang: "es"
 date: "2008-06-12"
 description: "Dos platos, cuatro cabezales y medio terabyte para tus juegos, música y fotos. El Barracuda que quiso ser el más rápido y acabó siendo el más sensato."
 categories: 

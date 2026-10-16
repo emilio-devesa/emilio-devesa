@@ -1,5 +1,6 @@
 ---
 title: "Blade: The Edge of Darkness"
+lang: "es"
 date: "2001-02-28"
 description: "Análisis del clásico español de RebelAct: cuatro personajes, niveles enormes, dificultad endiablada, combos con desmembramientos y un apartado técnico espectacular."
 categories: 

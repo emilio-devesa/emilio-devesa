@@ -9,7 +9,11 @@ import { NOT_FOUND_NAV_LINKS } from '../lib/blog';
 const navLinks = NOT_FOUND_NAV_LINKS;
 ---
 
-<PrimaryLayout title="404 No Encontrada" robots="noindex, nofollow">
+<PrimaryLayout
+  title="404 No Encontrada"
+  description="Página no encontrada en emiliodevesa.com."
+  robots="noindex, nofollow"
+>
   <SiteHeader links={navLinks} idPrefix="notfound" slot="header" />
 
   <HeroMini title="Página no encontrada" />

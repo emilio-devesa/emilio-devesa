@@ -1,5 +1,6 @@
 ---
 title: "Starman"
+lang: "es"
 date: "2018-08-09"
 description: "Nueve niveles en blanco y negro donde la luz es el camino: cajas, imanes y portales con sabor a Limbo. Si te gustó Portal, este pequeño y humilde juego Made in Spain te encantará."
 categories: 

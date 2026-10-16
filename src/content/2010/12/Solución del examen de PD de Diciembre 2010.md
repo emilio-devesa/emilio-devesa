@@ -1,5 +1,6 @@
 ---
 title: "Solución del examen de PD de Diciembre 2010"
+lang: "es"
 date: "2010-12-20"
 description: "Un repaso a las soluciones en Ocaml del examen de Programación Declarativa, paso a paso: mensajes del top-level, tipos y evaluaciones."
 categories: 

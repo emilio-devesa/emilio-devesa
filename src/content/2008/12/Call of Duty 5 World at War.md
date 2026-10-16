@@ -1,5 +1,6 @@
 ---
 title: "Call of Duty 5 World at War"
+lang: "es"
 date: "2008-12-15"
 description: "Treyarch tenía algo que demostrar tras el fiasco del 3, y vaya si lo demuestra: IA que flanquea, escenarios que respiran y zombis nazis de propina. Entra al Pacífico si te atreves."
 categories: 

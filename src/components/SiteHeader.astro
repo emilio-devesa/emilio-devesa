@@ -32,12 +32,20 @@ const navId = `${idPrefix}-nav-links`;
     </button>
 
     <div class="nav-links" id={navId}>
-      {links.map((link) => (
-        <a href={link.href}>{link.label}</a>
-      ))}
+      {links.map((link) =>
+        link.href.startsWith('http') ? (
+          <a href={link.href} target="_blank" rel="noopener noreferrer">
+            {link.label}
+          </a>
+        ) : (
+          <a href={link.href}>{link.label}</a>
+        ),
+      )}
     </div>
   </nav>
 
+  {/* Sin JS el menú quedaría oculto: estas reglas duplican a propósito
+      las de la hoja externa para no depender de ella si falla su carga. */}
   <noscript>
     <style>
       .menu-toggle {

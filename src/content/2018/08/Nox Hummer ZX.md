@@ -1,5 +1,6 @@
 ---
 title: "Nox Hummer ZX"
+lang: "es"
 date: "2018-08-03"
 description: "Doce años después de la Matrix Vx toca jubilarla: acero, ventana de metacrilato y tres ventiladores de 12 cm por 46 €. La torre sobria en la era del RGB chillón."
 categories: 

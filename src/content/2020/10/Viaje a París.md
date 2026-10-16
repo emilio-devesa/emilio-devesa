@@ -1,5 +1,6 @@
 ---
 title: "Viaje a París"
+lang: "es"
 date: "2020-10-12"
 description: "Escapada en pareja con festival incluido: apps, vuelos, rincones y precios de París, con vídeo estabilizado con el Osmo. Una guía genial para tu aventura parisina."
 categories: 
@@ -7,7 +8,7 @@ categories:
 ---
 
 
-![Viaje a París, Montmartre](images/eiffel.jpeg)
+![Viaje a París, Torre Eiffel](images/eiffel.jpeg)
 
 En octubre del año pasado (madre mía como pasa el tiempo!) hicimos una escapada en pareja a París. Ella me convenció con unos pases para un festival y allá que nos fuimos. No de cualquier forma: como quería hacer el video del viaje me compré el estabilizador [DJI Osmo Mobile 3](../../../2019/12/dji-osmo-mobile-3/) para que todo quedase bien inmortalizado con mi iPhone. Pero un viaje así requiere de cierta planificación, que dejo por aquí resumida por si tú también quieres vivir tu aventura parisina. Estos consejos no tienen garantías de ningún tipo pero ahí están, como me gusta decir, sin gluten ni lactosa.
 

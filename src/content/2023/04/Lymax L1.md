@@ -1,5 +1,6 @@
 ---
 title: "Lymax L1"
+lang: "es"
 date: "2023-04-19"
 description: "¿Trabajas a oscuras y acabas con los ojos cargados? Una barra de luz de 21 € sobre el monitor, sin reflejos y con tres temperaturas. La aliada barata contra la fatiga visual."
 categories: 

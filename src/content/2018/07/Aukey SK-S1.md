@@ -1,5 +1,6 @@
 ---
 title: "Aukey SK-S1"
+lang: "es"
 date: "2018-07-23"
 description: "Cazado en el Prime Day por 40 €: 16 W en estéreo, 8 horas de batería y la eterna pregunta de si un Bluetooth barato puede sonar bien. Compra a ciegas con veredicto."
 categories: 

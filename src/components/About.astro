@@ -3,10 +3,22 @@ import { Image } from 'astro:assets';
 import profile from '../assets/images/profile.png';
 
 const paragraphs = [
-  '🙋🏻‍♂️ Soy Emilio Devesa, batería profesional, profesor certificado por Yamaha Music Europe y cuento con una sólida experiencia como intérprete y docente.',
-  '🌍 Llevo más de 15 años trabajando como músico de directo, músico de sesión y profesor de batería.',
-  '💿 También he producido varios trabajos para otros artistas y colaborado con muchos proyectos de estilos muy variados.',
-  '🎓 Además soy Key Teacher oficial del sistema Yamaha Music Education.',
+  {
+    icon: '🙋🏻‍♂️',
+    text: 'Soy Emilio Devesa, batería profesional, profesor certificado por Yamaha Music Europe y cuento con una sólida experiencia como intérprete y docente.',
+  },
+  {
+    icon: '🌍',
+    text: 'Llevo más de 15 años trabajando como músico de directo, músico de sesión y profesor de batería.',
+  },
+  {
+    icon: '💿',
+    text: 'También he producido varios trabajos para otros artistas y colaborado con muchos proyectos de estilos muy variados.',
+  },
+  {
+    icon: '🎓',
+    text: 'Además soy Key Teacher oficial del sistema Yamaha Music Education.',
+  },
 ];
 ---
 
@@ -17,7 +29,9 @@ const paragraphs = [
   <div class="about-grid">
     <div class="about-text">
       {paragraphs.map((p) => (
-        <p>{p}</p>
+        <p>
+          <span aria-hidden="true">{p.icon}</span> {p.text}
+        </p>
       ))}
     </div>
     <div class="about-image">

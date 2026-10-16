@@ -13,7 +13,11 @@ interface PostLink {
   url: string;
 }
 
-type Props = CollectionEntry<'blog'>['data'] & {
+type Props = {
+  title: string;
+  description?: string;
+  date: Date;
+  lang?: string;
   minutes: number;
   categoryLabel: string;
   categorySlug: string;
@@ -47,12 +51,14 @@ const navLinks = BLOG_NAV_LINKS;
   robots="noindex, nofollow"
   lang={articleLang}
   ogImage={ogImage}
+  ogType="article"
+  publishedTime={date.toISOString()}
 >
   <SiteHeader links={navLinks} ariaLabel="Navegación del blog" idPrefix="blog" slot="header" />
 
   <HeroMini title={title} />
 
-  <article id="article-content" class="article-content" lang={articleLang}>
+  <article id="article-content" class="article-content article-page" lang={articleLang}>
     <p class="article-meta">
       <a href="/blog/">← Volver al índice</a> ·{' '}
       <a href={`/blog/categoria/${categorySlug}/`}>{categoryLabel}</a> ·{' '}

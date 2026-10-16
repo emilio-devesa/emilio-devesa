@@ -1,5 +1,6 @@
 ---
 title: "Tu PC para juegos por menos de 450 euros"
+lang: "es"
 date: "2008-06-15"
 description: "Plan renove para jugar a Crysis sin arruinarte: Matrix Vx, Gigabyte P31, Pentium Dual-Core y una HD3870. El ahorro inteligente existe, y aquí está la receta."
 categories: 
