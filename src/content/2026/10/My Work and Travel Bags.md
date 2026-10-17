@@ -8,9 +8,9 @@ categories:
 ---
 
 ## The starting point
-For almost twenty years, I have used only one computer at a time. When I in my first year at university, my parents bought me a 15-inch Packard Bell MZ36-T-073 laptop. It was a decent machine, but carrying it back and forth to university made my daily commute miserable. I had to carry it in a large backpack or laptop bag along with its charger, as the battery lasted barely two hours. It worked well enough, but portability was definitely not its strongest point.
+For almost twenty years, I have used only one computer at a time. When I was in my first year at university, my parents bought me a 15-inch Packard Bell MZ36-T-073 laptop. It was a decent machine, but carrying it back and forth to university made my daily commute miserable. I had to carry it in a large backpack or laptop bag along with its charger, as the battery lasted barely two hours. It worked well enough, but portability was definitely not its strongest point.
 
-I was using a Targus TSB081 Backpack that had only one strap so all the weight was put on one shoulder:
+I used a Targus TSB081EU laptop backpack. It had a single shoulder strap that went across my chest and over one shoulder, leaving all the weight on just one side. I never found it particularly comfortable, and its bulky, unattractive design didn't help. It wasn't especially versatile, either: it was awkward to carry as a briefcase and wasn't really suitable for use as a travel backpack. Looking back, it was a rather cumbersome way to carry a laptop that was already too heavy for my daily commute.
 
 ![Targus TSB081EU Backpack](images/targus-tsb081eu.jpeg)
 
