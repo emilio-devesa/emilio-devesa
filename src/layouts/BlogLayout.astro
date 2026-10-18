@@ -93,9 +93,8 @@ const navLinks = BLOG_NAV_LINKS;
           .replace(/</g, '&lt;')
           .replace(/>/g, '&gt;')
           .replace(/"/g, '&quot;');
-      // El excerpt de Pagefind trae <mark> en las coincidencias: se pela
-      // todo marcado antes de escapar, para no mostrar etiquetas crudas.
-      const cleanExcerpt = (html) => escapeHtml(html.replace(/<[^>]*>/g, ''));
+      // El excerpt de Pagefind ya viene con entidades codificadas y con <mark>
+      // en las coincidencias: es seguro inyectarlo como innerHTML tal cual.
       async function run(query) {
         if (!pagefind) {
           status.textContent = 'Cargando índice…';
@@ -121,7 +120,7 @@ const navLinks = BLOG_NAV_LINKS;
               const thumb = item.meta.image
                 ? `<span class="post-thumb"><img src="${item.meta.image}" width="320" height="240" alt="" loading="lazy" decoding="async" /></span>`
                 : '<span class="post-thumb post-thumb--empty"></span>';
-              return `<li class="post-item"><a class="post-card" href="${item.url}">${thumb}<span class="post-text"><span class="post-title">${escapeHtml(item.meta.title)}</span><span class="post-excerpt">${cleanExcerpt(item.excerpt)}</span></span></a></li>`;
+              return `<li class="post-item"><a class="post-card" href="${item.url}">${thumb}<span class="post-text"><span class="post-title">${escapeHtml(item.meta.title)}</span><span class="post-excerpt">${item.excerpt}</span></span></a></li>`;
             })
             .join('') +
           '</ul>';

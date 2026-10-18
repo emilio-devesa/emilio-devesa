@@ -185,8 +185,7 @@ nav a:hover {
     linear-gradient(to bottom, var(--shade), var(--background)),
     image-set(
         url('/images/hero_3a.avif') type('image/avif'),
-        url('/images/hero_3a.webp') type('image/webp'),
-        url('/images/hero_3a.jpeg') type('image/jpeg')
+        url('/images/hero_3a.webp') type('image/webp')
       )
       center/cover no-repeat;
   color: var(--foreground);

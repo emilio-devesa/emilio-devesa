@@ -53,7 +53,6 @@ const navLinks = BLOG_NAV_LINKS;
   title={title}
   description={description}
   robots="noindex, nofollow"
-  lang={articleLang}
   ogImage={ogImage}
   ogType="article"
   publishedTime={date.toISOString()}
@@ -62,14 +61,25 @@ const navLinks = BLOG_NAV_LINKS;
 
   <HeroMini title={title} />
 
-  <article id="article-content" class="article-content article-page" lang={articleLang}>
+  <article
+    id="article-content"
+    class="article-content article-page"
+    lang={articleLang}
+    data-pagefind-body
+  >
     <p class="article-meta">
       <a href="/blog/">← Volver al índice</a> ·{' '}
       <a href={`/blog/categoria/${categorySlug}/`}>{categoryLabel}</a> ·{' '}
       <FormattedDate date={date} /> · {minutes} min de lectura
     </p>
-    {ogImage && (
+    {/* Imagen del resultado de búsqueda. Si el post no tiene imagen propia se
+        fija la meta `image` vacía para anular la autodetección de Pagefind
+        (si no, tomaría la primera <img> del cuerpo —p. ej. la de
+        «Relacionados»— y su nombre de fichero contaminaría la búsqueda). */}
+    {ogImage ? (
       <img data-pagefind-meta="image[src]" src={ogImage} alt="" aria-hidden="true" hidden />
+    ) : (
+      <span data-pagefind-meta="image:" hidden aria-hidden="true"></span>
     )}
     <TableOfContents headings={headings} lang={articleLang} />
     <slot />
