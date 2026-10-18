@@ -1,4 +1,6 @@
 ---
+import Section from './Section.astro';
+
 const testimonios = [
   {
     quote:
@@ -23,10 +25,7 @@ const testimonios = [
 ];
 ---
 
-<section id="opiniones">
-  <h2>
-    <span aria-hidden="true">📣</span> Opiniones de alumnos
-  </h2>
+<Section id="opiniones" icon="📣" title="Opiniones de alumnos">
   <div class="offers">
     {testimonios.map((t) => (
       <div class="offer">
@@ -35,4 +34,4 @@ const testimonios = [
       </div>
     ))}
   </div>
-</section>
+</Section>

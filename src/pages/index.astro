@@ -10,8 +10,32 @@ import ContactSection from '../components/ContactSection.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
 import { HOME_NAV_LINKS } from '../lib/blog';
+import { canonicalUrl } from '../lib/site';
 
 const navLinks = HOME_NAV_LINKS;
+const siteUrl = canonicalUrl('/', Astro.site);
+// Datos estructurados: la home es la única página indexable.
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Emilio Devesa',
+    url: siteUrl,
+    inLanguage: 'es',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Emilio Devesa',
+    url: siteUrl,
+    jobTitle: 'Batería profesional y profesor de batería',
+    sameAs: [
+      'https://github.com/emilio-devesa',
+      'https://instagram.com/emiliodevesadrums',
+      'https://youtube.com/@emiliodevesadrums',
+    ],
+  },
+];
 
 const offers = [
   {
@@ -59,10 +83,20 @@ const commitments = [
 <PrimaryLayout
   description="Emilio Devesa: clases de batería, discografía y blog sobre hardware, software y videojuegos."
   robots="index, follow"
+  jsonLd={jsonLd}
 >
   <SiteHeader links={navLinks} idPrefix="home" slot="header" />
 
-  <Hero />
+  <Hero>
+    <h1>
+      Emilio Devesa,
+      <br />
+      Yamaha Key Teacher
+    </h1>
+    <a class="cta" href="#clases">
+      Empieza aquí
+    </a>
+  </Hero>
 
   <About />
 

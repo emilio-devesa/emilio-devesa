@@ -1,0 +1,26 @@
+---
+// Envoltorio de las secciones de la home: <section id> con <h2> opcional
+// (icono + título). Centraliza el esqueleto que repetían About, CardsSection,
+// TestimonialsSection, ContactSection y MusicSection.
+interface Props {
+  id?: string;
+  icon?: string;
+  title?: string;
+}
+
+const { id, icon, title } = Astro.props;
+---
+
+<section id={id}>
+  {title && (
+    <h2>
+      {icon ? (
+        <>
+          <span aria-hidden="true">{icon}</span>{' '}
+        </>
+      ) : null}
+      {title}
+    </h2>
+  )}
+  <slot />
+</section>

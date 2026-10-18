@@ -1,12 +1,11 @@
 ---
 import BlogLayout from '../layouts/BlogLayout.astro';
 
-import { BLOG_PAGE_SIZE, getAllPosts } from '../lib/blog';
+import { getAllPosts, paginate } from '../lib/blog';
 
 const allPosts = await getAllPosts();
 
-const totalPages = Math.ceil(allPosts.length / BLOG_PAGE_SIZE);
-const posts = allPosts.slice(0, BLOG_PAGE_SIZE);
+const { posts, currentPage, totalPages } = paginate(allPosts, 1);
 ---
 
 <BlogLayout
@@ -14,7 +13,7 @@ const posts = allPosts.slice(0, BLOG_PAGE_SIZE);
   description="Entradas del blog de Emilio Devesa: hardware, software y videojuegos (algunas en inglés)."
   activeCategory="todo"
   posts={posts}
-  currentPage={1}
+  currentPage={currentPage}
   totalPages={totalPages}
   showCategory
 />

@@ -1,5 +1,6 @@
 import rss from '@astrojs/rss';
 import { getAllPosts, blogPostUrl } from '../lib/blog.js';
+import { SITE_FALLBACK } from '../lib/site.js';
 import MarkdownIt from 'markdown-it';
 import sanitizeHtml from 'sanitize-html';
 
@@ -25,7 +26,7 @@ function toExcerpt(markdown, max = 280) {
 }
 
 export async function GET(context) {
-  const site = String(context.site ?? 'https://emiliodevesa.com/').replace(/\/$/, '');
+  const site = String(context.site ?? SITE_FALLBACK).replace(/\/$/, '');
   const posts = await getAllPosts();
   return rss({
     title: 'Emilio Devesa – Blog',

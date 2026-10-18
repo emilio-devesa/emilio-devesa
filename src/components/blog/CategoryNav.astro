@@ -1,5 +1,5 @@
 ---
-import { BLOG_CATEGORIES } from '../../lib/blog';
+import { BLOG_CATEGORIES, blogCategoryUrl, blogPageUrl } from '../../lib/blog';
 
 interface Props {
   // slug de la categoría activa ('todo' para todas)
@@ -9,15 +9,21 @@ interface Props {
 const { active = 'todo' } = Astro.props;
 ---
 
-<nav aria-label="Filtrar entradas por categoría">
+<nav aria-label="Filtrar entradas por categoría" data-search-static>
   <ul class="category-filter">
-    <li>{active === 'todo' ? <span aria-current="page">Todo</span> : <a href="/blog/">Todo</a>}</li>
+    <li>
+      {active === 'todo' ? (
+        <span aria-current="page">Todo</span>
+      ) : (
+        <a href={blogPageUrl(1)}>Todo</a>
+      )}
+    </li>
     {BLOG_CATEGORIES.map((cat) => (
       <li>
         {active === cat.slug ? (
           <span aria-current="page">{cat.label}</span>
         ) : (
-          <a href={`/blog/categoria/${cat.slug}/`}>{cat.label}</a>
+          <a href={blogCategoryUrl(cat.slug)}>{cat.label}</a>
         )}
       </li>
     ))}

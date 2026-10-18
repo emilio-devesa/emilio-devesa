@@ -1,10 +1,14 @@
-<section class="hero">
-  <h1>
-    Emilio Devesa,
-    <br />
-    Yamaha Key Teacher
-  </h1>
-  <a class="cta" href="#clases">
-    Empieza aquí
-  </a>
+---
+// Esqueleto de la cabecera. En modo `mini` (blog, /clases/ y 404) solo pinta
+// un <h1> simple; sin él, la página inserta su contenido (el h1 y el CTA de
+// la home). HeroMini lo reutiliza.
+interface Props {
+  mini?: boolean;
+}
+
+const { mini = false } = Astro.props;
+---
+
+<section class:list={['hero', mini && 'hero--mini']}>
+  <slot />
 </section>

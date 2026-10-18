@@ -3,9 +3,10 @@ import BlogLayout from '../../../../layouts/BlogLayout.astro';
 
 import {
   BLOG_CATEGORIES,
-  BLOG_PAGE_SIZE,
   blogCategoryUrl,
   getAllPosts,
+  pageCount,
+  paginate,
   postsInCategory,
 } from '../../../../lib/blog';
 
@@ -15,14 +16,15 @@ export async function getStaticPaths() {
   // aquí generamos las páginas 2..N de las que las necesiten.
   return BLOG_CATEGORIES.flatMap((cat) => {
     const filtered = postsInCategory(allPosts, cat);
-    const totalPages = Math.max(1, Math.ceil(filtered.length / BLOG_PAGE_SIZE));
-    return Array.from({ length: Math.max(0, totalPages - 1) }, (_, i) => {
+    const totalPages = pageCount(filtered.length);
+    return Array.from({ length: totalPages - 1 }, (_, i) => {
       const page = i + 2;
+      const { posts } = paginate(filtered, page);
       return {
         params: { categoria: cat.slug, pagina: String(page) },
         props: {
           cat,
-          posts: filtered.slice((page - 1) * BLOG_PAGE_SIZE, page * BLOG_PAGE_SIZE),
+          posts,
           currentPage: page,
           totalPages,
         },

@@ -12,6 +12,7 @@ import {
   readingMinutes,
 } from '../../lib/blog';
 import { postHeadings, type TocHeading } from '../../lib/toc';
+import { SITE_FALLBACK } from '../../lib/site';
 
 export async function getStaticPaths() {
   const posts = await getAllPosts();
@@ -63,7 +64,7 @@ const { Content } = await render(post);
 const og = await postFirstImage(post, 1200, 630);
 // Miniatura para el resultado de búsqueda (mismo 320×240 que el listado).
 const searchThumb = await postFirstImage(post, 320, 240);
-const site = Astro.site ?? 'https://emiliodevesa.com';
+const site = Astro.site ?? SITE_FALLBACK;
 ---
 
 <PostLayout

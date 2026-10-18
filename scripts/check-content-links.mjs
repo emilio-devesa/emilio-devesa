@@ -2,7 +2,8 @@
 // Uso: npm run check:links
 // Compara cada enlace relativo ../../../AAAA/MM/slug/ con las rutas
 // normalizadas que Astro genera (minúsculas, sin puntuación, con guiones),
-// más las imágenes images/* contra el sistema de ficheros.
+// más las imágenes images/* contra el sistema de ficheros. Avisa también de
+// encabezados '#' de nivel 1 en el cuerpo (producirían un segundo <h1>).
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs';
 import { join, dirname, resolve, sep, posix } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -18,14 +19,36 @@ function walk(dir, out = []) {
   return out;
 }
 
-// Imita la normalización de slugs de Astro (minúsculas, sin puntuación, con guiones)
+// Imita la normalización de slugs de Astro (minúsculas, sin puntuación, con
+// guiones). NFC primero: las rutas publicadas usan la forma compuesta (ver
+// blogPostUrl), así que un nombre en NFD debe compararse en la misma forma.
 function slugify(seg) {
   return seg
+    .normalize('NFC')
     .toLowerCase()
     .replace(/[^\p{L}\p{N}\s_-]/gu, '')
     .trim()
     .replace(/[\s_]+/g, '-')
     .replace(/-+/g, '-');
+}
+
+// Encabezados de nivel 1 en el cuerpo (el título ya lo aporta el front-matter,
+// así que un '#' produciría un segundo <h1>). Ignora cercas de código y
+// bloques indentados para no marcar comentarios de shell o ejemplos.
+function bodyH1Lines(raw) {
+  const lines = raw.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '').split('\n');
+  const hits = [];
+  let inFence = false;
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    if (/^\s*```/.test(line)) {
+      inFence = !inFence;
+      continue;
+    }
+    if (inFence || /^( {4,}|\t)/.test(line)) continue;
+    if (/^#\s+\S/.test(line)) hits.push(i + 1);
+  }
+  return hits;
 }
 
 const files = walk(CONTENT);
@@ -43,11 +66,14 @@ let checkedLinks = 0;
 let checkedImgs = 0;
 const brokenLinks = [];
 const brokenImgs = [];
+const bodyH1 = [];
 
 for (const file of files) {
   const raw = readFileSync(file, 'utf8');
   const rel = file.replace(CONTENT, '');
   const postDir = dirname(rel);
+
+  for (const line of bodyH1Lines(raw)) bodyH1.push({ file: rel, line });
 
   for (const m of raw.matchAll(linkRe)) {
     const target = m[2].trim();
@@ -86,9 +112,11 @@ for (const file of files) {
 console.log(`Archivos revisados: ${files.length}`);
 console.log(`Enlaces internos comprobados: ${checkedLinks} (rotos: ${brokenLinks.length})`);
 console.log(`Imágenes comprobadas: ${checkedImgs} (rotas: ${brokenImgs.length})`);
+console.log(`Encabezados '#' de nivel 1 en el cuerpo: ${bodyH1.length}`);
 for (const b of brokenLinks.slice(0, 100)) console.log(`- ENLACE ${b.file} -> ${b.target}`);
 for (const b of brokenImgs.slice(0, 100)) console.log(`- IMAGEN ${b.file} -> ${b.target}`);
+for (const b of bodyH1.slice(0, 100)) console.log(`- H1 ${b.file}:${b.line}`);
 if (brokenLinks.length + brokenImgs.length > 100)
   console.log(`… y ${brokenLinks.length + brokenImgs.length - 100} más`);
 // El CI debe fallar si hay algo roto: sin exit code el chequeo es decorativo.
-if (brokenLinks.length + brokenImgs.length > 0) process.exitCode = 1;
+if (brokenLinks.length + brokenImgs.length + bodyH1.length > 0) process.exitCode = 1;

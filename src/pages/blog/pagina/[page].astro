@@ -1,15 +1,15 @@
 ---
 import BlogLayout from '../../../layouts/BlogLayout.astro';
 
-import { BLOG_PAGE_SIZE, getAllPosts } from '../../../lib/blog';
+import { getAllPosts, pageCount, paginate } from '../../../lib/blog';
 
 export async function getStaticPaths() {
   const allPosts = await getAllPosts();
-  const totalPages = Math.ceil(allPosts.length / BLOG_PAGE_SIZE);
+  const totalPages = pageCount(allPosts.length);
   // La página 1 vive en /blog/, aquí generamos 2..N
   return Array.from({ length: totalPages - 1 }, (_, i) => {
     const page = i + 2;
-    const posts = allPosts.slice((page - 1) * BLOG_PAGE_SIZE, page * BLOG_PAGE_SIZE);
+    const { posts } = paginate(allPosts, page);
     return {
       params: { page: String(page) },
       props: { posts, currentPage: page, totalPages },

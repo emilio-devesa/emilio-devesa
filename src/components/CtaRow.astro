@@ -1,0 +1,37 @@
+---
+import ExternalHint from './ExternalHint.astro';
+
+// Fila de botones CTA (div.cta-row > ul > li > a.cta): mismo esqueleto en
+// CardsSection y ContactSection.
+interface CtaLink {
+  text: string;
+  url: string;
+  // Los enlaces que abren pestaña nueva llevan el aviso para lectores.
+  external?: boolean;
+}
+
+interface Props {
+  links: CtaLink[];
+  tight?: boolean;
+}
+
+const { links, tight = false } = Astro.props;
+---
+
+<div class:list={['cta-row', tight && 'cta-row--tight']}>
+  <ul>
+    {links.map((link) => (
+      <li>
+        <a
+          class="cta"
+          href={link.url}
+          target={link.external ? '_blank' : undefined}
+          rel={link.external ? 'noopener noreferrer' : undefined}
+        >
+          {link.text}
+          {link.external && <ExternalHint />}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>

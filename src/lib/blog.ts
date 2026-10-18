@@ -32,6 +32,41 @@ export const NOT_FOUND_NAV_LINKS = HOME_NAV_LINKS.map((link) => ({
   href: `/${link.href}`,
 }));
 
+export interface BlogCategory {
+  slug: string;
+  label: string;
+  // categorías del front-matter incluidas en el filtro
+  match: string[];
+}
+
+// 'mas' agrupa sin-categoria y cualquier otra futura categoría menor
+const MAS_CATEGORY: BlogCategory = { slug: 'mas', label: 'Más', match: ['sin-categoria'] };
+
+export const BLOG_CATEGORIES: BlogCategory[] = [
+  { slug: 'hardware', label: 'Hardware', match: ['hardware'] },
+  { slug: 'software', label: 'Software', match: ['software'] },
+  { slug: 'videojuegos', label: 'Videojuegos', match: ['videojuegos'] },
+  MAS_CATEGORY,
+];
+
+// Categoría del filtro a la que pertenece un post: primera coincidencia con
+// las categorías conocidas y 'Más' si no hay ninguna. Única fuente de la
+// agrupación: de aquí salen la etiqueta, el slug y los relacionados.
+export function postCategory(categories: string[] | undefined): BlogCategory {
+  const cats = categories ?? [];
+  return BLOG_CATEGORIES.find((cat) => cats.some((c) => cat.match.includes(c))) ?? MAS_CATEGORY;
+}
+
+// Etiqueta de categoría para mostrar
+export function postCategoryLabel(categories: string[] | undefined) {
+  return postCategory(categories).label;
+}
+
+// Slug del filtro al que pertenece el post (para enlazar la categoría)
+export function postCategorySlug(categories: string[] | undefined) {
+  return postCategory(categories).slug;
+}
+
 // Posts pertenecientes a una categoría del filtro
 export function postsInCategory(posts: CollectionEntry<'blog'>[], cat: BlogCategory) {
   return posts.filter((post) => (post.data.categories ?? []).some((c) => cat.match.includes(c)));
@@ -43,37 +78,33 @@ export function postsInSameCategory(
   posts: CollectionEntry<'blog'>[],
   categories: string[] | undefined,
 ) {
-  const slug = postCategorySlug(categories);
-  const cat = BLOG_CATEGORIES.find((c) => c.slug === slug) ?? {
-    slug: 'mas',
-    label: 'Más',
-    match: ['sin-categoria'],
+  return postsInCategory(posts, postCategory(categories));
+}
+
+// Número total de páginas para una lista (mínimo 1: siempre hay una página).
+export function pageCount(total: number, size = BLOG_PAGE_SIZE) {
+  return Math.max(1, Math.ceil(total / size));
+}
+
+// Trocea una lista en páginas de tamaño fijo. La página pedida se acota al
+// rango [1, totalPages] para que el llamador no tenga que repetir la cuenta.
+export function paginate<T>(items: T[], page: number, size = BLOG_PAGE_SIZE) {
+  const totalPages = pageCount(items.length, size);
+  const currentPage = Math.min(Math.max(1, page), totalPages);
+  return {
+    posts: items.slice((currentPage - 1) * size, currentPage * size),
+    currentPage,
+    totalPages,
   };
-  return postsInCategory(posts, cat);
 }
-
-export interface BlogCategory {
-  slug: string;
-  label: string;
-  // categorías del front-matter incluidas en el filtro
-  match: string[];
-}
-
-// 'mas' agrupa sin-categoria y cualquier otra futura categoría menor
-export const BLOG_CATEGORIES: BlogCategory[] = [
-  { slug: 'hardware', label: 'Hardware', match: ['hardware'] },
-  { slug: 'software', label: 'Software', match: ['software'] },
-  { slug: 'videojuegos', label: 'Videojuegos', match: ['videojuegos'] },
-  { slug: 'mas', label: 'Más', match: ['sin-categoria'] },
-];
 
 // Primera imagen del cuerpo optimizada en build. Sin imagen o con
 // error devuelve undefined para que la llamada pinte sin miniatura.
 const postImages = import.meta.glob<{ default: ImageMetadata }>(
-  '../content/**/*.{jpg,jpeg,png,gif,webp}',
+  '../content/**/*.{jpg,jpeg,png,gif,webp,avif}',
 );
 
-export function postFirstImageRel(body: string | undefined): string | undefined {
+function postFirstImageRel(body: string | undefined): string | undefined {
   const match = /!\[[^\]]*\]\(([^)]+)\)/.exec(body ?? '');
   const rel = match?.[1].split('#')[0].trim();
   return rel && !/^(https?:|data:)/i.test(rel) ? rel : undefined;
@@ -103,7 +134,10 @@ export async function postFirstImage(
     const mod = await load();
     const img = await getImage({ src: mod.default, width, height, fit: 'cover', format: 'webp' });
     return { src: img.src, width: img.attributes.width, height: img.attributes.height };
-  } catch {
+  } catch (error) {
+    // No rompe el build (la fila sale sin miniatura), pero deja rastro: fallar
+    // aquí suele ser una ruta de imagen mal escrita.
+    console.warn(`[blog] No se pudo optimizar la miniatura de ${post.id}: ${rel}`, error);
     return undefined;
   }
 }
@@ -126,23 +160,4 @@ export function blogPostUrl(id: string) {
 export function readingMinutes(body: string | undefined) {
   const words = (body ?? '').split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(words / 200));
-}
-
-// Etiqueta de categoría para mostrar (primera coincidencia con el filtro;
-// 'Más' si no hay ninguna conocida)
-export function postCategoryLabel(categories: string[] | undefined) {
-  const cats = categories ?? [];
-  for (const cat of BLOG_CATEGORIES) {
-    if (cats.some((c) => cat.match.includes(c))) return cat.label;
-  }
-  return 'Más';
-}
-
-// Slug del filtro al que pertenece el post (para enlazar la categoría)
-export function postCategorySlug(categories: string[] | undefined) {
-  const cats = categories ?? [];
-  for (const cat of BLOG_CATEGORIES) {
-    if (cats.some((c) => cat.match.includes(c))) return cat.slug;
-  }
-  return 'mas';
 }

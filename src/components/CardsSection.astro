@@ -1,4 +1,7 @@
 ---
+import Section from './Section.astro';
+import CtaRow from './CtaRow.astro';
+
 interface Card {
   icon?: string;
   title: string;
@@ -22,15 +25,7 @@ interface Props {
 const { id, icon, title, cards, cta } = Astro.props;
 ---
 
-<section id={id}>
-  <h2>
-    {icon ? (
-      <>
-        <span aria-hidden="true">{icon}</span>{' '}
-      </>
-    ) : null}
-    {title}
-  </h2>
+<Section id={id} icon={icon} title={title}>
   <div class="offers">
     {cards.map((card) => (
       <div class="offer">
@@ -52,16 +47,5 @@ const { id, icon, title, cards, cta } = Astro.props;
       </div>
     ))}
   </div>
-
-  <div class="cta-row">
-    <ul>
-      {cta.map((button) => (
-        <li>
-          <a class="cta" href={button.url}>
-            {button.text}
-          </a>
-        </li>
-      ))}
-    </ul>
-  </div>
-</section>
+  <CtaRow links={cta} />
+</Section>

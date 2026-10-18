@@ -18,9 +18,19 @@ interface Props {
   // false por defecto a propósito: documenta el comportamiento base aunque
   // hoy todos los llamadores pasen true.
   showCategory?: boolean;
+  // Marca la lista como contenido estático del buscador (BlogLayout la oculta
+  // mientras hay resultados). Solo la lleva el índice del blog.
+  searchStatic?: boolean;
 }
 
-const { posts, currentPage, totalPages, pageUrl = blogPageUrl, showCategory = false } = Astro.props;
+const {
+  posts,
+  currentPage,
+  totalPages,
+  pageUrl = blogPageUrl,
+  showCategory = false,
+  searchStatic = false,
+} = Astro.props;
 
 // Miniaturas: primera imagen del cuerpo, optimizada en build (320px webp).
 // Sin imagen o con error -> la fila sale con el hueco reservado.
@@ -29,7 +39,7 @@ const thumbs: (OptimizedImage | undefined)[] = await Promise.all(
 );
 ---
 
-<ul class="post-list" data-pagefind-ignore>
+<ul class="post-list" data-pagefind-ignore data-search-static={searchStatic || undefined}>
   {posts.map((post, i) => {
     const minutes = readingMinutes(post.body);
     const url = blogPostUrl(post.id);
@@ -67,7 +77,7 @@ const thumbs: (OptimizedImage | undefined)[] = await Promise.all(
 </ul>
 
 {totalPages > 1 && (
-  <nav aria-label="Paginación del blog">
+  <nav aria-label="Paginación del blog" data-search-static={searchStatic || undefined}>
     <ul class="pagination">
       {currentPage > 1 && (
         <li>

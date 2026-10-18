@@ -29,19 +29,19 @@ const navLinks = NOT_FOUND_NAV_LINKS;
         <div class="blog-search-field">
           <input
             type="search"
-            id="notfound-search-input"
             class="blog-search-input"
             name="q"
             placeholder="Buscar artículos…"
             aria-label="Buscar en el blog"
             autocomplete="off"
+            data-search-input
           />
           <button
             type="button"
-            id="notfound-search-clear"
             class="blog-search-clear"
             aria-label="Limpiar búsqueda"
             hidden
+            data-search-clear
           >
             ✕
           </button>
@@ -54,8 +54,8 @@ const navLinks = NOT_FOUND_NAV_LINKS;
   </section>
 
   <script is:inline>
-    const notfoundInput = document.getElementById('notfound-search-input');
-    const notfoundClear = document.getElementById('notfound-search-clear');
+    const notfoundInput = document.querySelector('[data-search-input]');
+    const notfoundClear = document.querySelector('[data-search-clear]');
     if (notfoundInput && notfoundClear) {
       const syncNotfoundClear = () =>
         notfoundClear.toggleAttribute('hidden', notfoundInput.value === '');

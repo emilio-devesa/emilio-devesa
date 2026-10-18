@@ -1,12 +1,16 @@
 // Cabecera del Markdown (sin cercas de código) a slug compatible con
 // los ids que genera Astro (minúsculas, sin puntuación, acentos intactos).
+// Es una reimplementación del slugger de Astro (github-slugger sobre el texto
+// sin formato), así que no se puede garantizar al 100 %: `npm run check:toc`
+// verifica sobre el sitio construido que todos los anclajes del índice
+// resuelven contra los ids reales del artículo.
 export interface TocHeading {
   depth: number;
   text: string;
   slug: string;
 }
 
-export function headingSlug(text: string) {
+function headingSlug(text: string) {
   return text
     .toLowerCase()
     .normalize('NFC')

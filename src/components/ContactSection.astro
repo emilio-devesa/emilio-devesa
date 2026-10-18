@@ -1,17 +1,15 @@
 ---
-import ExternalHint from './ExternalHint.astro';
+import Section from './Section.astro';
+import CtaRow from './CtaRow.astro';
 
 const email = 'hola@emiliodevesa.com';
 const redes = [
-  { name: 'Instagram', url: 'https://instagram.com/emiliodevesadrums' },
-  { name: 'YouTube', url: 'https://youtube.com/@emiliodevesadrums' },
+  { text: 'Instagram', url: 'https://instagram.com/emiliodevesadrums', external: true },
+  { text: 'YouTube', url: 'https://youtube.com/@emiliodevesadrums', external: true },
 ];
 ---
 
-<section id="contact">
-  <h2>
-    <span aria-hidden="true">📧</span> Contacto
-  </h2>
+<Section id="contact" icon="📧" title="Contacto">
   <p>
     <span aria-hidden="true">🚀</span> ¿Buscas clases de batería y quieres pasar al siguiente nivel?
     <br />
@@ -25,27 +23,8 @@ const redes = [
     alcanzar el éxito.
   </p>
   <p class="cta-lead">Escríbeme!</p>
-  <div class="cta-row cta-row--tight">
-    <ul>
-      <li>
-        <a class="cta" href={`mailto:${email}`}>
-          {email}
-        </a>
-      </li>
-    </ul>
-  </div>
+  <CtaRow links={[{ text: email, url: `mailto:${email}` }]} tight />
 
   <p class="cta-lead">También puedes encontrarme en redes:</p>
-  <div class="cta-row cta-row--tight">
-    <ul>
-      {redes.map((red) => (
-        <li>
-          <a class="cta" href={red.url} target="_blank" rel="noopener noreferrer">
-            {red.name}
-            <ExternalHint />
-          </a>
-        </li>
-      ))}
-    </ul>
-  </div>
-</section>
+  <CtaRow links={redes} tight />
+</Section>

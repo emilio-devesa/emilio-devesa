@@ -1,4 +1,6 @@
 ---
+import Hero from './Hero.astro';
+
 interface Props {
   title: string;
 }
@@ -6,6 +8,6 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<section class="hero hero--mini">
+<Hero mini>
   <h1>{title}</h1>
-</section>
+</Hero>
