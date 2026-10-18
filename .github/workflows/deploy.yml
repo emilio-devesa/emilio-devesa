@@ -5,8 +5,18 @@ on:
   # Using a different branch name? Replace `main` with your branch’s name
   push:
     branches: [main]
+  # En los pull request solo corren las verificaciones: los jobs de build y
+  # deploy se saltan (mirar sus `if`), así un PR nunca intenta publicar.
+  pull_request:
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
+
+# Un despliegue a la vez por rama. Los PR se cancelan entre ellos (no
+# interesa gastar minutos en un commit ya superado); un push a main no se
+# cancela, para no cortar una publicación a medias.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 # Allow this job to clone the repo and create a page deployment
 permissions:
@@ -23,7 +33,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: 24
+          node-version-file: .nvmrc
           cache: npm
       - name: Install dependencies
         run: npm ci
@@ -36,6 +46,7 @@ jobs:
 
   build:
     needs: verify
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
@@ -43,14 +54,17 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: 24
+          node-version-file: .nvmrc
           cache: npm
       - name: Install dependencies
         run: npm ci
       - name: Build your site
         run: npm run build
+      # Necesita el dist/: comprueba que los anclajes del índice resuelven.
+      - name: Check table of contents anchors
+        run: npm run check:toc
       - name: Index your site with Pagefind
-        run: npx -y pagefind --site dist
+        run: npm run build:search
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
@@ -58,6 +72,7 @@ jobs:
 
   deploy:
     needs: build
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

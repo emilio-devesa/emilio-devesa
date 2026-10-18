@@ -2,7 +2,10 @@ import { glob } from 'astro/loaders';
 import { defineCollection, z } from 'astro:content';
 
 const blog = defineCollection({
-  loader: glob({ base: './src/content/', pattern: '**/*.{md,mdx}' }),
+  // Solo Markdown: no hay ficheros .mdx ni la integración que los procesaría.
+  loader: glob({ base: './src/content/', pattern: '**/*.md' }),
+  // Orden canónico del front-matter (distinto del orden de las claves de
+  // abajo): title, description, date, lang, categories.
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),

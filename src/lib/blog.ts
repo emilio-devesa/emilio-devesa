@@ -116,6 +116,15 @@ export interface OptimizedImage {
   height: number;
 }
 
+// Carpeta del post dentro de src/content, para resolver sus imágenes.
+function postDir(post: CollectionEntry<'blog'>): string {
+  return (post.filePath ?? '')
+    .replace(/^src\//, '')
+    .split('/')
+    .slice(0, -1)
+    .join('/');
+}
+
 export async function postFirstImage(
   post: CollectionEntry<'blog'>,
   width: number,
@@ -123,12 +132,7 @@ export async function postFirstImage(
 ): Promise<OptimizedImage | undefined> {
   const rel = postFirstImageRel(post.body);
   if (!rel) return undefined;
-  const dir = (post.filePath ?? '')
-    .replace(/^src\//, '')
-    .split('/')
-    .slice(0, -1)
-    .join('/');
-  const load = postImages[`../${dir}/${rel}`];
+  const load = postImages[`../${postDir(post)}/${rel}`];
   if (!load) return undefined;
   try {
     const mod = await load();
@@ -138,6 +142,30 @@ export async function postFirstImage(
     // No rompe el build (la fila sale sin miniatura), pero deja rastro: fallar
     // aquí suele ser una ruta de imagen mal escrita.
     console.warn(`[blog] No se pudo optimizar la miniatura de ${post.id}: ${rel}`, error);
+    return undefined;
+  }
+}
+
+// Imagen del cuerpo (ruta relativa del markdown) resuelta con los mismos
+// parámetros que usa el render del artículo, de forma que reutiliza el fichero
+// ya optimizado y no añade trabajo al build. La usa el feed, que publica el
+// artículo completo. Sin imagen o con error devuelve undefined.
+export async function postBodyImage(
+  post: CollectionEntry<'blog'>,
+  rel: string,
+): Promise<OptimizedImage | undefined> {
+  const load = postImages[`../${postDir(post)}/${rel}`];
+  if (!load) return undefined;
+  try {
+    const mod = await load();
+    const img = await getImage({ src: mod.default, format: 'webp' });
+    return {
+      src: img.src,
+      width: img.attributes.width ?? mod.default.width,
+      height: img.attributes.height ?? mod.default.height,
+    };
+  } catch (error) {
+    console.warn(`[blog] No se pudo optimizar la imagen de ${post.id}: ${rel}`, error);
     return undefined;
   }
 }

@@ -7,6 +7,11 @@
 
 User-agent: *
 Allow: /$
+# La home necesita estos recursos para renderizar (CSS/JS/fuentes, la imagen
+# del hero y los iconos): se permiten aunque el resto del sitio esté bloqueado.
+Allow: /_astro/
+Allow: /images/
+Allow: /favicon/
 Disallow: /
 # El feed publica el contenido completo del blog: fuera de rastreadores.
 Disallow: /rss.xml

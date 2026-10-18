@@ -1,5 +1,8 @@
 dist/
 node_modules/
 .astro/
+# Los posts se mantienen fuera de Prettier a propósito: su cuerpo usa saltos
+# duros de Markdown (dos espacios finales) que Prettier reescribe, y el
+# front-matter se corrige a mano (orden de claves y espacios finales).
 src/content/
 package-lock.json
