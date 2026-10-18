@@ -1,9 +1,9 @@
 ---
 title: "FIFA 07"
-lang: "es"
-date: "2006-10-08"
 description: "El simulador de EA vuelve sin apenas cambios: misma fórmula, ritmo acelerado con truco y comentarios que salvan los muebles. ¿Otra temporada más del mismo fútbol?"
-categories: 
+date: "2006-10-08"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: "Bloodrayne"
-lang: "es"
-date: "2003-06-01"
 description: "La vampiresa Rayne contra los nazis entre las dos Guerras Mundiales: combos, poderes como la Visión de Aura y el modo Blood Rage, buena ambientación y una linealidad excesiva."
-categories: 
+date: "2003-06-01"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: "F.E.A.R."
-lang: "es"
-date: "2005-11-05"
 description: "Pasillos a oscuras, una niña que no debería estar ahí y soldados más listos que el hambre. El shooter de terror de Monolith te reta: ¿aguantarías su modo experto?"
-categories: 
+date: "2005-11-05"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: "Adonit Jot Pro"
-lang: "es"
-date: "2016-05-07"
 description: "Un stylus de aluminio para escribir partituras en el iPad: punta fina, agarre magnético y la eterna lucha contra la palma de la mano. ¿Merece los 25 € frente al básico de Amazon?"
-categories: 
+date: "2016-05-07"
+lang: "es"
+categories:
   - "hardware"
 ---
 

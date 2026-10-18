@@ -1,9 +1,9 @@
 ---
 title: "Asus Eee PC 1215N"
-lang: "es"
-date: "2011-08-25"
 description: "Adiós al 901, hola al doble núcleo: Atom D525, gráfica ION2 con Optimus y 500 GB para tres años más de universidad. El netbook mayor de edad."
-categories: 
+date: "2011-08-25"
+lang: "es"
+categories:
   - "hardware"
 ---
 

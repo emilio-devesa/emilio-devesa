@@ -1,9 +1,9 @@
 ---
 title: "Pro Evolution Soccer 5"
-lang: "es"
-date: "2005-11-04"
 description: "Konami contra EA por el trono del fútbol virtual: física implacable, IA que te asfixia y regates infinitos con pad. ¿PES o FIFA? Entra y defiende tu bando."
-categories: 
+date: "2005-11-04"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

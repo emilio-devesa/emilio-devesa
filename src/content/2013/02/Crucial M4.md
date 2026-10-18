@@ -1,9 +1,9 @@
 ---
 title: "Crucial M4"
-lang: "es"
-date: "2013-02-14"
 description: "Jubila tu disco mecánico: 128 GB de SSD, arranque en un abrir y cerrar de ojos y un silencio que al principio hasta extraña. La actualización más rentable para cualquier PC."
-categories: 
+date: "2013-02-14"
+lang: "es"
+categories:
   - "hardware"
 ---
 

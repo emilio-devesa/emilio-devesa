@@ -1,9 +1,9 @@
 ---
 title: "Mirror's Edge"
-lang: "es"
-date: "2008-12-11"
 description: "Faith no necesita pistolas: necesita que no la encierren. Corre por la ciudad más limpia y más podrida del género, del tejado al conducto, del conducto a la verdad."
-categories: 
+date: "2008-12-11"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

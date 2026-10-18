@@ -1,9 +1,9 @@
 ---
 title: "My Work and Travel Bags"
-date: "2026-10-01"
 description: "Twenty years of laptops and bags: from a Packard Bell and two Asus Eee PCs to a trusty Belkin messenger and a Paco Martínez backpack, and the ongoing search for the perfect travel setup."
+date: "2026-10-01"
 lang: "en"
-categories: 
+categories:
   - "sin-categoria"
 ---
 

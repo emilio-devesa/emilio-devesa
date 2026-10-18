@@ -1,9 +1,9 @@
 ---
 title: "Virtualizing Linux on MacOS"
-date: "2025-09-19"
 description: "Need to use Ubuntu? Stop dual-booting: use VMWare for a desktop or Multipass for a shell. Launch it, break it, purge it and start again. Your fearless Linux lab on Mac."
+date: "2025-09-19"
 lang: "en"
-categories: 
+categories:
   - "software"
 ---
 

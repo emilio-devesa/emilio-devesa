@@ -1,9 +1,9 @@
 ---
 title: "Viaje a París"
-lang: "es"
-date: "2020-10-12"
 description: "Escapada en pareja con festival incluido: apps, vuelos, rincones y precios de París, con vídeo estabilizado con el Osmo. Una guía genial para tu aventura parisina."
-categories: 
+date: "2020-10-12"
+lang: "es"
+categories:
   - "sin-categoria"
 ---
 

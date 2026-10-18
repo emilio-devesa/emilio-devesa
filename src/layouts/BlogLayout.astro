@@ -108,7 +108,7 @@ const navLinks = BLOG_NAV_LINKS;
       let pagefind = null;
       let timer = 0;
       let seq = 0; // token: descarta búsquedas antiguas si llega una nueva
-      const MAX_RESULTS = 50; // tope de resultados pintados
+      const MAX_RESULTS = 50; // tope de resultados pintados (sin importar: ver src/lib/constants.ts)
       // Sincroniza ?q= con la URL (sin recargar) para poder compartir el estado.
       function syncUrl(query) {
         const params = new URLSearchParams(window.location.search);
@@ -134,6 +134,8 @@ const navLinks = BLOG_NAV_LINKS;
           if (item.meta.image) {
             const img = document.createElement('img');
             img.src = item.meta.image;
+            // THUMB_WIDTH×THUMB_HEIGHT (src/lib/constants.ts); el script inline
+            // no puede importar. El CSS (.post-thumb) fija el tamaño final.
             img.width = 320;
             img.height = 240;
             img.alt = '';
@@ -195,7 +197,7 @@ const navLinks = BLOG_NAV_LINKS;
           reset();
           return;
         }
-        timer = window.setTimeout(() => run(query), 200);
+        timer = window.setTimeout(() => run(query), 200); // retardo (src/lib/constants.ts)
       });
       if (clearBtn) {
         clearBtn.addEventListener('click', () => {

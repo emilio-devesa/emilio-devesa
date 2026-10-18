@@ -1,9 +1,9 @@
 ---
 title: "F.E.A.R. 2 Project Origin"
-lang: "es"
-date: "2011-12-05"
 description: "Media hora antes de la explosión: Becket, Alma desatada y una ciudad al borde del fin. Más combate, menos pasillos y el terror que vuelve a llamar a tu puerta."
-categories: 
+date: "2011-12-05"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

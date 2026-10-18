@@ -1,9 +1,9 @@
 ---
 title: "NBA Live 2007"
-lang: "es"
-date: "2006-10-09"
 description: "EA sale a por la corona del basket: licencias totales, modo Dinastía, concursos de mates y un público que te abuchea si fallas los libres. ¿El mejor simulador o más de lo mismo?"
-categories: 
+date: "2006-10-09"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

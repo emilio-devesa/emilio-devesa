@@ -9,6 +9,7 @@ import TableOfContents from '../components/blog/TableOfContents.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { BLOG_NAV_LINKS, blogCategoryUrl, blogPageUrl } from '../lib/blog';
 import { canonicalUrl } from '../lib/site';
+import { OG_WIDTH, OG_HEIGHT } from '../lib/constants';
 import type { TocHeading } from '../lib/toc';
 
 interface PostLink {
@@ -91,8 +92,8 @@ const jsonLd = {
   description={description}
   robots="noindex, nofollow"
   ogImage={ogImage}
-  ogImageWidth={ogImage ? 1200 : undefined}
-  ogImageHeight={ogImage ? 630 : undefined}
+  ogImageWidth={ogImage ? OG_WIDTH : undefined}
+  ogImageHeight={ogImage ? OG_HEIGHT : undefined}
   ogImageAlt={title}
   ogLocale={articleLang === 'en' ? 'en_US' : 'es_ES'}
   ogType="article"

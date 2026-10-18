@@ -1,5 +1,8 @@
 import { glob } from 'astro/loaders';
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+// Astro 7 (Fase 5): `z` ya no se exporta desde 'astro:content' (quedó deprecado);
+// ahora viene de 'astro/zod' (Zod 4 reexportado por Astro).
+import { z } from 'astro/zod';
 
 const blog = defineCollection({
   // Solo Markdown: no hay ficheros .mdx ni la integración que los procesaría.

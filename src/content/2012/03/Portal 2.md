@@ -1,9 +1,9 @@
 ---
 title: "Portal 2"
-lang: "es"
-date: "2012-03-15"
 description: "¡Regresa a Aperture! El laboratorio está en ruinas. ¿Que fué de GLaDOS? Ahora ya no estás solo: el inolvidable Wheatley te espera. La secuela perfecta."
-categories: 
+date: "2012-03-15"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

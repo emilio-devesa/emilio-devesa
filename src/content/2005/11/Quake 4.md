@@ -1,9 +1,9 @@
 ---
 title: "Quake 4"
-lang: "es"
-date: "2005-11-01"
 description: "La Tierra contraataca a los Strogg con ritmo frenético y el motor de Doom 3, pero sin inventar nada. ¿Un Quake sin ID Software a los mandos puede estar a la altura del nombre?"
-categories: 
+date: "2005-11-01"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

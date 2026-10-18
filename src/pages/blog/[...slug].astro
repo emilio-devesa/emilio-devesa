@@ -13,6 +13,7 @@ import {
 } from '../../lib/blog';
 import { postHeadings, type TocHeading } from '../../lib/toc';
 import { SITE_FALLBACK } from '../../lib/site';
+import { OG_WIDTH, OG_HEIGHT, THUMB_WIDTH, THUMB_HEIGHT } from '../../lib/constants';
 
 export async function getStaticPaths() {
   const posts = await getAllPosts();
@@ -60,10 +61,10 @@ interface Props {
 
 const { post, minutes, categoryLabel, categorySlug, prev, next, related, headings } = Astro.props;
 const { Content } = await render(post);
-// OG con la primera imagen del post (1200px); si no hay, el hero por defecto
-const og = await postFirstImage(post, 1200, 630);
-// Miniatura para el resultado de búsqueda (mismo 320×240 que el listado).
-const searchThumb = await postFirstImage(post, 320, 240);
+// OG con la primera imagen del post; si no hay, el hero por defecto
+const og = await postFirstImage(post, OG_WIDTH, OG_HEIGHT);
+// Miniatura para el resultado de búsqueda (mismas dimensiones que el listado).
+const searchThumb = await postFirstImage(post, THUMB_WIDTH, THUMB_HEIGHT);
 const site = Astro.site ?? SITE_FALLBACK;
 ---
 

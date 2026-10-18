@@ -1,9 +1,9 @@
 ---
 title: "Apuntes de OAF"
-lang: "es"
-date: "2010-06-24"
 description: "Mis apuntes de Organización, Administración y Finanzas: 25 páginas con los 4 temas y anexo resumen, en PDF y con licencia Creative Commons. Para el que los necesite."
-categories: 
+date: "2010-06-24"
+lang: "es"
+categories:
   - "sin-categoria"
 ---
 

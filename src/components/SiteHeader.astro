@@ -75,6 +75,8 @@ const navId = `${idPrefix}-nav-links`;
         });
         // Al pasar a escritorio, el menú siempre visible sin estado abierto
         window.addEventListener('resize', () => {
+          // Punto de corte móvil (src/lib/constants.ts); el script inline no
+          // puede importar.
           if (window.innerWidth > 768) {
             closeMenu();
           }

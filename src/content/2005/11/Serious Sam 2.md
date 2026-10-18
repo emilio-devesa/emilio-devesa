@@ -1,9 +1,9 @@
 ---
 title: "Serious Sam 2"
-lang: "es"
-date: "2005-11-26"
 description: "Sam vuelve para reírse de sí mismo: 45 tipos de enemigos desternillantes en oleadas multitudinarias y más bichos en pantalla que pelos en tu barba al terminar."
-categories: 
+date: "2005-11-26"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

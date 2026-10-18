@@ -1,9 +1,9 @@
 ---
 title: "Tomb Raider Anniversary"
-lang: "es"
-date: "2007-06-12"
 description: "Once años después, Lara vuelve a donde todo empezó: el remake del clásico que la convirtió en leyenda, con la esencia intacta y la tecnología de Legend. La saga por excelencia, de aniversario."
-categories: 
+date: "2007-06-12"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

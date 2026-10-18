@@ -7,6 +7,7 @@ import {
   postFirstImage,
 } from '../lib/blog.js';
 import { SITE_FALLBACK } from '../lib/site.js';
+import { OG_WIDTH, OG_HEIGHT } from '../lib/constants.js';
 import MarkdownIt from 'markdown-it';
 import sanitizeHtml from 'sanitize-html';
 
@@ -84,7 +85,7 @@ export async function GET(context) {
   const items = await Promise.all(
     posts.map(async (post) => {
       const link = blogPostUrl(post.id);
-      const cover = await postFirstImage(post, 1200, 630);
+      const cover = await postFirstImage(post, OG_WIDTH, OG_HEIGHT);
       const body = await toFeedHtml(post.body, post, new URL(link, `${site}/`).href, site);
       return {
         title: post.data.title,

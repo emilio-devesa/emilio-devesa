@@ -1,9 +1,9 @@
 ---
 title: "DJI Osmo Mobile 3"
-lang: "es"
-date: "2019-12-14"
 description: "Un gimbal para grabar con tu movil: con estabilización de tres ejes, una buena batería, plegable y muy versátil. Lo pongo a prueba en un viaje a París."
-categories: 
+date: "2019-12-14"
+lang: "es"
+categories:
   - "hardware"
 ---
 

@@ -98,17 +98,24 @@ const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <meta name="theme-color" content="#0b0d13" />
     {/* Fallback sin JS del menú (SiteHeader): solo <style> es válido dentro
         de <noscript> en el <head>. Duplica a propósito reglas de la hoja
-        externa para no depender de ella si falla su carga. */}
+        externa para no depender de ella si falla su carga.
+        Ojo con la cascada: este bloque sale ANTES del <link> de la hoja
+        externa (Astro inyecta la hoja al final del head), así que a igualdad de
+        especificidad ganaría la hoja externa. Por eso los selectores llevan el
+        prefijo `header` (0,1,1 frente a 0,1,0): sin él, sin JS en móvil el
+        botón ☰ se queda visible pero inerte y los enlaces del menú, ocultos.
+        El 768 (el punto de corte documentado en src/lib/constants.ts) no se
+        puede interpolar aquí: el <style> se emite tal cual. */}
     <noscript>
       <style>
-        .menu-toggle {
+        header .menu-toggle {
           display: none;
         }
         @media (max-width: 768px) {
           header nav {
             flex-wrap: wrap;
           }
-          .nav-links {
+          header .nav-links {
             display: flex;
             flex-direction: column;
             width: 100%;

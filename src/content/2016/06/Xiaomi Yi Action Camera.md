@@ -1,9 +1,9 @@
 ---
 title: "Xiaomi Yi Action Camera"
-lang: "es"
-date: "2016-06-20"
 description: "La anti-GoPro por 74 €: sensor Sony de 16 Mpx, 2K a 30 fps y 72 gramos en el bolsillo. ¿La cámara deportiva china que planta cara a las grandes?"
-categories: 
+date: "2016-06-20"
+lang: "es"
+categories:
   - "hardware"
 ---
 

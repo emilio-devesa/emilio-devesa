@@ -1,9 +1,9 @@
 ---
 title: "Far Cry"
-lang: "es"
-date: "2004-05-13"
 description: "Jack Carver en un archipiélago del Pacífico: el CryEngine lleva el realismo al extremo, una IA enemiga que aprende de tu estilo y total libertad para alternar sigilo y acción."
-categories: 
+date: "2004-05-13"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

@@ -1,5 +1,6 @@
 ---
 import type { TocHeading } from '../../lib/toc';
+import { TOC_MIN_HEADINGS } from '../../lib/constants';
 
 interface Props {
   headings: TocHeading[];
@@ -7,8 +8,8 @@ interface Props {
 }
 
 const { headings, lang = 'es' } = Astro.props;
-// Solo artículos con al menos 4 apartados ## llevan índice.
-const show = headings.filter((h) => h.depth === 2).length >= 4;
+// Solo artículos con al menos TOC_MIN_HEADINGS apartados ## llevan índice.
+const show = headings.filter((h) => h.depth === 2).length >= TOC_MIN_HEADINGS;
 const title = lang === 'en' ? 'In this article' : 'En este artículo';
 ---
 

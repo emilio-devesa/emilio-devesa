@@ -1,9 +1,9 @@
 ---
 title: "Virtual Skipper 5: 32nd America's Cup"
-lang: "es"
-date: "2007-05-01"
 description: "El simulador que casi nadie se atreve a probar: vela de competición real con licencia de la Copa América, donde cada maniobra cuenta. Solo para paladares exóticos."
-categories: 
+date: "2007-05-01"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: "Crysis"
-lang: "es"
-date: "2007-12-30"
 description: "Eres Nomad y la isla esconde algo oscuro. Filipinas te espera en el nuevo referente técnicológico del PC y tu nanotraje hará que nada vuelva a ser como antes."
-categories: 
+date: "2007-12-30"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

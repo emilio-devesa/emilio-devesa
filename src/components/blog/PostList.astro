@@ -9,6 +9,7 @@ import {
   readingMinutes,
   type OptimizedImage,
 } from '../../lib/blog';
+import { THUMB_WIDTH, THUMB_HEIGHT } from '../../lib/constants';
 
 interface Props {
   posts: CollectionEntry<'blog'>[];
@@ -32,10 +33,10 @@ const {
   searchStatic = false,
 } = Astro.props;
 
-// Miniaturas: primera imagen del cuerpo, optimizada en build (320px webp).
-// Sin imagen o con error -> la fila sale con el hueco reservado.
+// Miniaturas: primera imagen del cuerpo, optimizada en build (THUMB_WIDTH px
+// webp). Sin imagen o con error -> la fila sale con el hueco reservado.
 const thumbs: (OptimizedImage | undefined)[] = await Promise.all(
-  posts.map((post) => postFirstImage(post, 320, 240)),
+  posts.map((post) => postFirstImage(post, THUMB_WIDTH, THUMB_HEIGHT)),
 );
 ---
 

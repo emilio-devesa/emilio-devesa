@@ -1,9 +1,9 @@
 ---
 title: "Half-Life 2 Episode Two (Orange Box)"
-lang: "es"
-date: "2007-10-22"
 description: "Gordon y Alyx deben escapar de la ciudadela. White Forest te espera. El capítulo donde cada respuesta abre dos preguntas nuevas y todo vuelve a quedar patas arriba."
-categories: 
+date: "2007-10-22"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

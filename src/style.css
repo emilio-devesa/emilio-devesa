@@ -21,9 +21,12 @@
   --quote: #d1d5db; /* Citas en artículos */
   --code-fg: #e5e7eb; /* Texto en code/pre */
   --surface: #151821; /* Tarjetas y citas */
-  --panel: #0a0c11; /* Pie y bloques pre */
-  --border: #222; /* Bordes de tarjetas */
-  --line: #1b1f27; /* Separadores y fondos de código */
+  /* Consolidación de la escala de grises: --panel (#0a0c11) se unifica con
+     --background y --line (#1b1f27) con --border. Los tres valores eran casi
+     idénticos (diferencia ≤ 7/255, imperceptible), así que el pie, los bloques
+     pre, los separadores y el fondo de code usan ahora los tokens que ya
+     existían y la paleta baja de 5 grises a 3. */
+  --border: #222; /* Bordes de tarjetas, separadores y fondo de code */
   --edge: #2a2f3a; /* Bordes de tablas, code/pre y hr */
   --shade: rgba(0, 0, 0, 0.6); /* Velo del hero */
   --card-shadow: rgba(0, 0, 0, 0.1); /* Sombra de portadas */
@@ -133,7 +136,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--border);
 }
 
 .menu-toggle {
@@ -489,12 +492,12 @@ section li {
 
 /* 9. Pie */
 footer {
-  background-color: var(--panel);
+  background-color: var(--background);
   padding: 2rem;
   text-align: center;
   font-size: var(--text-meta);
   color: var(--muted);
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--border);
 }
 
 footer a {
@@ -689,7 +692,7 @@ footer a:hover {
 }
 
 .article-content code {
-  background-color: var(--line);
+  background-color: var(--border);
   color: var(--code-fg);
   padding: 0.2rem 0.4rem;
   border-radius: var(--radius-sm);
@@ -699,7 +702,7 @@ footer a:hover {
 }
 
 .article-content pre {
-  background-color: var(--panel);
+  background-color: var(--background);
   color: var(--code-fg);
   padding: 1rem;
   overflow-x: auto;
@@ -1009,7 +1012,9 @@ a.post-card:hover .post-thumb img {
 }
 
 /* 13. Responsive (único punto de corte: 768 px en todo el archivo; CSS no
-   admite var() en media queries, así que el valor va en literal). */
+   admite var() en media queries, así que el valor va en literal. Es el mismo
+   que documenta src/lib/constants.ts y el que usan el <noscript> de
+   PrimaryLayout.astro y SiteHeader.astro). */
 @media (max-width: 768px) {
   /* Navegación */
   .menu-toggle {
@@ -1090,6 +1095,15 @@ a.post-card:hover .post-thumb img {
 
 /* 14. Impresión (guías de clases y artículos) */
 @media print {
+  /* Consolidación: los únicos colores literales que quedaban en la hoja viven
+     aquí, y se declaran una sola vez. La impresión no usa la paleta del tema
+     (es negro sobre blanco a propósito). */
+  :root {
+    --print-ink: #000;
+    --print-paper: #fff;
+    --print-rule: #999;
+  }
+
   @page {
     margin: 2cm;
   }
@@ -1111,8 +1125,8 @@ a.post-card:hover .post-thumb img {
   }
 
   body {
-    background: #fff;
-    color: #000;
+    background: var(--print-paper);
+    color: var(--print-ink);
     font-size: 12pt;
   }
 
@@ -1129,11 +1143,11 @@ a.post-card:hover .post-thumb img {
   .article-content p,
   .article-content ul,
   .article-content ol {
-    color: #000;
+    color: var(--print-ink);
   }
 
   .article-content a {
-    color: #000;
+    color: var(--print-ink);
     text-decoration: underline;
   }
 
@@ -1153,7 +1167,7 @@ a.post-card:hover .post-thumb img {
   }
 
   .offer {
-    border-color: #999;
+    border-color: var(--print-rule);
     background: none;
   }
 
@@ -1161,7 +1175,7 @@ a.post-card:hover .post-thumb img {
   .offer h3,
   .offer blockquote,
   .offer cite {
-    color: #000;
+    color: var(--print-ink);
   }
 
   /* Fondos oscuros de código, citas y cabeceras de tabla: a blanco. */
@@ -1170,18 +1184,18 @@ a.post-card:hover .post-thumb img {
   .article-content blockquote,
   .article-content th {
     background: none;
-    border-color: #999;
-    color: #000;
+    border-color: var(--print-rule);
+    color: var(--print-ink);
   }
 
   .article-content pre code {
-    color: #000;
+    color: var(--print-ink);
   }
 
   /* CTA: sin fondo azul (ahorra tinta) pero legible en blanco y negro. */
   .cta {
     background: none;
-    border: 1px solid #999;
-    color: #000;
+    border: 1px solid var(--print-rule);
+    color: var(--print-ink);
   }
 }

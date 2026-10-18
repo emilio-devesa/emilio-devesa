@@ -1,9 +1,9 @@
 ---
 title: "Limbo"
-lang: "es"
-date: "2012-06-10"
 description: "Un niño perdido en un mundo post-mortem en blanco y negro: sin DLCs, sin prisas, solo plataformas perfectas y puzzles que duelen. El indie que demuestra que menos es más."
-categories: 
+date: "2012-06-10"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

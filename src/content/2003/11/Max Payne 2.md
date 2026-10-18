@@ -1,9 +1,9 @@
 ---
 title: "Max Payne 2"
-lang: "es"
-date: "2003-11-29"
 description: "La caída de Max Payne tres años después: gráficos y físicas mejorados, tiempo bala ampliado con recarga rápida y el debut jugable de Mona Sax en una de las mejores secuelas del género."
-categories: 
+date: "2003-11-29"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

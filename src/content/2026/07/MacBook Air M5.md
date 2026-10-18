@@ -1,9 +1,9 @@
 ---
 title: "MacBook Air M5"
-date: "2026-07-12"
 description: "Time to upgrade my Mac: the most thought-through purchase I've ever made led me to this M5 MacBook Air. All the numbers, doubts and my single-cable desk dream."
+date: "2026-07-12"
 lang: "en"
-categories: 
+categories:
   - "hardware"
 ---
 

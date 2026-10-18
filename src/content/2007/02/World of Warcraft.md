@@ -1,9 +1,9 @@
 ---
 title: "World of Warcraft"
-lang: "es"
-date: "2007-02-19"
 description: "Blizzard promete el MMORPG definitivo: ocho razas, Alianza contra Horda y 60 horas después aún queda mundo por descubrir. ¿Revolución del rol online o marketing antológico?"
-categories: 
+date: "2007-02-19"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

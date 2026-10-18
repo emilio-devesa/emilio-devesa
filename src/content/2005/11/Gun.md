@@ -1,9 +1,9 @@
 ---
 title: "Gun"
-lang: "es"
-date: "2005-11-19"
 description: "Colton White busca venganza en el Far West: duelos al atardecer, cazarrecompensas, póquer y un tiempo bala delicioso. El GTA del oeste que nadie vio venir."
-categories: 
+date: "2005-11-19"
+lang: "es"
+categories:
   - "videojuegos"
 ---
 

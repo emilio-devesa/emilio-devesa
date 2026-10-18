@@ -1,6 +1,7 @@
 import { getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { WORDS_PER_MINUTE } from './constants';
 
 export const BLOG_PAGE_SIZE = 20;
 
@@ -184,8 +185,8 @@ export function blogPostUrl(id: string) {
   return `/blog/${id.normalize('NFC')}/`;
 }
 
-// Minutos de lectura estimados (200 palabras/min, mínimo 1)
+// Minutos de lectura estimados (mínimo 1)
 export function readingMinutes(body: string | undefined) {
   const words = (body ?? '').split(/\s+/).filter(Boolean).length;
-  return Math.max(1, Math.round(words / 200));
+  return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
 }

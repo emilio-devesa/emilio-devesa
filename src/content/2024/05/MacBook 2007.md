@@ -1,9 +1,9 @@
 ---
 title: "MacBook 2007"
-lang: "es"
-date: "2024-05-18"
 description: "Rescatado! Devolvemos a la vida un viejo MacBook (2007) con un SSD, más RAM y una pasta térmica nueva; un nuevo OS X y Ubuntu. A este Mac aun le queda mucha vida!"
-categories: 
+date: "2024-05-18"
+lang: "es"
+categories:
   - "hardware"
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: "Personalizar terminal de MacOS"
-lang: "es"
-date: "2022-05-14"
 description: "Adiós al terminal soso: prompt en verde y azul con dos líneas de .zshrc e historial que sobrevive al reinicio. Pequeños toques que se notan cada día."
-categories: 
+date: "2022-05-14"
+lang: "es"
+categories:
   - "software"
 ---
 

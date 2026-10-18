@@ -1,9 +1,9 @@
 ---
 title: "MacBook Pro 2014"
-lang: "es"
-date: "2025-02-23"
 description: "Actualizo mi viejo MacBook Pro de 2014: más espacio SSD, batería nueva, actualización de Mac OS y cómo seguir sacandole partido a este gran portátil."
-categories: 
+date: "2025-02-23"
+lang: "es"
+categories:
   - "hardware"
 ---
 

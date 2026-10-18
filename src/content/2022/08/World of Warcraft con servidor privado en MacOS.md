@@ -1,9 +1,9 @@
 ---
 title: "World of Warcraft con servidor privado (en MacOS)"
-lang: "es"
-date: "2022-08-25"
 description: "Quince años después del análisis original: cómo resucitar el WoW clásico en un Mac moderno, con cliente de Windows, traducción de librerías y tu propio servidor privado. Azeroth no se rinde."
-categories: 
+date: "2022-08-25"
+lang: "es"
+categories:
   - "software"
 ---
 
