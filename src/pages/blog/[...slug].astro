@@ -61,6 +61,8 @@ const { post, minutes, categoryLabel, categorySlug, prev, next, related, heading
 const { Content } = await render(post);
 // OG con la primera imagen del post (1200px); si no hay, el hero por defecto
 const og = await postFirstImage(post, 1200, 630);
+// Miniatura para el resultado de búsqueda (mismo 320×240 que el listado).
+const searchThumb = await postFirstImage(post, 320, 240);
 const site = Astro.site ?? 'https://emiliodevesa.com';
 ---
 
@@ -77,6 +79,7 @@ const site = Astro.site ?? 'https://emiliodevesa.com';
   related={related}
   headings={headings}
   ogImage={og ? new URL(og.src, site).href : undefined}
+  searchThumb={searchThumb ? new URL(searchThumb.src, site).href : undefined}
 >
   <Content />
 </PostLayout>

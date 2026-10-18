@@ -1,4 +1,6 @@
 ---
+import ExternalHint from './ExternalHint.astro';
+
 interface NavLink {
   href: string;
   label: string;
@@ -37,6 +39,7 @@ const navId = `${idPrefix}-nav-links`;
         link.href.startsWith('http') ? (
           <a href={link.href} target="_blank" rel="noopener noreferrer">
             {link.label}
+            <ExternalHint />
           </a>
         ) : (
           <a href={link.href}>{link.label}</a>

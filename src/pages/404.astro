@@ -25,24 +25,29 @@ const navLinks = NOT_FOUND_NAV_LINKS;
       <a href="/">página principal</a>.
     </p>
     <form class="blog-search" action="/blog/" method="get" role="search">
-      <div class="blog-search-field">
-        <input
-          type="search"
-          id="notfound-search-input"
-          class="blog-search-input"
-          name="q"
-          placeholder="Buscar artículos…"
-          aria-label="Buscar en el blog"
-          autocomplete="off"
-        />
-        <button
-          type="button"
-          id="notfound-search-clear"
-          class="blog-search-clear"
-          aria-label="Limpiar búsqueda"
-          hidden
-        >
-          ✕
+      <div class="blog-search-row">
+        <div class="blog-search-field">
+          <input
+            type="search"
+            id="notfound-search-input"
+            class="blog-search-input"
+            name="q"
+            placeholder="Buscar artículos…"
+            aria-label="Buscar en el blog"
+            autocomplete="off"
+          />
+          <button
+            type="button"
+            id="notfound-search-clear"
+            class="blog-search-clear"
+            aria-label="Limpiar búsqueda"
+            hidden
+          >
+            ✕
+          </button>
+        </div>
+        <button type="submit" class="blog-search-submit">
+          Buscar
         </button>
       </div>
     </form>

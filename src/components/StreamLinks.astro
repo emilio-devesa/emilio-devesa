@@ -1,4 +1,6 @@
 ---
+import ExternalHint from './ExternalHint.astro';
+
 interface Props {
   links: Record<'spotify' | 'apple' | 'amazon', string>;
 }
@@ -28,6 +30,7 @@ const items: { key: keyof Props['links']; label: string; icon: string }[] = [
         <path d={icons[icon]} />
       </svg>
       {label}
+      <ExternalHint />
     </a>
   ))}
 </div>

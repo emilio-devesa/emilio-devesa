@@ -32,7 +32,7 @@
   --font-sans: 'Inter', 'Segoe UI', sans-serif;
   --font-article: system-ui, sans-serif;
   --font-mono: Menlo, Monaco, Consolas, 'Courier New', monospace;
-  --text-mini: 0.65rem; /* botones compactos */
+  --text-mini: 0.75rem; /* botones compactos (≥12 px) */
   --text-xs: 0.75rem; /* enlaces pequeños y metas */
   --text-sm: 0.85rem; /* extractos */
   --text-meta: 0.9rem; /* pies y metas de artículo */
@@ -61,7 +61,8 @@ html {
     transition-duration: 0.01ms !important;
   }
   .cta:hover,
-  .category-filter a:hover {
+  .category-filter a:hover,
+  a.post-card:hover .post-thumb img {
     transform: none;
   }
 }
@@ -82,6 +83,19 @@ body {
 :focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
+}
+
+/* Solo para lectores de pantalla: el contenido sigue en el DOM. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .skip-link {
@@ -126,6 +140,12 @@ header {
   font-size: 2rem;
   cursor: pointer;
   display: none; /* oculto por defecto, se muestra en móvil */
+  /* Objetivo táctil ≥44 px (B10). */
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 
 .nav-links {
@@ -144,7 +164,7 @@ header nav {
 /* Estilos para móviles */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;
+    display: flex;
     margin-left: auto;
   }
 
@@ -540,6 +560,36 @@ footer a:hover {
   margin-bottom: 1rem;
 }
 
+/* Cuando hay botón de envío visible (404): campo + "Buscar" en una fila. */
+.blog-search-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.blog-search-row .blog-search-field {
+  flex: 1;
+}
+
+.blog-search-submit {
+  padding: 0 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.blog-search-submit:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 16px var(--primary-glow);
+}
+
 .blog-search-field {
   position: relative;
 }
@@ -552,6 +602,9 @@ footer a:hover {
   border-radius: var(--radius);
   color: var(--foreground);
   font-size: 1rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 /* Se usa botón propio (siguiente regla): se oculta el nativo de escritorio. */
@@ -565,7 +618,13 @@ footer a:hover {
   top: 50%;
   right: 0.25rem;
   transform: translateY(-50%);
-  padding: 0.6rem 0.9rem;
+  /* Objetivo táctil ≥44 px (B10). */
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   background: none;
   border: 0;
   color: var(--muted);
@@ -578,10 +637,12 @@ footer a:hover {
   color: var(--foreground);
 }
 
-.blog-search-input:focus {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
+.blog-search-input:focus-visible {
+  /* Anillo suave: borde azul + halo con el glow del sitio (no el outline duro).
+     Los campos de texto activan :focus-visible también al clicar, por diseño. */
+  outline: none;
   border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-glow);
 }
 
 .blog-search-status {
@@ -1000,7 +1061,10 @@ details.toc[open] .toc-title {
 
 .pagination a,
 .pagination span {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px; /* Objetivo táctil ≥44 px (B10) */
   padding: 0.5rem 1rem;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -1044,10 +1108,12 @@ details.toc[open] .toc-title {
   .post-nav,
   .pagination,
   .category-filter,
+  .blog-search,
   .skip-link,
   .post-related,
   .links,
   .post-thumb,
+  .visually-hidden,
   .article-content iframe {
     display: none;
   }
@@ -1096,5 +1162,33 @@ details.toc[open] .toc-title {
   .offer {
     border-color: #999;
     background: none;
+  }
+
+  /* Textos claros de las tarjetas: sobre blanco deben pasar a negro. */
+  .offer h3,
+  .offer blockquote,
+  .offer cite {
+    color: #000;
+  }
+
+  /* Fondos oscuros de código, citas y cabeceras de tabla: a blanco. */
+  .article-content pre,
+  .article-content code,
+  .article-content blockquote,
+  .article-content th {
+    background: none;
+    border-color: #999;
+    color: #000;
+  }
+
+  .article-content pre code {
+    color: #000;
+  }
+
+  /* CTA: sin fondo azul (ahorra tinta) pero legible en blanco y negro. */
+  .cta {
+    background: none;
+    border: 1px solid #999;
+    color: #000;
   }
 }

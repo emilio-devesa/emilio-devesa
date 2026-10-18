@@ -1,4 +1,6 @@
 ---
+import ExternalHint from './ExternalHint.astro';
+
 const email = 'hola@emiliodevesa.com';
 const redes = [
   { name: 'Instagram', url: 'https://instagram.com/emiliodevesadrums' },
@@ -40,6 +42,7 @@ const redes = [
         <li>
           <a class="cta" href={red.url} target="_blank" rel="noopener noreferrer">
             {red.name}
+            <ExternalHint />
           </a>
         </li>
       ))}

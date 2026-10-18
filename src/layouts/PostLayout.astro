@@ -27,6 +27,7 @@ type Props = {
   next?: PostLink;
   related: CollectionEntry<'blog'>[];
   ogImage?: string;
+  searchThumb?: string;
   headings?: TocHeading[];
 };
 
@@ -42,9 +43,31 @@ const {
   next,
   related,
   ogImage,
+  searchThumb,
   headings = [],
 } = Astro.props;
 const articleLang = lang ?? 'es';
+
+// Rótulos de la plantilla en el idioma del artículo: los posts `lang: en`
+// muestran la interfaz en inglés; el resto del sitio sigue en español.
+const t =
+  articleLang === 'en'
+    ? {
+        backToIndex: '← Back to index',
+        minRead: 'min read',
+        newer: '← Newer',
+        older: 'Older →',
+        related: 'Related',
+        postNav: 'Post navigation',
+      }
+    : {
+        backToIndex: '← Volver al índice',
+        minRead: 'min de lectura',
+        newer: '← Más reciente',
+        older: 'Más antiguo →',
+        related: 'Relacionados',
+        postNav: 'Navegación entre artículos',
+      };
 
 const navLinks = BLOG_NAV_LINKS;
 ---
@@ -68,34 +91,35 @@ const navLinks = BLOG_NAV_LINKS;
     data-pagefind-body
   >
     <p class="article-meta">
-      <a href="/blog/">← Volver al índice</a> ·{' '}
+      <a href="/blog/">{t.backToIndex}</a> ·{' '}
       <a href={`/blog/categoria/${categorySlug}/`}>{categoryLabel}</a> ·{' '}
-      <FormattedDate date={date} /> · {minutes} min de lectura
+      <FormattedDate date={date} lang={articleLang} /> · {minutes} {t.minRead}
     </p>
-    {/* Imagen del resultado de búsqueda. Si el post no tiene imagen propia se
+    {/* Imagen del resultado de búsqueda: la miniatura 320×240 del post (no la
+        OG, que pesa de más a 112 px). Si el post no tiene imagen propia se
         fija la meta `image` vacía para anular la autodetección de Pagefind
         (si no, tomaría la primera <img> del cuerpo —p. ej. la de
         «Relacionados»— y su nombre de fichero contaminaría la búsqueda). */}
-    {ogImage ? (
-      <img data-pagefind-meta="image[src]" src={ogImage} alt="" aria-hidden="true" hidden />
+    {searchThumb ? (
+      <img data-pagefind-meta="image[src]" src={searchThumb} alt="" hidden />
     ) : (
-      <span data-pagefind-meta="image:" hidden aria-hidden="true"></span>
+      <span data-pagefind-meta="image:" hidden></span>
     )}
     <TableOfContents headings={headings} lang={articleLang} />
     <slot />
 
-    <nav class="post-nav" aria-label="Navegación entre artículos" data-pagefind-ignore>
+    <nav class="post-nav" aria-label={t.postNav} data-pagefind-ignore>
       <ul>
         {prev && (
           <li>
-            ← Más reciente
+            {t.newer}
             <br />
             <a href={prev.url}>{prev.title}</a>
           </li>
         )}
         {next && (
           <li>
-            Más antiguo →
+            {t.older}
             <br />
             <a href={next.url}>{next.title}</a>
           </li>
@@ -105,7 +129,7 @@ const navLinks = BLOG_NAV_LINKS;
 
     {related.length > 0 && (
       <div class="post-related" data-pagefind-ignore>
-        <h2>Relacionados</h2>
+        <h2>{t.related}</h2>
         <PostList posts={related} currentPage={1} totalPages={1} showCategory />
       </div>
     )}

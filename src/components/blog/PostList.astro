@@ -57,7 +57,7 @@ const thumbs: (OptimizedImage | undefined)[] = await Promise.all(
             {post.data.description && <span class="post-excerpt">{post.data.description}</span>}
             <span class="post-meta">
               {showCategory && <>{postCategoryLabel(post.data.categories)} · </>}
-              <FormattedDate date={post.data.date} /> · {minutes} min
+              <FormattedDate date={post.data.date} lang={post.data.lang ?? 'es'} /> · {minutes} min
             </span>
           </span>
         </a>

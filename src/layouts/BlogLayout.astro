@@ -87,6 +87,8 @@ const navLinks = BLOG_NAV_LINKS;
       const statics = section.querySelectorAll(':scope > nav, :scope > ul.post-list');
       let pagefind = null;
       let timer = 0;
+      let seq = 0; // token: descarta búsquedas antiguas si llega una nueva
+      const MAX_RESULTS = 50; // tope de resultados pintados
       const escapeHtml = (s) =>
         s
           .replace(/&/g, '&amp;')
@@ -95,18 +97,38 @@ const navLinks = BLOG_NAV_LINKS;
           .replace(/"/g, '&quot;');
       // El excerpt de Pagefind ya viene con entidades codificadas y con <mark>
       // en las coincidencias: es seguro inyectarlo como innerHTML tal cual.
+      // Sincroniza ?q= con la URL (sin recargar) para poder compartir el estado.
+      function syncUrl(query) {
+        const params = new URLSearchParams(window.location.search);
+        if (query) params.set('q', query);
+        else params.delete('q');
+        const qs = params.toString();
+        const url = `${window.location.pathname}${qs ? `?${qs}` : ''}${window.location.hash}`;
+        window.history.replaceState(null, '', url);
+      }
       async function run(query) {
+        const mine = ++seq;
         if (!pagefind) {
           status.textContent = 'Cargando índice…';
           try {
             pagefind = await import('/pagefind/pagefind.js');
           } catch {
-            status.textContent = 'La búsqueda no está disponible (falta el índice).';
+            if (mine === seq)
+              status.textContent = 'La búsqueda no está disponible (falta el índice).';
             return;
           }
         }
-        const answer = await pagefind.search(query);
-        const items = await Promise.all(answer.results.map((r) => r.data()));
+        let items;
+        try {
+          const answer = await pagefind.search(query);
+          items = await Promise.all(answer.results.map((r) => r.data()));
+        } catch {
+          if (mine === seq)
+            status.textContent = 'La búsqueda no está disponible (falta el índice).';
+          return;
+        }
+        if (mine !== seq) return; // ya hay una búsqueda más reciente en curso
+        items = items.slice(0, MAX_RESULTS);
         statics.forEach((el) => el.toggleAttribute('hidden', true));
         results.toggleAttribute('hidden', false);
         status.textContent =
@@ -127,6 +149,7 @@ const navLinks = BLOG_NAV_LINKS;
       }
       function reset() {
         clearTimeout(timer);
+        seq++; // invalida cualquier búsqueda en vuelo
         statics.forEach((el) => el.toggleAttribute('hidden', false));
         results.toggleAttribute('hidden', true);
         results.innerHTML = '';
@@ -135,6 +158,7 @@ const navLinks = BLOG_NAV_LINKS;
       input.addEventListener('input', () => {
         const query = input.value.trim();
         syncClear();
+        syncUrl(query);
         clearTimeout(timer);
         if (!query) {
           reset();
@@ -146,6 +170,7 @@ const navLinks = BLOG_NAV_LINKS;
         clearBtn.addEventListener('click', () => {
           input.value = '';
           syncClear();
+          syncUrl('');
           reset();
           input.focus();
         });
