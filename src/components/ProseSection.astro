@@ -11,7 +11,7 @@ const { id, icon, title } = Astro.props;
 const Tag = title ? 'section' : 'div';
 ---
 
-<Tag id={id}>
+<Tag id={id} class="prose-section">
   {title ? (
     <h2>
       {icon ? (
