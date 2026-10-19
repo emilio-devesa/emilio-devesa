@@ -154,6 +154,40 @@ header {
   line-height: 1;
 }
 
+/* Glifo del botón sin JS: ☰ cerrado, ✕ abierto. El estado lo marca la
+   pastilla popover hermana (data-menu-state), que va antes en el DOM. */
+.menu-toggle::before {
+  content: '☰';
+}
+
+[data-menu-state]:popover-open ~ .menu-toggle::before {
+  content: '✕';
+}
+
+/* Pastilla de estado del menú (SiteHeader): el propio <div popover>. Con
+   Popover API el navegador la oculta cuando está cerrada y la saca del flujo
+   (position: fixed) al abrirla; aquí solo se neutraliza su caja para que no
+   se vea ni ocupe sitio. El `inert` del markup la deja fuera del foco. */
+[data-menu-state] {
+  inline-size: 0;
+  block-size: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+/* Navegadores sin Popover API: se oculta la pastilla y el botón, y el menú
+   queda siempre desplegado en móvil (equivalente al antiguo <noscript>). */
+@supports not selector(:popover-open) {
+  [data-menu-state] {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
+
 .nav-links {
   display: flex;
   gap: 1rem;
@@ -1013,8 +1047,7 @@ a.post-card:hover .post-thumb img {
 
 /* 13. Responsive (único punto de corte: 768 px en todo el archivo; CSS no
    admite var() en media queries, así que el valor va en literal. Es el mismo
-   que documenta src/lib/constants.ts y el que usan el <noscript> de
-   PrimaryLayout.astro y SiteHeader.astro). */
+   que documenta src/lib/constants.ts). */
 @media (max-width: 768px) {
   /* Navegación */
   .menu-toggle {
@@ -1033,8 +1066,19 @@ a.post-card:hover .post-thumb img {
     margin-top: 1rem;
   }
 
-  .nav-links.menu-open {
+  /* Menú abierto: lo dicta la pastilla popover (ver §3). */
+  [data-menu-state]:popover-open ~ .nav-links {
     display: flex;
+  }
+
+  /* Sin Popover API el menú queda siempre desplegado (ver §3). */
+  @supports not selector(:popover-open) {
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 1rem;
+    }
   }
 
   /* Secciones, hero y ofertas */

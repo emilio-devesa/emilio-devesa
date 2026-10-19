@@ -13,7 +13,7 @@ interface Props {
 }
 
 const { links, ariaLabel = 'Navegación principal', idPrefix = 'site' } = Astro.props;
-const toggleId = `${idPrefix}-menu-toggle`;
+const stateId = `${idPrefix}-menu-state`;
 const navId = `${idPrefix}-nav-links`;
 ---
 
@@ -22,17 +22,21 @@ const navId = `${idPrefix}-nav-links`;
     Saltar al contenido
   </a>
   <nav aria-label={ariaLabel}>
+    {/* Menú sin JS (Popover API). Esta pastilla vacía e invisible es el
+        <div popover>: el botón la abre/cierra con popovertarget y el combinador
+        (ver style.css) enseña .nav-links cuando está abierta. Va ANTES del
+        botón y de .nav-links para que el selector ~ los alcance. Es `inert` y
+        de tamaño cero, así que queda fuera del orden de tabulación y del
+        diseño; el navegador la oculta mientras está cerrada. */}
+    <div popover inert data-menu-state id={stateId}></div>
     <a href="/">Emilio Devesa</a>
     <button
       type="button"
       class="menu-toggle"
-      id={toggleId}
-      aria-label="Abrir menú"
-      aria-expanded="false"
+      popovertarget={stateId}
+      aria-label="Menú"
       aria-controls={navId}
-    >
-      ☰
-    </button>
+    ></button>
 
     <div class="nav-links" id={navId}>
       {links.map((link) =>
@@ -47,47 +51,4 @@ const navId = `${idPrefix}-nav-links`;
       )}
     </div>
   </nav>
-
-  <script is:inline>
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('header').forEach(function (header) {
-        const toggle = header.querySelector('.menu-toggle');
-        const nav = header.querySelector('.nav-links');
-        if (!toggle || !nav) return;
-        toggle.addEventListener('click', () => {
-          const isOpen = nav.classList.toggle('menu-open');
-          toggle.textContent = isOpen ? '✕' : '☰';
-          toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
-          toggle.setAttribute('aria-expanded', String(isOpen));
-        });
-        // Al elegir sección, el menú vuelve a cerrarse
-        nav.querySelectorAll('a').forEach(function (link) {
-          link.addEventListener('click', () => {
-            closeMenu();
-          });
-        });
-        // Tecla Escape: cierra y devuelve el foco al botón
-        document.addEventListener('keydown', (event) => {
-          if (event.key === 'Escape' && nav.classList.contains('menu-open')) {
-            closeMenu();
-            toggle.focus();
-          }
-        });
-        // Al pasar a escritorio, el menú siempre visible sin estado abierto
-        window.addEventListener('resize', () => {
-          // Punto de corte móvil (src/lib/constants.ts); el script inline no
-          // puede importar.
-          if (window.innerWidth > 768) {
-            closeMenu();
-          }
-        });
-        function closeMenu() {
-          nav.classList.remove('menu-open');
-          toggle.textContent = '☰';
-          toggle.setAttribute('aria-label', 'Abrir menú');
-          toggle.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
-  </script>
 </header>
