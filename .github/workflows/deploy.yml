@@ -63,6 +63,9 @@ jobs:
       # Necesita el dist/: comprueba que los anclajes del índice resuelven.
       - name: Check table of contents anchors
         run: npm run check:toc
+      # Necesita el dist/: comprueba los invariantes del menú sin JS.
+      - name: Check burger menu (no-JS)
+        run: npm run check:menu
       - name: Index your site with Pagefind
         run: npm run build:search
       - name: Upload Pages artifact

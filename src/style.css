@@ -176,8 +176,8 @@ header {
   background: none;
 }
 
-/* Navegadores sin Popover API: se oculta la pastilla y el botón, y el menú
-   queda siempre desplegado en móvil (equivalente al antiguo <noscript>). */
+/* Navegadores sin Popover API: se ocultan pastilla y botón, y el menú queda
+   siempre desplegado en móvil. */
 @supports not selector(:popover-open) {
   [data-menu-state] {
     display: none;
