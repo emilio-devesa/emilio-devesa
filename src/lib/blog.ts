@@ -113,8 +113,24 @@ function postFirstImageRel(body: string | undefined): string | undefined {
 
 export interface OptimizedImage {
   src: string;
+  // Caja pedida al pipeline de imágenes (la usan los <img> del listado).
   width: number;
   height: number;
+  // Tamaño real del fichero generado. Astro devuelve en `attributes` la caja
+  // pedida, no lo que mide el fichero, y como el pipeline nunca reescala hacia
+  // arriba una imagen menor que la caja se queda a su tamaño. Estas son las que
+  // hay que declarar en og:image:width/height para no mentir.
+  outputWidth: number;
+  outputHeight: number;
+}
+
+// Tamaño real del fichero que produce el pipeline: la caja pedida recortada por
+// el tamaño de la fuente (nunca reescala hacia arriba).
+function outputSize(source: { width: number; height: number }, width?: number, height?: number) {
+  return {
+    outputWidth: width === undefined ? source.width : Math.min(source.width, width),
+    outputHeight: height === undefined ? source.height : Math.min(source.height, height),
+  };
 }
 
 // Carpeta del post dentro de src/content, para resolver sus imágenes.
@@ -138,7 +154,12 @@ export async function postFirstImage(
   try {
     const mod = await load();
     const img = await getImage({ src: mod.default, width, height, fit: 'cover', format: 'webp' });
-    return { src: img.src, width: img.attributes.width, height: img.attributes.height };
+    return {
+      src: img.src,
+      width: img.attributes.width,
+      height: img.attributes.height,
+      ...outputSize(mod.default, width, height),
+    };
   } catch (error) {
     // No rompe el build (la fila sale sin miniatura), pero deja rastro: fallar
     // aquí suele ser una ruta de imagen mal escrita.
@@ -164,6 +185,7 @@ export async function postBodyImage(
       src: img.src,
       width: img.attributes.width ?? mod.default.width,
       height: img.attributes.height ?? mod.default.height,
+      ...outputSize(mod.default),
     };
   } catch (error) {
     console.warn(`[blog] No se pudo optimizar la imagen de ${post.id}: ${rel}`, error);

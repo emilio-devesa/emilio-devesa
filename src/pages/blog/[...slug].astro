@@ -61,7 +61,9 @@ interface Props {
 
 const { post, minutes, categoryLabel, categorySlug, prev, next, related, headings } = Astro.props;
 const { Content } = await render(post);
-// OG con la primera imagen del post; si no hay, el hero por defecto
+// OG con la primera imagen del post; si no hay, el hero por defecto. Se pide a
+// 1200×630, pero el pipeline no reescala hacia arriba: el fichero puede salir
+// menor, así que al layout se le pasan sus dimensiones reales, no las pedidas.
 const og = await postFirstImage(post, OG_WIDTH, OG_HEIGHT);
 // Miniatura para el resultado de búsqueda (mismas dimensiones que el listado).
 const searchThumb = await postFirstImage(post, THUMB_WIDTH, THUMB_HEIGHT);
@@ -81,6 +83,8 @@ const site = Astro.site ?? SITE_FALLBACK;
   related={related}
   headings={headings}
   ogImage={og ? new URL(og.src, site).href : undefined}
+  ogImageWidth={og?.outputWidth}
+  ogImageHeight={og?.outputHeight}
   searchThumb={searchThumb ? new URL(searchThumb.src, site).href : undefined}
 >
   <Content />
