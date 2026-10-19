@@ -40,28 +40,34 @@ const navLinks = BLOG_NAV_LINKS;
 
   <section id="posts" data-search-region>
     <CategoryNav active={activeCategory} />
-    <div class="blog-search" data-pagefind-ignore>
-      <div class="blog-search-field">
-        <input
-          type="search"
-          class="blog-search-input"
-          placeholder="Buscar artículos…"
-          aria-label="Buscar artículos"
-          autocomplete="off"
-          data-search-input
-        />
-        <button
-          type="button"
-          class="blog-search-clear"
-          aria-label="Limpiar búsqueda"
-          hidden
-          data-search-clear
-        >
-          ✕
+    <form class="blog-search" action="/blog/" method="get" role="search" data-pagefind-ignore>
+      <div class="blog-search-row">
+        <div class="blog-search-field">
+          <input
+            type="search"
+            class="blog-search-input"
+            name="q"
+            placeholder="Buscar artículos…"
+            aria-label="Buscar artículos"
+            autocomplete="off"
+            data-search-input
+          />
+          <button
+            type="button"
+            class="blog-search-clear"
+            aria-label="Limpiar búsqueda"
+            hidden
+            data-search-clear
+          >
+            ✕
+          </button>
+        </div>
+        <button type="submit" class="blog-search-submit">
+          Buscar
         </button>
       </div>
       <p class="blog-search-status" role="status" aria-live="polite" data-search-status></p>
-    </div>
+    </form>
     <PostList
       posts={posts}
       currentPage={currentPage}
