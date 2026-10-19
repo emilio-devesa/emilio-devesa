@@ -7,7 +7,7 @@ categories:
   - "videojuegos"
 ---
 
-![World of Warcraft](images/WoW_WoWBC.png)
+![World of Warcraft](images/wow_wowbc.png)
 
 Existen en este mundo dos formas, dos vertientes, dos subgéneros si así lo prefieres en esto de crear juegos de rol para PC. Por un lado tenemos a Bioware, compañía con solera y currículum despampanantes, que es la creadora de aventuras épicas como la saga Baldur's Gate, los Icewind Dale o (sobretodo) Neverwinter Nights 1 y 2; cada uno de los títulos con sus respectivas expansiones y material adiccional. Frente a ellos, encontramos a Blizzard y su legión de imitadores granjeados gracias a un único título: Diablo. Blizzard mantenía (además de Diablo, Diablo 2 y la expansión de rigor) otra saga de juegos de estrategia con ambientación fantástica titulada Warcraft. Nada del otro mundo hasta que anunció que se traía entre manos un juego multijugador masivo.
 

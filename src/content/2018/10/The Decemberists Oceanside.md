@@ -7,7 +7,7 @@ categories:
   - "sin-categoria"
 ---
 
-![5 Songs EP by The Decemberists](images/the-decemberists-5-songs-Cover-Art.jpeg)
+![5 Songs EP by The Decemberists](images/the-decemberists-5-songs-cover-art.jpeg)
 
 ## "[_Oceanside_](https://www.youtube.com/watch?v=ZNVcTCP33fU)", The Decemberists, 5 Songs EP (2002)
 
