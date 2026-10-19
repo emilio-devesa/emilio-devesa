@@ -68,6 +68,16 @@ const navLinks = BLOG_NAV_LINKS;
       </div>
       <p class="blog-search-status" role="status" aria-live="polite" data-search-status></p>
     </form>
+    {/* Sin JS no hay Pagefind: en vez de una caja que no responde, se explica
+        y se ofrecen las rutas que sí funcionan (categorías, lista y ⌘F/Ctrl+F).
+        Ver el <noscript> del <head> en PrimaryLayout, que oculta la caja. */}
+    <noscript>
+      <p class="blog-search-noscript">
+        La búsqueda por texto necesita JavaScript, que tienes desactivado. Puedes moverte por las
+        categorías (arriba) o por las entradas de esta página, y usar la búsqueda del navegador (⌘F
+        en macOS, Ctrl+F en otros).
+      </p>
+    </noscript>
     <PostList
       posts={posts}
       currentPage={currentPage}
