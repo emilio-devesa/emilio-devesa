@@ -21,7 +21,7 @@ export const BLOG_NAV_LINKS = [
 // Navegación de la home (anclas); la 404 la reutiliza con prefijo '/'
 export const HOME_NAV_LINKS = [
   { href: '#sobre-mi', label: 'Quién soy' },
-  { href: '#clases', label: 'Clases de Batería' },
+  { href: '#clases', label: 'Clases' },
   { href: '#opiniones', label: 'Opiniones' },
   { href: '#compromiso', label: 'Mi compromiso' },
   { href: '#music', label: 'Discografía' },

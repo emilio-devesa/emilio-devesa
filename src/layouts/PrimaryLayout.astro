@@ -99,11 +99,10 @@ const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     {/* Búsqueda sin JS: el índice de Pagefind solo se consulta ejecutando
         JavaScript, así que con la ejecución desactivada la caja no puede hacer
         nada (ni escribir ni pulsar «Buscar»). Aquí se oculta; en su lugar
-        BlogLayout y 404 muestran un aviso con el índice del blog (bloques
-        <noscript>). Solo <style> es válido dentro de <noscript> en el <head>;
-        el selector lleva `html` delante (0,1,1) para no depender del orden de
-        la hoja externa —Astro la inyecta al final del head— si algún día esa
-        fija un display para .blog-search. */}
+        BlogLayout muestra un aviso (bloque <noscript>). Solo <style> es válido
+        dentro de <noscript> en el <head>; el selector lleva `html` delante
+        (0,1,1) para no depender del orden de la hoja externa —Astro la inyecta
+        al final del head— si algún día esa fija un display para .blog-search. */}
     <noscript>
       <style>
         html .blog-search {

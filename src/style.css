@@ -554,10 +554,10 @@ footer a:hover {
   margin-bottom: 1rem;
 }
 
-/* Aviso que sustituye a la caja de búsqueda cuando no hay JS (lo emiten los
-   bloques <noscript> de BlogLayout y 404; el <noscript> del <head> en
-   PrimaryLayout oculta .blog-search). En ese caso no hay Pagefind, así que en
-   vez de una caja que no responde se explica y se ofrece el índice. */
+/* Aviso que sustituye a la caja de búsqueda cuando no hay JS (lo emite el
+   bloque <noscript> de BlogLayout; el <noscript> del <head> en PrimaryLayout
+   oculta .blog-search). En ese caso no hay Pagefind, así que en vez de una
+   caja que no responde se avisa. */
 .blog-search-noscript {
   margin-bottom: 1rem;
   color: var(--muted);
