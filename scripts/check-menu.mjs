@@ -1,18 +1,19 @@
-// Comprueba que el menú burger sin JS (Popover API) sigue cumpliendo los
-// invariantes de los que depende. Uso: npm run check:menu
+// Comprueba el menú móvil: respaldo sin JS (Popover API) y mejora progresiva
+// con JS. Uso: npm run check:menu
 // Requiere un `npm run build` previo: lee dist/.
 //
 // Es frágil por diseño, así que conviene blindarlo:
-//   · el panel <div popover data-menu-state class="menu-panel"> contiene
-//     .nav-links (los enlaces) y va DESPUÉS del botón en el DOM (el glifo
-//     ☰/✕ se actualiza con :has);
-//   · el botón tiene que apuntar con popovertarget al id del panel, y
-//     .nav-links ser el de aria-controls;
-//   · el panel no puede ser `inert`: contiene los enlaces focusables;
-//   · nada de JavaScript: sin <script> en el header, sin .menu-open y sin
-//     aria-expanded en el botón (lo aporta popovertarget de forma nativa);
-//   · la hoja construida tiene que traer el panel bajo la cabecera, el
-//     objetivo táctil de 44 px, el glifo :popover-open y el respaldo
+//   · el marcado conserva el panel <div popover data-menu-state
+//     class="menu-panel"> con .nav-links dentro y DESPUÉS del botón; ese es
+//     el respaldo cuando no hay JS;
+//   · el botón conserva popovertarget hacia el panel y aria-controls hacia
+//     .nav-links; el panel no puede ser `inert`;
+//   · el header incluye el script de mejora que desactiva el popover y usa
+//     .menu-open cuando JS está disponible;
+//   · el botón no lleva aria-expanded en el HTML: lo aporta popovertarget
+//     sin JS y el script con JS;
+//   · la hoja construida trae el panel bajo la cabecera, el objetivo táctil
+//     de 44 px, el glifo del respaldo, el modo .js en flujo y el respaldo
 //     @supports not selector(:popover-open).
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
@@ -57,6 +58,7 @@ for (const file of walk(DIST, /^(index|404)\.html$/)) {
   const pill = header.match(PILL)?.[0];
   const panelBody = header.match(PANEL_BODY)?.[1] ?? '';
   const toggle = header.match(TOGGLE)?.[0];
+  const script = header.match(/<script\b[^>]*>([\s\S]*?)<\/script>/i)?.[1] ?? '';
   const navlinks =
     [...header.matchAll(NAVLINKS)].map((match) => match[0]).find((tag) => attr(tag, 'id')) ?? null;
 
@@ -83,10 +85,20 @@ for (const file of walk(DIST, /^(index|404)\.html$/)) {
     fail('el panel no va antes de .nav-links');
   if (!panelBody.includes(navlinks)) fail('.nav-links debe estar dentro del panel popover');
 
-  if (/<script\b/i.test(header)) fail('el header sigue teniendo <script>');
-  if (/menu-open/.test(html)) fail('queda una clase .menu-open');
+  if (!script) {
+    fail('el header no tiene el script de mejora progresiva del menú');
+  } else {
+    if (!/removeAttribute\(['"]popover['"]\)/.test(script))
+      fail('el script no desactiva el popover de respaldo');
+    if (!/removeAttribute\(['"]popovertarget['"]\)/.test(script))
+      fail('el script no desactiva popovertarget del botón');
+    if (!/classList\.add\(['"]js['"]\)/.test(script)) fail('el script no activa html.js');
+    if (!/menu-open/.test(script)) fail('el script no usa el estado .menu-open');
+  }
   if (/\baria-expanded=/.test(toggle))
-    fail('el botón lleva aria-expanded (lo aporta popovertarget; sobra)');
+    fail(
+      'el botón lleva aria-expanded en el HTML (lo aporta popovertarget sin JS y el script con JS)',
+    );
 }
 
 // Reglas de las que depende el mecanismo, en la hoja construida.
@@ -101,15 +113,24 @@ const cssChecks = [
   ],
   [
     /header:has\(\.menu-panel:popover-open\)\s+\.menu-toggle:{1,2}before\s*\{\s*content:\s*["']?✕/,
-    'glifo ✕ al abrir',
+    'glifo ✕ al abrir el respaldo',
   ],
   [/\.menu-toggle:{1,2}before\s*\{\s*content:\s*["']?☰/, 'glifo ☰ al cerrar'],
   [/@supports\s+not\s+selector\(:popover-open\)/, 'respaldo @supports not selector(:popover-open)'],
+  [
+    /html:not\(\.js\)\s+\.menu-toggle\s*\{[^}]*display:\s*none/,
+    'botón oculto solo en el respaldo sin Popover API',
+  ],
+  [/\.js\s+\.menu-panel\s*\{[^}]*position:\s*static/, 'panel en flujo con JS'],
+  [/\.js\s+header\.menu-open\s+\.menu-panel\s*\{[^}]*display:\s*block/, 'panel abierto con JS'],
+  [
+    /\.js\s+header\.menu-open\s+\.menu-toggle:{1,2}before\s*\{\s*content:\s*["']?✕/,
+    'glifo ✕ con JS',
+  ],
 ];
 for (const [re, label] of cssChecks) {
   if (!re.test(css)) failures.push(`CSS: falta ${label}`);
 }
-if (/menu-open/.test(css)) failures.push('CSS: queda una regla .menu-open');
 
 console.log(`Páginas comprobadas: ${pages} (menús válidos: ${menus}, fallos: ${failures.length})`);
 for (const f of failures.slice(0, 100)) console.log(`- ${f}`);

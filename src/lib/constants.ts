@@ -4,7 +4,7 @@
 // un comentario que apunta aquí (el CSS no admite var() en media queries y los
 // <script is:inline> se emiten tal cual, sin pasar por el empaquetador):
 //
-//   768 px  → style.css (§13)
+//   768 px  → style.css (§13) y SiteHeader.astro (JS: window.innerWidth > 768)
 //   50      → BlogLayout.astro (tope de resultados del buscador)
 //   200 ms  → BlogLayout.astro (retardo del filtro del buscador)
 //   320×240 → BlogLayout.astro (<img> de cada resultado)

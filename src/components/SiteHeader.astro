@@ -33,7 +33,7 @@ const navId = `${idPrefix}-nav-links`;
 
     <NavLinks links={links} className="nav-links nav-links--desktop" />
 
-    {/* Menú sin JS (Popover API). En móvil el popover es el propio panel y
+    {/* Respaldo sin JS (Popover API). En móvil el popover es el propio panel y
         contiene los enlaces: así, al pulsar un enlace, el navegador no lo
         considera un clic fuera del popover y no dispara el light dismiss que
         cerraba el menú antes de procesar el clic. Va después del botón para
@@ -45,4 +45,69 @@ const navId = `${idPrefix}-nav-links`;
       <NavLinks links={links} id={navId} />
     </div>
   </nav>
+
+  {/* Mejora progresiva: si hay JS, se desactiva el popover y se usa el menú en
+      flujo, que se cierra al elegir enlace, con Escape, al tocar fuera y al
+      pasar a escritorio. Sin JS no se añade .js y queda el respaldo de arriba. */}
+  <script is:inline>
+    (() => {
+      const init = () => {
+        const menus = [];
+        document.querySelectorAll('header').forEach((header) => {
+          const toggle = header.querySelector('.menu-toggle');
+          const panel = header.querySelector('.menu-panel');
+          const nav = panel?.querySelector('.nav-links');
+          if (!toggle || !panel || !nav) return;
+          menus.push({ header, toggle, panel, nav });
+        });
+        if (menus.length === 0) return;
+
+        // A partir de aquí manda el JS: el popover queda como respaldo.
+        document.documentElement.classList.add('js');
+        menus.forEach(({ header, toggle, panel, nav }) => {
+          panel.removeAttribute('popover');
+          toggle.removeAttribute('popovertarget');
+
+          const setOpen = (open) => {
+            header.classList.toggle('menu-open', open);
+            toggle.setAttribute('aria-expanded', String(open));
+            toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+          };
+          setOpen(false);
+
+          toggle.addEventListener('click', () => {
+            setOpen(!header.classList.contains('menu-open'));
+          });
+
+          nav.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => setOpen(false));
+          });
+
+          document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && header.classList.contains('menu-open')) {
+              setOpen(false);
+              toggle.focus();
+            }
+          });
+
+          document.addEventListener('click', (event) => {
+            if (!header.classList.contains('menu-open')) return;
+            if (!header.contains(event.target)) setOpen(false);
+          });
+
+          window.addEventListener('resize', () => {
+            // Punto de corte móvil (src/lib/constants.ts); el script inline no
+            // puede importar.
+            if (window.innerWidth > 768) setOpen(false);
+          });
+        });
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
 </header>

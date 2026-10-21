@@ -189,10 +189,11 @@ header:has(.menu-panel:popover-open) .menu-toggle::before {
   overflow-y: auto;
 }
 
-/* Navegadores sin Popover API: se oculta el botón y el panel móvil; el menú
-   queda siempre desplegado en el flujo (ver §13). */
+/* Navegadores sin Popover API y sin JS: se oculta el botón y el panel móvil;
+   el menú queda siempre desplegado en el flujo (ver §13). Con JS (html.js) el
+   menú lo controla SiteHeader y el botón debe seguir visible. */
 @supports not selector(:popover-open) {
-  .menu-toggle {
+  html:not(.js) .menu-toggle {
     display: none;
   }
 }
@@ -1130,6 +1131,34 @@ a.post-card:hover .post-thumb img {
     .menu-panel .nav-links {
       padding: 0;
     }
+  }
+
+  /* Con JS el panel vuelve al flujo (menú preferente) y se abre con la clase
+     .menu-open del header; sin .js queda el popover de respaldo. */
+  .js .menu-panel {
+    position: static;
+    inset: auto;
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    overflow: visible;
+    display: none;
+  }
+
+  .js header.menu-open .menu-panel {
+    display: block;
+  }
+
+  .js .menu-panel .nav-links {
+    padding: 0;
+  }
+
+  .js header.menu-open .menu-toggle::before {
+    content: '✕';
   }
 
   /* Secciones, hero y ofertas */
