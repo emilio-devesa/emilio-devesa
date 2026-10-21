@@ -1,0 +1,29 @@
+---
+import ExternalHint from './ExternalHint.astro';
+
+interface NavLink {
+  href: string;
+  label: string;
+}
+
+interface Props {
+  links: NavLink[];
+  id?: string;
+  className?: string;
+}
+
+const { links, id, className = 'nav-links' } = Astro.props;
+---
+
+<div class={className} id={id}>
+  {links.map((link) =>
+    link.href.startsWith('http') ? (
+      <a href={link.href} target="_blank" rel="noopener noreferrer">
+        {link.label}
+        <ExternalHint />
+      </a>
+    ) : (
+      <a href={link.href}>{link.label}</a>
+    ),
+  )}
+</div>

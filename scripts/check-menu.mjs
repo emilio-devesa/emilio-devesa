@@ -3,14 +3,17 @@
 // Requiere un `npm run build` previo: lee dist/.
 //
 // Es frágil por diseño, así que conviene blindarlo:
-//   · la pastilla <div popover inert data-menu-state> tiene que ir ANTES del
-//     botón y de .nav-links en el DOM (el CSS los alcanza con el combinador ~);
-//   · el botón tiene que apuntar con popovertarget al id de la pastilla, y
+//   · el panel <div popover data-menu-state class="menu-panel"> contiene
+//     .nav-links (los enlaces) y va DESPUÉS del botón en el DOM (el glifo
+//     ☰/✕ se actualiza con :has);
+//   · el botón tiene que apuntar con popovertarget al id del panel, y
 //     .nav-links ser el de aria-controls;
+//   · el panel no puede ser `inert`: contiene los enlaces focusables;
 //   · nada de JavaScript: sin <script> en el header, sin .menu-open y sin
 //     aria-expanded en el botón (lo aporta popovertarget de forma nativa);
-//   · la hoja construida tiene que traer las reglas :popover-open y el
-//     respaldo @supports not selector(:popover-open).
+//   · la hoja construida tiene que traer el panel bajo la cabecera, el
+//     objetivo táctil de 44 px, el glifo :popover-open y el respaldo
+//     @supports not selector(:popover-open).
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -36,8 +39,9 @@ const attr = (tag, name) => tag.match(new RegExp(`\\b${name}="([^"]*)"`))?.[1] ?
 
 const HEADER = /<header\b[\s\S]*?<\/header>/i;
 const PILL = /<div\b[^>]*\bdata-menu-state\b[^>]*>/i;
+const PANEL_BODY = /<div\b[^>]*\bdata-menu-state\b[^>]*>([\s\S]*?)<\/div>/i;
 const TOGGLE = /<button\b[^>]*\bclass="[^"]*\bmenu-toggle\b[^"]*"[^>]*>/i;
-const NAVLINKS = /<div\b[^>]*\bclass="[^"]*\bnav-links\b[^"]*"[^>]*>/i;
+const NAVLINKS = /<div\b[^>]*\bclass="[^"]*\bnav-links\b[^"]*"[^>]*>/gi;
 
 const failures = [];
 let pages = 0;
@@ -51,11 +55,13 @@ for (const file of walk(DIST, /^(index|404)\.html$/)) {
 
   const header = html.match(HEADER)?.[0] ?? '';
   const pill = header.match(PILL)?.[0];
+  const panelBody = header.match(PANEL_BODY)?.[1] ?? '';
   const toggle = header.match(TOGGLE)?.[0];
-  const navlinks = header.match(NAVLINKS)?.[0];
+  const navlinks =
+    [...header.matchAll(NAVLINKS)].map((match) => match[0]).find((tag) => attr(tag, 'id')) ?? null;
 
   if (!pill || !toggle || !navlinks) {
-    fail('falta la pastilla, el botón o .nav-links en el <header>');
+    fail('falta el panel, el botón o .nav-links en el <header>');
     continue;
   }
   menus++;
@@ -63,21 +69,19 @@ for (const file of walk(DIST, /^(index|404)\.html$/)) {
   const pillId = attr(pill, 'id');
   const navId = attr(navlinks, 'id');
 
-  if (!/\bpopover\b/.test(pill)) fail('la pastilla no lleva el atributo popover');
-  if (!/\binert\b/.test(pill)) fail('la pastilla no lleva el atributo inert');
-  if (!pillId) fail('la pastilla no tiene id');
+  if (!/\bpopover\b/.test(pill)) fail('el panel no lleva el atributo popover');
+  if (/\binert\b/.test(pill)) fail('el panel no debe ser inert: contiene los enlaces');
+  if (!pillId) fail('el panel no tiene id');
   if (attr(toggle, 'popovertarget') !== pillId)
-    fail(`el botón no apunta con popovertarget al id de la pastilla (${pillId})`);
+    fail(`el botón no apunta con popovertarget al id del panel (${pillId})`);
   if (!navId) fail('.nav-links no tiene id');
   if (attr(toggle, 'aria-controls') !== navId)
     fail(`el botón no apunta con aria-controls al id de .nav-links (${navId})`);
 
-  if (!(header.indexOf(pill) < header.indexOf(toggle)))
-    fail('la pastilla no va antes del botón (el combinador ~ no la alcanzaría)');
+  if (!(header.indexOf(toggle) < header.indexOf(pill))) fail('el panel no va después del botón');
   if (!(header.indexOf(pill) < header.indexOf(navlinks)))
-    fail('la pastilla no va antes de .nav-links (el combinador ~ no la alcanzaría)');
-  if (!(header.indexOf(toggle) < header.indexOf(navlinks)))
-    fail('el botón no va antes de .nav-links');
+    fail('el panel no va antes de .nav-links');
+  if (!panelBody.includes(navlinks)) fail('.nav-links debe estar dentro del panel popover');
 
   if (/<script\b/i.test(header)) fail('el header sigue teniendo <script>');
   if (/menu-open/.test(html)) fail('queda una clase .menu-open');
@@ -90,12 +94,13 @@ const css = walk(DIST, /\.css$/)
   .map((f) => readFileSync(f, 'utf8'))
   .join('\n');
 const cssChecks = [
+  [/\.menu-panel\s*\{[^}]*top:\s*var\(--header-height\)/, 'panel colocado bajo la cabecera'],
   [
-    /\[data-menu-state\]:popover-open\s*~\s*\.nav-links\s*\{\s*display:\s*flex/,
-    'regla :popover-open ~ .nav-links',
+    /\.menu-panel\s+\.nav-links\s+a\s*\{[^}]*min-height:\s*44px/,
+    'objetivo táctil de 44 px en el panel',
   ],
   [
-    /\[data-menu-state\]:popover-open\s*~\s*\.menu-toggle:{1,2}before\s*\{\s*content:\s*["']?✕/,
+    /header:has\(\.menu-panel:popover-open\)\s+\.menu-toggle:{1,2}before\s*\{\s*content:\s*["']?✕/,
     'glifo ✕ al abrir',
   ],
   [/\.menu-toggle:{1,2}before\s*\{\s*content:\s*["']?☰/, 'glifo ☰ al cerrar'],

@@ -1,5 +1,5 @@
 ---
-import ExternalHint from './ExternalHint.astro';
+import NavLinks from './NavLinks.astro';
 
 interface NavLink {
   href: string;
@@ -22,13 +22,6 @@ const navId = `${idPrefix}-nav-links`;
     Saltar al contenido
   </a>
   <nav aria-label={ariaLabel}>
-    {/* Menú sin JS (Popover API). Esta pastilla vacía e invisible es el
-        <div popover>: el botón la abre/cierra con popovertarget y el combinador
-        (ver style.css) enseña .nav-links cuando está abierta. Va ANTES del
-        botón y de .nav-links para que el selector ~ los alcance. Es `inert` y
-        de tamaño cero, así que queda fuera del orden de tabulación y del
-        diseño; el navegador la oculta mientras está cerrada. */}
-    <div popover inert data-menu-state id={stateId}></div>
     <a href="/">Emilio Devesa</a>
     <button
       type="button"
@@ -38,17 +31,18 @@ const navId = `${idPrefix}-nav-links`;
       aria-controls={navId}
     ></button>
 
-    <div class="nav-links" id={navId}>
-      {links.map((link) =>
-        link.href.startsWith('http') ? (
-          <a href={link.href} target="_blank" rel="noopener noreferrer">
-            {link.label}
-            <ExternalHint />
-          </a>
-        ) : (
-          <a href={link.href}>{link.label}</a>
-        ),
-      )}
+    <NavLinks links={links} className="nav-links nav-links--desktop" />
+
+    {/* Menú sin JS (Popover API). En móvil el popover es el propio panel y
+        contiene los enlaces: así, al pulsar un enlace, el navegador no lo
+        considera un clic fuera del popover y no dispara el light dismiss que
+        cerraba el menú antes de procesar el clic. Va después del botón para
+        que el orden de foco sea natural; el glifo ☰/✕ se actualiza con :has.
+        En escritorio este panel está cerrado y se usa .nav-links--desktop.
+        Sin JS, un enlace de ancla de la misma página no recarga y el panel
+        permanece abierto; se cierra con ✕, Escape o tocando fuera. */}
+    <div popover data-menu-state id={stateId} class="menu-panel">
+      <NavLinks links={links} id={navId} />
     </div>
   </nav>
 </header>
