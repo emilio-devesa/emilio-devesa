@@ -9,9 +9,9 @@ categories:
 
 Sometimes, software projects start with a very simple need. You build something to solve a problem, add a few features along the way, and eventually move on to other things. Years later, you might find yourself revisiting that same code, looking at it with a different perspective and wondering how far you can take it.
 
-That's more or less the story behind **Open Pastebin NG (OPNG)**.
+That's more or less the story behind **[Open Pastebin NG (OPNG)](https://github.com/emilio-devesa/opng/)**.
 
-[![Open Pastebin NG](images/opng-home.jpg)](https://github.com/emilio-devesa/opng/)
+![Open Pastebin NG](images/opng-home.jpg)
 
 ## It all started with Pascal
 
